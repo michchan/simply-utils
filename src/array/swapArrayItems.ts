@@ -1,5 +1,5 @@
 
-export function swapArrayItems<T = unknown>(arr: T[], indexA: number, indexB: number): T[] {
+export function swapArrayItems <T = unknown> (arr: T[], indexA: number, indexB: number): T[] {
     const newArr = [...arr]
 
     const itemA = newArr[indexA]

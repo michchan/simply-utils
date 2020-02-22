@@ -6,11 +6,11 @@ export type Direction = 'backward' | 'forward'
  * Get the next item index of the array
  * It handles with the length of the array so that the index won't overflow.
  */
-export const getNextIndex = (
+export function getNextIndex (
     prevIndex: null | number,
     totalLength: number,
     direction: Direction = 'forward',
-): number => {
+): number {
     const isForward = direction === 'forward'
     const lastIndex = totalLength - 1
     const nextIndex = (
