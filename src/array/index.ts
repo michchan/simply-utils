@@ -1,0 +1,5 @@
+export * from './getNextIndex'
+export * from './isArr'
+export * from './shuffle'
+export * from './sortAlphabetically'
+export * from './swapArrayItems'
