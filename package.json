@@ -1,0 +1,30 @@
+{
+  "name": "simply-utils",
+  "version": "0.0.0",
+  "description": "Simple and generic JavaScript utils for common use cases, mainly developed and refractored from frontend projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michchan/simply-utils.git"
+  },
+  "keywords": [
+    "node",
+    "npm",
+    "javascript",
+    "utils",
+    "utils-library",
+    "utils-lib",
+    "utilities",
+    "web",
+    "frontend"
+  ],
+  "author": "Michael Chan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michchan/simply-utils/issues"
+  },
+  "homepage": "https://github.com/michchan/simply-utils#readme"
+}
