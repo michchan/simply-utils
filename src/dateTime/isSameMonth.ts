@@ -1,0 +1,8 @@
+// check if on same month (ignore day and time)
+const isSameMonth = (a: Date, b: Date): boolean => {
+    const aMonth = new Date(a.getFullYear(), a.getMonth())
+    const bMonth = new Date(b.getFullYear(), b.getMonth())
+    return aMonth.valueOf() === bMonth.valueOf()
+}
+
+export default isSameMonth
