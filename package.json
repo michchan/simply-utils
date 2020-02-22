@@ -2,9 +2,11 @@
   "name": "simply-utils",
   "version": "0.0.0",
   "description": "Simple and generic JavaScript utils for common use cases, mainly developed and refractored from frontend projects.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -26,5 +28,9 @@
   "bugs": {
     "url": "https://github.com/michchan/simply-utils/issues"
   },
-  "homepage": "https://github.com/michchan/simply-utils#readme"
+  "homepage": "https://github.com/michchan/simply-utils#readme",
+  "devDependencies": {
+    "@types/node": "^13.7.4",
+    "typescript": "^3.8.2"
+  }
 }
