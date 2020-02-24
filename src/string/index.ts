@@ -1,5 +1,6 @@
 export * from './capitalizeWords'
 export * from './compareString'
+export * from './escapeSpecialCharacters'
 export * from './findLongestString'
 export * from './generateRandomString'
 export * from './hasSpecialCharacters'

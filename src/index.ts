@@ -1,3 +1,4 @@
+import * as _resources from './_resources'
 import * as array from './array'
 import * as arrayBuffer from './arrayBuffer'
 import * as async from './async'
@@ -19,6 +20,7 @@ import * as validators from './validators'
 
 /** -------------------- Named export -------------------- */
 
+export * from './_resources'
 export * from './array'
 export * from './arrayBuffer'
 export * from './async'
@@ -40,6 +42,7 @@ export * from './validators'
 /** -------------------- Module export -------------------- */
 
 export default {
+    ..._resources,
     ...array,
     ...arrayBuffer,
     ...async,
