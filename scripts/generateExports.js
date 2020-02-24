@@ -9,10 +9,11 @@ const dir = process.argv[2]
 
 // Read filenames from export statements like "export * from './someFile'"
 const filenames = fs
+    // Read the directory specified
     .readdirSync(dir)
     // Filter out 'index.ts'
     .filter(name => !['index.ts'].includes(name))
-    // Map all filename to the export statement
+    // Map every filename to the export statement
     .map(filename => {
         // Remove all '.ts' extension from filenames
         const name = filename.replace(/\.ts$/i, '')
