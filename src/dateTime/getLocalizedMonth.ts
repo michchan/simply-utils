@@ -1,6 +1,13 @@
+
+/**
+ * 
+ * @param index 
+ * @param locale The locale code or an array of locale codes
+ * @param format 
+ */
 const getLocalizedMonth = (
     index: number = 0, 
-    locale?: LocaleCode | LocaleCode[], 
+    locale?: string | string[], 
     format: "long" | "short" = "long"
 ): string => {
     const objDate = new Date();

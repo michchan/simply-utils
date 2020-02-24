@@ -1,8 +1,12 @@
 import isNum from "../number/isNum"
 
 
-
-const isDateString = (dateStr: ISOTimestamp | string): boolean => {
+/**
+ * Check whether the string can be parsed by the Date constructor.
+ * 
+ * @param dateStr 
+ */
+const isDateString = (dateStr: string): boolean => {
     // Empty string 
     if (!dateStr) return false
     

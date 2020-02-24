@@ -2,7 +2,13 @@ import isDateString from "./isDateString"
 import isTimeLocal from "./isTimeLocal"
 
 
-const fromDateTimeLocal = (value: DateTimeLocal | DateLocal | TimeLocal | ISOTimestamp): ISOTimestamp => {
+/**
+ * 
+ * 
+ * @param value string value of date-time, can be format of datetime-local, date-local, time-local or ISO-timestamp
+ * @returns ISO-timestamp
+ */
+const fromDateTimeLocal = (value: string): string => {
     if (isTimeLocal(value)) {
         return (() => {
             const [hours = 0, mins = 0, secs = 0, ms = 0] = value.split(/\:|\./)

@@ -2,9 +2,15 @@ import addDays from "./addDays";
 
 
 
+/**
+ * 
+ * @param index 
+ * @param locale The locale code or an array of locale codes 
+ * @param format 
+ */
 const getLocalizedWeekday = (
     index: number = 0, 
-    locale?: LocaleCode | LocaleCode[], 
+    locale?: string | string[], 
     format: "long" | "short" = "long"
 ): string => {
     const dummyDate = new Date();

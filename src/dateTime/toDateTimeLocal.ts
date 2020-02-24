@@ -12,12 +12,14 @@ export interface Options {
  * As the HTML5 input simply doesn't parse the ISO8061 timestamp with local timezone
  * So we have to parse it manually 
  * @param {String} isoDatetime Example value: "2019-05-02T05:28:18.185Z"
- * @returns {String} Example value: "2019-05-02T13:28" 
+ * @returns {String} 
+ * A string of type datetime-local, date-local or time-local (depending on options passed). 
+ * Example value: "2019-05-02T13:28" 
  */
 const toDateTimeLocal = (
-    isoDatetime: ISOTimestamp, 
+    isoDatetime: string, 
     options: Options = {}
-): DateTimeLocal | DateLocal | TimeLocal => {
+): string => {
     if (!isDateString(isoDatetime)) return ''
 
     const d = new Date(isoDatetime)

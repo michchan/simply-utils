@@ -5,10 +5,16 @@ import isStr from "../string/isStr";
 /**
  * Get relative date time string e.g. 3 days ago, 3 weeks ago
  */
+/**
+ * 
+ * @param comparedDateTime ISO-timestamp or Date instance
+ * @param relatedDateTime ISO-timestamp or Date instance
+ * @param locales The locale code or an array of locale codes
+ */
 function getRelativeDateTime(
-    comparedDateTime: ISOTimestamp | Date, 
-    relatedDateTime: ISOTimestamp | Date,
-    locales: LocaleCodes | LocaleCode[],
+    comparedDateTime: string | Date, 
+    relatedDateTime: string | Date,
+    locales: string | string[],
 ): string {
     const comparedDate = 
         isStr(comparedDateTime) 
