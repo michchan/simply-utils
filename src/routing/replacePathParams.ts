@@ -6,6 +6,8 @@ import isArr from "../array/isArr";
 const PARAM_PFX = ':'
 const PARAM_REGEX = new RegExp(`${PARAM_PFX}[a-z0-9-_\\?]+`, 'i')
 
+type Param = string | number
+
 /**
  * Replace the route pathname (config path) with params.
  * The length of the keys
@@ -15,11 +17,11 @@ const PARAM_REGEX = new RegExp(`${PARAM_PFX}[a-z0-9-_\\?]+`, 'i')
  */
 function replacePathParams (
     path: string,
-    params: string | string[],
+    params: Param | Param[],
 ): string {
     const _params = !isArr(params) ? [params] : params
 
-    return _params.reduce<string>((prev: string, param: string) => {
+    return _params.reduce<string>((prev: string, param: Param) => {
         return prev.replace(PARAM_REGEX, `${param}`)
     }, path)
 }

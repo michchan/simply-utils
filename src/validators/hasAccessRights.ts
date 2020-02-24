@@ -3,7 +3,7 @@ import isArr from "../array/isArr"
 
 
 
-export type HasAccessRightsIteratee <T extends string = string> = T | ((value: T) => boolean)
+export type HasAccessRightsIteratee <T extends string | number = string> = T | ((value: T) => boolean)
 
 export type HasAccessRightsMode =
     | 'whitelist'
@@ -16,7 +16,7 @@ export type HasAccessRightsMode =
  * @param list The list of permission / permission checker
  * @param mode The mode of checking, either whitelist or blacklist. Default to whitelist.
  */
-function hasAccessRights <T extends string = string> (
+function hasAccessRights <T extends string | number = string> (
     value: T,
     list: HasAccessRightsIteratee<T> | HasAccessRightsIteratee<T>[],
     mode: HasAccessRightsMode = 'whitelist',
