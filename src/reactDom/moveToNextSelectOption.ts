@@ -4,13 +4,11 @@ import getNextIndex, { Direction as _Direction } from '../array/getNextIndex';
 import isFunc from '../validators/primitive/isFunc'
 
 
-export type Direction = _Direction
-
 /**
  * Scroll to the next select option
  */
 const moveToNextSelectOption = (
-    direction: Direction,
+    direction: _Direction,
     prevIndex: null | number,
     totalLength: number,
     nodeRefs: MutableRefObject<(null | HTMLElement)[]>,

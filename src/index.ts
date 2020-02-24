@@ -3,6 +3,10 @@ import * as arrayBuffer from './arrayBuffer'
 import * as async from './async'
 import * as dateTime from './dateTime'
 import * as dom from './dom'
+import * as i18next from './i18next'
+import * as math from './math'
+import * as media from './media'
+import * as network from './network'
 import * as reactDom from './reactDom'
 
 
@@ -11,6 +15,13 @@ import * as reactDom from './reactDom'
 export * from './array'
 export * from './arrayBuffer'
 export * from './async'
+export * from './dateTime'
+export * from './dom'
+export * from './i18next'
+export * from './math'
+export * from './media'
+export * from './network'
+export * from './reactDom'
 
 /** -------------------- Module export -------------------- */
 
@@ -20,5 +31,9 @@ export default {
     ...async,
     ...dateTime,
     ...dom,
+    ...i18next,
+    ...math,
+    ...media,
+    ...network,
     ...reactDom,
 }
