@@ -3,7 +3,7 @@ import isArr from "../array/isArr"
 
 
 
-type Iteratee <T extends string = string> = T | ((value: T) => boolean)
+export type HasAccessRightsIteratee <T extends string = string> = T | ((value: T) => boolean)
 
 export type HasAccessRightsMode =
     | 'whitelist'
@@ -18,7 +18,7 @@ export type HasAccessRightsMode =
  */
 function hasAccessRights <T extends string = string> (
     value: T,
-    list: Iteratee<T> | Iteratee<T>[],
+    list: HasAccessRightsIteratee<T> | HasAccessRightsIteratee<T>[],
     mode: HasAccessRightsMode = 'whitelist',
 ): boolean {
     // Normalize list arg
