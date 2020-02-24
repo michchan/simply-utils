@@ -4,6 +4,8 @@ import getNextIndex, { GetNextIndexDirection } from '../array/getNextIndex';
 import isFunc from '../validators/isFunc'
 
 
+export type MoveToNextSelectOptionDirection = GetNextIndexDirection
+
 /**
  * Scroll to the next select option
  */
