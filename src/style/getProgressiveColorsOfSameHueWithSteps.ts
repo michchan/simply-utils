@@ -1,7 +1,7 @@
-import generateProgressiveColorsOfSameHue, { Options as ProgressiveColorsOptions } from "../style/generateProgressiveColorsOfSameHue"
+import generateProgressiveColorsOfSameHue, { GenerateProgressiveColorsOfSameHueOptions } from "../style/generateProgressiveColorsOfSameHue"
 import getColorsContrastRatio from "../style/getColorsContrastRatio"
 
-export interface Options extends Pick<ProgressiveColorsOptions,
+export interface GetProgressiveColorsOfSameHueWithStepsOptions extends Pick<GenerateProgressiveColorsOfSameHueOptions,
     | 'saturation' 
     | 'lightness'
 > {
@@ -23,7 +23,7 @@ export interface Options extends Pick<ProgressiveColorsOptions,
     textColors?: [ string, string ];
 }
 
-export interface ReturnType {
+export interface GetProgressiveColorsOfSameHueWithStepsReturnType {
     colors: string[];
     textColors: string[];
     colorsCount: number;
@@ -33,7 +33,9 @@ export interface ReturnType {
 }
 
 
-const getProgressiveColorsOfSameHueWithSteps = (options: Options) => {
+const getProgressiveColorsOfSameHueWithSteps = (
+    options: GetProgressiveColorsOfSameHueWithStepsOptions
+): GetProgressiveColorsOfSameHueWithStepsReturnType => {
     const {
         hue,
         saturation,

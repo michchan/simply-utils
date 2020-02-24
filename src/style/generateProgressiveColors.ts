@@ -1,4 +1,4 @@
-export interface Options {
+export interface GenerateProgressiveColorsOptions {
     startHue?: number;
     endHue?: number;
     saturation?: number; // 0 - 100
@@ -13,7 +13,10 @@ export interface Options {
  * @param options
  * @returns array of HSL color code
  */
-const generateProgressiveColors = (numberOfColors: number, options: Options = {}): string[] => {
+const generateProgressiveColors = (
+    numberOfColors: number, 
+    options: GenerateProgressiveColorsOptions = {}
+): string[] => {
     const {
         startHue = 0,
         endHue = 300,

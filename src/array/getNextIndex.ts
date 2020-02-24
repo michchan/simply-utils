@@ -1,6 +1,6 @@
 
 
-export type Direction ='backward' | 'forward'
+export type GetNextIndexDirection ='backward' | 'forward'
 
 /**
  * Get the next item index of the array
@@ -9,7 +9,7 @@ export type Direction ='backward' | 'forward'
 export function getNextIndex (
     prevIndex: null | number,
     totalLength: number,
-    direction: Direction = 'forward',
+    direction: GetNextIndexDirection = 'forward',
 ): number {
     const isForward = direction === 'forward'
     const lastIndex = totalLength - 1

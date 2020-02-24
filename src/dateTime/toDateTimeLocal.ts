@@ -3,7 +3,7 @@ import zeroPadding from '../number/zeroPadding'
 
 
 
-export interface Options {
+export interface ToDateTimeLocalOptions {
     dateOnly?: boolean;
     timeOnly?: boolean;
 }
@@ -18,7 +18,7 @@ export interface Options {
  */
 const toDateTimeLocal = (
     isoDatetime: string, 
-    options: Options = {}
+    options: ToDateTimeLocalOptions = {}
 ): string => {
     if (!isDateString(isoDatetime)) return ''
 

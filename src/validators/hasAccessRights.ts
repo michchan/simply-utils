@@ -4,7 +4,8 @@ import isArr from "../array/isArr"
 
 
 type Iteratee <T extends string = string> = T | ((value: T) => boolean)
-export type Mode =
+
+export type HasAccessRightsMode =
     | 'whitelist'
     | 'blacklist'
 
@@ -18,7 +19,7 @@ export type Mode =
 function hasAccessRights <T extends string = string> (
     value: T,
     list: Iteratee<T> | Iteratee<T>[],
-    mode: Mode = 'whitelist',
+    mode: HasAccessRightsMode = 'whitelist',
 ): boolean {
     // Normalize list arg
     const normalizedList = isArr(list) ? list : [list]

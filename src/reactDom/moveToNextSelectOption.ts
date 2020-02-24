@@ -1,6 +1,6 @@
 import { MutableRefObject } from "react";
 
-import getNextIndex, { Direction as _Direction } from '../array/getNextIndex';
+import getNextIndex, { GetNextIndexDirection } from '../array/getNextIndex';
 import isFunc from '../validators/isFunc'
 
 
@@ -8,7 +8,7 @@ import isFunc from '../validators/isFunc'
  * Scroll to the next select option
  */
 const moveToNextSelectOption = (
-    direction: _Direction,
+    direction: GetNextIndexDirection,
     prevIndex: null | number,
     totalLength: number,
     nodeRefs: MutableRefObject<(null | HTMLElement)[]>,

@@ -1,7 +1,7 @@
 import isNullOrUndef from "../validators/isNullOrUndef"
 import shuffle from "../array/shuffle"
 
-export interface Options {
+export interface GenerateRandomColorsOptions {
     // Specify saturation. 0 - 100
     // Default to random 60 - 100
     saturation?: number;
@@ -16,7 +16,10 @@ export interface Options {
  * @param options
  * @returns array of HSL color code
  */
-const generateRandomColors = (numberOfColors: number, options: Options = {}): string[] => {
+const generateRandomColors = (
+    numberOfColors: number, 
+    options: GenerateRandomColorsOptions = {}
+): string[] => {
     const {
         saturation,
         lightness

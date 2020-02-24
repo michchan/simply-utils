@@ -1,4 +1,4 @@
-export interface Options {
+export interface GenerateProgressiveColorsOfSameHueOptions {
     // Specity initial lightness (0 - 100)
     // Default to 50
     lightness?: number;
@@ -21,7 +21,11 @@ export interface Options {
  * @param options 
  * @returns array of HSL color code
  */
-const generateProgressiveColorsOfSameHue = (hue: number = 270, numberOfColors: number, options: Options = {}): string[] => {
+const generateProgressiveColorsOfSameHue = (
+    hue: number = 270, 
+    numberOfColors: number, 
+    options: GenerateProgressiveColorsOfSameHueOptions = {}
+): string[] => {
     const {
         lightness = 50,
         saturation = 100,
