@@ -1,4 +1,4 @@
-import { Currency } from "resources/currencies"
+import { Currency } from "../../resources/currencies"
 
 /**
  * Get the currency symbol

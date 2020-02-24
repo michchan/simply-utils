@@ -1,4 +1,4 @@
-import { Currency } from "resources/currencies"
+import { Currency } from "../../resources/currencies"
 import formatCurrency from "./formatCurrency"
 
 
