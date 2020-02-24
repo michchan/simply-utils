@@ -7,6 +7,7 @@ import * as i18next from './i18next'
 import * as math from './math'
 import * as media from './media'
 import * as network from './network'
+import * as number from './number'
 import * as reactDom from './reactDom'
 
 
@@ -21,6 +22,7 @@ export * from './i18next'
 export * from './math'
 export * from './media'
 export * from './network'
+export * from './number'
 export * from './reactDom'
 
 /** -------------------- Module export -------------------- */
@@ -35,5 +37,6 @@ export default {
     ...math,
     ...media,
     ...network,
+    ...number,
     ...reactDom,
 }
