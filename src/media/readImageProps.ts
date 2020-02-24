@@ -4,7 +4,7 @@ import isStr from "../string/isStr"
 /**
  * Read the file props of the image
  */
-const readImageProps = (src: HTMLImageElement['src']): Promise<{
+const readImageProps = (src: HTMLImageElement['src'] | File | Blob): Promise<{
     width: number;
     height: number;
 }> => new Promise((resolve, reject) => {

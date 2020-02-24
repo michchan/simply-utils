@@ -4,7 +4,7 @@ import isStr from "../string/isStr"
 /**
  * Read the file props of the video
  */
-const readVideoProps = (src: HTMLVideoElement['src']): Promise<{
+const readVideoProps = (src: HTMLVideoElement['src'] | File | Blob): Promise<{
     width: number;
     height: number;
 }> => new Promise((resolve, reject) => {
