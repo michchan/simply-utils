@@ -1,4 +1,4 @@
-import { Currency } from "../../resources/currencies"
+import { Currency } from "../_resources/currencies"
 
 /**
  * See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
