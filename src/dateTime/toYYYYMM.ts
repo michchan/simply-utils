@@ -1,4 +1,4 @@
-import zeroPadding from "utils/number/zeroPadding"
+import zeroPadding from "../number/zeroPadding"
 
 
 /**

@@ -2,7 +2,7 @@
 // With slash separator e.g. 12/24
 const REGEX = /^\d{2}\/\d{2}$/
 
-const isCardExp = (str): str is CreditCardExpDate => {
+const isCardExp = (str: string): boolean => {
     const isFormatCorrect = REGEX.test(str)
 
     if (!isFormatCorrect) return false

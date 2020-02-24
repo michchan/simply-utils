@@ -1,5 +1,5 @@
 import validateCaseInsensitiveKey from './validateCaseInsensitiveKey'
-import isArr from 'utils/array/isArr'
+import isArr from '../array/isArr'
 
 export type ReturnType<FieldType extends string, TargetType extends FieldType> = (type: FieldType) => type is TargetType
 

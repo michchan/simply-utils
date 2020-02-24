@@ -19,8 +19,13 @@ function difference <T = object> (previous: T, next: T): Partial<T> | null | und
 
 		// @ts-ignore: @TODO: fix type ts(2769)
 		return transform(next, (result, value, key) => {
+			// @ts-ignore: @TODO: Fix type ts(7053)
 			if (!isEqual(value, previous[key])) {
-				result[key] = (isObj(value) && isObj(previous[key])) 
+				result[key] = (
+					isObj(value) 
+					// @ts-ignore: @TODO: Fix type ts(7053)
+					&& isObj(previous[key])
+				) 
 					// @ts-ignore: @TODO: fix type ts(2352)
 					? changes((previous[key] as T), value) 
 					: value;

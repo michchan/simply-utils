@@ -1,9 +1,9 @@
 import isFunc from "./isFunc"
-import isArr from "utils/array/isArr"
+import isArr from "../array/isArr"
 
 
 
-export type Iteratee <T extends Key = Key> = T | ((value: T) => boolean)
+export type Iteratee <T extends string = string> = T | ((value: T) => boolean)
 export type Mode = 
     | 'whitelist'
     | 'blacklist'
@@ -15,7 +15,7 @@ export type Mode =
  * @param list The list of permission / permission checker
  * @param mode The mode of checking, either whitelist or blacklist. Default to whitelist.
  */
-function hasAccessRights <T extends Key = Key> (
+function hasAccessRights <T extends string = string> (
     value: T,
     list: Iteratee<T> | Iteratee<T>[],
     mode: Mode = 'whitelist',

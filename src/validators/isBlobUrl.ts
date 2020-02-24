@@ -1,6 +1,6 @@
 
 const REGEX = /^blob\:https?:\/\//i
 
-const isBlobUrl = (str: string): str is BlobURI => REGEX.test(str)
+const isBlobUrl = (str: string): boolean => REGEX.test(str)
 
 export default isBlobUrl

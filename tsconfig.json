@@ -11,5 +11,5 @@
         "esModuleInterop": true
     },
     "exclude": ["node_modules", "**/__tests__/*"],
-    "include": ["src"]
+    "include": ["src", "lib.d.ts"]
 }

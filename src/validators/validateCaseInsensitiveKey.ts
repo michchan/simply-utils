@@ -5,7 +5,7 @@
  * @param value The value to test
  * @param strict If enabled, the regex will wrap the key with '^' and '$' symbol. Default to true.
  */
-function validateCaseInsensitiveKey(key: Key, value: string, strict: boolean = true): boolean {
+function validateCaseInsensitiveKey(key: string, value: string, strict: boolean = true): boolean {
     const regexStr = strict? `^${key}$` : `${key}`
     return new RegExp(regexStr, 'i').test(value)
 }

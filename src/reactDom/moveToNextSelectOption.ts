@@ -16,7 +16,7 @@ const moveToNextSelectOption = (
 ): number => {
     const nextIndex = getNextIndex(prevIndex, totalLength, direction)
 
-    const foundOptionNode: HTMLElement = nodeRefs.current[nextIndex]
+    const foundOptionNode: HTMLElement | null = nodeRefs.current[nextIndex]
 
     if (
         foundOptionNode

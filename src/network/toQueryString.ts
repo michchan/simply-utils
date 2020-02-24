@@ -9,7 +9,7 @@ import isNullOrUndef from '../validators/isNullOrUndef'
  * 
  * @param params 
  */
-function toQueryString <T extends object = object> (params: T): QueryString {
+function toQueryString <T extends object = object> (params: T): string {
     const queryString = qs.stringify(
         omitBy(params, (value) => 
             // @ts-ignore: @TODO: fix type ts(2367)

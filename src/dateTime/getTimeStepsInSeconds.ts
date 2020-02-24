@@ -1,4 +1,4 @@
-import getStepsToTotal from 'utils/math/getStepsToTotal'
+import getStepsToTotal from '../math/getStepsToTotal'
 
 
 
