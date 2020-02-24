@@ -4,7 +4,7 @@ import { Currency } from "resources/currencies"
  * Get the currency symbol
  */
 const getCurrencySymbol = (
-    locales: LocaleCode | LocaleCode[] = [],
+    locales: string | string[] = [],
     currency: Currency = 'hkd',
 ): string => {
     const formatter = new Intl.NumberFormat(locales, { 

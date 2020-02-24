@@ -1,5 +1,10 @@
-// make number in format XXX-XXXXXX-XXX
-const formatBankAccNum = (value: BankAccountNumber, separator: string = '-'): string => {
+/**
+ * Format bank account number to format like XXX-XXXXXX-XXX (separator can be customized)
+ * 
+ * @param value The original bank account number value
+ * @param separator Customized separator. Default to hyphen '-'.
+ */
+const formatBankAccNum = (value: string, separator: string = '-'): string => {
     const rawNumber = value.replace(/[^\d]/g, '')
     const matchedNumber = rawNumber.match(/^(\d{0,3})(\d{0,6})(\d{0,3})/)
     // matchedNumber will be in format of [ wholeNumber, firstGroup, secondGroup, thirdGroup ]

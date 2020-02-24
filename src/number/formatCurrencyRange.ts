@@ -5,7 +5,7 @@ import formatCurrency from "./formatCurrency"
 const formatCurrencyRange = (
     minNumToFormat: number = 0,
     maxNumToFormat: number = 0,
-    locales: LocaleCode | LocaleCode[] = [],
+    locales: string | string[] = [],
     currency: Currency = 'hkd',
     minimumFractionDigits: number = 2,
     minimumIntegerDigits: number = 1,

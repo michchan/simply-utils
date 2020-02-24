@@ -1,7 +1,13 @@
 import formatAsGroupedString from "./formatAsGroupedString";
 
 
-const formatCardExp = (value: CreditCardExpDate, separator: string = ' / '): string => {
+/**
+ * Format the expiry date '1223' to format like '12/23'
+ * 
+ * @param value The expiry date value of a credit card like '1223'
+ * @param separator 
+ */
+const formatCardExp = (value: string, separator: string = ' / '): string => {
     // Replace extra slashes "/" of value first before formatting
     const normalizedValue = value
         .split(separator)

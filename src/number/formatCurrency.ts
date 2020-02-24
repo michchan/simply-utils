@@ -11,7 +11,7 @@ import { Currency } from "resources/currencies"
  */
 const formatCurrency = (
     numToFormat: number = 0,
-    locales: LocaleCode | LocaleCode[] = [],
+    locales: string | string[] = [],
     currency: Currency = 'hkd',
     minimumFractionDigits: number = 2,
     minimumIntegerDigits: number = 1,
