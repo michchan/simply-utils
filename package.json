@@ -37,6 +37,7 @@
     "typescript": "^3.8.2"
   },
   "dependencies": {
+    "eastasianwidth": "0.2.0",
     "lodash": "^4.17.15",
     "qs": "^6.9.1",
     "react": "^16.12.0"

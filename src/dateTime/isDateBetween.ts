@@ -1,5 +1,5 @@
 import isDate from './isDate';
-import isUndef from '../validators/primitive/isUndef';
+import isUndef from '../validators/isUndef';
 
 
 /**

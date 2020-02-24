@@ -1,7 +1,7 @@
 import { MutableRefObject } from "react";
 
 import getNextIndex, { Direction as _Direction } from '../array/getNextIndex';
-import isFunc from '../validators/primitive/isFunc'
+import isFunc from '../validators/isFunc'
 
 
 /**

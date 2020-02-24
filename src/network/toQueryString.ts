@@ -1,7 +1,7 @@
 import qs from 'qs'
 import omitBy from 'lodash/omitBy'
 
-import isNullOrUndef from '../validators/primitive/isNullOrUndef'
+import isNullOrUndef from '../validators/isNullOrUndef'
 
 
 /**

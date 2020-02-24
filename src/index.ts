@@ -8,7 +8,10 @@ import * as math from './math'
 import * as media from './media'
 import * as network from './network'
 import * as number from './number'
+import * as object from './object'
 import * as reactDom from './reactDom'
+import * as string from './string'
+import * as validators from './validators'
 
 
 /** -------------------- Named export -------------------- */
@@ -23,7 +26,10 @@ export * from './math'
 export * from './media'
 export * from './network'
 export * from './number'
+export * from './object'
 export * from './reactDom'
+export * from './string'
+export * from './validators'
 
 /** -------------------- Module export -------------------- */
 
@@ -38,5 +44,8 @@ export default {
     ...media,
     ...network,
     ...number,
+    ...object,
     ...reactDom,
+    ...string,
+    ...validators,
 }
