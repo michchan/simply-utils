@@ -10,7 +10,9 @@ import * as network from './network'
 import * as number from './number'
 import * as object from './object'
 import * as reactDom from './reactDom'
+import * as routing from './routing'
 import * as string from './string'
+import * as style from './style'
 import * as utils from './utils'
 import * as validators from './validators'
 
@@ -29,7 +31,9 @@ export * from './network'
 export * from './number'
 export * from './object'
 export * from './reactDom'
+export * from './routing'
 export * from './string'
+export * from './style'
 export * from './utils'
 export * from './validators'
 
@@ -48,7 +52,9 @@ export default {
     ...number,
     ...object,
     ...reactDom,
+    ...routing,
     ...string,
+    ...style,
     ...utils,
     ...validators,
 }

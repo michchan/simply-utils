@@ -3,8 +3,8 @@ import isArr from "../array/isArr"
 
 
 
-export type Iteratee <T extends string = string> = T | ((value: T) => boolean)
-export type Mode = 
+type Iteratee <T extends string = string> = T | ((value: T) => boolean)
+export type Mode =
     | 'whitelist'
     | 'blacklist'
 

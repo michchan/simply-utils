@@ -1,6 +1,6 @@
 
 
-export type Direction = 'backward' | 'forward'
+export type Direction ='backward' | 'forward'
 
 /**
  * Get the next item index of the array

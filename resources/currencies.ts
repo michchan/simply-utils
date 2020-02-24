@@ -6,7 +6,7 @@ const list = [
     'eur'
 ] as const
 
-export type Currency = typeof list[number]
+export type Currency =typeof list[number]
 
 const DEFAULT: Currency = "hkd"
 
