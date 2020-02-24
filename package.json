@@ -31,10 +31,13 @@
   "homepage": "https://github.com/michchan/simply-utils#readme",
   "devDependencies": {
     "@types/node": "^13.7.4",
-    "typescript": "^3.8.2"
+    "@types/react": "^16.9.22",
+    "typescript": "^3.8.2",
+    "@types/qs": "^6.9.1"
   },
   "dependencies": {
-    "@types/react": "^16.9.22",
+    "lodash": "^4.17.15",
+    "qs": "^6.9.1",
     "react": "^16.12.0"
   }
 }

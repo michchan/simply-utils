@@ -6,7 +6,8 @@
         "outDir": "./dist",
         "strict": true,
         "allowJs": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "esModuleInterop": true
     },
     "exclude": ["node_modules", "**/__tests__/*"],
     "include": ["src"]
