@@ -90,6 +90,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Michael Chan** - *Initial work* - [michchan](https://github.com/michchan)
+* **Sandy Lau** - *Initial work* - [sandylau333](https://github.com/sandylau333)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
