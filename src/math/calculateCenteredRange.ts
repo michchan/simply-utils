@@ -2,12 +2,7 @@
  * Calculate a range of number to be displayed, 
  * with the active number to be centered in the range if possible.
  * 
- * @author Sandy Lau <sandy.lau@oneshop.team>
- * Special thanks: 
- * David Tse <david.tse@oneshop.team>
- * Lawson Cheng <lawson.cheng@oneshop.team>
- * Backed by:
- * Jack Li <jack.li@oneshop.team>
+ * @author Sandy Lau https://github.com/sandylau333
  * 
  * @param {number} active The active number to be centered
  * @param {number} minPossibleIndex Minimum possible number

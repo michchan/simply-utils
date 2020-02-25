@@ -4,8 +4,6 @@ import isStr from "../string/isStr";
 
 /**
  * Get relative date time string e.g. 3 days ago, 3 weeks ago
- */
-/**
  * 
  * @param comparedDateTime ISO-timestamp or Date instance
  * @param relatedDateTime ISO-timestamp or Date instance

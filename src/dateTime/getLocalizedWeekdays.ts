@@ -3,6 +3,8 @@ import getLocalizedWeekday from "./getLocalizedWeekday"
 
 /**
  * 
+ * @author Sandy Lau https://github.com/sandylau333
+ * 
  * @param locale The locale code or an array of locale codes
  * @param format 
  */

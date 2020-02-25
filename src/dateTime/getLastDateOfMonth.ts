@@ -2,6 +2,11 @@ import isSameMonth from './isSameMonth'
 import getLastMsOfDate from './getLastMsOfDate'
 
 
+/**
+ * @author Sandy Lau https://github.com/sandylau333
+ * 
+ * @param date 
+ */
 function getLastDateOfMonth (date: Date = new Date()): Date {
     // month of given date
     const month = date.getMonth()

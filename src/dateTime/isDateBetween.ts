@@ -5,6 +5,9 @@ import isUndef from '../validators/isUndef';
 /**
  * Check if `date` is between `start` and `end`.
  * `start` and `end` are count as datetime (in ms) 
+ * 
+ * @author Sandy Lau https://github.com/sandylau333
+ * 
  * @param date 
  * @param start (optional)
  * @param end (optional)
