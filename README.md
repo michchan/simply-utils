@@ -9,7 +9,7 @@ This is a simple, generic utils library that,
 - try to make pieces of codes smaller reusable blocks, and 
 - is written in and refractored from some frontend React projects.
 
-Note that this library is not yet actively maintained but it might changes depending on demands. Feel free to make a pull request or raise a ticket of any issue.
+Note that this library **is NOT yet actively maintained** but it might changes depending on demands. Feel free to make a pull request or raise a ticket of any issue.
 
 ## Getting Started
 
