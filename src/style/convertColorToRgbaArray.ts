@@ -1,5 +1,13 @@
+import chunk from 'lodash/chunk'
 
 
+/**
+ * @author 
+ *  Sandy Lau https://github.com/sandylau333 
+ *  Michael Chan michchandev@gmail.com
+ * 
+ * @param color 
+ */
 const convertColorToRgbaArray = (color: string): number[] => {
     // find rgba values. ([ r, g, b, a? ]) (rgb in dec. a from 0 - 1)
     const rgbaStrings: (string | number)[] = (() => {
@@ -10,15 +18,26 @@ const convertColorToRgbaArray = (color: string): number[] => {
         // if hex (e.g. #123, #1234, #123456, #12345678)
         else if (/^#[0-9a-f]{3,8}$/i.test(color)) {
             const colorString = color.slice(1)
-            const regexArr = color.match(/[0-9a-f]/gi) || []
+            // Contains hex codes like ['e', 'e', 'e', 'f', 'f', 'f']
+            const hexCodes = color.match(/[0-9a-f]/gi) || []
 
             switch (colorString.length) {
+                // e.g. #333 === '#333333'
                 case 3:
+                // e.g. #333a === '#333333aa' (last 2 digits: alpha channel)
                 case 4:
-                    return regexArr.map(singleHex => parseInt(`${singleHex}${singleHex}`, 16))
+                    return hexCodes.map(singleHex => parseInt(`${singleHex}${singleHex}`, 16))
+                // e.g. '#333333'
                 case 6:
+                // e.g. '#333333aa' (last 2 digits: alpha channel)
                 case 8:
-                    return regexArr.map(hex => parseInt(hex, 16))
+                    // Group each 2 hexcodes like: 
+                    // ['3', '4', '3', '4', '3', '4'] -> [['3', '4'], ['3', '4'], ['3', '4']]
+                    const chunks = chunk(hexCodes, 2)
+                    // Join each group to make it like ['34', '34', '34']
+                    const hexCodeGroups = chunks.map(chunk => chunk.join(''))
+
+                    return hexCodeGroups.map(hex => parseInt(hex, 16))
             }
         }
         // if hsl or hsla (e.g hsl(123, 0%, 0%), hsla(123, 0%, 0%, 0.5))
@@ -57,7 +76,8 @@ const convertColorToRgbaArray = (color: string): number[] => {
     // destruct rgbaStrings to set default values
     const [r = 0, g = 0, b = 0, a = 1] = rgbaStrings
 
-    return [+r, +g, +b, +a]
+    // Round each number
+    return [+r, +g, +b, +a].map(n => Math.round(n))
 }
 
 export default convertColorToRgbaArray
