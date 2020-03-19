@@ -17,15 +17,15 @@ const getSearchParams = (
 ): null | string => {
     // Return search from location object
     if (isObj(location)) {
-        return location.search
+        return location.search || null
     }
     // Return search from location string
     const search = location.split('?')[1]
     if (search) 
-        return search
+        return search || null
     // Return search from window.location object
     if (useWindowLocationAsFallback) {
-        return window.location.search
+        return window.location.search || null
     }
     // Return null
     return null
