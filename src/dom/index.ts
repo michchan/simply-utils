@@ -1,5 +1,6 @@
 export * from './copyToClipboard'
 export * from './getInnerTextFromHTMLStr'
 export * from './getParentNodeByClassName'
+export * from './isWebkitBrowser'
 export * from './measureScrollbarWidth'
 export * from './scrollIntoView'

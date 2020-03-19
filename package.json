@@ -30,11 +30,11 @@
   },
   "homepage": "https://github.com/michchan/simply-utils#readme",
   "devDependencies": {
+    "@types/history": "^4.7.4",
     "@types/lodash": "^4.14.149",
     "@types/node": "^13.7.4",
     "@types/qs": "^6.9.1",
     "@types/react": "^16.9.22",
-    "@types/history": "^4.7.4",
     "typescript": "^3.8.2"
   },
   "dependencies": {
@@ -42,6 +42,7 @@
     "history": "^4.10.1",
     "lodash": "^4.17.15",
     "qs": "^6.9.1",
-    "react": "^16.12.0"
+    "react": "^16.12.0",
+    "react-device-detect": "^1.11.14"
   }
 }
