@@ -1,5 +1,6 @@
 export * from './calculateFlexRatio'
 export * from './calculateHeightPercentageByAspectRatio'
+export * from './classNameToSelector'
 export * from './convertColorToRgbaArray'
 export * from './generateProgressiveColors'
 export * from './generateProgressiveColorsOfSameHue'
