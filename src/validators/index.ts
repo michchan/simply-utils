@@ -1,6 +1,6 @@
 export * from './createKeyValidator'
 export * from './getSpecialCharsRegex'
-export * from './hasAccessRights'
+export * from './valueIn'
 export * from './isBankAccNum'
 export * from './isBase64Url'
 export * from './isBlobUrl'

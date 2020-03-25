@@ -10,13 +10,13 @@ export type HasAccessRightsMode =
     | 'blacklist'
 
 /**
- * Simple helper to check whether the user has an access right
+ * Simple helper to check wether a value is in/out of a list
  * 
- * @param value The value of the user's permission
- * @param list The list of permission / permission checker
+ * @param value The value to check
+ * @param list The list of values / value checkers
  * @param mode The mode of checking, either whitelist or blacklist. Default to whitelist.
  */
-function hasAccessRights <T extends string | number = string> (
+function valueIn <T extends string | number = string> (
     value: T,
     list: HasAccessRightsIteratee<T> | HasAccessRightsIteratee<T>[],
     mode: HasAccessRightsMode = 'whitelist',
@@ -42,4 +42,4 @@ function hasAccessRights <T extends string | number = string> (
     )
 }
 
-export default hasAccessRights
+export default valueIn
