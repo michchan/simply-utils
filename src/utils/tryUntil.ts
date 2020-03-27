@@ -1,6 +1,7 @@
-import setTimeoutRecursive from './setTimeoutRecursive'
 import isFunc from '../validators/isFunc'
 
+
+type CallStackItem = () => void;
 
 /**
  * Try some synchronous execution until it is successful time by time. e.g. Calling React ref instance method.
@@ -10,31 +11,28 @@ import isFunc from '../validators/isFunc'
  * @param interval The interval between each try
  */
 function tryUntil (
-    eachTry: (repeated: number, totalTry: number) => boolean,
+    handler: (repeated: number, totalTry: number) => boolean,
     tryTime: number,
     interval: number = 100,
     successCallback?: () => unknown,
     failedCallback?: () => unknown,
 ) {
-    // Create aborter buffer
-    let abort: (() => void) | undefined
     // Create each try function
-    const getEachTryFunc = (index: number, length: number) => () => {
-        const result = eachTry(index, length)
+    const tryEach = (index: number, length: number): CallStackItem => () => {
+        const result = handler(index, length)
         if (result) {
-            // Abort call stack
-            if (abort) abort()
             // Invoke success callback
             isFunc(successCallback) && successCallback()
         } else if (index + 1 === length) {
             // Invoke failed callback
             isFunc(failedCallback) && failedCallback()
+        } else {
+            // Invoke next try
+            setTimeout(() => tryEach(index + 1, length), interval)
         }
     }
-    // Create callstack
-    const callStack = Array(tryTime).fill(null).map((v, i, arr) => getEachTryFunc(i, arr.length))
-    // Try several times since inserting is a heavy action
-    setTimeoutRecursive(callStack, interval, (aborter) => { abort = aborter })
+    // Invoke recursive function
+    tryEach(0, tryTime)
 }
 
 export default tryUntil
