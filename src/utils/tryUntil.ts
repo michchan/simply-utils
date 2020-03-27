@@ -1,5 +1,5 @@
 import setTimeoutRecursive from './setTimeoutRecursive'
-import isFunc from 'validators/isFunc'
+import isFunc from '../validators/isFunc'
 
 
 /**
