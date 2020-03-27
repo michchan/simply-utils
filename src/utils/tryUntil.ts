@@ -1,4 +1,5 @@
 import setTimeoutRecursive from './setTimeoutRecursive'
+import isFunc from 'validators/isFunc'
 
 
 /**
@@ -11,7 +12,9 @@ import setTimeoutRecursive from './setTimeoutRecursive'
 function tryUntil (
     eachTry: (repeated: number, totalTry: number) => boolean,
     tryTime: number,
-    interval: number = 100
+    interval: number = 100,
+    successCallback?: () => unknown,
+    failedCallback?: () => unknown,
 ) {
     // Create aborter buffer
     let abort: (() => void) | undefined
@@ -21,6 +24,11 @@ function tryUntil (
         if (result) {
             // Abort call stack
             if (abort) abort()
+            // Invoke success callback
+            isFunc(successCallback) && successCallback()
+        } else if (index + 1 === length) {
+            // Invoke failed callback
+            isFunc(failedCallback) && failedCallback()
         }
     }
     // Create callstack
