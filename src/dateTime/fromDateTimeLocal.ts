@@ -1,3 +1,5 @@
+import { isSafari } from "react-device-detect"
+
 import isDateString from "./isDateString"
 import isTimeLocal from "./isTimeLocal"
 
@@ -18,10 +20,16 @@ const fromDateTimeLocal = (value: string): string => {
         })()
     }
 
+    // Fix safari cannot parse ISO string properly issue
+    // Reference: https://stackoverflow.com/questions/6427204/date-parsing-in-javascript-is-different-between-safari-and-chrome/6428201#6428201
+    const _value = isSafari 
+        ? value.replace(/-/g,'/').replace('T',' ').replace(/(\..*|\+.*)/, '')
+        : value
+
     // Parse the date string
-    if (!isDateString(value)) 
+    if (!isDateString(_value)) 
         return ''
-    return new Date(value).toISOString()
+    return new Date(_value).toISOString()
 }
 
 export default fromDateTimeLocal
