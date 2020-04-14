@@ -25,15 +25,23 @@ const getTranslatedSections = (
     let i = 0
 
     do {
-        const titleKey = `${key? `${key}.` : ''}${i}.title`
-        const descriptionKey = `${key? `${key}.` : ''}${i}.description`
-
+        const titleKey = ((): string => {
+            const k = `${key? `${key}.` : ''}${i}.title`
+            if (i18nNamspace) return k.split(':').pop() as string
+            return k
+        })()
+        const descriptionKey = ((): string => {
+            const k = `${key? `${key}.` : ''}${i}.description`
+            if (i18nNamspace) return k.split(':').pop() as string
+            return k
+        })()
+        
         const title = t(`${i18nNamspace? `${i18nNamspace}:` : ''}${titleKey}`)
         const description = t(`${i18nNamspace? `${i18nNamspace}:` : ''}${descriptionKey}`)
 
         /** Test if the result texts are not equal to their i18n keys */
-        const hasTitle = !isStr(title) || !new RegExp(`${titleKey}`).test(title)
-        const hasDescription = !isStr(description) || !new RegExp(`${descriptionKey}`).test(description)
+        const hasTitle = !isStr(title) || !new RegExp(`${titleKey.split(':').pop()}`).test(title)
+        const hasDescription = !isStr(description) || !new RegExp(`${descriptionKey.split(':').pop()}`).test(description)
 
         buffer = hasTitle || hasDescription ? { title, description } : null
 
