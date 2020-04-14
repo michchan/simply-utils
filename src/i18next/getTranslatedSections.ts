@@ -35,7 +35,7 @@ const getTranslatedSections = (
         const hasTitle = !isStr(title) || !new RegExp(`${titleKey}`).test(title)
         const hasDescription = !isStr(description) || !new RegExp(`${descriptionKey}`).test(description)
 
-        buffer = hasTitle && hasDescription? { title, description } : null
+        buffer = hasTitle || hasDescription ? { title, description } : null
 
         if (buffer) results.push(buffer)
         
