@@ -8,7 +8,7 @@ const traverseParentNodeByClassName = (
 ): HTMLElement | null | undefined => {
     return traverseParentNodeBy(node, node => {
         return (
-            (node.classList || []).contains(className) 
+            (!!node.classList && node.classList.contains(className) )
             || (node.className || '').includes(className)
         )
     }, selfInclusive)
