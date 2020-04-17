@@ -1,6 +1,6 @@
 
 
-// @TODO: Define correct Node type
+// @DEPRECATED
 const getParentNodeByClassName = (
     node: HTMLElement,
     className: string,
