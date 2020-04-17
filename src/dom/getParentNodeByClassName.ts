@@ -1,6 +1,7 @@
 
 
-// @DEPRECATED
+// @DEPRECATED at 2020-04-17
+// Please use traverseParentNodeByClassNamae
 const getParentNodeByClassName = (
     node: HTMLElement,
     className: string,
