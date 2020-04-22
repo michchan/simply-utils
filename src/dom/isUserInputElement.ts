@@ -1,4 +1,4 @@
-import parseBooleanStr from "utils/parseBooleanStr"
+import parseBooleanStr from "../utils/parseBooleanStr"
 
 
 
