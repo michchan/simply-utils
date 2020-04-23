@@ -1,6 +1,5 @@
 import setTimerRecursive from "./setTimerRecursive"
 
-export type ReturnType = NodeJS.Timeout[]
 
 /**
  * Gradually invoking each of the stack of functions with a constant interval
@@ -13,7 +12,7 @@ const setTimeoutRecursive = (
     callStack: (() => unknown)[] = [],
     interval: number = 150,
     setAborter?: (abort: () => void) => unknown,
-): ReturnType => {
+): NodeJS.Timeout[] => {
     return setTimerRecursive<NodeJS.Timeout>('timeout', callStack, interval, setAborter)
 
 }

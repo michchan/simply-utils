@@ -1,5 +1,5 @@
 
-export type ReturnType <RefType extends number | NodeJS.Timeout> = RefType[]
+type ReturnType <RefType extends number | NodeJS.Timeout> = RefType[]
 
 /**
  * Gradually invoking each of the stack of functions with a constant interval

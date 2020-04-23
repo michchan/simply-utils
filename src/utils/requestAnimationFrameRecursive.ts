@@ -1,6 +1,5 @@
 import setTimerRecursive from "./setTimerRecursive"
 
-export type ReturnType = number[]
 
 /**
  * Gradually invoking each of the stack of functions with a constant interval
@@ -12,7 +11,7 @@ export type ReturnType = number[]
 const requestAnimationFrameRecursive = (
     callStack: (() => unknown)[] = [],
     setAborter?: (abort: () => void) => unknown,
-): ReturnType => {
+): number[] => {
     return setTimerRecursive<number>('animFrame', callStack, undefined, setAborter)
 }
 
