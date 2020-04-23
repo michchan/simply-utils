@@ -1,6 +1,6 @@
 import setTimerRecursive from "./setTimerRecursive"
 
-export type ReturnType = NodeJS.Timeout[]
+export type ReturnType = number[]
 
 /**
  * Gradually invoking each of the stack of functions with a constant interval
@@ -9,13 +9,11 @@ export type ReturnType = NodeJS.Timeout[]
  * @param interval The constant interval between each invocation.
  * @returns A reference value pointed to the titimmer references stack. It is useful to cancel timers.
  */
-const setTimeoutRecursive = (
+const requestAnimationFrameRecursive = (
     callStack: (() => unknown)[] = [],
-    interval: number = 150,
     setAborter?: (abort: () => void) => unknown,
 ): ReturnType => {
-    return setTimerRecursive<NodeJS.Timeout>('timeout', callStack, interval, setAborter)
-
+    return setTimerRecursive<number>('animFrame', callStack, undefined, setAborter)
 }
 
-export default setTimeoutRecursive
+export default requestAnimationFrameRecursive
