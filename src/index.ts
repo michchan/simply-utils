@@ -1,3 +1,4 @@
+import * as _common from './_common'
 import * as _resources from './_resources'
 import * as array from './array'
 import * as arrayBuffer from './arrayBuffer'
@@ -20,6 +21,7 @@ import * as validators from './validators'
 
 /** -------------------- Named export -------------------- */
 
+export * from './_common'
 export * from './_resources'
 export * from './array'
 export * from './arrayBuffer'
@@ -42,6 +44,7 @@ export * from './validators'
 /** -------------------- Module export -------------------- */
 
 export default {
+    ..._common,
     ..._resources,
     ...array,
     ...arrayBuffer,

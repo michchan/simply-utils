@@ -1,0 +1,1 @@
+export * from './LINK_REGEX_STR'
