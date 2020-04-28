@@ -1,15 +1,13 @@
 import urlRegex from "../_common/urlRegex"
 
 /**
- * !@DEPRECATED: Use network/replaceUrls instead
- * 
  * Replace all links in text
  * 
  * @param text 
  * @param regexReplacer 
  */
-const replaceLinks = (text: string, regexReplacer: string): string => {
+const replaceUrls = (text: string, regexReplacer: string): string => {
     return text.replace(urlRegex.STRICT_GLOBAL, regexReplacer)
 }
 
-export default replaceLinks
+export default replaceUrls

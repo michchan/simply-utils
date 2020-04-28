@@ -1,1 +1,1 @@
-export * from './LINK_REGEX_STR'
+export * from './urlRegex'

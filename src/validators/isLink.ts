@@ -1,9 +1,9 @@
-import LINK_REGEX_STR from "../_common/LINK_REGEX_STR"
+import urlRegex from "../_common/urlRegex"
 
 
-// Reference: https://regex101.com/r/fics9a/1
-const REGEX = new RegExp(`^${LINK_REGEX_STR}$`)
-
-const isLink = (str: string): boolean => REGEX.test(str)
+// !@DEPRECATED: Use network/isUrl instead
+const isLink = (str: string, strict: boolean = true): boolean => {
+    return (strict ? urlRegex.STRICT : urlRegex.OPTIONAL_WWW).test(str)
+}
 
 export default isLink
