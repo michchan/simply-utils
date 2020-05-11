@@ -21,7 +21,7 @@ function getRelativeDateTime(
 
     const relativeDate = 
         isStr(relatedDateTime) 
-            ? new Date(isDateString(relatedDateTime)? comparedDateTime : 0)
+            ? new Date(isDateString(relatedDateTime)? relatedDateTime : 0)
             : relatedDateTime || new Date()
 
     // @ts-ignore: Ensured a polyfill for Intl.RelativeTimeFormat has been made
