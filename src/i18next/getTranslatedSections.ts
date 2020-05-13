@@ -43,8 +43,8 @@ const getTranslatedSections = (
         const description = !exists(descriptionKey) ? null : t(descriptionKey)
 
         /** Test if the result texts are not equal to their i18n keys */
-        const hasTitle = title !== null || (!isStr(title) || !new RegExp(`${titleKey.split(':').pop()}`).test(title))
-        const hasDescription = description !== null || (!isStr(description) || !new RegExp(`${descriptionKey.split(':').pop()}`).test(description))
+        const hasTitle = title !== null && (!isStr(title) || !new RegExp(`${titleKey.split(':').pop()}`).test(title))
+        const hasDescription = description !== null && (!isStr(description) || !new RegExp(`${descriptionKey.split(':').pop()}`).test(description))
 
         buffer = hasTitle || hasDescription ? { title, description } : null
 
