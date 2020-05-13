@@ -19,6 +19,7 @@ const getTranslatedSections = (
     i18nNamspace: string, 
     key: string, 
     t: I18nTranslate | ((key: string) => ReactNode),
+    exists: (i18nKey: string) => boolean, 
 ): TranslatedSection[] => {
     const results = []
     let buffer = null
@@ -36,8 +37,8 @@ const getTranslatedSections = (
             return k
         })()
         
-        const title = t(`${i18nNamspace? `${i18nNamspace}:` : ''}${titleKey}`)
-        const description = t(`${i18nNamspace? `${i18nNamspace}:` : ''}${descriptionKey}`)
+        const title = !exists(titleKey) ? null : t(`${i18nNamspace? `${i18nNamspace}:` : ''}${titleKey}`)
+        const description = !exists(descriptionKey) ? null : t(`${i18nNamspace? `${i18nNamspace}:` : ''}${descriptionKey}`)
 
         /** Test if the result texts are not equal to their i18n keys */
         const hasTitle = !isStr(title) || !new RegExp(`${titleKey.split(':').pop()}`).test(title)

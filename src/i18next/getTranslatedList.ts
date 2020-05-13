@@ -14,6 +14,7 @@ const getTranslatedList = (
     i18nNamspace: string, 
     key: string, 
     t: I18nTranslate | ((key: string) => ReactNode),
+    exists: (i18nKey: string) => boolean, 
 ): (string | ReactNode)[] => {
     const results = []
     let buffer: (string | ReactNode) = null
@@ -26,8 +27,9 @@ const getTranslatedList = (
             if (i18nNamspace) return k.split(':').pop() as string
             return k
         })()
+
         // Translate text
-        const text = t(`${i18nNamspace ? `${i18nNamspace}:` : ''}${tKey}`)
+        const text = !exists(tKey) ? null : t(`${i18nNamspace ? `${i18nNamspace}:` : ''}${tKey}`)
 
         /** Test if the result texts are not equal to their i18n keys */
         const hasText = !isStr(text) || !new RegExp(`${tKey.split(':').pop()}`).test(text)
@@ -37,7 +39,7 @@ const getTranslatedList = (
         if (buffer) results.push(buffer)
         
         i++
-    } while (buffer && i<10);
+    } while (buffer);
 
     return results
 }
