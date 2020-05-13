@@ -25,7 +25,7 @@ const getTranslatedList = (
         const tKey = ((): string => {
             const k = `${key? `${key}.` : ''}${i}`
             if (i18nNamspace) 
-                return `${i18nNamspace}:${k.split(':').pop()}` as string
+                return `${i18nNamspace}:${k.split(':').pop()}`
             return k
         })()
 
@@ -33,8 +33,8 @@ const getTranslatedList = (
         const text = !exists(tKey) ? null : t(tKey)
 
         /** Test if the result texts are not equal to their i18n keys */
-        const hasText = !isStr(text) || !new RegExp(`${tKey.split(':').pop()}`).test(text)
-
+        const hasText = text !== null && (!isStr(text) || !new RegExp(`${tKey.split(':').pop()}`).test(text)
+)
         buffer = hasText ? text : null
 
         if (buffer) results.push(buffer)
