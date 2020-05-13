@@ -28,17 +28,19 @@ const getTranslatedSections = (
     do {
         const titleKey = ((): string => {
             const k = `${key? `${key}.` : ''}${i}.title`
-            if (i18nNamspace) return k.split(':').pop() as string
+            if (i18nNamspace) 
+                return `${i18nNamspace}:${k.split(':').pop()}` as string
             return k
         })()
         const descriptionKey = ((): string => {
             const k = `${key? `${key}.` : ''}${i}.description`
-            if (i18nNamspace) return k.split(':').pop() as string
+            if (i18nNamspace) 
+                return `${i18nNamspace}:${k.split(':').pop()}` as string
             return k
         })()
         
-        const title = !exists(titleKey) ? null : t(`${i18nNamspace? `${i18nNamspace}:` : ''}${titleKey}`)
-        const description = !exists(descriptionKey) ? null : t(`${i18nNamspace? `${i18nNamspace}:` : ''}${descriptionKey}`)
+        const title = !exists(titleKey) ? null : t(titleKey)
+        const description = !exists(descriptionKey) ? null : t(descriptionKey)
 
         /** Test if the result texts are not equal to their i18n keys */
         const hasTitle = !isStr(title) || !new RegExp(`${titleKey.split(':').pop()}`).test(title)
