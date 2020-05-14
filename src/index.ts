@@ -6,7 +6,7 @@ import * as arrayBuffer from './arrayBuffer'
 import * as async from './async'
 import * as dateTime from './dateTime'
 import * as dom from './dom'
-import * as function from './function'
+import * as func from './func'
 import * as i18next from './i18next'
 import * as math from './math'
 import * as media from './media'
@@ -56,7 +56,7 @@ export default {
     ...async,
     ...dateTime,
     ...dom,
-    ...function,
+    ...func,
     ...i18next,
     ...math,
     ...media,
