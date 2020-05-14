@@ -1,5 +1,4 @@
 import * as _common from './_common'
-import * as _polyfills from './_polyfills'
 import * as _resources from './_resources'
 import * as array from './array'
 import * as arrayBuffer from './arrayBuffer'
@@ -24,7 +23,6 @@ import * as validators from './validators'
 /** -------------------- Named export -------------------- */
 
 export * from './_common'
-export * from './_polyfills'
 export * from './_resources'
 export * from './array'
 export * from './arrayBuffer'
@@ -49,7 +47,6 @@ export * from './validators'
 
 export default {
     ..._common,
-    ..._polyfills,
     ..._resources,
     ...array,
     ...arrayBuffer,
