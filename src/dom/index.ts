@@ -1,5 +1,6 @@
 export * from './autoGrowTextArea'
 export * from './copyToClipboard'
+export * from './getFilesFromClipboardEvent'
 export * from './getInnerTextFromHTMLStr'
 export * from './getParentNodeByClassName'
 export * from './isUserInputElement'
