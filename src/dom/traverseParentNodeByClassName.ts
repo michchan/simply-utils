@@ -1,5 +1,6 @@
 import traverseParentNodeBy from "./traverseParentNodeBy"
 import { isArr } from "../array"
+import isFunc from "../validators/isFunc"
 
 
 const traverseParentNodeByClassName = (
@@ -11,10 +12,12 @@ const traverseParentNodeByClassName = (
     const _className = isArr(className) ? className : [className]
 
     return traverseParentNodeBy(node, node => {
-        return _className.some((className) => (
-            (!!node.classList && node.classList.contains(className) )
-            || (node.className || '').includes(className)
-        ))
+        return _className.some((className) => {
+            const nodeClassName = node.className ?? ''
+            const isInClassList = !!node.classList && node.classList.contains(className)
+            const isInClassName = isFunc(nodeClassName.includes) && nodeClassName.includes(className)
+            return isInClassList || isInClassName
+        })
     }, selfInclusive)
 }
 
