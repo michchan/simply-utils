@@ -13,8 +13,6 @@ import isObj from './isObj'
  * @return {Object}        Return a new next who represent the diff
  */
 function difference <T = object> (previous: T, next: T, depth: number = Infinity): Partial<T> | null | undefined {
-	let depthBuffer = 0
-
 	const changes = (previous: T, next: T, currentDepth: number) => {
 		if (!previous) return next
 		if (!next) return null
@@ -41,7 +39,7 @@ function difference <T = object> (previous: T, next: T, depth: number = Infinity
 			}
 		});
 	}
-	return changes(previous, next, depthBuffer + 1);
+	return changes(previous, next, 1);
 }
 
 export default difference
