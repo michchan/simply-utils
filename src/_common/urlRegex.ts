@@ -1,4 +1,6 @@
 // Reference: https://regex101.com/r/fics9a/3
+// Special character: [A-Za-z0-9_\.\/\-~\?=]
+
 const STRICT = /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[A-Za-z0-9_\.\/\-~\?=]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[A-Za-z0-9_\.\/\-~\?=]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[A-Za-z0-9_\.\/\-~\?=]{2,}|www\.[a-zA-Z0-9]+\.[A-Za-z0-9_\.\/\-~\?=]{2,})$/
 
 const STRICT_GLOBAL = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[A-Za-z0-9_\.\/\-~\?=]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[A-Za-z0-9_\.\/\-~\?=]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[A-Za-z0-9_\.\/\-~\?=]{2,}|www\.[a-zA-Z0-9]+\.[A-Za-z0-9_\.\/\-~\?=]{2,})/g
