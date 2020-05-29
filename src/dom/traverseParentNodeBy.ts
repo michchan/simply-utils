@@ -11,7 +11,9 @@ const traverseParentNodeBy = (
     if (selfInclusive) {
         if (match(node)) return node
     }
-    const nextParent = (node.parentNode as (HTMLElement | null | undefined))
+
+    // Check next parent
+    const nextParent = node.parentElement
     if (nextParent) {
         if (match(nextParent)) {
             return nextParent
@@ -19,9 +21,9 @@ const traverseParentNodeBy = (
             // * 'selfInclusive' won't passed since it is only run for the first time
             return traverseParentNodeBy(nextParent, match, false)
         }
-    } else {
-        return null
     }
+
+    return null
 }
 
 export default traverseParentNodeBy
