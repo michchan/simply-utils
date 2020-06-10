@@ -1,4 +1,3 @@
-import { Currency } from "../_resources/currencies"
 import formatCurrency from "./formatCurrency"
 
 
@@ -6,7 +5,7 @@ const formatCurrencyRange = (
     minNumToFormat: number = 0,
     maxNumToFormat: number = 0,
     locales: string | string[] = [],
-    currency: Currency = 'hkd',
+    currency: string = 'hkd',
     minimumFractionDigits: number = 2,
     minimumIntegerDigits: number = 1,
 ): string => {

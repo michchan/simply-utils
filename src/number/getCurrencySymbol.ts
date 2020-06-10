@@ -1,11 +1,9 @@
-import { Currency } from "../_resources/currencies"
-
 /**
  * Get the currency symbol
  */
 const getCurrencySymbol = (
     locales: string | string[] = [],
-    currency: Currency = 'hkd',
+    currency: string = 'hkd',
 ): string => {
     const formatter = new Intl.NumberFormat(locales, { 
         style: 'currency', 

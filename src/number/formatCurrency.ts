@@ -1,5 +1,3 @@
-import { Currency } from "../_resources/currencies"
-
 /**
  * See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
  * 
@@ -12,7 +10,7 @@ import { Currency } from "../_resources/currencies"
 const formatCurrency = (
     numToFormat: number = 0,
     locales: string | string[] = [],
-    currency: Currency = 'hkd',
+    currency: string = 'hkd',
     minimumFractionDigits: number = 2,
     minimumIntegerDigits: number = 1,
 ): string => {
