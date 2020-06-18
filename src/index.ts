@@ -11,6 +11,7 @@ import * as media from './media'
 import * as network from './network'
 import * as number from './number'
 import * as object from './object'
+import * as pagination from './pagination'
 import * as reactDom from './reactDom'
 import * as routing from './routing'
 import * as string from './string'
@@ -34,6 +35,7 @@ export * from './media'
 export * from './network'
 export * from './number'
 export * from './object'
+export * from './pagination'
 export * from './reactDom'
 export * from './routing'
 export * from './string'
@@ -57,6 +59,7 @@ export default {
     ...network,
     ...number,
     ...object,
+    ...pagination,
     ...reactDom,
     ...routing,
     ...string,
