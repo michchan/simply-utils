@@ -2,7 +2,7 @@
  * Execute async task with auto-retry
  * 
  * @param task The async task function
- * @param time The nth number of time for this attempt. Stop retrying if it is equal to ZERO.
+ * @param time The nth number of time for this attempt. Stop retrying if it is equal to ZERO. Default to 3.
  */
 export async function retry <T = unknown> (
     task: (time: number) => Promise<T>, 
