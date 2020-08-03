@@ -1,6 +1,6 @@
 {
   "name": "simply-utils",
-  "version": "0.24.2",
+  "version": "0.25.0",
   "description": "Simple and generic JavaScript utils for common use cases, mainly developed and refractored from frontend projects.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,17 +33,19 @@
   "devDependencies": {
     "@types/history": "^4.7.4",
     "@types/lodash": "^4.14.149",
-    "@types/node": "^13.7.4",
+    "@types/node": "^13.13.15",
     "@types/qs": "^6.9.1",
     "@types/react": "^16.9.22",
+    "@types/styled-components": "^5.1.2",
     "typescript": "^3.8.2"
   },
   "dependencies": {
     "eastasianwidth": "0.2.0",
     "history": "^4.10.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "qs": "^6.9.3",
     "react": "^16.13.1",
-    "react-device-detect": "^1.11.14"
+    "react-device-detect": "^1.11.14",
+    "styled-components": "^5.1.1"
   }
 }

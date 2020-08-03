@@ -8,7 +8,8 @@
         "strict": true,
         "allowJs": true,
         "resolveJsonModule": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "skipLibCheck": true
     },
     "exclude": ["node_modules", "**/__tests__/*"],
     "include": ["src", "lib.d.ts"]

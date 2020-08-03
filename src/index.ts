@@ -16,6 +16,7 @@ import * as reactDom from './reactDom'
 import * as routing from './routing'
 import * as string from './string'
 import * as style from './style'
+import * as styledComponents from './styledComponents'
 import * as utils from './utils'
 import * as validators from './validators'
 
@@ -40,6 +41,7 @@ export * from './reactDom'
 export * from './routing'
 export * from './string'
 export * from './style'
+export * from './styledComponents'
 export * from './utils'
 export * from './validators'
 
@@ -64,6 +66,7 @@ export default {
     ...routing,
     ...string,
     ...style,
+    ...styledComponents,
     ...utils,
     ...validators,
 }
