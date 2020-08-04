@@ -192,7 +192,7 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/styled-components@^5.1.2":
+"@types/styled-components@^5.0.0":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.2.tgz#652af475b4af917b355ea1c3068acae63d46455f"
   integrity sha512-HNocYLfrsnNNm8NTS/W53OERSjRA8dx5Bn6wBd2rXXwt4Z3s+oqvY6/PbVt3e6sgtzI63GX//WiWiRhWur08qQ==
@@ -417,7 +417,7 @@ source-map@^0.5.0:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
   integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
 
-styled-components@^5.1.1:
+styled-components@^5.0.0:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-5.1.1.tgz#96dfb02a8025794960863b9e8e365e3b6be5518d"
   integrity sha512-1ps8ZAYu2Husx+Vz8D+MvXwEwvMwFv+hqqUwhNlDN5ybg6A+3xyW1ECrAgywhvXapNfXiz79jJyU0x22z0FFTg==
