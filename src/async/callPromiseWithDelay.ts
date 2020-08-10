@@ -5,10 +5,10 @@
  * @param delay The number of delay
  * @param callee The callee function
  */
-function callPromiseWithDelay <T = unknown> (
+function callPromiseWithDelay <T> (
+    callee: () => Promise<T>,
     delay: number,
-    callee: () => Promise<T>
-) {
+): Promise<T> {
     return new Promise((resolve) => {
         setTimeout(async () => {
             const res = await callee()
