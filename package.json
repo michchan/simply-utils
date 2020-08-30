@@ -1,6 +1,6 @@
 {
   "name": "simply-utils",
-  "version": "0.30.0",
+  "version": "0.30.1",
   "description": "Simple and generic JavaScript utils for common use cases, mainly developed and refractored from frontend projects.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
     "build": "tsc",
     "index": "node scripts/generateExports && node scripts/generateIndex",
     "tag": "git tag $(node -pe 'require(\"./package.json\").version')",
-    "deploy": "npm run index && npm run build && npm run tag && git push && npm run publish"
+    "deploy": "npm run index && npm run build && npm run tag && git push && npm publish"
   },
   "repository": {
     "type": "git",
