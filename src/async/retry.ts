@@ -9,10 +9,10 @@ export async function retry <T = unknown> (
     time: number = 3,
 ): Promise<T> {
     try {
-        return await task(time)
+        return task(time)
     } catch(err) {
         if (time === 1) throw err;
-        return await retry(task, time - 1);
+        return retry(task, time - 1);
     }
 };
 
