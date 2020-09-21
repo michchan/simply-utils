@@ -11,7 +11,7 @@ export async function retry <T = unknown> (
     try {
         return task(time)
     } catch(err) {
-        if (time === 0) throw err;
+        if (time <= 0) throw err;
         return retry(task, time - 1);
     }
 };
