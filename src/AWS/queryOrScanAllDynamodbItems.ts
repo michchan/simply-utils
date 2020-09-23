@@ -7,7 +7,7 @@ function queryOrScanAllDynamodbItems <
     Input extends DynamoDB.DocumentClient.QueryInput | DynamoDB.DocumentClient.ScanInput,
     Output extends DynamoDB.DocumentClient.QueryOutput | DynamoDB.DocumentClient.ScanOutput,
 > (
-    docClient: DynamoDB.DocumentClient,
+    docClient: Pick<DynamoDB.DocumentClient, 'scan' | 'query'>,
     method: 'scan' | 'query',
     input: Input,
     previousResult: null | Output = null,

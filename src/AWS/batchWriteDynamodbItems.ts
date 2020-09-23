@@ -12,7 +12,7 @@ type DT = DynamoDB.DocumentClient.DeleteRequest
  * which means with this helper more than 25 items can be written into the database with one call.
  */
 async function batchWriteDynamodbItems <T, RT extends PT | DT> (
-    docClient: DynamoDB.DocumentClient,
+    docClient: Pick<DynamoDB.DocumentClient, 'batchWrite'>,
     records: T[],
     tableName: string,
     mode: 'put' | 'delete',

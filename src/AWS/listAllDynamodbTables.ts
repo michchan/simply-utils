@@ -7,7 +7,7 @@ export type ListAllTablesResult = DynamoDB.TableNameList
  * List table recursively
  */
 const listAllDynamodbTables = (
-    dynamodb: DynamoDB,
+    dynamodb: Pick<DynamoDB, 'listTables'>,
     ExclusiveStartTableName: string,
     Limit?: DynamoDB.ListTablesInput['Limit'],
     accTableNames: DynamoDB.TableNameList = [],
