@@ -1,8 +1,8 @@
 import { DynamoDB } from 'aws-sdk';
 import chunk from 'lodash/chunk'
 
-export type ChunkResult = DynamoDB.DocumentClient.BatchWriteItemOutput
-export type Result = ChunkResult[]
+export type BatchWriteChunkResult = DynamoDB.DocumentClient.BatchWriteItemOutput
+export type BatchWriteResult = BatchWriteChunkResult[]
 
 type PT = DynamoDB.DocumentClient.PutRequest
 type DT = DynamoDB.DocumentClient.DeleteRequest
@@ -17,14 +17,14 @@ async function batchWriteDynamodbItems <T, RT extends PT | DT> (
     tableName: string,
     mode: 'put' | 'delete',
     serialize?: (item: T) => RT,
-): Promise<Result | null> {
+): Promise<BatchWriteResult | null> {
     if (records.length === 0) return null
 
     // Chunk records by 25 which is the max number of items DynamoDB can batch write.
     const chunks = chunk(records, 25)
     // Send batch requests for each chunk
     return Promise.all(
-        chunks.map((chunkedRecords, index): Promise<ChunkResult> => {
+        chunks.map((chunkedRecords, index): Promise<BatchWriteChunkResult> => {
             // Create items
             const items = chunkedRecords.map(rec => ({
                 [mode === 'put' ? 'PutRequest' : 'DeleteRequest']: (

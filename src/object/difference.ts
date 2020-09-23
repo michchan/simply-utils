@@ -20,25 +20,27 @@ function difference <T = object> (previous: T, next: T, depth: number = Infinity
 		// Get next depth
 		const nextDepth = currentDepth + 1
 
-		// @ts-ignore: @TODO: fix type ts(2769)
+		// @ts-expect-error: @TODO: fix type ts(2769)
 		return transform(next, (result, value, key) => {
-			// @ts-ignore: @TODO: Fix type ts(7053)
+			// @ts-expect-error: @TODO: Fix type ts(7053)
 			if (!isEqual(value, previous[key])) {
+				// @ts-expect-error: @TODO: Fix type
 				result[key] = (
 					isObj(value) 
-					// @ts-ignore: @TODO: Fix type ts(7053)
+					// @ts-expect-error: @TODO: Fix type ts(7053)
 					&& isObj(previous[key])
 				) 
 					? (() => {
 						// * Abort if it reaches max depth 
 						if (nextDepth > depth) return value
-						// @ts-ignore: @TODO: fix type ts(2352)
+						// @ts-expect-error: @TODO: fix type ts(2352)
 						return changes((previous[key] as T), value, nextDepth)
 					})()
 					: value;
 			}
 		});
 	}
+	// @ts-expect-error: @TODO: Fix type
 	return changes(previous, next, 1);
 }
 

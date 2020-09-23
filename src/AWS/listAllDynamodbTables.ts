@@ -1,7 +1,7 @@
 import { DynamoDB } from 'aws-sdk';
 
 
-export type Result = DynamoDB.TableNameList
+export type ListAllTablesResult = DynamoDB.TableNameList
 
 /**
  * List table recursively
@@ -11,7 +11,7 @@ const listAllDynamodbTables = (
     ExclusiveStartTableName: string,
     Limit?: DynamoDB.ListTablesInput['Limit'],
     accTableNames: DynamoDB.TableNameList = [],
-): Promise<Result> => new Promise((resolve, reject) => {
+): Promise<ListAllTablesResult> => new Promise((resolve, reject) => {
     dynamodb.listTables({
         ExclusiveStartTableName,
         Limit,
