@@ -1,3 +1,4 @@
+import * as AWS from './AWS'
 import * as _common from './_common'
 import * as array from './array'
 import * as arrayBuffer from './arrayBuffer'
@@ -23,6 +24,7 @@ import * as validators from './validators'
 
 /** -------------------- Named export -------------------- */
 
+export * from './AWS'
 export * from './_common'
 export * from './array'
 export * from './arrayBuffer'
@@ -48,6 +50,7 @@ export * from './validators'
 /** -------------------- Module export -------------------- */
 
 export default {
+    ...AWS,
     ..._common,
     ...array,
     ...arrayBuffer,
