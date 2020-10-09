@@ -6,8 +6,8 @@ name: CD
 # Reference: https://github.community/t/how-to-restrict-execution-of-github-actions-workflow-on-tags-creation-only/16041/2
 on:
   push:
-    branches:
-      - refs/tags/v*
+    tags:
+      - v*
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
