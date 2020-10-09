@@ -10,8 +10,6 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # Only run if it contains a 
-  if: contains(github.ref, 'refs/tags/v')
 
   # This workflow contains a single job called "build"
   build:
@@ -20,6 +18,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Only run if it contains a tag started with "v"
+      - if: contains(github.ref, 'refs/tags/v')
+      
       - run: echo ${{github.ref}}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out from Git
