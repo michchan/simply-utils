@@ -16,13 +16,13 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    # Only run if it contains a tag started with "v"
+    if: contains(github.ref, 'refs/tags/v')     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Only run if it contains a tag started with "v"
-      # - name: Run only if there is a version tag
-      # if: contains(github.ref, 'refs/tags/v')     
+      - name: Display github.ref
+        run: echo ${{github.ref}}
 
-      - run: echo ${{github.ref}}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out from Git
         uses: actions/checkout@v2
