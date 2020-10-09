@@ -2,7 +2,7 @@
 
 name: CD
 
-# Controls when the action will run.
+# Controls when the action will run. Triggers the workflow on push new tag.
 on:
   push:
     tags: 
