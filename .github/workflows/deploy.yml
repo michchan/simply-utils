@@ -22,7 +22,7 @@ jobs:
       - name: Check out from Git
         uses: actions/checkout@v2
       # Setup .npmrc file to publish to npm
-      - name: Setup Node with right version
+      - name: Setup Node with the right version
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
