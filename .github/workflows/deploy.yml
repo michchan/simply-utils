@@ -20,9 +20,6 @@ jobs:
     if: contains(github.ref, 'refs/tags/v')     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Display github.ref
-        run: echo ${{github.ref}}
-
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out from Git
         uses: actions/checkout@v2
