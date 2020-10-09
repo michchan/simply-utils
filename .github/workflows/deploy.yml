@@ -3,7 +3,6 @@
 name: CD
 
 # On some tags started with "v" being pushed 
-# Reference: https://github.community/t/how-to-restrict-execution-of-github-actions-workflow-on-tags-creation-only/16041/2
 on:
   push:
     tags:
