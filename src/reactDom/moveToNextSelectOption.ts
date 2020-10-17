@@ -10,25 +10,25 @@ export type MoveToNextSelectOptionDirection = GetNextIndexDirection
  * Scroll to the next select option
  */
 const moveToNextSelectOption = (
-    direction: GetNextIndexDirection,
-    prevIndex: null | number,
-    totalLength: number,
-    nodeRefs: MutableRefObject<(null | HTMLElement)[]>,
-    listScrollableRef: MutableRefObject<null | HTMLDivElement>,
+  direction: GetNextIndexDirection,
+  prevIndex: null | number,
+  totalLength: number,
+  nodeRefs: MutableRefObject<(null | HTMLElement)[]>,
+  listScrollableRef: MutableRefObject<null | HTMLDivElement>,
 ): number => {
-    const nextIndex = getNextIndex(prevIndex, totalLength, direction)
+  const nextIndex = getNextIndex(prevIndex, totalLength, direction)
 
-    const foundOptionNode: HTMLElement | null = nodeRefs.current[nextIndex]
+  const foundOptionNode: HTMLElement | null = nodeRefs.current[nextIndex]
 
-    if (
-        foundOptionNode
-        && listScrollableRef.current
-        && isFunc(listScrollableRef.current.scrollTo)
-    ) {
-        listScrollableRef.current.scrollTo({ top: foundOptionNode.offsetTop })
-    }
+  if (
+    foundOptionNode
+    && listScrollableRef.current
+    && isFunc(listScrollableRef.current.scrollTo)
+  ) {
+    listScrollableRef.current.scrollTo({ top: foundOptionNode.offsetTop })
+  }
 
-    return nextIndex
+  return nextIndex
 }
 
 export default moveToNextSelectOption

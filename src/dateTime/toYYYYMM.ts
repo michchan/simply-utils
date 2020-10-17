@@ -7,7 +7,7 @@ import zeroPadding from "../number/zeroPadding"
  * @returns A date string of format "YYYY-MM"
  */
 const toYYYYMM = (date: Date): string => {
-    return `${date.getFullYear()}-${zeroPadding(+date.getMonth() + 1)}`
+  return `${date.getFullYear()}-${zeroPadding(+date.getMonth() + 1)}`
 }
 
 export default toYYYYMM

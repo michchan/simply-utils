@@ -12,10 +12,10 @@ const OPTIONAL_WWW_GLOBAL = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-
 
 
 const urlRegex = {
-    STRICT,
-    STRICT_GLOBAL,
-    OPTIONAL_WWW,
-    OPTIONAL_WWW_GLOBAL,
+  STRICT,
+  STRICT_GLOBAL,
+  OPTIONAL_WWW,
+  OPTIONAL_WWW_GLOBAL,
 } as const 
 
 export default urlRegex

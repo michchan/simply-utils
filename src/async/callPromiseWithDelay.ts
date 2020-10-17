@@ -6,15 +6,15 @@
  * @param callee The callee function
  */
 function callPromiseWithDelay <T> (
-    callee: () => Promise<T>,
-    delay: number,
+  callee: () => Promise<T>,
+  delay: number,
 ): Promise<T> {
-    return new Promise((resolve) => {
-        setTimeout(async () => {
-            const res = await callee()
-            resolve(res)
-        }, delay)
-    })
+  return new Promise((resolve) => {
+    setTimeout(async () => {
+      const res = await callee()
+      resolve(res)
+    }, delay)
+  })
 }
 
 export default callPromiseWithDelay

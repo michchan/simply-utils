@@ -3,20 +3,20 @@
 // @DEPRECATED at 2020-04-17
 // PLEASE USE: traverseParentNodeByClassNamae
 const getParentNodeByClassName = (
-    node: HTMLElement,
-    className: string,
+  node: HTMLElement,
+  className: string,
 ): HTMLElement | null | undefined => {
-    const nextParent = (node.parentNode as (HTMLElement | null | undefined))
+  const nextParent = (node.parentNode as (HTMLElement | null | undefined))
 
-    if (nextParent) {
-        if (`${(nextParent.className || '')}`.includes(className)) {
-            return nextParent
-        } else {
-            return getParentNodeByClassName(nextParent, className)
-        }
+  if (nextParent) {
+    if (`${(nextParent.className || '')}`.includes(className)) {
+      return nextParent
     } else {
-        return null
+      return getParentNodeByClassName(nextParent, className)
     }
+  } else {
+    return null
+  }
 }
 
 export default getParentNodeByClassName

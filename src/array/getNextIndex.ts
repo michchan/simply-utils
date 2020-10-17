@@ -7,25 +7,25 @@ export type GetNextIndexDirection ='backward' | 'forward'
  * It handles with the length of the array so that the index won't overflow.
  */
 export function getNextIndex (
-    prevIndex: null | number,
-    totalLength: number,
-    direction: GetNextIndexDirection = 'forward',
+  prevIndex: null | number,
+  totalLength: number,
+  direction: GetNextIndexDirection = 'forward',
 ): number {
-    const isForward = direction === 'forward'
-    const lastIndex = totalLength - 1
-    const nextIndex = (
-        prevIndex === null
-            ? isForward ? 0 : lastIndex
-            : (
-                // Determin if the move is within the bound
-                isForward 
-                    ? (prevIndex + 1 <= lastIndex)
-                    : (prevIndex > 0)
-            ) 
-                ? prevIndex + (isForward? 1 : -1)
-                : isForward ? 0 : lastIndex
-    )
-    return nextIndex
+  const isForward = direction === 'forward'
+  const lastIndex = totalLength - 1
+  const nextIndex = (
+    prevIndex === null
+      ? isForward ? 0 : lastIndex
+      : (
+        // Determin if the move is within the bound
+        isForward 
+          ? (prevIndex + 1 <= lastIndex)
+          : (prevIndex > 0)
+      ) 
+        ? prevIndex + (isForward? 1 : -1)
+        : isForward ? 0 : lastIndex
+  )
+  return nextIndex
 } 
 
 export default getNextIndex

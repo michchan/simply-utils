@@ -10,20 +10,20 @@ import isFunc from "../validators/isFunc"
  * @param fallback The fallback value. Default to empty object
  */
 function parseJSON <T extends object = object> (
-    str: string, 
-    noFallbackObj?: boolean,
-    log?: (error: Error) => unknown,
+  str: string, 
+  noFallbackObj?: boolean,
+  log?: (error: Error) => unknown,
 ): T | {} {
-    const fallback = noFallbackObj ? str : {}
+  const fallback = noFallbackObj ? str : {}
 
-    try {
-        return isStr(str) ? JSON.parse(str) : fallback
-    } catch (error) {
-        if (isFunc(log)) {
-            log(error)
-        }
-        return fallback
+  try {
+    return isStr(str) ? JSON.parse(str) : fallback
+  } catch (error) {
+    if (isFunc(log)) {
+      log(error)
     }
+    return fallback
+  }
 }
 
 export default parseJSON

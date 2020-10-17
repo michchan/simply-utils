@@ -8,20 +8,20 @@
  * @param {number} minimumFractionDigits 
  */
 const formatCurrency = (
-    numToFormat: number = 0,
-    locales: string | string[] = [],
-    currency: string = 'hkd',
-    minimumFractionDigits: number = 2,
-    minimumIntegerDigits: number = 1,
+  numToFormat: number = 0,
+  locales: string | string[] = [],
+  currency: string = 'hkd',
+  minimumFractionDigits: number = 2,
+  minimumIntegerDigits: number = 1,
 ): string => {
-    const formatter = new Intl.NumberFormat(locales, { 
-        style: 'currency', 
-        currency: currency.toUpperCase(), 
-        minimumFractionDigits,
-        minimumIntegerDigits,
-    })
+  const formatter = new Intl.NumberFormat(locales, { 
+    style: 'currency', 
+    currency: currency.toUpperCase(), 
+    minimumFractionDigits,
+    minimumIntegerDigits,
+  })
 
-    return formatter.format(numToFormat)
+  return formatter.format(numToFormat)
 }
 
 export default formatCurrency

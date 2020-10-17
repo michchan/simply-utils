@@ -3,9 +3,9 @@ import isObj from '../object/isObj'
 
 
 const getPathname = (param: LocationDescriptorObject | Location | string): LocationDescriptorObject['pathname'] => (
-    isObj<LocationDescriptorObject>(param)
-        ? param.pathname 
-        : param
+  isObj<LocationDescriptorObject>(param)
+    ? param.pathname 
+    : param
 )
 
 export default getPathname

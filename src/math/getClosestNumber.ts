@@ -11,9 +11,9 @@
  * @param numbers The array of numbers 
  */
 const getClosestNumber = (num: number, numbers: number[]): number => {
-    return numbers.reduce((prev, curr) => {
-        return (Math.abs(curr - num) < Math.abs(prev - num) ? curr : prev)
-    })
+  return numbers.reduce((prev, curr) => {
+    return (Math.abs(curr - num) < Math.abs(prev - num) ? curr : prev)
+  })
 }
 
 export default getClosestNumber

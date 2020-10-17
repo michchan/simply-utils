@@ -5,9 +5,9 @@ export type FlipFunc <Args extends unknown[], R> = (...args: Args) => R
  * Reference: https://1loc.dev/#flip-the-arguments-of-a-function
  */
 function flip <Args extends unknown[], Reversed extends unknown[], R> (
-    fn: FlipFunc<Reversed, R>
+  fn: FlipFunc<Reversed, R>
 ) {
-    return (...args: Args): R => fn(...(args.reverse() as Reversed))
+  return (...args: Args): R => fn(...(args.reverse() as Reversed))
 }
 
 export default flip

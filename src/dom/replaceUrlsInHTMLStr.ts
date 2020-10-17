@@ -7,8 +7,8 @@ import replaceTextsInHTMLStr from "./replaceTextsInHTMLStr"
  * 
  * @param htmlStr 
  */
-const replaceUrlsInHTMLStr = (htmlStr: string, replacer: string): string => {    
-    return replaceTextsInHTMLStr(htmlStr, eachHtmlStr => replaceUrls(eachHtmlStr, replacer))
+const replaceUrlsInHTMLStr = (htmlStr: string, replacer: string): string => {  
+  return replaceTextsInHTMLStr(htmlStr, eachHtmlStr => replaceUrls(eachHtmlStr, replacer))
 }
 
 export default replaceUrlsInHTMLStr

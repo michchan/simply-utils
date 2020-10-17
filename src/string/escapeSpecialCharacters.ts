@@ -7,8 +7,8 @@
  * 
  * @param text The text to escape
  */
-function escapeSpecialCharacters(text: string): string  {
-    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+function escapeSpecialCharacters(text: string): string {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
 }
 
 export default escapeSpecialCharacters

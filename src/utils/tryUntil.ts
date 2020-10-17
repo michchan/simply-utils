@@ -9,29 +9,29 @@ import isFunc from '../validators/isFunc'
  * @param interval The interval between each try
  */
 function tryUntil (
-    handler: (repeated: number, totalTry: number) => boolean,
-    tryTime: number,
-    interval: number = 100,
-    successCallback?: () => unknown,
-    failedCallback?: () => unknown,
+  handler: (repeated: number, totalTry: number) => boolean,
+  tryTime: number,
+  interval: number = 100,
+  successCallback?: () => unknown,
+  failedCallback?: () => unknown,
 ) {
-    // Create each try function
-    const tryEach = (index: number, tryTime: number) => {
-        const result = handler(index, tryTime)
-        if (result) {
-            // Invoke success callback
-            isFunc(successCallback) && successCallback()
-        } else if (index + 1 === tryTime) {
-            // Invoke failed callback
-            isFunc(failedCallback) && failedCallback()
-        } else {
-            // Invoke next try
-            setTimeout(() => tryEach(index + 1, tryTime), interval)
-        }
+  // Create each try function
+  const tryEach = (index: number, tryTime: number) => {
+    const result = handler(index, tryTime)
+    if (result) {
+      // Invoke success callback
+      isFunc(successCallback) && successCallback()
+    } else if (index + 1 === tryTime) {
+      // Invoke failed callback
+      isFunc(failedCallback) && failedCallback()
+    } else {
+      // Invoke next try
+      setTimeout(() => tryEach(index + 1, tryTime), interval)
     }
-    
-    // Invoke recursive function
-    tryEach(0, tryTime)
+  }
+  
+  // Invoke recursive function
+  tryEach(0, tryTime)
 }
 
 export default tryUntil

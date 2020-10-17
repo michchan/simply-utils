@@ -11,38 +11,38 @@ import isStr from '../string/isStr';
  * @param t 
  */
 const getTranslatedList = (
-    i18nNamspace: string, 
-    key: string, 
-    t: I18nTranslate | ((key: string) => ReactNode),
-    exists: (i18nKey: string) => boolean, 
+  i18nNamspace: string, 
+  key: string, 
+  t: I18nTranslate | ((key: string) => ReactNode),
+  exists: (i18nKey: string) => boolean, 
 ): (string | ReactNode)[] => {
-    const results = []
-    let buffer: (string | ReactNode) = null
-    let i = 0
+  const results = []
+  let buffer: (string | ReactNode) = null
+  let i = 0
 
-    do {
-        // Create key and remove namespace
-        const tKey = ((): string => {
-            const k = `${key? `${key}.` : ''}${i}`
-            if (i18nNamspace) 
-                return `${i18nNamspace}:${k.split(':').pop()}`
-            return k
-        })()
+  do {
+    // Create key and remove namespace
+    const tKey = ((): string => {
+      const k = `${key? `${key}.` : ''}${i}`
+      if (i18nNamspace) 
+        return `${i18nNamspace}:${k.split(':').pop()}`
+      return k
+    })()
 
-        // Translate text
-        const text = !exists(tKey) ? null : t(tKey)
+    // Translate text
+    const text = !exists(tKey) ? null : t(tKey)
 
-        /** Test if the result texts are not equal to their i18n keys */
-        const hasText = text !== null && (!isStr(text) || !new RegExp(`${tKey.split(':').pop()}`).test(text)
+    /** Test if the result texts are not equal to their i18n keys */
+    const hasText = text !== null && (!isStr(text) || !new RegExp(`${tKey.split(':').pop()}`).test(text)
 )
-        buffer = hasText ? text : null
+    buffer = hasText ? text : null
 
-        if (buffer) results.push(buffer)
-        
-        i++
-    } while (buffer);
+    if (buffer) results.push(buffer)
+    
+    i++
+  } while (buffer);
 
-    return results
+  return results
 }
 
 export default getTranslatedList

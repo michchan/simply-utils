@@ -9,11 +9,11 @@ import setTimerRecursive from "./setTimerRecursive"
  * @returns A reference value pointed to the titimmer references stack. It is useful to cancel timers.
  */
 const setTimeoutRecursive = (
-    callStack: (() => unknown)[] = [],
-    interval: number = 150,
-    setAborter?: (abort: () => void) => unknown,
+  callStack: (() => unknown)[] = [],
+  interval: number = 150,
+  setAborter?: (abort: () => void) => unknown,
 ): NodeJS.Timeout[] => {
-    return setTimerRecursive<NodeJS.Timeout>('timeout', callStack, interval, setAborter)
+  return setTimerRecursive<NodeJS.Timeout>('timeout', callStack, interval, setAborter)
 
 }
 

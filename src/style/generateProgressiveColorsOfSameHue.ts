@@ -1,16 +1,16 @@
 export interface GenerateProgressiveColorsOfSameHueOptions {
-    // Specity initial lightness (0 - 100)
-    // Default to 50
-    lightness?: number;
-    // Specify initial saturation (0 - 100)
-    // Default to 100
-    saturation?: number;
-    // Change this property of HSL color to give the set of colors
-    // Default to lightness
-    mode?: 'saturation' | 'lightness';
-    // Target saturation / lightness
-    // Default to 80
-    targetValue?: number;
+  // Specity initial lightness (0 - 100)
+  // Default to 50
+  lightness?: number;
+  // Specify initial saturation (0 - 100)
+  // Default to 100
+  saturation?: number;
+  // Change this property of HSL color to give the set of colors
+  // Default to lightness
+  mode?: 'saturation' | 'lightness';
+  // Target saturation / lightness
+  // Default to 80
+  targetValue?: number;
 }
 
 /**
@@ -22,38 +22,38 @@ export interface GenerateProgressiveColorsOfSameHueOptions {
  * @returns array of HSL color code
  */
 const generateProgressiveColorsOfSameHue = (
-    hue: number = 270, 
-    numberOfColors: number, 
-    options: GenerateProgressiveColorsOfSameHueOptions = {}
+  hue: number = 270, 
+  numberOfColors: number, 
+  options: GenerateProgressiveColorsOfSameHueOptions = {}
 ): string[] => {
-    const {
-        lightness = 50,
-        saturation = 100,
-        mode = 'lightness',
-        targetValue = 80
-    } = options
+  const {
+    lightness = 50,
+    saturation = 100,
+    mode = 'lightness',
+    targetValue = 80
+  } = options
 
-    const normalizedHue = hue % 360
+  const normalizedHue = hue % 360
 
-    if (mode === 'saturation') {
-        // Decrease saturation
+  if (mode === 'saturation') {
+    // Decrease saturation
 
-        // Saturation diff between colors
-        const saturationDiff = numberOfColors > 1 ? (targetValue - saturation) / (numberOfColors - 1) : 0
-                
-        return new Array(numberOfColors).fill('').map((d, index) => (
-            `hsl(${normalizedHue}, ${saturation + saturationDiff * index}%, ${lightness}%)`
-        ))
-    } else {
-        // Decrease lightness
+    // Saturation diff between colors
+    const saturationDiff = numberOfColors > 1 ? (targetValue - saturation) / (numberOfColors - 1) : 0
+        
+    return new Array(numberOfColors).fill('').map((d, index) => (
+      `hsl(${normalizedHue}, ${saturation + saturationDiff * index}%, ${lightness}%)`
+    ))
+  } else {
+    // Decrease lightness
 
-        // Lightness diff between color
-        const lightnessDiff = numberOfColors > 1 ? (targetValue - lightness) / (numberOfColors - 1) : 0
+    // Lightness diff between color
+    const lightnessDiff = numberOfColors > 1 ? (targetValue - lightness) / (numberOfColors - 1) : 0
 
-        return new Array(numberOfColors).fill('').map((d, index) => (
-            `hsl(${normalizedHue}, ${saturation}%, ${lightness + lightnessDiff * index}%)`
-        ))
-    }
+    return new Array(numberOfColors).fill('').map((d, index) => (
+      `hsl(${normalizedHue}, ${saturation}%, ${lightness + lightnessDiff * index}%)`
+    ))
+  }
 
 }
 

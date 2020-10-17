@@ -5,10 +5,10 @@
  * @param value 
  */
 const formatCvc = (value: string): string => {
-    if (value.length > 3) {
-        return value.substr(0, 3)
-    }
-    return value
+  if (value.length > 3) {
+    return value.substr(0, 3)
+  }
+  return value
 }
 
 export default formatCvc

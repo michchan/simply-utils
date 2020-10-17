@@ -11,17 +11,17 @@ type ReturnType<FieldType extends string, TargetType extends FieldType> = (type:
  * @param target Target string constant, or array of validators.
  */
 function createKeyValidator<FieldType extends string, TargetType extends FieldType> (
-    target: TargetType | ReturnType<FieldType, TargetType>[]
+  target: TargetType | ReturnType<FieldType, TargetType>[]
 ): ReturnType<FieldType, TargetType> {
-    return (type: FieldType): type is TargetType => {
-        if (isArr<ReturnType<FieldType, TargetType>[]>(target)) {
-            return target.some(validate => {
-                return validate(type)
-            })
-        } else {
-            return validateCaseInsensitiveKey(target as string, type)
-        }
+  return (type: FieldType): type is TargetType => {
+    if (isArr<ReturnType<FieldType, TargetType>[]>(target)) {
+      return target.some(validate => {
+        return validate(type)
+      })
+    } else {
+      return validateCaseInsensitiveKey(target as string, type)
     }
+  }
 }
 
 export default createKeyValidator

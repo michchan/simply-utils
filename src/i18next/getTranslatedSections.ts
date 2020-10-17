@@ -5,8 +5,8 @@ import isStr from '../string/isStr';
 
 
 export interface TranslatedSection {
-    title: string | ReactNode; 
-    description: string | ReactNode;
+  title: string | ReactNode; 
+  description: string | ReactNode;
 }
 
 /**
@@ -16,44 +16,44 @@ export interface TranslatedSection {
  * @param t 
  */
 const getTranslatedSections = (
-    i18nNamspace: string, 
-    key: string, 
-    t: I18nTranslate | ((key: string) => ReactNode),
-    exists: (i18nKey: string) => boolean, 
+  i18nNamspace: string, 
+  key: string, 
+  t: I18nTranslate | ((key: string) => ReactNode),
+  exists: (i18nKey: string) => boolean, 
 ): TranslatedSection[] => {
-    const results = []
-    let buffer = null
-    let i = 0
+  const results = []
+  let buffer = null
+  let i = 0
 
-    do {
-        const titleKey = ((): string => {
-            const k = `${key? `${key}.` : ''}${i}.title`
-            if (i18nNamspace) 
-                return `${i18nNamspace}:${k.split(':').pop()}`
-            return k
-        })()
-        const descriptionKey = ((): string => {
-            const k = `${key? `${key}.` : ''}${i}.description`
-            if (i18nNamspace) 
-                return `${i18nNamspace}:${k.split(':').pop()}`
-            return k
-        })()
-        
-        const title = !exists(titleKey) ? null : t(titleKey)
-        const description = !exists(descriptionKey) ? null : t(descriptionKey)
+  do {
+    const titleKey = ((): string => {
+      const k = `${key? `${key}.` : ''}${i}.title`
+      if (i18nNamspace) 
+        return `${i18nNamspace}:${k.split(':').pop()}`
+      return k
+    })()
+    const descriptionKey = ((): string => {
+      const k = `${key? `${key}.` : ''}${i}.description`
+      if (i18nNamspace) 
+        return `${i18nNamspace}:${k.split(':').pop()}`
+      return k
+    })()
+    
+    const title = !exists(titleKey) ? null : t(titleKey)
+    const description = !exists(descriptionKey) ? null : t(descriptionKey)
 
-        /** Test if the result texts are not equal to their i18n keys */
-        const hasTitle = title !== null && (!isStr(title) || !new RegExp(`${titleKey.split(':').pop()}`).test(title))
-        const hasDescription = description !== null && (!isStr(description) || !new RegExp(`${descriptionKey.split(':').pop()}`).test(description))
+    /** Test if the result texts are not equal to their i18n keys */
+    const hasTitle = title !== null && (!isStr(title) || !new RegExp(`${titleKey.split(':').pop()}`).test(title))
+    const hasDescription = description !== null && (!isStr(description) || !new RegExp(`${descriptionKey.split(':').pop()}`).test(description))
 
-        buffer = hasTitle || hasDescription ? { title, description } : null
+    buffer = hasTitle || hasDescription ? { title, description } : null
 
-        if (buffer) results.push(buffer)
-        
-        i++
-    } while (buffer);
+    if (buffer) results.push(buffer)
+    
+    i++
+  } while (buffer);
 
-    return results
+  return results
 }
 
 export default getTranslatedSections

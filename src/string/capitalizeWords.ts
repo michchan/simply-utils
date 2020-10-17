@@ -5,13 +5,13 @@
  * @returns {string}
  */
 const capitalizeWords = (str: string): string => {
-    const words: string[] = str.split(' ').filter(s => s)
+  const words: string[] = str.split(' ').filter(s => s)
 
-    const capitalizedWords = words.map((word: string) => {
-        return `${(word[0] || '').toUpperCase()}${word.substr(1)}`
-    })
+  const capitalizedWords = words.map((word: string) => {
+    return `${(word[0] || '').toUpperCase()}${word.substr(1)}`
+  })
 
-    return capitalizedWords.join(' ');
+  return capitalizedWords.join(' ');
 }
 
 export default capitalizeWords

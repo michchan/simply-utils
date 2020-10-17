@@ -14,32 +14,32 @@ export type IsSmallerThanBreakpointBreakpoint = number | "100%" | ""
  * If both `breakpoint` and `min` are not provided, will return false
  */
 const isSmallerThanBreakpoint = (
-    windowWidth: number, 
-    breakpoint: IsSmallerThanBreakpointBreakpoint = '', 
-    min: number = 0
+  windowWidth: number, 
+  breakpoint: IsSmallerThanBreakpointBreakpoint = '', 
+  min: number = 0
 ): boolean => {
 
-    // always return true if breakpoint is "100%"
-    if (breakpoint === "100%") {
-        return true
+  // always return true if breakpoint is "100%"
+  if (breakpoint === "100%") {
+    return true
+  }
+
+  // convert breakpoint into px or use fallback
+  const breakpointPx = (() => {
+    const breakpointString = breakpoint.toString()
+    // if can be parse to number
+    if (isNum(breakpointString, true)) {
+      return parseFloat(breakpointString)
     }
+    else {
+      return min
+    }
+  })()
 
-    // convert breakpoint into px or use fallback
-    const breakpointPx = (() => {
-        const breakpointString = breakpoint.toString()
-        // if can be parse to number
-        if (isNum(breakpointString, true)) {
-            return parseFloat(breakpointString)
-        }
-        else {
-            return min
-        }
-    })()
+  // limit breakpoint
+  const limitedBreakpointPx = Math.max(min, breakpointPx)
 
-    // limit breakpoint
-    const limitedBreakpointPx = Math.max(min, breakpointPx)
-
-    return windowWidth < limitedBreakpointPx
+  return windowWidth < limitedBreakpointPx
 }
 
 export default isSmallerThanBreakpoint

@@ -9,12 +9,12 @@ import getLocalizedWeekday from "./getLocalizedWeekday"
  * @param format 
  */
 const getLocalizedWeekdays = (
-    locale?: string | string[], 
-    format: "long" | "short" = "long"
+  locale?: string | string[], 
+  format: "long" | "short" = "long"
 ): string[] => {
-    return new Array(7).fill('').map((d, weekdayIndex) => (
-        getLocalizedWeekday(weekdayIndex, locale, format)
-    ))
+  return new Array(7).fill('').map((d, weekdayIndex) => (
+    getLocalizedWeekday(weekdayIndex, locale, format)
+  ))
 }
 
 export default getLocalizedWeekdays

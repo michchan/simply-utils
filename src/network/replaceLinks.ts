@@ -9,7 +9,7 @@ import urlRegex from "../_common/urlRegex"
  * @param regexReplacer 
  */
 const replaceLinks = (text: string, regexReplacer: string): string => {
-    return text.replace(urlRegex.STRICT_GLOBAL, regexReplacer)
+  return text.replace(urlRegex.STRICT_GLOBAL, regexReplacer)
 }
 
 export default replaceLinks

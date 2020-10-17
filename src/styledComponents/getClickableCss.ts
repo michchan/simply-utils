@@ -14,26 +14,26 @@ import getDisabledCss from "./getDisabledCss"
  * @param disabledCursor 
  */
 const getClickableCss = (
-    hoverOpacity: number = 0.7, 
-    activeOpacity: number = 0.5,
-    disabledOpacity?: number,
-    disabledCursor?: CSSProperties['cursor'],
+  hoverOpacity: number = 0.7, 
+  activeOpacity: number = 0.5,
+  disabledOpacity?: number,
+  disabledCursor?: CSSProperties['cursor'],
 ) => css`
-    cursor: pointer;
-    user-select: none;
-    transition: opacity 0.1s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.1s ease-in-out;
 
-    ${createHoverableOnlyCss(css`
-        &:hover {
-            opacity: ${hoverOpacity};
-        }
+  ${createHoverableOnlyCss(css`
+    &:hover {
+      opacity: ${hoverOpacity};
+    }
 
-        &:active {
-            opacity: ${activeOpacity};
-        }
-    `)}
+    &:active {
+      opacity: ${activeOpacity};
+    }
+  `)}
 
-    ${getDisabledCss(disabledOpacity, disabledCursor)}
+  ${getDisabledCss(disabledOpacity, disabledCursor)}
 `
 
 export default getClickableCss

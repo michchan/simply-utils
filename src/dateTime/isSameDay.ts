@@ -8,9 +8,9 @@
  * @param b 
  */
 const isSameDay = (a: Date, b: Date): boolean => {
-    const aDay = new Date(a.getFullYear(), a.getMonth(), a.getDate())
-    const bDay = new Date(b.getFullYear(), b.getMonth(), b.getDate())
-    return aDay.valueOf() === bDay.valueOf()
+  const aDay = new Date(a.getFullYear(), a.getMonth(), a.getDate())
+  const bDay = new Date(b.getFullYear(), b.getMonth(), b.getDate())
+  return aDay.valueOf() === bDay.valueOf()
 }
 
 export default isSameDay

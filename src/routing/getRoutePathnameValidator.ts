@@ -8,11 +8,11 @@ import matchRoutePathname from './matchRoutePathname';
  * @param notExact 
  */
 function getRoutePathnameValidator (
-    route: string, 
-    // e.g. if it has child routes
-    notExact: boolean = false,
+  route: string, 
+  // e.g. if it has child routes
+  notExact: boolean = false,
 ): (pathname: string) => boolean {
-    return (pathname: string) => !!matchRoutePathname(pathname, route, !notExact)
+  return (pathname: string) => !!matchRoutePathname(pathname, route, !notExact)
 }
 
 export default getRoutePathnameValidator

@@ -2,12 +2,12 @@ import shortenNumberWithUnit from "./shortenNumberWithUnit"
 
 
 const UNITS_MAP = [
-    'B',
-    'KB',
-    'MB',
-    'GB',
-    'TB',
-    'PB',
+  'B',
+  'KB',
+  'MB',
+  'GB',
+  'TB',
+  'PB',
 ]
 
 /**
@@ -17,7 +17,7 @@ const UNITS_MAP = [
  * @returns A tuple type of [<Displayed number>, <Displayed units>] format. E.g. [300, 'MB']
  */
 const formatByteSize = (size: number): [number, string] => {
-    return shortenNumberWithUnit(size, 1024, UNITS_MAP)
+  return shortenNumberWithUnit(size, 1024, UNITS_MAP)
 }
 
 export default formatByteSize

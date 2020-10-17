@@ -5,8 +5,8 @@ import { SyntheticEvent } from "react"
  * @param e 
  */
 const preventEventPropagateToParent = (e: SyntheticEvent | Event) => {
-    e.preventDefault()
-    e.stopPropagation()
+  e.preventDefault()
+  e.stopPropagation()
 }
 
 export default preventEventPropagateToParent

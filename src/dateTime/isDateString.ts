@@ -7,15 +7,15 @@ import isNum from "../number/isNum"
  * @param dateStr 
  */
 const isDateString = (dateStr: string): boolean => {
-    // Empty string 
-    if (!dateStr) return false
-    
-    const parsedDate: number = Date.parse(dateStr)
-    
-    if ((isNum(parsedDate) && parsedDate > 0) || /^\d+$/g.test(`${parsedDate}`))
-        return true
+  // Empty string 
+  if (!dateStr) return false
+  
+  const parsedDate: number = Date.parse(dateStr)
+  
+  if ((isNum(parsedDate) && parsedDate > 0) || /^\d+$/g.test(`${parsedDate}`))
+    return true
 
-    return false
+  return false
 }
 
 export default isDateString

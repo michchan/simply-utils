@@ -16,14 +16,14 @@ type Param = string | number
  * @param params The param or an array of params in order. e.g. For /shops/:id/orders/:id -> ['shop123', 'order4325']
  */
 function replacePathParams (
-    path: string,
-    params: Param | Param[],
+  path: string,
+  params: Param | Param[],
 ): string {
-    const _params = !isArr(params) ? [params] : params
+  const _params = !isArr(params) ? [params] : params
 
-    return _params.reduce<string>((prev: string, param: Param) => {
-        return prev.replace(PARAM_REGEX, `${param}`)
-    }, path)
+  return _params.reduce<string>((prev: string, param: Param) => {
+    return prev.replace(PARAM_REGEX, `${param}`)
+  }, path)
 }
 
 export default replacePathParams

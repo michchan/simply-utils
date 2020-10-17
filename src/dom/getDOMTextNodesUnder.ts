@@ -6,7 +6,7 @@ import getDOMNodesUnder from "./getDOMNodesUnder"
  * @param el 
  */
 function getDOMTextNodesUnder (el: Node): Text[] {
-    return getDOMNodesUnder<Text>(el, NodeFilter.SHOW_TEXT)
+  return getDOMNodesUnder<Text>(el, NodeFilter.SHOW_TEXT)
 }
 
 export default getDOMTextNodesUnder

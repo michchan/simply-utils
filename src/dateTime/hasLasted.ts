@@ -7,9 +7,9 @@
  * @param duration The duration to compare
  */
 const hasLasted = (prev: string, duration: number, dateNow: Date = new Date()): boolean => {
-    const timePrev = new Date(prev).getTime()
-    const timeNow = dateNow.getTime()
-    return timeNow - timePrev >= duration
+  const timePrev = new Date(prev).getTime()
+  const timeNow = dateNow.getTime()
+  return timeNow - timePrev >= duration
 }
 
 export default hasLasted

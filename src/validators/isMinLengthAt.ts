@@ -6,11 +6,11 @@
  * @param value 
  */
 function isMinLengthAt (
-    minLength: number, 
-    value: string | number, 
-    spaceAllowed: boolean = false
+  minLength: number, 
+  value: string | number, 
+  spaceAllowed: boolean = false
 ): boolean {
-    return new RegExp(`^${spaceAllowed ? '.' : '\\S'}{${minLength},}$`, '').test(`${value}`)
+  return new RegExp(`^${spaceAllowed ? '.' : '\\S'}{${minLength},}$`, '').test(`${value}`)
 }
 
 export default isMinLengthAt

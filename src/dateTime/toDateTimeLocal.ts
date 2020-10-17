@@ -4,8 +4,8 @@ import zeroPadding from '../number/zeroPadding'
 
 
 export interface ToDateTimeLocalOptions {
-    dateOnly?: boolean;
-    timeOnly?: boolean;
+  dateOnly?: boolean;
+  timeOnly?: boolean;
 }
 
 /**
@@ -17,25 +17,25 @@ export interface ToDateTimeLocalOptions {
  * Example value: "2019-05-02T13:28" 
  */
 const toDateTimeLocal = (
-    isoDatetime: string, 
-    options: ToDateTimeLocalOptions = {}
+  isoDatetime: string, 
+  options: ToDateTimeLocalOptions = {}
 ): string => {
-    if (!isDateString(isoDatetime)) return ''
+  if (!isDateString(isoDatetime)) return ''
 
-    const d = new Date(isoDatetime)
-    const YYYY = d.getFullYear()
-    const MM = zeroPadding(d.getMonth() + 1) // month start from ZERO
-    const DD = zeroPadding(d.getDate())
-    const HH = zeroPadding(d.getHours())
-    const mm = zeroPadding(d.getMinutes())
+  const d = new Date(isoDatetime)
+  const YYYY = d.getFullYear()
+  const MM = zeroPadding(d.getMonth() + 1) // month start from ZERO
+  const DD = zeroPadding(d.getDate())
+  const HH = zeroPadding(d.getHours())
+  const mm = zeroPadding(d.getMinutes())
 
-    const date = `${YYYY}-${MM}-${DD}`
-    const time = `${HH}:${mm}`
+  const date = `${YYYY}-${MM}-${DD}`
+  const time = `${HH}:${mm}`
 
-    if ((options || {}).dateOnly) return date
-    if ((options || {}).timeOnly) return time
+  if ((options || {}).dateOnly) return date
+  if ((options || {}).timeOnly) return time
 
-    return `${date}T${time}`
+  return `${date}T${time}`
 }
 
 export default toDateTimeLocal

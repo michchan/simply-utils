@@ -5,7 +5,7 @@ export type ComposeFunc <T> = (arg: T) => T
  * Reference: https://1loc.dev/#compose-functions
  */
 function compose <T> (...fns: ComposeFunc<T>[]) {
-    return (arg: T): T => fns.reduceRight((y, f) => f(y), arg)
+  return (arg: T): T => fns.reduceRight((y, f) => f(y), arg)
 }
 
 export default compose

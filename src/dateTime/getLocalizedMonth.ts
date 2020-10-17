@@ -8,14 +8,14 @@
  * @param format 
  */
 const getLocalizedMonth = (
-    index: number = 0, 
-    locale?: string | string[], 
-    format: "long" | "short" = "long"
+  index: number = 0, 
+  locale?: string | string[], 
+  format: "long" | "short" = "long"
 ): string => {
-    const objDate = new Date();
-    objDate.setMonth(index);
-  
-    return objDate.toLocaleString(locale, { month: format });
+  const objDate = new Date();
+  objDate.setMonth(index);
+ 
+  return objDate.toLocaleString(locale, { month: format });
 }
 
 export default getLocalizedMonth

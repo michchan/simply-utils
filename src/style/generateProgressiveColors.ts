@@ -1,8 +1,8 @@
 export interface GenerateProgressiveColorsOptions {
-    startHue?: number;
-    endHue?: number;
-    saturation?: number; // 0 - 100
-    lightness?: number; // 0 - 100
+  startHue?: number;
+  endHue?: number;
+  saturation?: number; // 0 - 100
+  lightness?: number; // 0 - 100
 }
 /**
  * Generate array of colors like rainbow.
@@ -14,21 +14,21 @@ export interface GenerateProgressiveColorsOptions {
  * @returns array of HSL color code
  */
 const generateProgressiveColors = (
-    numberOfColors: number, 
-    options: GenerateProgressiveColorsOptions = {}
+  numberOfColors: number, 
+  options: GenerateProgressiveColorsOptions = {}
 ): string[] => {
-    const {
-        startHue = 0,
-        endHue = 300,
-        saturation = 100,
-        lightness = 50
-    } = options
+  const {
+    startHue = 0,
+    endHue = 300,
+    saturation = 100,
+    lightness = 50
+  } = options
 
-    const hueDiff = numberOfColors > 1 ? (endHue - startHue) / (numberOfColors - 1) : 0
+  const hueDiff = numberOfColors > 1 ? (endHue - startHue) / (numberOfColors - 1) : 0
 
-    return new Array(numberOfColors).fill('').map((d, index) => (
-        `hsl(${startHue + hueDiff * index}, ${saturation}%, ${lightness}%)`
-    ))
+  return new Array(numberOfColors).fill('').map((d, index) => (
+    `hsl(${startHue + hueDiff * index}, ${saturation}%, ${lightness}%)`
+  ))
 }
 
 export default generateProgressiveColors

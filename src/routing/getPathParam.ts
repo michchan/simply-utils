@@ -10,20 +10,20 @@ import isObj from "../object/isObj"
  * @param paramKey 
  */
 const getPathParam = (
-    location: history.Location | history.Location['pathname'],
-    route: string,
-    paramKey: string = ':id',
+  location: history.Location | history.Location['pathname'],
+  route: string,
+  paramKey: string = ':id',
 ): string => {
-    // get pathanme from location
-    const pathname = isObj<history.Location>(location)
-                        ? location.pathname 
-                        : location
+  // get pathanme from location
+  const pathname = isObj<history.Location>(location)
+            ? location.pathname 
+            : location
 
-    const splittedRoute = route.split('/')
+  const splittedRoute = route.split('/')
 
-    const id = pathname.split('/')[splittedRoute.indexOf(`${paramKey}`)]    
+  const id = pathname.split('/')[splittedRoute.indexOf(`${paramKey}`)]  
 
-    return id
+  return id
 }
 
 export default getPathParam

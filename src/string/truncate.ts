@@ -9,37 +9,37 @@ import isFullWidthChar from "./isFullWIdthChar"
  * @returns {string}
  */
 const truncate = (
-    str: string = '', 
-    options: {
-        length: number;
-        omission?: string;
-    },
-): string => {    
-    const {
-        length: maxLength,
-        omission,
-    } = options
+  str: string = '', 
+  options: {
+    length: number;
+    omission?: string;
+  },
+): string => {  
+  const {
+    length: maxLength,
+    omission,
+  } = options
 
-    let length = 0
-    let charIndex = 0
-    let truncatedStr = ''
-    do {
-        const char = (str || '')[charIndex] || ''
+  let length = 0
+  let charIndex = 0
+  let truncatedStr = ''
+  do {
+    const char = (str || '')[charIndex] || ''
 
-        if (isFullWidthChar(char)) {
-            if (length + 2 > maxLength)
-                break;
+    if (isFullWidthChar(char)) {
+      if (length + 2 > maxLength)
+        break;
 
-            length += 2
-        } else {
-            length += 1
-        }
+      length += 2
+    } else {
+      length += 1
+    }
 
-        truncatedStr += char
-        charIndex++
-    } while (length < maxLength)
+    truncatedStr += char
+    charIndex++
+  } while (length < maxLength)
 
-    return `${truncatedStr}${(str || '').length !== truncatedStr.length? omission || '...' : ''}`
+  return `${truncatedStr}${(str || '').length !== truncatedStr.length? omission || '...' : ''}`
 }
 
 export default truncate

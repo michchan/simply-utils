@@ -9,10 +9,10 @@ import setTimerRecursive from "./setTimerRecursive"
  * @returns A reference value pointed to the titimmer references stack. It is useful to cancel timers.
  */
 const requestAnimationFrameRecursive = (
-    callStack: (() => unknown)[] = [],
-    setAborter?: (abort: () => void) => unknown,
+  callStack: (() => unknown)[] = [],
+  setAborter?: (abort: () => void) => unknown,
 ): number[] => {
-    return setTimerRecursive<number>('animFrame', callStack, undefined, setAborter)
+  return setTimerRecursive<number>('animFrame', callStack, undefined, setAborter)
 }
 
 export default requestAnimationFrameRecursive

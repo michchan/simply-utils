@@ -6,36 +6,36 @@ import zeroPadding from "../number/zeroPadding"
  * @param year 
  */
 const toFullYear = (year: string | number): number | undefined => {
-    const yearString = isStr(year) ? year : zeroPadding(year, 2)
+  const yearString = isStr(year) ? year : zeroPadding(year, 2)
 
-    const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear()
 
-    // Index of current / prev / next decade
-    const currentCentury = `${currentYear}`.slice(0, 2)
-    const prevCentury = parseInt(currentCentury) - 1
-    const nextCentury = parseInt(currentCentury) + 1
+  // Index of current / prev / next decade
+  const currentCentury = `${currentYear}`.slice(0, 2)
+  const prevCentury = parseInt(currentCentury) - 1
+  const nextCentury = parseInt(currentCentury) + 1
 
-    // Get full years of the year if it is in current / prev / next decade
-    const currentCenturyYear = parseInt(`${currentCentury}${yearString}`)
-    const prevCenturyYear = parseInt(`${prevCentury}${yearString}`)
-    const nextCenturyYear = parseInt(`${nextCentury}${yearString}`)
+  // Get full years of the year if it is in current / prev / next decade
+  const currentCenturyYear = parseInt(`${currentCentury}${yearString}`)
+  const prevCenturyYear = parseInt(`${prevCentury}${yearString}`)
+  const nextCenturyYear = parseInt(`${nextCentury}${yearString}`)
 
-    // Find the one closest to currentYear
-    let minDiff = Infinity
-    const fullYear = [
-        currentCenturyYear, 
-        prevCenturyYear, 
-        nextCenturyYear
-    ].reduce((fullYear: number | undefined, year: number) => {
-        const diff = Math.abs(year - currentYear)
-        if (diff < minDiff) {
-            minDiff = diff
-            return year
-        }
-        return fullYear
-    }, undefined)
-
+  // Find the one closest to currentYear
+  let minDiff = Infinity
+  const fullYear = [
+    currentCenturyYear, 
+    prevCenturyYear, 
+    nextCenturyYear
+  ].reduce((fullYear: number | undefined, year: number) => {
+    const diff = Math.abs(year - currentYear)
+    if (diff < minDiff) {
+      minDiff = diff
+      return year
+    }
     return fullYear
+  }, undefined)
+
+  return fullYear
 }
 
 export default toFullYear
