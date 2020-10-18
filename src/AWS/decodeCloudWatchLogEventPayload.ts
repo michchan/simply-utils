@@ -1,4 +1,4 @@
-import { CloudWatchLogsDecodedData, CloudWatchLogsEvent, CloudWatchLogsHandler } from "aws-lambda"
+import { CloudWatchLogsDecodedData, CloudWatchLogsEvent } from "aws-lambda"
 import zlib from 'zlib'
 
 
