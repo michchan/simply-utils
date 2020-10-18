@@ -15,6 +15,7 @@ import * as object from './object'
 import * as pagination from './pagination'
 import * as reactDom from './reactDom'
 import * as routing from './routing'
+import * as scraping from './scraping'
 import * as string from './string'
 import * as style from './style'
 import * as styledComponents from './styledComponents'
@@ -41,6 +42,7 @@ export * from './object'
 export * from './pagination'
 export * from './reactDom'
 export * from './routing'
+export * from './scraping'
 export * from './string'
 export * from './style'
 export * from './styledComponents'
@@ -67,6 +69,7 @@ export default {
   ...pagination,
   ...reactDom,
   ...routing,
+  ...scraping,
   ...string,
   ...style,
   ...styledComponents,
