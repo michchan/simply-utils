@@ -5,6 +5,15 @@
 /* eslint-disable quote-props */
 /* eslint-disable @typescript-eslint/quotes */
 /* eslint-disable @typescript-eslint/no-magic-numbers */
+
+/*
+ Dependencies:
+  "@typescript-eslint/eslint-plugin",
+  "@typescript-eslint/parser",
+  "eslint",
+  "eslint-plugin-import"
+ */
+
 module.exports = {
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
