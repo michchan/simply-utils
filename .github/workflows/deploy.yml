@@ -28,8 +28,16 @@ jobs:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
+
+      # Run eslint test
+      - name: Run ESLint test
+        run: npm run eslint
+
+      # Build
       - run: npm run clearBuildCache
       - run: npm run build
+
+      # Publish to NPM
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
