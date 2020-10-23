@@ -7,11 +7,12 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 
 /*
- Dependencies:
-  "@typescript-eslint/eslint-plugin",
-  "@typescript-eslint/parser",
-  "eslint",
-  "eslint-plugin-import"
+  Source: https://gist.github.com/michchan/3a799e67a5df5fc336aab23e653e038c
+  Dependencies:
+    "@typescript-eslint/eslint-plugin",
+    "@typescript-eslint/parser",
+    "eslint",
+    "eslint-plugin-import"
 */
 
 module.exports = {
