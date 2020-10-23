@@ -12,7 +12,7 @@
   "@typescript-eslint/parser",
   "eslint",
   "eslint-plugin-import"
- */
+*/
 
 module.exports = {
   "parser": "@typescript-eslint/parser",
