@@ -5,12 +5,15 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run tsc",
     "clearBuildCache": "rm -rf dist",
-    "build": "tsc",
+    "deploy": "npm run index && npm run build && npm run tag && git push && npm publish",
+    "eslint": "node_modules/.bin/eslint --ext .js,.jsx,.ts,.tsx src/ scripts/",
     "index": "node scripts/generateExports && node scripts/generateIndex && git add . && git commit -m \"Update index files\"",
     "tag": "git tag $(node -pe 'require(\"./package.json\").version')",
-    "deploy": "npm run index && npm run build && npm run tag && git push && npm publish"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "node_modules/.bin/tsc",
+    "watch": "npm run tsc -- --watch --noemit"
   },
   "repository": {
     "type": "git",
@@ -43,7 +46,11 @@
     "typescript": "^4.0.3",
     "@types/puppeteer": "^3.0.1",
     "@types/superagent": "^4.1.9",
-    "file-loader": "^6.0.0"
+    "file-loader": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "eslint": "^7.11.0",
+    "eslint-plugin-import": "^2.22.1"
   },
   "dependencies": {
     "@types/aws-lambda": "^8.10.63",
