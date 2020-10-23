@@ -1,8 +1,6 @@
-import { css } from "styled-components"
+import { css } from 'styled-components'
 
-import getPlusIconCss from "./getPlusIconCss"
-
-
+import getPlusIconCss from './getPlusIconCss'
 
 const getCrossIconCss = (
   size: number = 14,

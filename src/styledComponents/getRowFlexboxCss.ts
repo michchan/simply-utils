@@ -1,9 +1,7 @@
-import { css, CSSProperties } from "styled-components";
-
-
+import { css, CSSProperties } from 'styled-components'
 
 /**
- * 
+ *
  * @param alignItems Default to 'flex-start'
  * @param justifyContent Default to `alignItems` argument
  * @param flexWrap Default to 'nowrap'

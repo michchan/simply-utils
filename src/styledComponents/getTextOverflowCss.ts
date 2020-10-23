@@ -1,9 +1,7 @@
-import { css, CSSProperties } from "styled-components"
-
-
+import { css, CSSProperties } from 'styled-components'
 
 const getTextOverflowCss = (
-  numLines: number = 1, 
+  numLines: number = 1,
   trailiing: CSSProperties['textOverflow'] = 'ellipsis',
   forcedWebkitBox: boolean = false,
 ) => css`

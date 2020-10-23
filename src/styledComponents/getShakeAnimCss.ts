@@ -1,5 +1,4 @@
-import { css, keyframes } from "styled-components"
-
+import { css, keyframes } from 'styled-components'
 
 export const DEFAULT_SHAKE_DURATION = 820
 
@@ -23,7 +22,7 @@ const shakeAnim = keyframes`
 
 /**
  * Ref: https://css-tricks.com/snippets/css/shake-css-keyframe-animation/
- * 
+ *
  * @param {number} duration Duration in milliseconds (ms)
  * @returns return styled css
  */

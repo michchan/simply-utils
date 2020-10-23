@@ -1,8 +1,7 @@
-import { MutableRefObject } from "react";
+import { MutableRefObject } from 'react'
 
-import getNextIndex, { GetNextIndexDirection } from '../array/getNextIndex';
+import getNextIndex, { GetNextIndexDirection } from '../array/getNextIndex'
 import isFunc from '../validators/isFunc'
-
 
 export type MoveToNextSelectOptionDirection = GetNextIndexDirection
 
@@ -24,9 +23,8 @@ const moveToNextSelectOption = (
     foundOptionNode
     && listScrollableRef.current
     && isFunc(listScrollableRef.current.scrollTo)
-  ) {
+  )
     listScrollableRef.current.scrollTo({ top: foundOptionNode.offsetTop })
-  }
 
   return nextIndex
 }

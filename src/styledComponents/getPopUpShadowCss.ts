@@ -1,11 +1,9 @@
-import { css } from "styled-components";
-
-
+import { css } from 'styled-components'
 
 const getPopUpShadowCss = (
   color: string = '#99999927',
   size: number = 6,
-  offsetRatio: number = 1/3,
+  offsetRatio: number = 1 / 3,
   offsetDirection: 'right' | 'left' = 'right'
 ) => {
   const absOffset = size * offsetRatio

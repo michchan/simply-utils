@@ -1,10 +1,8 @@
-import type { CSSProperties } from "react"
+import { CSSProperties } from 'react'
 import styled, { css } from 'styled-components'
 
-import isNumOrStr from "../validators/isNumOrStr"
-import isNum from "../number/isNum"
-
-
+import isNumOrStr from '../validators/isNumOrStr'
+import isNum from '../number/isNum'
 
 export interface RowsContainer {
   extraCss?: string;
@@ -14,38 +12,38 @@ export interface RowProps {
 }
 interface FlexConfig {
   flex: CSSProperties['flex'];
-  maxWidth?: CSSProperties['maxWidth']; // bound the width of flexbox because sometimes the width may exceed the given flex-basis
+  maxWidth?: CSSProperties['maxWidth']; // Bound the width of flexbox because sometimes the width may exceed the given flex-basis
 }
 export interface ColumnProps {
-  // original flex and maxWidth (when screen is larger than breakpoint and any of breakpoints)
+  // Original flex and maxWidth (when screen is larger than breakpoint and any of breakpoints)
   flex?: CSSProperties['flex'];
   // Default to 'column'
   flexDirection?: CSSProperties['flexDirection'];
-  maxWidth?: CSSProperties['maxWidth']; // bound the width of flexbox because sometimes the width may exceed the given flex-basis
+  maxWidth?: CSSProperties['maxWidth']; // Bound the width of flexbox because sometimes the width may exceed the given flex-basis
 
-  // flex and maxWidth changes if screen smaller than `breakpoint` or `breakpoints`
-  // if both `breakpoints` and `breakpoint` specified, same effect as putting the `breakpoint` config into `breakpoints`
+  // Flex and maxWidth changes if screen smaller than `breakpoint` or `breakpoints`
+  // If both `breakpoints` and `breakpoint` specified, same effect as putting the `breakpoint` config into `breakpoints`
   breakpoints?: { [breakpoint in number | string]: CSSProperties['flex'] | FlexConfig }; // { [breakpoint]: flex | FlexConfig }  when screen width smaller than breakpoint (the key in `breakpoints`), flex specified (may not be 100%) will be used for that Column
-  breakpoint?: number; // same as `breakpoints`: { [breakpoint]: { flex: "0 0 100%", maxWidth: "100%" } }
+  breakpoint?: number; // Same as `breakpoints`: { [breakpoint]: { flex: "0 0 100%", maxWidth: "100%" } }
 
   extraCss?: string;
 }
 
 /**
- * 
+ *
  * Return components for rendering flexbox when specified margin. Flexbox wrap when reach specified breakpoint(s)
  * All Columns have same margin between other Columns got by the same createRowColumnLayout(margin)
  * <RowsContainer/>: wrap Rows. To ensure Rows are wrapped by block
  * <Row/>: wrap Column. Auto wrap Columns if they exceed the width.
  * <Column/>: flexbox
- * 
+ *
  * @author Sandy Lau https://github.com/sandylau333
- * 
- * @param paddingHoriz 
- * @param paddingVerti 
+ *
+ * @param paddingHoriz
+ * @param paddingVerti
  */
-function createRowColumnLayout(
-  paddingHoriz: number = 30, 
+function createRowColumnLayout (
+  paddingHoriz: number = 30,
   paddingVerti: number = 20,
 ) {
   const halfPaddingHoriz = paddingHoriz / 2
@@ -89,7 +87,7 @@ function createRowColumnLayout(
   const Row = styled.div`
     ${rowCss}
   `
-  Row.displayName = "Row"
+  Row.displayName = 'Row'
 
   /** --------------------- Create Column --------------------- */
 
@@ -97,42 +95,41 @@ function createRowColumnLayout(
   const columnCss = css`
     display: flex;
     flex-direction: ${({ flexDirection = 'column' }: ColumnProps) => flexDirection};
-    flex: ${({ flex = "1" }: ColumnProps) => flex};
-    max-width: ${({ maxWidth = "100%" }: ColumnProps) => isNum(maxWidth)? `${maxWidth}px` : maxWidth};
+    flex: ${({ flex = '1' }: ColumnProps) => flex};
+    max-width: ${({ maxWidth = '100%' }: ColumnProps) => isNum(maxWidth) ? `${maxWidth}px` : maxWidth};
     padding: ${halfPaddingVerti}px ${halfPaddingHoriz}px;
     box-sizing: border-box;
 
     ${({ breakpoint }: ColumnProps) => (breakpoint ? css`
-      @media (max-width: ${ breakpoint }px) {        
+      @media (max-width: ${breakpoint}px) {        
         flex-basis: 100%;
         max-width: 100%
       }
     ` : '')}
 
-    ${({ breakpoints = {} }: ColumnProps) => 
-      Object.keys(breakpoints)
-        .map(bp => parseFloat(bp))
-        .sort((bp1, bp2) => bp2 - bp1)
-        .map((bpNumber, index, array) => {
-          const bp = breakpoints[bpNumber.toString()]
-          if (!bp) return ''
-          return css`
+    ${({ breakpoints = {} }: ColumnProps) => Object.keys(breakpoints)
+    .map(bp => parseFloat(bp))
+    .sort((bp1, bp2) => bp2 - bp1)
+    .map((bpNumber, index, array) => {
+      const bp = breakpoints[bpNumber.toString()]
+      if (!bp) return ''
+      return css`
             @media (max-width: ${bpNumber}px) and (min-width: ${array[index + 1] || 0}px) {
               flex: ${
-                isNumOrStr(bp)
-                  ? bp 
-                  : bp.flex
-              };
+  isNumOrStr(bp)
+    ? bp
+    : bp.flex
+};
               max-width: ${
-                !isNumOrStr(bp) 
-                && bp.maxWidth !== undefined 
-                  ? bp.maxWidth 
-                  : "100%"
-              }
+  !isNumOrStr(bp)
+                && bp.maxWidth !== undefined
+    ? bp.maxWidth
+    : '100%'
+}
             }
           `
-        })
-    }
+    })
+}
 
     ${({ extraCss }: ColumnProps) => extraCss}
   `
@@ -140,8 +137,7 @@ function createRowColumnLayout(
   const Column = styled.div<ColumnProps>`
     ${columnCss}
   `
-  Column.displayName = "Column"
-
+  Column.displayName = 'Column'
 
   return {
     rowsContainerCss,

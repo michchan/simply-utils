@@ -1,8 +1,5 @@
-import urlRegex from "../_common/urlRegex"
+import urlRegex from '../_common/urlRegex'
 
-
-const isUrl = (str: string, strict: boolean = true): boolean => {
-  return (strict ? urlRegex.STRICT : urlRegex.OPTIONAL_WWW).test(str)
-}
+const isUrl = (str: string, strict: boolean = true): boolean => (strict ? urlRegex.STRICT : urlRegex.OPTIONAL_WWW).test(str)
 
 export default isUrl

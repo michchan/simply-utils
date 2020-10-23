@@ -1,14 +1,12 @@
-import isNum from "../number/isNum"
-
-
+import isNum from '../number/isNum'
 
 /**
- * 
- * @param value 
+ *
+ * @param value
  * @param unit Default to `px`
  */
 function parseCSSNumWithUnit <
-  T extends number | string, 
+  T extends number | string,
   R extends string
 > (
   value: T,

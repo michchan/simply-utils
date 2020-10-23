@@ -1,5 +1,4 @@
-import trim from "lodash/trim"
-
+import trim from 'lodash/trim'
 
 const formatAsGroupedString = (
   value: string,
@@ -15,11 +14,10 @@ const formatAsGroupedString = (
 
   for (let i = startIndex; i < maxNumGroup; i++) {
     const strGroup = trimmedValue.substr(i * groupSize, groupSize)
-    if (strGroup) {
+    if (strGroup)
       strGroups.push(strGroup)
-    }
   }
-  
+
   return strGroups.join(separator)
 }
 

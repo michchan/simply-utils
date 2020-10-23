@@ -1,14 +1,12 @@
-import { css } from "styled-components"
-
-
+import { css } from 'styled-components'
 
 /**
  * Get chevron icon css
- * 
- * @param {string} direction 
- * @param {string} color 
- * @param {number} size 
- * @param {number} thickness 
+ *
+ * @param {string} direction
+ * @param {string} color
+ * @param {number} size
+ * @param {number} thickness
  */
 const getChevronCss = (
   direction: 'up' | 'down' | 'left' | 'right' = 'down',
@@ -27,38 +25,38 @@ const getChevronCss = (
 
   transform: 
     rotate(${(() => {
-      switch (direction) {
-        case 'left':
-          return -45
-        case 'right':
-          return 135
-        case 'up':
-          return 45
-        case 'down':
-        default: 
-          return -135
-      }
-    })()}deg) 
+    switch (direction) {
+      case 'left':
+        return -45
+      case 'right':
+        return 135
+      case 'up':
+        return 45
+      case 'down':
+      default:
+        return -135
+    }
+  })()}deg) 
 
     translate(${(() => {
-      switch (direction) {
-        case 'left':
-          return `0, 25%`
-        case 'right':
-          return `25%, 0`
-        case 'up':
-          return `50%, 0`
-        case 'down':
-        default: 
-          return `0, 50%`
-      }
-    })()});
+    switch (direction) {
+      case 'left':
+        return '0, 25%'
+      case 'right':
+        return '25%, 0'
+      case 'up':
+        return '50%, 0'
+      case 'down':
+      default:
+        return '0, 50%'
+    }
+  })()});
   
   margin-right: ${
-    direction === 'up' || direction === 'down'
-      ? size 
-      : 0
-  }px;
+  direction === 'up' || direction === 'down'
+    ? size
+    : 0
+}px;
 `
 
 export default getChevronCss

@@ -1,5 +1,4 @@
-import { css } from "styled-components"
-
+import { css } from 'styled-components'
 
 /**
  * Clear the default style of a button element

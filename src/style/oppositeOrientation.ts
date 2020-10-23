@@ -1,4 +1,3 @@
-
 const oppositeOrientation = {
   bottom: 'top',
   top: 'bottom',

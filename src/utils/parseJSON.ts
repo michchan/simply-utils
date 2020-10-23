@@ -1,6 +1,5 @@
-import isStr from "../string/isStr"
-import isFunc from "../validators/isFunc"
-
+import isStr from '../string/isStr'
+import isFunc from '../validators/isFunc'
 
 /**
  * Parse JSON string with error catched
@@ -10,7 +9,7 @@ import isFunc from "../validators/isFunc"
  * @param fallback The fallback value. Default to empty object
  */
 function parseJSON <T extends object = object> (
-  str: string, 
+  str: string,
   noFallbackObj?: boolean,
   log?: (error: Error) => unknown,
 ): T | {} {
@@ -19,9 +18,9 @@ function parseJSON <T extends object = object> (
   try {
     return isStr(str) ? JSON.parse(str) : fallback
   } catch (error) {
-    if (isFunc(log)) {
+    if (isFunc(log))
       log(error)
-    }
+
     return fallback
   }
 }

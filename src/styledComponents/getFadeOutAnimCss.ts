@@ -1,5 +1,4 @@
-import { css, keyframes } from "styled-components"
-
+import { css, keyframes } from 'styled-components'
 
 export const DEFAULT_FADE_OUT_DURATION = 300
 const fadeOutAnim = keyframes`

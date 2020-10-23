@@ -1,6 +1,5 @@
-import zeroPadding from "../number/zeroPadding"
-import isStr from "../string/isStr"
-
+import zeroPadding from '../number/zeroPadding'
+import isStr from '../string/isStr'
 
 /**
  * Generate an ID with format YYYYMMDDHHmmssSSS

@@ -1,10 +1,8 @@
-import { css } from "styled-components"
-
-
+import { css } from 'styled-components'
 
 const getFixedSizeImgCss = (
-  width: number, 
-  height: number, 
+  width: number,
+  height: number,
   bgColor?: string
 ) => css`
   width: ${width}px;
@@ -12,9 +10,9 @@ const getFixedSizeImgCss = (
   min-width: ${width}px;
   min-height: ${height}px;
 
-  ${bgColor? css`
+  ${bgColor ? css`
     background: ${bgColor};
-  `:''}
+  ` : ''}
 `
 
 export default getFixedSizeImgCss

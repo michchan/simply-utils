@@ -1,9 +1,7 @@
-import getFixedSizeImgCss from "./getFixedSizeImgCss"
-
-
+import getFixedSizeImgCss from './getFixedSizeImgCss'
 
 const getSquaredFixedSizeImgCss = (
-  size: number, 
+  size: number,
   bgColor?: string,
 ) => getFixedSizeImgCss(size, size, bgColor)
 

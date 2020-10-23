@@ -1,8 +1,6 @@
-
-
 /**
  * Check if the time has lasted for a certain duration
- * 
+ *
  * @param prev Previous ISOTimestamp time to compare
  * @param duration The duration to compare
  */

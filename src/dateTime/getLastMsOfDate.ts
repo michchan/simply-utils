@@ -1,7 +1,7 @@
 /**
- * 
+ *
  * @author Sandy Lau https://github.com/sandylau333
- * @param date 
+ * @param date
  */
 function getLastMsOfDate (date: Date = new Date()): Date {
   const clonedDate = new Date(date)

@@ -1,6 +1,3 @@
-
-const getNextPage = (dataLength: number, pageSize: number): number => {
-  return Math.floor(dataLength / pageSize) + 1
-}
+const getNextPage = (dataLength: number, pageSize: number): number => Math.floor(dataLength / pageSize) + 1
 
 export default getNextPage

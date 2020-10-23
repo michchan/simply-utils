@@ -1,5 +1,4 @@
-import { css, SimpleInterpolation, FlattenSimpleInterpolation, FlattenInterpolation, ThemeProps } from "styled-components";
-
+import { css, SimpleInterpolation, FlattenSimpleInterpolation, FlattenInterpolation, ThemeProps } from 'styled-components'
 
 type StyledCss <T = unknown> = FlattenSimpleInterpolation | FlattenInterpolation<ThemeProps<T>>
 

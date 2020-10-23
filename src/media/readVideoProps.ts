@@ -1,5 +1,4 @@
-import isStr from "../string/isStr"
-
+import isStr from '../string/isStr'
 
 /**
  * Read the file props of the video
@@ -10,7 +9,7 @@ const readVideoProps = (src: HTMLVideoElement['src'] | File | Blob): Promise<{
 }> => new Promise((resolve, reject) => {
   const video: HTMLVideoElement = document.createElement('video')
 
-  video.onloadedmetadata = function() {
+  video.onloadedmetadata = function () {
     resolve({
       // @ts-ignore: @TODO: fix type
       width: this.videoWidth,
@@ -19,11 +18,11 @@ const readVideoProps = (src: HTMLVideoElement['src'] | File | Blob): Promise<{
     })
   }
 
-  video.onerror = function(e: Event | string) {
+  video.onerror = function (e: Event | string) {
     reject(e)
   }
 
-  video.src = isStr(src)? src : window.URL.createObjectURL(src)
+  video.src = isStr(src) ? src : window.URL.createObjectURL(src)
 })
 
 export default readVideoProps

@@ -1,6 +1,5 @@
-
 const REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/i
 
-const isEmail = (str: string): boolean => REGEX.test(str) 
+const isEmail = (str: string): boolean => REGEX.test(str)
 
 export default isEmail

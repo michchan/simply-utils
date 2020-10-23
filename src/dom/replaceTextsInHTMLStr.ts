@@ -1,18 +1,17 @@
-import getDOMTextNodesUnder from "./getDOMTextNodesUnder"
-
+import getDOMTextNodesUnder from './getDOMTextNodesUnder'
 
 // Init dom parser
 const domparser = new DOMParser()
 
 /**
  * Replace text in HTML string
- * 
- * @param htmlStr 
+ *
+ * @param htmlStr
  */
 const replaceTextsInHTMLStr = (
-  htmlStr: string, 
+  htmlStr: string,
   replacer: (innerHTML: string) => string,
-): string => {  
+): string => {
   // Parse HTML string
   const doc = domparser.parseFromString(htmlStr, 'text/html')
   // Get all elements that containing a text node

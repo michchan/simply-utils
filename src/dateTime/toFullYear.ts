@@ -1,9 +1,9 @@
-import isStr from "../string/isStr"
-import zeroPadding from "../number/zeroPadding"
+import isStr from '../string/isStr'
+import zeroPadding from '../number/zeroPadding'
 
 /**
  * Convert 2 digit year to 4 digit year
- * @param year 
+ * @param year
  */
 const toFullYear = (year: string | number): number | undefined => {
   const yearString = isStr(year) ? year : zeroPadding(year, 2)
@@ -23,9 +23,9 @@ const toFullYear = (year: string | number): number | undefined => {
   // Find the one closest to currentYear
   let minDiff = Infinity
   const fullYear = [
-    currentCenturyYear, 
-    prevCenturyYear, 
-    nextCenturyYear
+    currentCenturyYear,
+    prevCenturyYear,
+    nextCenturyYear,
   ].reduce((fullYear: number | undefined, year: number) => {
     const diff = Math.abs(year - currentYear)
     if (diff < minDiff) {

@@ -1,6 +1,5 @@
-const fs = require('fs');
+const fs = require('fs')
 const generateExports = require('./generateExports')
-
 
 /** ---------------- Read folder name ---------------- */
 
@@ -19,28 +18,28 @@ function main () {
 
   // Map modules names to import statements
   const importStatements = folderNames
-    .map(name => 'import * as ' + name + ' from \'./' + name + '\'')
+    .map(name => `import * as ${name} from './${name}'`)
     .join('\n')
 
   // Map modules names to named export statements
   const namedExportsStatements = folderNames
-    .map(name => 'export * from \'./' + name + '\'')
+    .map(name => `export * from './${name}'`)
     .join('\n')
 
   // Map modules names to module export statements
   const moduleExportsStatements = folderNames
-    .map(name => '  ...' + name + ',')
+    .map(name => `  ...${name},`)
     .join('\n')
 
   // Generate string of whole file
-  const fileText = 
-    importStatements + '\n\n\n' +
-    '/** -------------------- Named export -------------------- */\n\n' +
-    namedExportsStatements + '\n\n' +
-    '/** -------------------- Module export -------------------- */\n\n' +
-    'export default {\n' +
-    moduleExportsStatements +
-    '\n}'
+  const fileText
+    = `${importStatements}\n\n\n`
+    + `/** -------------------- Named export -------------------- */\n\n${
+      namedExportsStatements}\n\n`
+    + '/** -------------------- Module export -------------------- */\n\n'
+    + `export default {\n${
+      moduleExportsStatements
+    }\n}`
 
   // Write exports codes to the src/index.ts file (or create one and write)
   fs.writeFileSync('src/index.ts', fileText)
@@ -51,7 +50,7 @@ module.exports = main
 /** ---------------- Execute ---------------- */
 
 // Generate module index
-folderNames.forEach(name => generateExports('src/' + name))
+folderNames.forEach(name => generateExports(`src/${name}`))
 
 // Generate src/index
 main()

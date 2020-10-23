@@ -1,7 +1,5 @@
-import { css } from "styled-components";
-import createHoverableOnlyCss from "./createHoverableOnlyCss";
-
-
+import { css } from 'styled-components'
+import createHoverableOnlyCss from './createHoverableOnlyCss'
 
 /**
  * Opposite of `getClickableCss`

@@ -1,4 +1,3 @@
-
 export function swapArrayItems <T = unknown> (arr: T[], indexA: number, indexB: number): T[] {
   const newArr = [...arr]
 

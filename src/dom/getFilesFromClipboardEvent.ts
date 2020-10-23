@@ -1,8 +1,5 @@
-import type { ClipboardEvent } from 'react'
+import { ClipboardEvent } from 'react'
 
-
-const getFilesFromClipboardEvent = (e: ClipboardEvent): File[] => {
-  return Array.from(e.clipboardData?.files ?? [])
-}
+const getFilesFromClipboardEvent = (e: ClipboardEvent): File[] => Array.from(e.clipboardData?.files ?? [])
 
 export default getFilesFromClipboardEvent

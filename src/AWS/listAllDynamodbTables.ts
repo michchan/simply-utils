@@ -1,5 +1,4 @@
-import { DynamoDB } from 'aws-sdk';
-
+import { DynamoDB } from 'aws-sdk'
 
 export type ListAllTablesResult = DynamoDB.TableNameList
 
@@ -17,13 +16,13 @@ const listAllDynamodbTables = (
     Limit,
   }, async (err, data) => {
     if (err) {
-      reject(new Error(`Unable to list tables. Error JSON: ${err}`));
+      reject(new Error(`Unable to list tables. Error JSON: ${err}`))
     } else {
       const { TableNames = [], LastEvaluatedTableName } = data
       const mergedTableNames = [...accTableNames, ...TableNames]
 
       if (LastEvaluatedTableName) {
-        // recur next
+        // Recur next
         resolve(await listAllDynamodbTables(
           dynamodb,
           ExclusiveStartTableName,
@@ -32,7 +31,7 @@ const listAllDynamodbTables = (
         ))
       } else {
         // End recur
-        resolve(mergedTableNames);
+        resolve(mergedTableNames)
       }
     }
   })

@@ -22,7 +22,6 @@ import * as styledComponents from './styledComponents'
 import * as utils from './utils'
 import * as validators from './validators'
 
-
 /** -------------------- Named export -------------------- */
 
 export * from './AWS'

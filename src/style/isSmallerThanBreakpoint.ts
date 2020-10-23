@@ -1,7 +1,6 @@
-import isNum from "../number/isNum"
+import isNum from '../number/isNum'
 
-
-export type IsSmallerThanBreakpointBreakpoint = number | "100%" | ""
+export type IsSmallerThanBreakpointBreakpoint = number | '100%' | ''
 
 /**
  * Check if the given windowWidth is smaller than the breakpoint
@@ -14,29 +13,25 @@ export type IsSmallerThanBreakpointBreakpoint = number | "100%" | ""
  * If both `breakpoint` and `min` are not provided, will return false
  */
 const isSmallerThanBreakpoint = (
-  windowWidth: number, 
-  breakpoint: IsSmallerThanBreakpointBreakpoint = '', 
+  windowWidth: number,
+  breakpoint: IsSmallerThanBreakpointBreakpoint = '',
   min: number = 0
 ): boolean => {
-
-  // always return true if breakpoint is "100%"
-  if (breakpoint === "100%") {
+  // Always return true if breakpoint is "100%"
+  if (breakpoint === '100%')
     return true
-  }
 
-  // convert breakpoint into px or use fallback
+  // Convert breakpoint into px or use fallback
   const breakpointPx = (() => {
     const breakpointString = breakpoint.toString()
-    // if can be parse to number
-    if (isNum(breakpointString, true)) {
+    // If can be parse to number
+    if (isNum(breakpointString, true))
       return parseFloat(breakpointString)
-    }
-    else {
-      return min
-    }
+
+    return min
   })()
 
-  // limit breakpoint
+  // Limit breakpoint
   const limitedBreakpointPx = Math.max(min, breakpointPx)
 
   return windowWidth < limitedBreakpointPx

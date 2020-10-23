@@ -1,6 +1,4 @@
-import { css } from "styled-components";
-
-
+import { css } from 'styled-components'
 
 /**
  * Enable smooth/momentum scrolling like on iOS devices

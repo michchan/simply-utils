@@ -1,5 +1,4 @@
-import formatCurrency from "./formatCurrency"
-
+import formatCurrency from './formatCurrency'
 
 const formatCurrencyRange = (
   minNumToFormat: number = 0,
@@ -10,9 +9,9 @@ const formatCurrencyRange = (
   minimumIntegerDigits: number = 1,
 ): string => {
   // Display price if only one price
-  if (minNumToFormat === maxNumToFormat) {
+  if (minNumToFormat === maxNumToFormat)
     return formatCurrency(minNumToFormat, locales, currency, minimumFractionDigits, minimumIntegerDigits)
-  }
+
   // Else display price range
   const formattedMin = formatCurrency(minNumToFormat, locales, currency, minimumFractionDigits, minimumIntegerDigits)
   const formattedMax = formatCurrency(maxNumToFormat, locales, currency, minimumFractionDigits, minimumIntegerDigits)

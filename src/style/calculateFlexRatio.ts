@@ -1,5 +1,3 @@
-
-
 const calculateFlexRatio = (nums: number[] = []): number[] => {
   if (nums.length === 0) return nums
 
@@ -8,10 +6,8 @@ const calculateFlexRatio = (nums: number[] = []): number[] => {
     if (a > b) return 1
     return 0
   })[0]
-  
-  return nums.map((num: number) => {
-    return num / smallestNum
-  })
+
+  return nums.map((num: number) => num / smallestNum)
 }
 
 export default calculateFlexRatio

@@ -1,9 +1,9 @@
-import generateProgressiveColorsOfSameHue, { GenerateProgressiveColorsOfSameHueOptions } from "../style/generateProgressiveColorsOfSameHue"
-import getColorsContrastRatio from "../style/getColorsContrastRatio"
+import generateProgressiveColorsOfSameHue, { GenerateProgressiveColorsOfSameHueOptions } from '../style/generateProgressiveColorsOfSameHue'
+import getColorsContrastRatio from '../style/getColorsContrastRatio'
 
 export interface GetProgressiveColorsOfSameHueWithStepsOptions extends Pick<GenerateProgressiveColorsOfSameHueOptions,
-  | 'saturation' 
-  | 'lightness'
+| 'saturation'
+| 'lightness'
 > {
   // Hue value 0 - 360
   hue: number;
@@ -13,7 +13,7 @@ export interface GetProgressiveColorsOfSameHueWithStepsOptions extends Pick<Gene
   // Largest value, which is the value to be divided into steps.
   maxValue: number;
   // Default to maxValue
-  maxColorsCount?: number; 
+  maxColorsCount?: number;
   // Default to maxValue
   // Useful to not show dark color if the value is absolutely small.
   minColorsCount?: number;
@@ -32,7 +32,6 @@ export interface GetProgressiveColorsOfSameHueWithStepsReturnType {
   getTextColor: (value: number) => string;
 }
 
-
 const getProgressiveColorsOfSameHueWithSteps = (
   options: GetProgressiveColorsOfSameHueWithStepsOptions
 ): GetProgressiveColorsOfSameHueWithStepsReturnType => {
@@ -44,7 +43,7 @@ const getProgressiveColorsOfSameHueWithSteps = (
     maxValue,
     maxColorsCount = maxValue,
     minColorsCount = maxValue,
-    textColors: textColorOptions = ['#000', '#fff']
+    textColors: textColorOptions = ['#000', '#fff'],
   } = options
 
   // +1 because visits can be [0, maxVisits], which total (maxValue + 1) numbers
@@ -58,7 +57,7 @@ const getProgressiveColorsOfSameHueWithSteps = (
     saturation,
     lightness,
     mode: 'lightness',
-    targetValue: maxLightness
+    targetValue: maxLightness,
   }).reverse()
 
   // Array of text color for each step depends on its background color
@@ -73,22 +72,18 @@ const getProgressiveColorsOfSameHueWithSteps = (
   const stepSize = numberCount / colorsCount
 
   // Helper method for getting color that the value falls in
-  const getColor = (value: number) => {
-    return colors[Math.floor(Math.min(value, maxValue) / stepSize)]
-  }
+  const getColor = (value: number) => colors[Math.floor(Math.min(value, maxValue) / stepSize)]
 
   // Helper method for getting text color that the value falls in
-  const getTextColor = (value: number) => {
-    return textColors[Math.floor(Math.min(value, maxValue) / stepSize)]
-  }
-  
+  const getTextColor = (value: number) => textColors[Math.floor(Math.min(value, maxValue) / stepSize)]
+
   return {
     colors,
     textColors,
     colorsCount,
     stepSize,
     getColor,
-    getTextColor
+    getTextColor,
   }
 }
 

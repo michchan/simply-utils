@@ -1,6 +1,4 @@
-import { css } from "styled-components";
-
-
+import { css } from 'styled-components'
 
 const getHideScrollBarCss = () => css`
   /* 

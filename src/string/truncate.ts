@@ -1,20 +1,20 @@
-import isFullWidthChar from "./isFullWIdthChar"
+import isFullWidthChar from './isFullWIdthChar'
 
 /**
  * Truncate string with handling of full width characters (e.g. Chinese/Japanese)
- * 
- * @param {string} str 
- * @param {Object} options 
- * 
+ *
+ * @param {string} str
+ * @param {Object} options
+ *
  * @returns {string}
  */
 const truncate = (
-  str: string = '', 
+  str: string = '',
   options: {
     length: number;
     omission?: string;
   },
-): string => {  
+): string => {
   const {
     length: maxLength,
     omission,
@@ -28,7 +28,7 @@ const truncate = (
 
     if (isFullWidthChar(char)) {
       if (length + 2 > maxLength)
-        break;
+        break
 
       length += 2
     } else {
@@ -39,7 +39,7 @@ const truncate = (
     charIndex++
   } while (length < maxLength)
 
-  return `${truncatedStr}${(str || '').length !== truncatedStr.length? omission || '...' : ''}`
+  return `${truncatedStr}${(str || '').length !== truncatedStr.length ? omission || '...' : ''}`
 }
 
 export default truncate

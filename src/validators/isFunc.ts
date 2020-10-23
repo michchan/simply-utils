@@ -1,6 +1,5 @@
-import isNull from "./isNull"
-import isUndef from "./isUndef"
-
+import isNull from './isNull'
+import isUndef from './isUndef'
 
 // Not using "isFunction" here to avoid wrong import from other utils library
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

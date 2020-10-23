@@ -1,6 +1,35 @@
 const SPECIAL_CHARS_LIST = [
-  '`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '=', '[', '{', ']', '}', 
-  '|', '\\', '\'', '<', ',', '.', '>', '?', '/', '"', ';', ':', '\\s'
+  '`',
+  '~',
+  '!',
+  '@',
+  '#',
+  '$',
+  '%',
+  '^',
+  '&',
+  '*',
+  '(',
+  ')',
+  '+',
+  '=',
+  '[',
+  '{',
+  ']',
+  '}',
+  '|',
+  '\\',
+  '\'',
+  '<',
+  ',',
+  '.',
+  '>',
+  '?',
+  '/',
+  '"',
+  ';',
+  ':',
+  '\\s',
 ]
 
 const getSpecialCharsRegex = (
@@ -9,9 +38,9 @@ const getSpecialCharsRegex = (
   flags?: RegExp['flags'],
 ): RegExp => new RegExp((
   SPECIAL_CHARS_LIST
-    .filter((s) => !excluded.includes(s))
+    .filter(s => !excluded.includes(s))
     // Replace redundant slash characters
-    .map(s => /^\\/.test(s)? s : `\\${s}`)
+    .map(s => /^\\/.test(s) ? s : `\\${s}`)
     .join('|')
 ), flags)
 

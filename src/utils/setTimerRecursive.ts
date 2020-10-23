@@ -1,9 +1,8 @@
-
 type ReturnType <RefType extends number | NodeJS.Timeout> = RefType[]
 
 /**
  * Gradually invoking each of the stack of functions with a constant interval
- * 
+ *
  * @param callStack The stack of functions to call in sequence.
  * @param interval The constant interval between each invocation.
  * @returns A reference value pointed to the titimmer references stack. It is useful to cancel refs.
@@ -17,14 +16,13 @@ function setTimerRecursive <RefType extends number | NodeJS.Timeout> (
   // The buffer stack to store timmer references
   const refs: RefType[] = []
   // The flag to indicate an abort
-  let isAborted: boolean = false
+  let isAborted = false
 
   // Prepare aborter
   const abort = () => { isAborted = true }
   // Set aborter
-  if (setAborter) {
+  if (setAborter)
     setAborter(abort)
-  }
 
   // Define the recursive function
   const recur = (callStackIndex: number) => {
@@ -41,8 +39,8 @@ function setTimerRecursive <RefType extends number | NodeJS.Timeout> (
         recur(callStackIndex + 1)
     }
 
-    const ref = timer === 'timeout' 
-      ? setTimeout(callback, interval) 
+    const ref = timer === 'timeout'
+      ? setTimeout(callback, interval)
       : requestAnimationFrame(callback)
 
     // Store id to buffer

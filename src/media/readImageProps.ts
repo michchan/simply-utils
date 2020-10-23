@@ -1,5 +1,4 @@
-import isStr from "../string/isStr"
-
+import isStr from '../string/isStr'
 
 /**
  * Read the file props of the image
@@ -10,7 +9,7 @@ const readImageProps = (src: HTMLImageElement['src'] | File | Blob): Promise<{
 }> => new Promise((resolve, reject) => {
   const img: HTMLImageElement = new Image()
 
-  img.onload = function() {
+  img.onload = function () {
     resolve({
       // @ts-ignore: @TODO: fix type
       width: this.width,
@@ -19,11 +18,11 @@ const readImageProps = (src: HTMLImageElement['src'] | File | Blob): Promise<{
     })
   }
 
-  img.onerror = function(e: Event | string) {
+  img.onerror = function (e: Event | string) {
     reject(e)
   }
 
-  img.src = isStr(src)? src : window.URL.createObjectURL(src)
+  img.src = isStr(src) ? src : window.URL.createObjectURL(src)
 })
 
 export default readImageProps

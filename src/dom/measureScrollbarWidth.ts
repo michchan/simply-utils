@@ -3,19 +3,19 @@
  */
 const measureScrollbarWidth = (): number => {
   // Create the measurement node
-  const scrollDiv = document.createElement("div");
-  // way the hell off screen
-  scrollDiv.style.top = '-9999';
-  scrollDiv.style.overflow = 'scroll';
-  scrollDiv.style.position = 'absolute';
-  
-  document.body.appendChild(scrollDiv);
+  const scrollDiv = document.createElement('div')
+  // Way the hell off screen
+  scrollDiv.style.top = '-9999'
+  scrollDiv.style.overflow = 'scroll'
+  scrollDiv.style.position = 'absolute'
+
+  document.body.appendChild(scrollDiv)
 
   // Get the scrollbar width
-  const scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+  const scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
 
-  // Delete the DIV 
-  document.body.removeChild(scrollDiv);
+  // Delete the DIV
+  document.body.removeChild(scrollDiv)
 
   return scrollbarWidth
 }

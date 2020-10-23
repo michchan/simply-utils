@@ -1,13 +1,13 @@
 /**
  * Calculate active page based on scroll top and row size properties.
  * This is useful of list with vertical-scrolled pagination.
- * 
- * @param scrollTop 
- * @param rowHeight 
- * @param pageSize 
- * @param startPage 
- * @param pageBreakerHeight 
- * 
+ *
+ * @param scrollTop
+ * @param rowHeight
+ * @param pageSize
+ * @param startPage
+ * @param pageBreakerHeight
+ *
  * @returns The page number (start from 1)
  */
 const calculatePageByScrollTop = (
@@ -31,7 +31,7 @@ const calculatePageByScrollTop = (
   // Calculate page by page size
   const calculatedPage = Math.ceil((normTopRowIndex + 1) / pageSize)
   // Calculate relative page
-  const page = startPage - 1 + (calculatedPage < 1? 1 : calculatedPage)
+  const page = startPage - 1 + (calculatedPage < 1 ? 1 : calculatedPage)
   // Return page
   return page
 }

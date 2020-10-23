@@ -1,5 +1,4 @@
-import convertColorToRgbaArray from "./convertColorToRgbaArray"
-
+import convertColorToRgbaArray from './convertColorToRgbaArray'
 
 /**
  * Add alpha info the given color code.

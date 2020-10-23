@@ -1,9 +1,8 @@
-import { CSSProperties } from "react"
-
+import { CSSProperties } from 'react'
 
 const fadeOut = (
-  el: HTMLElement, 
-  duration: number = 300, // in ms
+  el: HTMLElement,
+  duration: number = 300, // In ms
   timingFunction: CSSProperties['transitionTimingFunction'] = 'ease-in-out',
   callback?: () => void,
 ) => {

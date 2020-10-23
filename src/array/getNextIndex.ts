@@ -1,5 +1,3 @@
-
-
 export type GetNextIndexDirection ='backward' | 'forward'
 
 /**
@@ -18,14 +16,14 @@ export function getNextIndex (
       ? isForward ? 0 : lastIndex
       : (
         // Determin if the move is within the bound
-        isForward 
+        isForward
           ? (prevIndex + 1 <= lastIndex)
           : (prevIndex > 0)
-      ) 
-        ? prevIndex + (isForward? 1 : -1)
+      )
+        ? prevIndex + (isForward ? 1 : -1)
         : isForward ? 0 : lastIndex
   )
   return nextIndex
-} 
+}
 
 export default getNextIndex

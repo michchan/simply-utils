@@ -1,5 +1,4 @@
-import getSpecialCharsRegex from "../validators/getSpecialCharsRegex";
-
+import getSpecialCharsRegex from '../validators/getSpecialCharsRegex'
 
 const hasSpecialCharacters = (
   str: string,

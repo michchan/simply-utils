@@ -1,7 +1,6 @@
-
 /**
  * Convert HTMLString to its inner text
- * @param htmlString 
+ * @param htmlString
  */
 function getInnerTextFromHTMLStr (htmlString: string): string {
   const tempContainerDom = document.createElement('div')

@@ -1,25 +1,24 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
-import { I18nTranslate } from './types';
-import isStr from '../string/isStr';
-
+import { I18nTranslate } from './types'
+import isStr from '../string/isStr'
 
 export interface TranslatedSection {
-  title: string | ReactNode; 
+  title: string | ReactNode;
   description: string | ReactNode;
 }
 
 /**
- * 
- * @param i18nNamspace 
+ *
+ * @param i18nNamspace
  * @param key The translation key, e.g. 'namespace:title.description'
- * @param t 
+ * @param t
  */
 const getTranslatedSections = (
-  i18nNamspace: string, 
-  key: string, 
+  i18nNamspace: string,
+  key: string,
   t: I18nTranslate | ((key: string) => ReactNode),
-  exists: (i18nKey: string) => boolean, 
+  exists: (i18nKey: string) => boolean,
 ): TranslatedSection[] => {
   const results = []
   let buffer = null
@@ -27,18 +26,18 @@ const getTranslatedSections = (
 
   do {
     const titleKey = ((): string => {
-      const k = `${key? `${key}.` : ''}${i}.title`
-      if (i18nNamspace) 
+      const k = `${key ? `${key}.` : ''}${i}.title`
+      if (i18nNamspace)
         return `${i18nNamspace}:${k.split(':').pop()}`
       return k
     })()
     const descriptionKey = ((): string => {
-      const k = `${key? `${key}.` : ''}${i}.description`
-      if (i18nNamspace) 
+      const k = `${key ? `${key}.` : ''}${i}.description`
+      if (i18nNamspace)
         return `${i18nNamspace}:${k.split(':').pop()}`
       return k
     })()
-    
+
     const title = !exists(titleKey) ? null : t(titleKey)
     const description = !exists(descriptionKey) ? null : t(descriptionKey)
 
@@ -49,9 +48,9 @@ const getTranslatedSections = (
     buffer = hasTitle || hasDescription ? { title, description } : null
 
     if (buffer) results.push(buffer)
-    
+
     i++
-  } while (buffer);
+  } while (buffer)
 
   return results
 }
