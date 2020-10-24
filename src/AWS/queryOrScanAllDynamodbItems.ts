@@ -1,4 +1,4 @@
-import { DynamoDB, AWSError } from 'aws-sdk'
+import { DynamoDB } from 'aws-sdk'
 
 /**
  * Return a list of properties of tables that have been created and match the criteria
