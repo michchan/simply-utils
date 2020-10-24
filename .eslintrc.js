@@ -158,6 +158,7 @@ module.exports = {
       "tabWidth": 2,
       "ignoreUrls": true,
       "ignoreStrings": true,
+      "ignoreRegExpLiterals": true,
       // Ignore require and single-line imports from very long module
       "ignorePattern":
         // Ignore require statement
