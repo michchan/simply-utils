@@ -1,8 +1,7 @@
-import { css, SimpleInterpolation, FlattenSimpleInterpolation, FlattenInterpolation, ThemeProps } from 'styled-components'
+import { css } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
 
-type StyledCss <T = unknown> = FlattenSimpleInterpolation | FlattenInterpolation<ThemeProps<T>>
-
-function createHoverableOnlyCss <T> (styledCss: StyledCss<T>) {
+function createHoverableOnlyCss <T> (styledCss: StyledCss<T>): StyledCss<T> {
   return css`
     /* Hoverable pointer only */
     @media (hover: hover) {
