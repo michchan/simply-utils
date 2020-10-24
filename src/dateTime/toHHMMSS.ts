@@ -1,22 +1,24 @@
+const SECONS_IN_HOUR = 3600
+const SECONS_IN_MIN = 60
+const NUM_DIGITS = 10
+
 /**
  * References: https://stackoverflow.com/questions/6312993/javascript-seconds-to-time-string-with-format-hhmmss
  *
  * @param {Number} seconds
  */
 const toHHMMSS = (seconds: number): string => {
-  const secNum = parseInt(`${seconds}`, 10) // Don't forget the second param
-  let hours: string | number = Math.floor(secNum / 3600)
-  let minutes: string | number = Math.floor((secNum - (hours * 3600)) / 60)
-  let _seconds: string | number = secNum - (hours * 3600) - (minutes * 60)
+  // Don't forget the second param
+  const secNum = parseInt(`${seconds}`, 10)
+  let hours: string | number = Math.floor(secNum / SECONS_IN_HOUR)
+  let minutes: string | number = Math.floor((secNum - (hours * SECONS_IN_HOUR)) / SECONS_IN_MIN)
+  let sec: string | number = secNum - (hours * SECONS_IN_HOUR) - (minutes * SECONS_IN_MIN)
 
-  if (hours < 10) hours = `0${hours}`
-  if (minutes < 10) minutes = `0${minutes}`
-  if (_seconds < 10) _seconds = `0${_seconds}`
+  if (hours < NUM_DIGITS) hours = `0${hours}`
+  if (minutes < NUM_DIGITS) minutes = `0${minutes}`
+  if (sec < NUM_DIGITS) sec = `0${sec}`
 
-  return `${(parseInt(`${hours}`) === 0 ? '' : `${hours}:`)
-      + minutes
-  }:${
-    _seconds}`
+  return `${hours}:${minutes}:${sec}`
 }
 
 export default toHHMMSS

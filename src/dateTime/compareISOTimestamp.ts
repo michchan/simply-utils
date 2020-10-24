@@ -13,10 +13,10 @@
 const compareISOTimestamp = (a: string, b: string): number => {
   const aDate = new Date(a)
   const bDate = new Date(b)
-  const aIsBeforeB = bDate > aDate
-  const aIsAfterB = aDate > bDate
+  const isABeforeB = bDate > aDate
+  const isAAfterB = aDate > bDate
 
-  return aIsBeforeB ? -1 : aIsAfterB ? 1 : 0
+  return isABeforeB ? -1 : isAAfterB ? 1 : 0
 }
 
 export default compareISOTimestamp

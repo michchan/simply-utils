@@ -6,7 +6,8 @@ import isTimeLocal from './isTimeLocal'
 /**
  *
  *
- * @param value string value of date-time, can be format of datetime-local, date-local, time-local or ISO-timestamp
+ * @param value string value of date-time,
+ *        can be format of datetime-local, date-local, time-local or ISO-timestamp
  * @returns ISO-timestamp
  */
 const fromDateTimeLocal = (value: string): string => {
@@ -21,15 +22,15 @@ const fromDateTimeLocal = (value: string): string => {
 
   // Fix safari cannot parse ISO string properly issue
   // Reference: https://stackoverflow.com/questions/6427204/date-parsing-in-javascript-is-different-between-safari-and-chrome/6428201#6428201
-  const _value = isSafari
+  const thisValue = isSafari
     ? value.replace(/-/g, '/').replace('T', ' ')
       .replace(/(\..*|\+.*)/, '')
     : value
 
   // Parse the date string
-  if (!isDateString(_value))
+  if (!isDateString(thisValue))
     return ''
-  return new Date(_value).toISOString()
+  return new Date(thisValue).toISOString()
 }
 
 export default fromDateTimeLocal

@@ -1,3 +1,6 @@
+const SECONDS_IN_HOUR = 3600
+const SECONDS_IN_MIN = 60
+
 /**
  * Get the number of seconds contributing to the time (of a date)
  *
@@ -6,8 +9,8 @@
  * @param date
  */
 const getTimeInSeconds = (date: Date): number => (
-  date.getHours() * 3600
-    + date.getMinutes() * 60
+  (date.getHours() * SECONDS_IN_HOUR)
+    + (date.getMinutes() * SECONDS_IN_MIN)
     + date.getSeconds()
 )
 

@@ -1,3 +1,7 @@
+const MS_IN_DAY = 86400000
+const MAX_WEEKDAY = 7
+const DAY_OFFSET = 4
+
 /**
  * Based on information at:
  * http://www.merlyn.demon.co.uk/weekcalc.htm#WNR
@@ -15,16 +19,17 @@
  * @author https://stackoverflow.com/a/6117889/9428719
  * @param d
  */
-function getWeekOfYear (d: Date): number {
+function getWeekOfYear (date: Date): number {
+  let d = date
   // Copy date so don't modify original
   d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()))
   // Set to nearest Thursday: current date + 4 - current day number
   // Make Sunday's day number 7
-  d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7))
+  d.setUTCDate(d.getUTCDate() + DAY_OFFSET - (d.getUTCDay() || MAX_WEEKDAY))
   // Get first day of year
   const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1))
   // Calculate full weeks to nearest Thursday
-  const weekNum = Math.ceil((((Number(d) - Number(yearStart)) / 86400000) + 1) / 7)
+  const weekNum = Math.ceil((((Number(d) - Number(yearStart)) / MS_IN_DAY) + 1) / MAX_WEEKDAY)
   // Return array of year and week number
   return weekNum
 }

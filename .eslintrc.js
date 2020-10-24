@@ -158,7 +158,6 @@ module.exports = {
       "tabWidth": 2,
       "ignoreUrls": true,
       "ignoreStrings": true,
-      "ignoreRegExpLiterals": true,
       // Ignore require and single-line imports from very long module
       "ignorePattern":
         // Ignore require statement
@@ -166,7 +165,9 @@ module.exports = {
         // Ignore single-line import statement
         + "|(^import\\s([a-zA-Z0-9]+)\\sfrom\\s')"
         // Ignore last-line of import statement
-        + "|(^\\}\\sfrom\\s')",
+        + "|(^\\}\\sfrom\\s')"
+        // Ignore regex literal const declaration
+        + "|(^\\s*(var|const)\\s.+=\\s*\/(.+)\/[a-zA-Z]*)",
     }],
     "max-lines": ["error", { "max": 300 }],
     "max-lines-per-function": ["error", 50],

@@ -1,6 +1,6 @@
 import getStepsToTotal from '../math/getStepsToTotal'
 
-const SECONDS_IN_A_DAY = 60 * 60 * 24
+const SECONDS_IN_DAY = 86400
 
 /**
  * Get an array of number,
@@ -8,6 +8,6 @@ const SECONDS_IN_A_DAY = 60 * 60 * 24
  *
  * @param step The step of each intervals
  */
-const getTimeStepsInSeconds = (step: number = 60): number[] => getStepsToTotal(SECONDS_IN_A_DAY, step)
+const getTimeStepsInSeconds = (step: number = 60): number[] => getStepsToTotal(SECONDS_IN_DAY, step)
 
 export default getTimeStepsInSeconds

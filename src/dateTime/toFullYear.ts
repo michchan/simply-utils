@@ -1,17 +1,19 @@
 import isStr from '../string/isStr'
 import zeroPadding from '../number/zeroPadding'
 
+const CENTURY_DIGITS = 2
+
 /**
  * Convert 2 digit year to 4 digit year
  * @param year
  */
 const toFullYear = (year: string | number): number | undefined => {
-  const yearString = isStr(year) ? year : zeroPadding(year, 2)
+  const yearString = isStr(year) ? year : zeroPadding(year, CENTURY_DIGITS)
 
   const currentYear = new Date().getFullYear()
 
   // Index of current / prev / next decade
-  const currentCentury = `${currentYear}`.slice(0, 2)
+  const currentCentury = `${currentYear}`.slice(0, CENTURY_DIGITS)
   const prevCentury = parseInt(currentCentury) - 1
   const nextCentury = parseInt(currentCentury) + 1
 

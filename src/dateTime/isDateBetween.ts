@@ -10,16 +10,16 @@ import isUndef from '../validators/isUndef'
  * @param date
  * @param start (optional)
  * @param end (optional)
- * @param inclusive (optional) Default false
+ * @param isInclusive (optional) Default false
  */
-const isDateBetween = (date: Date, start?: Date, end?: Date, inclusive?: boolean): boolean => {
+const isDateBetween = (date: Date, start?: Date, end?: Date, isInclusive?: boolean): boolean => {
   if (!isDate(date)) return false
 
   const startLimit = isUndef(start) || !isDate(start) ? 0 : start.valueOf()
   const endLimit = isUndef(end) || !isDate(end) ? Infinity : end.valueOf()
   const dateValue = date.valueOf()
 
-  if (inclusive)
+  if (isInclusive)
     return startLimit <= dateValue && dateValue <= endLimit
 
   return startLimit < dateValue && dateValue < endLimit

@@ -1,5 +1,6 @@
 import getLocalizedWeekday from './getLocalizedWeekday'
 
+const NUM_WEEKDAYS = 7
 /**
  *
  * @author Sandy Lau https://github.com/sandylau333
@@ -10,7 +11,7 @@ import getLocalizedWeekday from './getLocalizedWeekday'
 const getLocalizedWeekdays = (
   locale?: string | string[],
   format: 'long' | 'short' = 'long'
-): string[] => new Array(7).fill('')
+): string[] => new Array(NUM_WEEKDAYS).fill('')
   .map((d, weekdayIndex) => (
     getLocalizedWeekday(weekdayIndex, locale, format)
   ))

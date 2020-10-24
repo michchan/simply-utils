@@ -22,7 +22,8 @@ const toDateTimeLocal = (
 
   const d = new Date(isoDatetime)
   const YYYY = d.getFullYear()
-  const MM = zeroPadding(d.getMonth() + 1) // Month start from ZERO
+  // Month start from ZERO
+  const MM = zeroPadding(d.getMonth() + 1)
   const DD = zeroPadding(d.getDate())
   const HH = zeroPadding(d.getHours())
   const mm = zeroPadding(d.getMinutes())
