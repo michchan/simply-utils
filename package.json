@@ -37,6 +37,7 @@
   },
   "homepage": "https://github.com/michchan/simply-utils#readme",
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.63",
     "@types/history": "^4.7.8",
     "@types/lodash": "^4.14.149",
     "@types/node": "^14.14.2",
@@ -53,10 +54,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.2.0"
-  },
-  "dependencies": {
-    "@types/aws-lambda": "^8.10.63",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "aws-lambda": "^1.0.6",
     "aws-sdk": "^2.777.0",
     "eastasianwidth": "0.2.0",
@@ -69,5 +67,19 @@
     "chrome-aws-lambda": "^5.2.1",
     "puppeteer": "^5.2.1",
     "puppeteer-core": "^5.2.1"
+  },
+  "peerDependencies": {
+    "aws-lambda": "1.x",
+    "aws-sdk": "2.x",
+    "eastasianwidth": "0.x",
+    "history": "4.x",
+    "lodash": "4.x",
+    "qs": "6.x",
+    "react": ">= 16",
+    "react-device-detect": "1.x",
+    "styled-components": ">= 5.0.0",
+    "chrome-aws-lambda": "5.x",
+    "puppeteer": "5.x",
+    "puppeteer-core": "5.x"
   }
 }
