@@ -1,12 +1,12 @@
-function forEach<T extends object = object> (
+function forEach<T extends { [key: string]: any } = { [key: string]: any }> (
   obj: T,
   callback: (
-    entry: [keyof T, T[keyof T]], // [key, value] pair
+    // [key, value] pair
+    entry: [keyof T, T[keyof T]],
     index: number,
     entries: [keyof T, T[keyof T]][],
-  ) => unknown = () => {},
-) {
-  // @ts-ignore: @TODO: fix type ts(2345)
+  ) => unknown = () => null,
+): void {
   Object.entries(obj).forEach(callback)
 }
 

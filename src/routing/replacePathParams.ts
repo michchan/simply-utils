@@ -13,15 +13,17 @@ type Param = string | number
  * The length of the keys
  *
  * @param path The route config path for a route of a router like React-Router
- * @param params The param or an array of params in order. e.g. For /shops/:id/orders/:id -> ['shop123', 'order4325']
+ * @param params The param or an array of params in order.
+ *   e.g. For /shops/:id/orders/:id -> ['shop123', 'order4325']
  */
 function replacePathParams (
   path: string,
   params: Param | Param[],
 ): string {
-  const _params = !isArr(params) ? [params] : params
+  const thisParams = isArr(params) ? params : [params]
 
-  return _params.reduce<string>((prev: string, param: Param) => prev.replace(PARAM_REGEX, `${param}`), path)
+  return thisParams
+    .reduce<string>((prev: string, param: Param) => prev.replace(PARAM_REGEX, `${param}`), path)
 }
 
 export default replacePathParams

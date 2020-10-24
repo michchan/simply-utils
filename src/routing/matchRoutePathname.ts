@@ -8,12 +8,12 @@ export const PARAM_REGEX_STR = '[a-zA-Z0-9_-]+'
  *
  * @param path The actual pathname displayed on browser navigation bar
  * @param route The route config path for a route of a router like React-Router
- * @param exact
+ * @param isExact
  */
 const matchRoutePathname = (
   path: string,
   route: string,
-  exact: boolean = false
+  isExact: boolean = false
 ): string | undefined => {
   const pathRegxStr = route
     // Replace optional path params with regex (e.g. "/:key?", ((/[a-zA-Z0-9_-]+)?))
@@ -21,7 +21,7 @@ const matchRoutePathname = (
     // Replace path params with regex (e.g. ":key" -> ([[a-zA-Z0-9_-]+]))
     .replace(new RegExp(`\\:${PARAM_REGEX_STR}`, 'gi'), `(${PARAM_REGEX_STR})`)
 
-  const endingSuffix = exact ? '$' : ''
+  const endingSuffix = isExact ? '$' : ''
 
   const configPathRegex = new RegExp(`^${pathRegxStr}${endingSuffix}`, 'i')
 

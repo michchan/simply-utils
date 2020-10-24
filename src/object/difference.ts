@@ -11,7 +11,11 @@ import isObj from './isObj'
  * @param {Object} previous  Object to compare with
  * @return {Object}    Return a new next who represent the diff
  */
-function difference <T = object> (previous: T, next: T, depth: number = Infinity): Partial<T> | null | undefined {
+function difference <T = { [key: string]: any }> (
+  previous: T,
+  next: T,
+  depth: number = Infinity
+): Partial<T> | null | undefined {
   const changes = (previous: T, next: T, currentDepth: number) => {
     if (!previous) return next
     if (!next) return null
@@ -26,8 +30,8 @@ function difference <T = object> (previous: T, next: T, depth: number = Infinity
         // @ts-expect-error: @TODO: Fix type
         result[key] = (
           isObj(value)
-   // @ts-expect-error: @TODO: Fix type ts(7053)
-   && isObj(previous[key])
+          // @ts-expect-error: @TODO: Fix type ts(7053)
+          && isObj(previous[key])
         )
           ? (() => {
             // * Abort if it reaches max depth

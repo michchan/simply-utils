@@ -4,17 +4,24 @@ import getNextIndex, { GetNextIndexDirection } from '../array/getNextIndex'
 import isFunc from '../validators/isFunc'
 
 export type MoveToNextSelectOptionDirection = GetNextIndexDirection
+export interface Options {
+  direction: GetNextIndexDirection;
+  prevIndex: null | number;
+  totalLength: number;
+  nodeRefs: MutableRefObject<(null | HTMLElement)[]>;
+  listScrollableRef: MutableRefObject<null | HTMLDivElement>;
+}
 
 /**
  * Scroll to the next select option
  */
-const moveToNextSelectOption = (
-  direction: GetNextIndexDirection,
-  prevIndex: null | number,
-  totalLength: number,
-  nodeRefs: MutableRefObject<(null | HTMLElement)[]>,
-  listScrollableRef: MutableRefObject<null | HTMLDivElement>,
-): number => {
+const moveToNextSelectOption = ({
+  direction,
+  prevIndex,
+  totalLength,
+  nodeRefs,
+  listScrollableRef,
+}: Options): number => {
   const nextIndex = getNextIndex(prevIndex, totalLength, direction)
 
   const foundOptionNode: HTMLElement | null = nodeRefs.current[nextIndex]

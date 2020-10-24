@@ -1,3 +1,5 @@
+const MAX_HUE = 360
+
 export interface GenerateProgressiveColorsOfSameHueOptions {
   // Specity initial lightness (0 - 100)
   // Default to 50
@@ -15,7 +17,8 @@ export interface GenerateProgressiveColorsOfSameHueOptions {
 
 /**
  * Generate a set of colors from original color to changes of targetValue.
- * For example, generateProgressiveColorsOfSameHue(270, 10) to generate 10 purple colors from darker to lighter
+ * For example, generateProgressiveColorsOfSameHue(270, 10)
+ * to generate 10 purple colors from darker to lighter
  * @param hue 0 - 360. If greater than 360, will use value of mod 360. Default to 270 (purple theme)
  * @param numberOfColors
  * @param options
@@ -33,17 +36,19 @@ const generateProgressiveColorsOfSameHue = (
     targetValue = 80,
   } = options
 
-  const normalizedHue = hue % 360
+  const normalizedHue = hue % MAX_HUE
 
   if (mode === 'saturation') {
     // Decrease saturation
 
     // Saturation diff between colors
-    const saturationDiff = numberOfColors > 1 ? (targetValue - saturation) / (numberOfColors - 1) : 0
+    const saturationDiff = numberOfColors > 1
+      ? (targetValue - saturation) / (numberOfColors - 1)
+      : 0
 
     return new Array(numberOfColors).fill('')
       .map((d, index) => (
-        `hsl(${normalizedHue}, ${saturation + saturationDiff * index}%, ${lightness}%)`
+        `hsl(${normalizedHue}, ${saturation + (saturationDiff * index)}%, ${lightness}%)`
       ))
   }
   // Decrease lightness
@@ -53,7 +58,7 @@ const generateProgressiveColorsOfSameHue = (
 
   return new Array(numberOfColors).fill('')
     .map((d, index) => (
-      `hsl(${normalizedHue}, ${saturation}%, ${lightness + lightnessDiff * index}%)`
+      `hsl(${normalizedHue}, ${saturation}%, ${lightness + (lightnessDiff * index)}%)`
     ))
 }
 

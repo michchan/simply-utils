@@ -1,5 +1,7 @@
 import getColorLuminance from './getColorLuminance'
 
+const OFFSET = 0.05
+
 /**
  * Get contrast ratio between two color.
  * Smaller result means larger contrast.
@@ -12,8 +14,8 @@ const getColorsContrastRatio = (color1: string, color2: string): number => {
   const color2Luminance = getColorLuminance(color2)
 
   return color1Luminance > color2Luminance
-    ? ((color2Luminance + 0.05) / (color1Luminance + 0.05))
-    : ((color1Luminance + 0.05) / (color2Luminance + 0.05))
+    ? ((color2Luminance + OFFSET) / (color1Luminance + OFFSET))
+    : ((color1Luminance + OFFSET) / (color2Luminance + OFFSET))
 }
 
 export default getColorsContrastRatio

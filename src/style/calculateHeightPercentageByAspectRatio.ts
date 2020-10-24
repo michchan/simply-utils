@@ -1,5 +1,6 @@
 import isNum from '../number/isNum'
 
+const MAX_PERCENT = 100
 /**
  * Convert aspect ratio to height percentage for use in the container
  * @param aspectRatio The floating number of aspect ratio of format (W/H). e.g. 12/8
@@ -13,12 +14,11 @@ const calculateHeightPercentageByAspectRatio = (
   // If is number
   if (isNum(aspectRatio, true)) {
     // AspectRatio is W/H but padding top is H/W
-    return `${100 / parseFloat(aspectRatio.toString())}%`
-  }
+    return `${MAX_PERCENT / parseFloat(aspectRatio.toString())}%`
   // If in format of "number:number"
-  else if (/^(\d*\.)?\d+:(\d*\.)?\d+$/.test(aspectRatio.toString())) {
+  } else if (/^(\d*\.)?\d+:(\d*\.)?\d+$/.test(aspectRatio.toString())) {
     const [width = '1', height = '1'] = aspectRatio.toString().split(':')
-    return `${100 * (parseFloat(height) / parseFloat(width))}%`
+    return `${MAX_PERCENT * (parseFloat(height) / parseFloat(width))}%`
   }
   // Fallback
   return /^(\d*\.)?\d+%$/.test(fallbackPercentage) ? fallbackPercentage : '100%'

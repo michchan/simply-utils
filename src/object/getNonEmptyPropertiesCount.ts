@@ -1,6 +1,6 @@
 import getNonEmptyPropertyKeys from './getNonEmptyPropertyKeys'
 
-function getNonEmptyPropertiesCount <T = object> (object: T): number {
+function getNonEmptyPropertiesCount <T = { [key: string]: any }> (object: T): number {
   return getNonEmptyPropertyKeys<T>(object).length
 }
 

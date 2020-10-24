@@ -1,6 +1,12 @@
 import isNullOrUndef from '../validators/isNullOrUndef'
 import shuffle from '../array/shuffle'
 
+const MAX_HUE = 360
+const SAT_BASE = 40
+const SAT_OFFSET = 60
+const LIGHT_BASE = 40
+const LIGHT_OFFSET = 40
+
 export interface GenerateRandomColorsOptions {
   // Specify saturation. 0 - 100
   // Default to random 60 - 100
@@ -26,16 +32,19 @@ const generateRandomColors = (
   } = options
 
   // Generate numberOfColors + 1 colors
+  const startHue = Math.random() * MAX_HUE
 
-  const startHue = Math.random() * 360
-
-  const hueDiff = 360 / (numberOfColors)
+  const hueDiff = MAX_HUE / (numberOfColors)
 
   const colors = new Array(numberOfColors + 1).fill('')
     .map((d, index) => {
-      const derivedSaturation = isNullOrUndef(saturation) ? Math.random() * 40 + 60 : saturation
-      const derivedLightness = isNullOrUndef(lightness) ? Math.random() * 40 + 30 : lightness
-      return `hsl(${startHue + hueDiff * index}, ${derivedSaturation}%, ${derivedLightness}%)`
+      const derivedSaturation = isNullOrUndef(saturation)
+        ? (Math.random() * SAT_BASE) + SAT_OFFSET
+        : saturation
+      const derivedLightness = isNullOrUndef(lightness)
+        ? (Math.random() * LIGHT_BASE) + LIGHT_OFFSET
+        : lightness
+      return `hsl(${startHue + (hueDiff * index)}, ${derivedSaturation}%, ${derivedLightness}%)`
     })
 
   // Drop the last color because first color hue is same as last color

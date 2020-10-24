@@ -7,10 +7,20 @@
  * @param {Number} maxViewportWidth
  */
 const getFluidSize = (
-  minSize: number = 16, // In px
-  maxSize: number = 24, // In px
-  minViewportWidth: number = 320, // In px
-  maxViewportWidth: number = 1200, // In px
-): string => `calc(${minSize}px + (${maxSize - minSize}) * ((100vw - ${minViewportWidth}px) / (${maxViewportWidth} - ${minViewportWidth})))`
+  // In px
+  minSize: number = 16,
+  // In px
+  maxSize: number = 24,
+  // In px
+  minViewportWidth: number = 320,
+  // In px
+  maxViewportWidth: number = 1200,
+): string => {
+  const min = minSize
+  const range = maxSize - minSize
+  const minVW = minViewportWidth
+  const maxVW = maxViewportWidth
+  return `calc(${min}px + ${range} * ((100vw - ${minVW}px) / (${maxVW} - ${minVW})))`
+}
 
 export default getFluidSize

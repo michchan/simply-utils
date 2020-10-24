@@ -1,11 +1,14 @@
 import { CSSProperties } from 'react'
 
+const DURATION_BUFFER = 10
+
 const fadeOut = (
   el: HTMLElement,
-  duration: number = 300, // In ms
+  // In ms
+  duration: number = 300,
   timingFunction: CSSProperties['transitionTimingFunction'] = 'ease-in-out',
   callback?: () => void,
-) => {
+): void => {
   if (!el) return
 
   el.style.transition = `opacity ${duration}ms ${timingFunction}`
@@ -15,7 +18,7 @@ const fadeOut = (
     callback && callback()
 
     el.style.transition = ''
-  }, duration - 10)
+  }, duration - DURATION_BUFFER)
 }
 
 export default fadeOut

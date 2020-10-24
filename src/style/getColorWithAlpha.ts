@@ -7,7 +7,7 @@ import convertColorToRgbaArray from './convertColorToRgbaArray'
  */
 const getColorWithAlpha = (color: string, alpha: number): string => {
   const [r, g, b] = convertColorToRgbaArray(color)
-  return `rgba(${[r, g, b, alpha].join(',')})`
+  return `rgba(${[r, g, b, alpha].join(',')})`
 }
 
 export default getColorWithAlpha

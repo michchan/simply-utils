@@ -1,6 +1,6 @@
 import isEmpty from 'lodash/isEmpty'
 
-export function hasEmptyObject <T = object[]> (objects: T[]): boolean {
+export function hasEmptyObject <T = { [key: string]: any }[]> (objects: T[]): boolean {
   return objects.some(obj => isEmpty(obj))
 }
 

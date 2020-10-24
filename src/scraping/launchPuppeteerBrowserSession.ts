@@ -5,7 +5,8 @@ import 'chrome-aws-lambda/bin/aws.tar.br'
 import 'chrome-aws-lambda/bin/chromium.br'
 import 'chrome-aws-lambda/bin/swiftshader.tar.br'
 
-const DEFAULT_TIMEOUT = 240_000 // 240s
+// 240s
+const DEFAULT_TIMEOUT = 240_000
 
 export type GetDataWithPage <T> = (page: puppeteer.Page) => Promise<T> | T
 
@@ -45,8 +46,6 @@ async function launchPuppeteerBrowserSession <T> (
 
     // Run function to get data
     return data
-  } catch (error) {
-    throw error
   } finally {
     if (browser) browser.close()
   }

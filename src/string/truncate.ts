@@ -39,7 +39,8 @@ const truncate = (
     charIndex++
   } while (length < maxLength)
 
-  return `${truncatedStr}${(str || '').length !== truncatedStr.length ? omission || '...' : ''}`
+  const isTruncated = (str || '').length !== truncatedStr.length
+  return `${truncatedStr}${isTruncated ? omission || '...' : ''}`
 }
 
 export default truncate

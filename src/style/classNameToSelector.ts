@@ -4,6 +4,6 @@
  *
  * @param className
  */
-const classNameToSelector = (className: string) => `.${className.trim().replace(/\s+/g, '.')}`
+const classNameToSelector = (className: string): string => `.${className.trim().replace(/\s+/g, '.')}`
 
 export default classNameToSelector

@@ -1,12 +1,10 @@
 import isEmpty from 'lodash/isEmpty'
 
-function getNonEmptyPropertyKeys <T = object> (object: T): string[] {
+function getNonEmptyPropertyKeys <T = { [key: string]: any }> (object: T): string[] {
   return Object
     .entries(object)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    .filter(([key, value]: [string, unknown]) => !isEmpty(value))
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    .map(([key, value]: [string, unknown]) => key)
+    .filter((entry: [string, unknown]) => !isEmpty(entry[1]))
+    .map(([key]: [string, unknown]) => key)
 }
 
 export default getNonEmptyPropertyKeys

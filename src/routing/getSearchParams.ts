@@ -9,21 +9,26 @@ import { Location, LocationDescriptor } from 'history'
  */
 const getSearchParams = (
   location: Location | LocationDescriptor = window.location,
-  // Since argument 'location' can be string pathname, it might not necessarily contains search parameters.
-  // If this argument equals true,
-  // That means window.location.search will be used as the last fallback of deriving search parameters.
-  useWindowLocationAsFallback: boolean = true,
+  /**
+    Since argument 'location' can be string pathname,
+    it might not necessarily contains search parameters.
+    If this argument equals true,
+    That means window.location.search will be used
+    as the last fallback of deriving search parameters.
+    Default to true.
+   */
+  shouldFallbackWithWindow: boolean = true,
 ): null | string => {
   // Return search from location object
   if (isObj(location))
     return location.search || null
 
   // Return search from location string
-  const search = location.split('?')[1]
+  const [search] = location.split('?')
   if (search)
     return search || null
   // Return search from window.location object
-  if (useWindowLocationAsFallback)
+  if (shouldFallbackWithWindow)
     return window.location.search || null
 
   // Return null

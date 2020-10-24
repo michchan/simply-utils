@@ -4,6 +4,9 @@
  * @param rowIndex
  * @param pageSize
  */
-const isPageLeadingItem = (rowIndex: number, pageSize: number): boolean => rowIndex % pageSize === 0
+const isPageLeadingItem = (
+  rowIndex: number,
+  pageSize: number
+): boolean => rowIndex % pageSize === 0
 
 export default isPageLeadingItem

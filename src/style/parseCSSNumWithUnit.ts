@@ -12,7 +12,7 @@ function parseCSSNumWithUnit <
   value: T,
   unit: string = 'px'
 ): R {
-  return (isNum(value, true) ? `${value}px` : value) as R
+  return (isNum(value, true) ? `${value}${unit}` : value) as R
 }
 
 export default parseCSSNumWithUnit

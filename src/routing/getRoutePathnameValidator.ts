@@ -3,14 +3,14 @@ import matchRoutePathname from './matchRoutePathname'
 /**
  *
  * @param route The route config path for a route of a router like React-Router
- * @param notExact
+ * @param isNotExact
  */
 function getRoutePathnameValidator (
   route: string,
   // E.g. if it has child routes
-  notExact: boolean = false,
+  isNotExact: boolean = false,
 ): (pathname: string) => boolean {
-  return (pathname: string) => !!matchRoutePathname(pathname, route, !notExact)
+  return (pathname: string) => !!matchRoutePathname(pathname, route, !isNotExact)
 }
 
 export default getRoutePathnameValidator
