@@ -1,11 +1,30 @@
 import { DynamoDB } from 'aws-sdk'
 
+type QI = DynamoDB.DocumentClient.QueryInput
+type QO = DynamoDB.DocumentClient.QueryOutput
+type SI = DynamoDB.DocumentClient.ScanInput
+type SO = DynamoDB.DocumentClient.ScanOutput
+
+/** Merge previous and next results */
+function mergeResults <Output extends QO | SO> (
+  previousResult: null | Output,
+  nextResult: Output
+): Output {
+  if (!previousResult) return nextResult
+  return {
+    ...nextResult,
+    Items: [...previousResult.Items ?? [], ...nextResult.Items ?? []],
+    Count: (previousResult.Count ?? 0) + (nextResult.Count ?? 0),
+    ScannedCount: (previousResult.ScannedCount) ?? 0 + (nextResult.ScannedCount ?? 0),
+  }
+}
+
 /**
  * Return a list of properties of tables that have been created and match the criteria
  */
 function queryOrScanAllDynamodbItems <
-  Input extends DynamoDB.DocumentClient.QueryInput | DynamoDB.DocumentClient.ScanInput,
-  Output extends DynamoDB.DocumentClient.QueryOutput | DynamoDB.DocumentClient.ScanOutput
+  Input extends QI | SI,
+  Output extends QO | SO
 > (
   docClient: Pick<DynamoDB.DocumentClient, 'scan' | 'query'>,
   method: 'scan' | 'query',
@@ -34,17 +53,3 @@ function queryOrScanAllDynamodbItems <
   })
 }
 export default queryOrScanAllDynamodbItems
-
-/** Merge previous and next results */
-function mergeResults <Output extends DynamoDB.DocumentClient.QueryOutput | DynamoDB.DocumentClient.ScanOutput> (
-  previousResult: null | Output,
-  nextResult: Output
-): Output {
-  if (!previousResult) return nextResult
-  return {
-    ...nextResult,
-    Items: [...previousResult.Items ?? [], ...nextResult.Items ?? []],
-    Count: (previousResult.Count ?? 0) + (nextResult.Count ?? 0),
-    ScannedCount: (previousResult.ScannedCount) ?? 0 + (nextResult.ScannedCount ?? 0),
-  }
-}

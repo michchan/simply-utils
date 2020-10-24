@@ -1,9 +1,61 @@
-export type Desciber <Input, Output, Err> = (input: Input, callback: Callback<Output, Err>) => unknown
+export type Desciber <Input, Output, Err> = (
+  input: Input,
+  callback: Callback<Output, Err>
+) => unknown
 export type HasServicePredicate <Output> = (result: null | Output) => boolean
 export type Callback <Output, Err> = (err: Err, data: Output) => unknown
 
-export const DEFAULT_MAX_TRY_TIME = 25 // 25 times
-export const DEFAULT_INTERVAL = 20000 // Every 20 seconds
+// 25 times
+export const DEFAULT_MAX_TRY_TIME = 25
+// Every 20 seconds
+export const DEFAULT_INTERVAL = 20000
+
+interface RecurOptions <Input, Output, Err> {
+  describe: Desciber<Input, Output, Err>;
+  input: Input;
+  retryCounter: number;
+  hasService: HasServicePredicate<Output>;
+  callback: (err: null | Err, data?: null | Output) => unknown;
+  maxTryTime: number;
+  interval: number;
+}
+
+/** Wait for service async */
+function describeRecur <Input, Output, Err> ({
+  describe,
+  input,
+  retryCounter = 0,
+  hasService,
+  callback,
+  maxTryTime,
+  interval,
+}: RecurOptions<Input, Output, Err>) {
+  describe(input, (err: Err, data: Output) => {
+    if (err || !hasService(data)) {
+      // Abort if retry time reaches maximum
+      if (retryCounter >= maxTryTime) {
+        if (err)
+          callback(err)
+        else callback(null)
+      } else {
+        // Pass resolve as a callback and increment `retryCounter`
+        setTimeout(() => {
+          describeRecur({
+            describe,
+            input,
+            retryCounter: retryCounter + 1,
+            hasService,
+            callback,
+            maxTryTime,
+            interval,
+          })
+        }, interval)
+      }
+    } else {
+      callback(null, data)
+    }
+  })
+}
 
 /**
  * Wait for some service to be active.
@@ -46,37 +98,16 @@ function waitForAWSService <Input, Output, Err> (
       else resolve(data ?? null)
     }
 
-    describeRecur(describe, input, 0, hasService, callback, maxTryTime, interval)
+    describeRecur({
+      describe,
+      input,
+      retryCounter: 0,
+      hasService,
+      callback,
+      maxTryTime,
+      interval,
+    })
   })
 }
 
 export default waitForAWSService
-
-/** Wait for service async */
-function describeRecur <Input, Output, Err> (
-  describe: Desciber<Input, Output, Err>,
-  input: Input,
-  retryCounter: number = 0,
-  hasService: HasServicePredicate<Output>,
-  callback: (err: null | Err, data?: null | Output) => unknown,
-  maxTryTime: number,
-  interval: number,
-) {
-  describe(input, (err: Err, data: Output) => {
-    if (err || !hasService(data)) {
-      // Abort if retry time reaches maximum
-      if (retryCounter >= maxTryTime) {
-        if (err)
-          callback(err)
-        else callback(null)
-      } else {
-        // Pass resolve as a callback and increment `retryCounter`
-        setTimeout(() => {
-          describeRecur(describe, input, retryCounter + 1, hasService, callback, maxTryTime, interval)
-        }, interval)
-      }
-    } else {
-      callback(null, data)
-    }
-  })
-}

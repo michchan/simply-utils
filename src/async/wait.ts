@@ -6,8 +6,10 @@
  * @param ms The time in milliseconds to wait
  * @param resolveValues The value(s) to resolve
  */
-function wait <T extends unknown[]> (ms: number, ...resolveValues: T) {
-  return new Promise((resolve: (value: T) => void) => setTimeout(resolve, ms, ...resolveValues))
+function wait <T extends unknown[]> (ms: number, ...resolveValues: T): Promise<T> {
+  return new Promise((resolve: (value: T) => void) => {
+    setTimeout(resolve, ms, ...resolveValues)
+  })
 }
 
 export default wait
