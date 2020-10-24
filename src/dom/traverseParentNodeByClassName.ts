@@ -5,17 +5,17 @@ import isFunc from '../validators/isFunc'
 const traverseParentNodeByClassName = (
   node: HTMLElement,
   className: string | string[],
-  selfInclusive?: boolean,
+  isSelfInclusive?: boolean,
 ): HTMLElement | null | undefined => {
   // Normalize
-  const _className = isArr(className) ? className : [className]
+  const classNames = isArr(className) ? className : [className]
 
-  return traverseParentNodeBy(node, node => _className.some(className => {
+  return traverseParentNodeBy(node, node => classNames.some(className => {
     const nodeClassName = node.className ?? ''
     const isInClassList = !!node.classList && node.classList.contains(className)
     const isInClassName = isFunc(nodeClassName.includes) && nodeClassName.includes(className)
     return isInClassList || isInClassName
-  }), selfInclusive)
+  }), isSelfInclusive)
 }
 
 export default traverseParentNodeByClassName

@@ -1,8 +1,10 @@
+const HALF = 0.5
+
 function scrollIntoView (
   scrollableElement: null | HTMLElement | typeof window,
   targetElement: null | HTMLElement,
   scrollByFallback: number = 0
-) {
+): void {
   if (scrollableElement) {
     if (targetElement) {
       // Scroll form to middle of window
@@ -20,7 +22,7 @@ function scrollIntoView (
 
       // Scroll form to middle of view
       scrollableElement.scrollTo({
-        top: pageScrollTop + (formClientY - (pageClientHeight / 2)),
+        top: pageScrollTop + (formClientY - (pageClientHeight * HALF)),
         behavior: 'smooth',
       })
     } else {

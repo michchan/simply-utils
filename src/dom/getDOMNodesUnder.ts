@@ -15,7 +15,14 @@ function getDOMNodesUnder <T extends Node = Node> (
   const nodes: T[] = []
   const walker = document.createTreeWalker(el, whatToShow, null, false)
 
-  while (n = walker.nextNode() as T | null)
+  while ((
+    n = walker.nextNode() as (
+      // @TODO: Fix this eslint and typescript linting bug
+      // eslint-disable-next-line no-unmodified-loop-condition
+      | T
+      | null
+    )
+  ))
     nodes.push(n)
   return nodes
 }
