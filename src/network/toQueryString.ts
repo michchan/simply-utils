@@ -8,14 +8,15 @@ import isNullOrUndef from '../validators/isNullOrUndef'
  *
  * @param params
  */
-function toQueryString <T extends object = object> (params: T): string {
+function toQueryString <
+  T extends { [key: string]: any } = { [key: string]: any }
+> (params: T): string {
   const queryString = qs.stringify(
-    omitBy(params, value =>
-      // @ts-ignore: @TODO: fix type ts(2367)
+    omitBy(params, value => (
       value === ''
-      || isNullOrUndef(value))
+      || isNullOrUndef(value)
+    ))
   )
-
   // Return query string with question mark
   return queryString ? `?${queryString}` : ''
 }

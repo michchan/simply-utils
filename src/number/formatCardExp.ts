@@ -13,7 +13,12 @@ const formatCardExp = (value: string, separator: string = ' / '): string => {
     .map(segment => segment.replace(/\//g, ''))
     .join(separator)
 
-  return formatAsGroupedString(normalizedValue, 2, 2, separator)
+  return formatAsGroupedString({
+    value: normalizedValue,
+    groupSize: 2,
+    maxNumGroup: 2,
+    separator,
+  })
 }
 
 export default formatCardExp

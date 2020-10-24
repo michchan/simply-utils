@@ -1,5 +1,6 @@
 /**
- * Generate array combinations, each of which is of the length of the number of arrays passed (groups)
+ * Generate array combinations,
+ * each of which is of the length of the number of arrays passed (groups)
  *
  * @param {Array<Array<T>>}
  * arrays An array of arrays containing each options (e.g. option groups)

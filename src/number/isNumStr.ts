@@ -5,7 +5,6 @@ import isNum from './isNum'
  *
  * @param o
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const isNumStr = (o: any): o is number | string => isNum(o, true)
+const isNumStr = (o: unknown): o is number | string => isNum(o, true)
 
 export default isNumStr

@@ -1,12 +1,21 @@
 import trim from 'lodash/trim'
 
-const formatAsGroupedString = (
-  value: string,
-  groupSize: number,
-  maxNumGroup: number,
-  separator: string,
-  startIndex: number = 0
-): string => {
+export interface Options {
+  value: string;
+  groupSize: number;
+  maxNumGroup: number;
+  separator: string;
+  /** Default to 0 */
+  startIndex?: number;
+}
+
+const formatAsGroupedString = ({
+  value,
+  groupSize,
+  maxNumGroup,
+  separator,
+  startIndex = 0,
+}: Options): string => {
   const regexp = new RegExp(separator, 'g')
 
   const trimmedValue = trim(value.replace(regexp, ''))

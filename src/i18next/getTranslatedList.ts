@@ -30,7 +30,7 @@ const getTranslatedList = (
     })()
 
     // Translate text
-    const text = !exists(tKey) ? null : t(tKey)
+    const text = exists(tKey) ? t(tKey) : null
 
     /** Test if the result texts are not equal to their i18n keys */
     const hasText = text !== null && (!isStr(text) || !new RegExp(`${tKey.split(':').pop()}`).test(text)

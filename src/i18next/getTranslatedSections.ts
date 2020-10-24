@@ -38,8 +38,8 @@ const getTranslatedSections = (
       return k
     })()
 
-    const title = !exists(titleKey) ? null : t(titleKey)
-    const description = !exists(descriptionKey) ? null : t(descriptionKey)
+    const title = exists(titleKey) ? t(titleKey) : null
+    const description = exists(descriptionKey) ? t(descriptionKey) : null
 
     /** Test if the result texts are not equal to their i18n keys */
     const hasTitle = title !== null && (!isStr(title) || !new RegExp(`${titleKey.split(':').pop()}`).test(title))

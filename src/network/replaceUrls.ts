@@ -6,6 +6,9 @@ import urlRegex from '../_common/urlRegex'
  * @param text
  * @param regexReplacer
  */
-const replaceUrls = (text: string, regexReplacer: string): string => text.replace(urlRegex.STRICT_GLOBAL, regexReplacer)
+const replaceUrls = (
+  text: string,
+  regexReplacer: string
+): string => text.replace(urlRegex.STRICT_GLOBAL, regexReplacer)
 
 export default replaceUrls

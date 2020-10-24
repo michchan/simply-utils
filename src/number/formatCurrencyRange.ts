@@ -1,20 +1,20 @@
-import formatCurrency from './formatCurrency'
+import formatCurrency, { Options as Opts } from './formatCurrency'
+
+export interface Options extends Opts {}
 
 const formatCurrencyRange = (
   minNumToFormat: number = 0,
   maxNumToFormat: number = 0,
   locales: string | string[] = [],
-  currency: string = 'hkd',
-  minimumFractionDigits: number = 2,
-  minimumIntegerDigits: number = 1,
+  options?: Options,
 ): string => {
   // Display price if only one price
   if (minNumToFormat === maxNumToFormat)
-    return formatCurrency(minNumToFormat, locales, currency, minimumFractionDigits, minimumIntegerDigits)
+    return formatCurrency(minNumToFormat, locales, options)
 
   // Else display price range
-  const formattedMin = formatCurrency(minNumToFormat, locales, currency, minimumFractionDigits, minimumIntegerDigits)
-  const formattedMax = formatCurrency(maxNumToFormat, locales, currency, minimumFractionDigits, minimumIntegerDigits)
+  const formattedMin = formatCurrency(minNumToFormat, locales, options)
+  const formattedMax = formatCurrency(maxNumToFormat, locales, options)
   return `${formattedMin} - ${formattedMax}`
 }
 

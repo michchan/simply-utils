@@ -9,19 +9,11 @@ const readImageProps = (src: HTMLImageElement['src'] | File | Blob): Promise<{
 }> => new Promise((resolve, reject) => {
   const img: HTMLImageElement = new Image()
 
-  img.onload = function () {
-    resolve({
-      // @ts-ignore: @TODO: fix type
-      width: this.width,
-      // @ts-ignore: @TODO: fix type
-      height: this.height,
-    })
-  }
-
-  img.onerror = function (e: Event | string) {
-    reject(e)
-  }
-
+  img.onload = () => resolve({
+    width: img.width,
+    height: img.height,
+  })
+  img.onerror = reject
   img.src = isStr(src) ? src : window.URL.createObjectURL(src)
 })
 

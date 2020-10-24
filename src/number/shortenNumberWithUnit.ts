@@ -9,7 +9,11 @@ import divideDeep from '../math/divideDeep'
  *
  * @returns A tuple type of [<Displayed number>, <Displayed units>] format. E.g. [300, 'K']
  */
-const shortenNumberWithUnit = (num: number, divisor: number, unitsMap: string[]): [number, string] => {
+const shortenNumberWithUnit = (
+  num: number,
+  divisor: number,
+  unitsMap: string[]
+): [number, string] => {
   const [normalizedNum, depth] = divideDeep(num, divisor, unitsMap.length - 1)
 
   const fixedNum = Number(normalizedNum.toFixed(2))

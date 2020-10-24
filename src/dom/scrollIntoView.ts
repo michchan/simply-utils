@@ -1,5 +1,3 @@
-const HALF = 0.5
-
 function scrollIntoView (
   scrollableElement: null | HTMLElement | typeof window,
   targetElement: null | HTMLElement,
@@ -22,7 +20,7 @@ function scrollIntoView (
 
       // Scroll form to middle of view
       scrollableElement.scrollTo({
-        top: pageScrollTop + (formClientY - (pageClientHeight * HALF)),
+        top: pageScrollTop + (formClientY - (pageClientHeight / 2)),
         behavior: 'smooth',
       })
     } else {

@@ -9,7 +9,8 @@
  * @param {number} maxPossibleIndex Maximum possible number
  * @param {number} maxRange Maximum range of number to be displayed each time
  *
- * @returns {Array<number>} Return a tuple including minimum and maximum number of the range [Min, Max]
+ * @returns {Array<number>} Return a tuple
+ * including minimum and maximum number of the range [Min, Max]
  */
 const calculateCenteredRange = (
   active: number,
@@ -21,7 +22,8 @@ const calculateCenteredRange = (
   let start = Math.max(minPossibleIndex, (active - numBeforeMiddle))
   const end = Math.min(maxPossibleIndex, (start + maxRange - 1))
   start = (end - start + 1) < maxRange
-    ? Math.max(minPossibleIndex, (end - maxRange + 1)) : start
+    ? Math.max(minPossibleIndex, (end - maxRange + 1))
+    : start
   return [start, end]
 }
 

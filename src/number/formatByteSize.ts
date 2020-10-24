@@ -1,5 +1,6 @@
 import shortenNumberWithUnit from './shortenNumberWithUnit'
 
+const EACH_KB = 1024
 const UNITS_MAP = [
   'B',
   'KB',
@@ -15,6 +16,8 @@ const UNITS_MAP = [
  * @param size The size in bytes
  * @returns A tuple type of [<Displayed number>, <Displayed units>] format. E.g. [300, 'MB']
  */
-const formatByteSize = (size: number): [number, string] => shortenNumberWithUnit(size, 1024, UNITS_MAP)
+function formatByteSize (size: number): [number, string] {
+  return shortenNumberWithUnit(size, EACH_KB, UNITS_MAP)
+}
 
 export default formatByteSize
