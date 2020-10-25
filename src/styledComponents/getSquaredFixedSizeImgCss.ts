@@ -1,8 +1,9 @@
 import getFixedSizeImgCss from './getFixedSizeImgCss'
+import StyledCss from './common/StyledCss.type'
 
-const getSquaredFixedSizeImgCss = (
+const getSquaredFixedSizeImgCss = <T> (
   size: number,
   bgColor?: string,
-) => getFixedSizeImgCss(size, size, bgColor)
+): StyledCss<T> => getFixedSizeImgCss(size, size, bgColor)
 
 export default getSquaredFixedSizeImgCss
