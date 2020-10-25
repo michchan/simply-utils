@@ -10,6 +10,7 @@
     "deploy": "npm run index && npm run build && npm run tag && git push && npm publish",
     "eslint": "node_modules/.bin/eslint --ext .js,.jsx,.ts,.tsx",
     "eslintTest": "npm run eslint src/ scripts/",
+    "eslintFix": "npm run eslint src/ scripts/ -- --fix",
     "index": "node scripts/generateExports && node scripts/generateIndex && git add . && git commit -m \"Update index files\"",
     "tag": "git tag $(node -pe 'require(\"./package.json\").version')",
     "test": "echo \"Error: no test specified\" && exit 1",
