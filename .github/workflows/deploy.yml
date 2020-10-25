@@ -32,6 +32,10 @@ jobs:
       # Run eslint test
       - name: Run ESLint test
         run: npm run eslintTest
+      
+      # Run stylelint test
+      - name: Run Stylelint test
+        run: npm run stylelint
 
       # Build
       - run: npm run clearBuildCache
