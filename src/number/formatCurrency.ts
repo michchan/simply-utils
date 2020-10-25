@@ -1,4 +1,4 @@
-export interface Options {
+export interface FormatCurrencyOptions {
   /** Default to 'hkd' */
   currency?: string;
   /** Default to 2 */
@@ -17,7 +17,7 @@ const formatCurrency = (
     currency = 'hkd',
     minimumFractionDigits = 2,
     minimumIntegerDigits = 1,
-  }: Options = {},
+  }: FormatCurrencyOptions = {},
 ): string => {
   const formatter = new Intl.NumberFormat(locales, {
     style: 'currency',

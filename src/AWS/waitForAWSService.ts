@@ -57,7 +57,7 @@ function describeRecur <Input, Output, Err> ({
   })
 }
 
-export interface Options {
+export interface WaitForAWSServiceOptions {
   // Default to 25
   maxTryTime?: number;
   // Default to 20000
@@ -91,7 +91,7 @@ function waitForAWSService <Input, Output, Err> (
   {
     maxTryTime = DEFAULT_MAX_TRY_TIME,
     interval = DEFAULT_INTERVAL,
-  }: Options = {},
+  }: WaitForAWSServiceOptions = {},
 ): Promise<null | Output> {
   return new Promise((resolve, reject) => {
     const callback = (err: null | Err, data?: null | Output) => {

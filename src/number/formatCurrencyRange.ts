@@ -1,12 +1,12 @@
-import formatCurrency, { Options as Opts } from './formatCurrency'
+import formatCurrency, { FormatCurrencyOptions } from './formatCurrency'
 
-export interface Options extends Opts {}
+export interface FormatCurrencyRangOptions extends FormatCurrencyOptions {}
 
 const formatCurrencyRange = (
   minNumToFormat: number = 0,
   maxNumToFormat: number = 0,
   locales: string | string[] = [],
-  options?: Options,
+  options?: FormatCurrencyRangOptions,
 ): string => {
   // Display price if only one price
   if (minNumToFormat === maxNumToFormat)

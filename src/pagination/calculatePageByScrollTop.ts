@@ -1,4 +1,4 @@
-export interface Options {
+export interface CalculatePageByScrollTopOptions {
   /** The current start page / page offset. Default to 1. */
   startPage?: number;
   /** The page breaker height. Default to 0 */
@@ -26,7 +26,7 @@ const calculatePageByScrollTop = (
   {
     startPage = 1,
     pageBreakerHeight = 0,
-  }: Options = {},
+  }: CalculatePageByScrollTopOptions = {},
 ): number => {
   // Get toppest-visible row index
   const topRowIndex = Math.ceil(scrollTop / rowHeight)

@@ -1,6 +1,6 @@
 import trim from 'lodash/trim'
 
-export interface Options {
+export interface FormatAsGroupedStringOptions {
   value: string;
   groupSize: number;
   maxNumGroup: number;
@@ -15,7 +15,7 @@ const formatAsGroupedString = ({
   maxNumGroup,
   separator,
   startIndex = 0,
-}: Options): string => {
+}: FormatAsGroupedStringOptions): string => {
   const regexp = new RegExp(separator, 'g')
 
   const trimmedValue = trim(value.replace(regexp, ''))

@@ -3,7 +3,7 @@ import isNum from '../number/isNum'
 import fromQueryString from '../network/fromQueryString'
 import getSearchParams from './getSearchParams'
 
-export interface Options {
+export interface GetSearchParamOptions {
   isNumberExpected?: boolean;
   /**
     Since argument 'location' can be string pathname,
@@ -31,7 +31,7 @@ function getSearchParam <T extends string | number = string> (
   {
     isNumberExpected,
     shouldFallbackWithWindow = true,
-  }: Options = {},
+  }: GetSearchParamOptions = {},
 ): T {
   const search: null | string = getSearchParams(location, shouldFallbackWithWindow)
 

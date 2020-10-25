@@ -4,7 +4,7 @@ import getNextIndex, { GetNextIndexDirection } from '../array/getNextIndex'
 import isFunc from '../validators/isFunc'
 
 export type MoveToNextSelectOptionDirection = GetNextIndexDirection
-export interface Options {
+export interface MoveToNextSelectOptionOptions {
   direction: GetNextIndexDirection;
   prevIndex: null | number;
   totalLength: number;
@@ -21,7 +21,7 @@ const moveToNextSelectOption = ({
   totalLength,
   nodeRefs,
   listScrollableRef,
-}: Options): number => {
+}: MoveToNextSelectOptionOptions): number => {
   const nextIndex = getNextIndex(prevIndex, totalLength, direction)
 
   const foundOptionNode: HTMLElement | null = nodeRefs.current[nextIndex]
