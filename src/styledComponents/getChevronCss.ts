@@ -50,10 +50,9 @@ const getChevronCss = <T> (
   size: number = 7,
   thickness: number = 1,
 ): StyledCss<T> => {
-  const marginRight = 
-    direction === 'up' || direction === 'down'
-      ? size
-      : 0
+  const marginRight = direction === 'up' || direction === 'down'
+    ? size
+    : 0
 
   return css`
     display: block;
