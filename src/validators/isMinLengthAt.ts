@@ -7,9 +7,9 @@
 function isMinLengthAt (
   minLength: number,
   value: string | number,
-  spaceAllowed: boolean = false
+  isSpaceAllowed: boolean = false
 ): boolean {
-  return new RegExp(`^${spaceAllowed ? '.' : '\\S'}{${minLength},}$`, '').test(`${value}`)
+  return new RegExp(`^${isSpaceAllowed ? '.' : '\\S'}{${minLength},}$`, '').test(`${value}`)
 }
 
 export default isMinLengthAt

@@ -7,6 +7,6 @@ const REGEX = new RegExp(`^(/|((/?${URL_SAFE_REGEX_STR})(/${URL_SAFE_REGEX_STR})
  *
  * @param value
  */
-const isDirName = (value: string) => REGEX.test(value)
+const isDirName = (value: string): boolean => REGEX.test(value)
 
 export default isDirName

@@ -7,6 +7,6 @@ const REGEX = new RegExp(`^(${URL_SAFE_REGEX_STR}/)?${URL_SAFE_REGEX_STR}$`, 'i'
  *
  * @param value
  */
-const isRepoBranchName = (value: string) => REGEX.test(value)
+const isRepoBranchName = (value: string): boolean => REGEX.test(value)
 
 export default isRepoBranchName

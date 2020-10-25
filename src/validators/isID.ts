@@ -5,6 +5,6 @@ import isURLSafeStr from './isURLSafeStr'
  *
  * @param value
  */
-const isID = (value: string) => isURLSafeStr(value)
+const isID = (value: string | number): boolean => isURLSafeStr(`${value}`)
 
 export default isID

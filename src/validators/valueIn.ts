@@ -1,7 +1,9 @@
 import isFunc from './isFunc'
 import isArr from '../array/isArr'
 
-export type HasAccessRightsIteratee <T extends string | number = string> = T | ((value: T) => boolean)
+export type HasAccessRightsIteratee <T extends string | number = string> =
+  | T
+  | ((value: T) => boolean)
 
 export type HasAccessRightsMode =
   | 'whitelist'
@@ -23,7 +25,7 @@ function valueIn <T extends string | number = string> (
   const normalizedList = isArr(list) ? list : [list]
 
   // Iterate through the list
-  const result = normalizedList.some(iteratee => {
+  const isInList = normalizedList.some(iteratee => {
     const isMatched = (() => {
       if (isFunc(iteratee))
         return iteratee(value)
@@ -35,8 +37,8 @@ function valueIn <T extends string | number = string> (
 
   return (
     mode === 'whitelist'
-      ? result
-      : !result
+      ? isInList
+      : !isInList
   )
 }
 

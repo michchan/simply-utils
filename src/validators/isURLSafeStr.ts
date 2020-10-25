@@ -15,6 +15,6 @@ const REGEX = new RegExp(`^(${CASE_1}|${CASE_2})$`, 'i')
  *
  * @param value
  */
-const isURLSafeStr = (value: string) => REGEX.test(value)
+const isURLSafeStr = (value: string | string): boolean => REGEX.test(`${value}`)
 
 export default isURLSafeStr

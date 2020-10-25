@@ -1,7 +1,10 @@
 import validateCaseInsensitiveKey from './validateCaseInsensitiveKey'
 import isArr from '../array/isArr'
 
-type ReturnType<FieldType extends string, TargetType extends FieldType> = (type: FieldType) => type is TargetType
+type ReturnType<
+  FieldType extends string,
+  TargetType extends FieldType
+> = (type: FieldType) => type is TargetType
 
 /**
  * Create a validator of the case-insensitive key
