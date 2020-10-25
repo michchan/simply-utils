@@ -31,15 +31,19 @@ jobs:
 
       # Run eslint test
       - name: Run ESLint test
-        run: npm run eslintTest
+        run: npm run eslint
       
       # Run stylelint test
       - name: Run Stylelint test
         run: npm run stylelint
 
+      # Clear last build cache
+      - name: Clear last build cache
+        run: npm run clearbuildcache
+
       # Build
-      - run: npm run clearBuildCache
-      - run: npm run build
+      - name: Build
+        run: npm run build
 
       # Publish to NPM
       - run: npm publish

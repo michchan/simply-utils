@@ -5,18 +5,15 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "npm run tsc",
-    "clearBuildCache": "rm -rf dist",
+    "build": "tsc",
+    "clearbuildcache": "rm -rf dist",
     "deploy": "npm run index && npm run build && npm run tag && git push && npm publish",
-    "eslint": "node_modules/.bin/eslint --ext .js,.jsx,.ts,.tsx",
-    "eslintTest": "npm run eslint src/ scripts/",
-    "eslintFix": "npm run eslint src/ scripts/ -- --fix",
-    "stylelint": "node_modules/.bin/stylelint 'src/**/*.{js,jsx,ts,tsx}'",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx src/ scripts/",
+    "stylelint": "stylelint 'src/**/*.{js,jsx,ts,tsx}'",
     "index": "node scripts/generateExports && node scripts/generateIndex && git add . && git commit -m \"Update index files\"",
     "tag": "git tag $(node -pe 'require(\"./package.json\").version')",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "node_modules/.bin/tsc",
-    "watch": "npm run tsc -- --watch --noemit"
+    "watch": "tsc --watch --noemit"
   },
   "repository": {
     "type": "git",
