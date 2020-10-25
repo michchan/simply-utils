@@ -18,9 +18,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Check out from Git
+      # Checkout master branch
+      - name: Checkout master branch
         uses: actions/checkout@v2
+        with:
+          ref: master
+
       # Setup .npmrc file to publish to npm
       - name: Setup Node with the right version
         uses: actions/setup-node@v1
