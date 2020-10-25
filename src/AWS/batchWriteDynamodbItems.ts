@@ -1,7 +1,6 @@
 import { DynamoDB } from 'aws-sdk'
 import chunk from 'lodash/chunk'
 
-const TAB_SIZE = 2
 const CHUNK_SIZE = 25
 
 export type BatchWriteChunkResult = DynamoDB.DocumentClient.BatchWriteItemOutput
@@ -34,7 +33,7 @@ function batchWriteDynamodbItems <T, RT extends PT | DT> ({
   const chunks = chunk(records, CHUNK_SIZE)
   // Send batch requests for each chunk
   return Promise.all(
-    chunks.map((chunkedRecords, index): Promise<BatchWriteChunkResult> => {
+    chunks.map((chunkedRecords): Promise<BatchWriteChunkResult> => {
       // Create items
       const items = chunkedRecords.map(rec => ({
         [mode === 'put' ? 'PutRequest' : 'DeleteRequest']: (
@@ -45,12 +44,6 @@ function batchWriteDynamodbItems <T, RT extends PT | DT> ({
       const RequestItems: DynamoDB.DocumentClient.BatchWriteItemInput['RequestItems'] = {
         [tableName]: items,
       }
-      // Log to console
-      console.log(
-        `Batch Write Request Items (chunk: ${index}, length: ${items.length}): `,
-        JSON.stringify(RequestItems, null, TAB_SIZE)
-      )
-
       // Send batch create requests
       return docClient.batchWrite({ RequestItems }).promise()
     })
