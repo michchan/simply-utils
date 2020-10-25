@@ -10,17 +10,24 @@ export type BatchWriteResult = BatchWriteChunkResult[]
 type PT = DynamoDB.DocumentClient.PutRequest
 type DT = DynamoDB.DocumentClient.DeleteRequest
 
+export interface Options <T, RT extends PT | DT> {
+  docClient: Pick<DynamoDB.DocumentClient, 'batchWrite'>;
+  records: T[];
+  tableName: string;
+  mode: 'put' | 'delete';
+  serialize?: (item: T) => RT;
+}
 /**
  * Batch write items to dynamoDB with handling for maximum items (25) to write,
  * which means with this helper more than 25 items can be written into the database with one call.
  */
-function batchWriteDynamodbItems <T, RT extends PT | DT> (
-  docClient: Pick<DynamoDB.DocumentClient, 'batchWrite'>,
-  records: T[],
-  tableName: string,
-  mode: 'put' | 'delete',
-  serialize?: (item: T) => RT,
-): Promise<BatchWriteResult | null> {
+function batchWriteDynamodbItems <T, RT extends PT | DT> ({
+  docClient,
+  records,
+  tableName,
+  mode,
+  serialize,
+}: Options<T, RT>): Promise<BatchWriteResult | null> {
   if (records.length === 0) return Promise.resolve(null)
 
   // Chunk records by 25 which is the max number of items DynamoDB can batch write.

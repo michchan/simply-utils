@@ -57,6 +57,12 @@ function describeRecur <Input, Output, Err> ({
   })
 }
 
+export interface Options {
+  // Default to 25
+  maxTryTime?: number;
+  // Default to 20000
+  interval?: number;
+}
 /**
  * Wait for some service to be active.
  * This is a supplemental help for some services which does not natively have a `waitFor` helper.
@@ -77,19 +83,15 @@ function describeRecur <Input, Output, Err> ({
   data => !!data?.StreamDescription
   )
  * ```
- *
- * @param describe
- * @param input
- * @param hasService
- * @param maxTryTime
- * @param interval
  */
 function waitForAWSService <Input, Output, Err> (
   describe: Desciber<Input, Output, Err>,
   input: Input,
   hasService: HasServicePredicate<Output>,
-  maxTryTime: number = DEFAULT_MAX_TRY_TIME,
-  interval: number = DEFAULT_INTERVAL,
+  {
+    maxTryTime = DEFAULT_MAX_TRY_TIME,
+    interval = DEFAULT_INTERVAL,
+  }: Options = {},
 ): Promise<null | Output> {
   return new Promise((resolve, reject) => {
     const callback = (err: null | Err, data?: null | Output) => {
