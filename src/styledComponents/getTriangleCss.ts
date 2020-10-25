@@ -1,4 +1,5 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
 
 /**
  * Source: http://apps.eky.hk/css-triangle-generator/
@@ -8,12 +9,12 @@ import { css } from 'styled-components'
  * @param {number} width
  * @param {number} height
  */
-const getTriangleCss = (
+const getTriangleCss = <T> (
   direction: 'up' | 'down' | 'left' | 'right' = 'down',
   color: string = '#333',
   width: number = 20,
   height: number = 20,
-) => css`
+): StyledCss<T> => css`
   width: 0;
   height: 0;
   border-style: solid;

@@ -1,11 +1,14 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
 
-const getPopUpShadowCss = (
+const DEFAULT_OFFSET_RATIO = 0.3333333333333333
+
+const getPopUpShadowCss = <T> (
   color: string = '#99999927',
   size: number = 6,
-  offsetRatio: number = 1 / 3,
+  offsetRatio: number = DEFAULT_OFFSET_RATIO,
   offsetDirection: 'right' | 'left' = 'right'
-) => {
+): StyledCss<T> => {
   const absOffset = size * offsetRatio
   const offset = offsetDirection === 'right' ? absOffset : -absOffset
   return css`

@@ -1,10 +1,11 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
 
-const getPlusIconCss = (
+const getPlusIconCss = <T> (
   size: number = 14,
   width: number = 2,
   color: string = '#333',
-) => css`
+): StyledCss<T> => css`
   &:before,
   &:after {
     position: absolute;

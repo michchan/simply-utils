@@ -5,7 +5,8 @@ import setTimerRecursive from './setTimerRecursive'
  *
  * @param callStack The stack of functions to call in sequence.
  * @param interval The constant interval between each invocation.
- * @returns A reference value pointed to the titimmer references stack. It is useful to cancel timers.
+ * @returns A reference value pointed to the titimmer references stack.
+ *          It is useful to cancel timers.
  */
 const requestAnimationFrameRecursive = (
   callStack: (() => unknown)[] = [],

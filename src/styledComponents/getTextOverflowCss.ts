@@ -1,16 +1,17 @@
-import { css, CSSProperties } from 'styled-components'
+import { css, CSSProperties } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
 
-const getTextOverflowCss = (
+const getTextOverflowCss = <T> (
   numLines: number = 1,
   trailiing: CSSProperties['textOverflow'] = 'ellipsis',
-  forcedWebkitBox: boolean = false,
-) => css`
-  white-space: ${(numLines === 1 && !forcedWebkitBox) ? 'nowrap' : 'normal'};
+  shouldUseWebkitBox: boolean = false,
+): StyledCss<T> => css`
+  white-space: ${(numLines === 1 && !shouldUseWebkitBox) ? 'nowrap' : 'normal'};
   overflow: hidden;
   text-overflow: ${trailiing};
   word-break: break-all;
 
-  ${(numLines > 1 || forcedWebkitBox) && css`
+  ${(numLines > 1 || shouldUseWebkitBox) && css`
     /* !!Multiline will be displayed as "-webkit-box" */
     display: -webkit-box;
     -webkit-line-clamp: ${numLines};

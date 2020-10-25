@@ -1,4 +1,5 @@
-import { css, keyframes } from 'styled-components'
+import { css, keyframes } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
 
 export const DEFAULT_SHAKE_DURATION = 820
 
@@ -26,7 +27,7 @@ const shakeAnim = keyframes`
  * @param {number} duration Duration in milliseconds (ms)
  * @returns return styled css
  */
-const getShakeAnimCss = (duration: number = DEFAULT_SHAKE_DURATION) => css`
+const getShakeAnimCss = <T> (duration: number = DEFAULT_SHAKE_DURATION): StyledCss<T> => css`
   animation: ${shakeAnim} ${duration}ms cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;

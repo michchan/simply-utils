@@ -1,4 +1,5 @@
-import { css, CSSProperties } from 'styled-components'
+import { css, CSSProperties } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
 
 import createHoverableOnlyCss from './createHoverableOnlyCss'
 import getDisabledCss from './getDisabledCss'
@@ -11,12 +12,12 @@ import getDisabledCss from './getDisabledCss'
  * @param disabledOpacity
  * @param disabledCursor
  */
-const getClickableCss = (
+const getClickableCss = <T> (
   hoverOpacity: number = 0.7,
   activeOpacity: number = 0.5,
   disabledOpacity?: number,
   disabledCursor?: CSSProperties['cursor'],
-) => css`
+): StyledCss<T> => css`
   cursor: pointer;
   user-select: none;
   transition: opacity 0.1s ease-in-out;

@@ -1,10 +1,11 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
 import createHoverableOnlyCss from './createHoverableOnlyCss'
 
 /**
  * Opposite of `getClickableCss`
  */
-const getClearClickableCss = () => css`
+const getClearClickableCss = <T> (): StyledCss<T> => css`
   cursor: default;
   user-select: auto;
   transition: none;

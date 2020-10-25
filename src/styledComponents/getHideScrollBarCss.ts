@@ -1,6 +1,7 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
 
-const getHideScrollBarCss = () => css`
+const getHideScrollBarCss = <T> (): StyledCss<T> => css`
   /* 
     Hide scrollbar 
     source: https://www.geeksforgeeks.org/hide-scroll-bar-but-while-still-being-able-to-scroll-using-css/

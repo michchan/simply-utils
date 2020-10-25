@@ -1,4 +1,5 @@
-import { css, CSSProperties } from 'styled-components'
+import { css, CSSProperties } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
 
 /**
  *
@@ -6,11 +7,11 @@ import { css, CSSProperties } from 'styled-components'
  * @param justifyContent Default to `alignItems` argument
  * @param flexWrap Default to 'nowrap'
  */
-const getRowFlexboxCss = (
+const getRowFlexboxCss = <T> (
   alignItems: CSSProperties['alignItems'] = 'flex-start',
   justifyContent: CSSProperties['justifyContent'] = alignItems,
   flexWrap: CSSProperties['flexWrap'] = 'nowrap'
-) => css`
+): StyledCss<T> => css`
   display: flex;
   flex-direction: row;
   align-items: ${alignItems};

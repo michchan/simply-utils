@@ -1,10 +1,11 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
 
-const getFixedSizeImgCss = (
+const getFixedSizeImgCss = <T> (
   width: number,
   height: number,
   bgColor?: string
-) => css`
+): StyledCss<T> => css`
   width: ${width}px;
   height: ${height}px;
   min-width: ${width}px;

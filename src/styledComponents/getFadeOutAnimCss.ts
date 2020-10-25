@@ -1,4 +1,5 @@
-import { css, keyframes } from 'styled-components'
+import { css, keyframes } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
 
 export const DEFAULT_FADE_OUT_DURATION = 300
 const fadeOutAnim = keyframes`
@@ -10,7 +11,7 @@ const fadeOutAnim = keyframes`
   }
 `
 
-const getFadeOutAnimCss = (duration: number = DEFAULT_FADE_OUT_DURATION) => css`
+const getFadeOutAnimCss = <T> (duration: number = DEFAULT_FADE_OUT_DURATION): StyledCss<T> => css`
   animation: ${fadeOutAnim} ${duration}ms ease-in;
 `
 

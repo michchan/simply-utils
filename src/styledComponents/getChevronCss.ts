@@ -1,4 +1,10 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
+
+const ROTATE_ANGLE_LEFT = -45
+const ROTATE_ANGLE_RIGHT = 135
+const ROTATE_ANGLE_UP = 45
+const ROTATE_ANGLE_DOWN = -135
 
 /**
  * Get chevron icon css
@@ -8,12 +14,12 @@ import { css } from 'styled-components'
  * @param {number} size
  * @param {number} thickness
  */
-const getChevronCss = (
+const getChevronCss = <T> (
   direction: 'up' | 'down' | 'left' | 'right' = 'down',
   color: string = '#999',
   size: number = 7,
   thickness: number = 1,
-) => css`
+): StyledCss<T> => css`
   display: block;
   content: ' ';
   position: relative;
@@ -27,14 +33,14 @@ const getChevronCss = (
     rotate(${(() => {
     switch (direction) {
       case 'left':
-        return -45
+        return ROTATE_ANGLE_LEFT
       case 'right':
-        return 135
+        return ROTATE_ANGLE_RIGHT
       case 'up':
-        return 45
+        return ROTATE_ANGLE_UP
       case 'down':
       default:
-        return -135
+        return ROTATE_ANGLE_DOWN
     }
   })()}deg) 
 

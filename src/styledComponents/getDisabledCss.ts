@@ -1,4 +1,5 @@
-import { css, CSSProperties } from 'styled-components'
+import { css, CSSProperties } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
 
 /**
  * Get style of a disabled element
@@ -6,10 +7,10 @@ import { css, CSSProperties } from 'styled-components'
  * @param opacity
  * @param cursor
  */
-const getDisabledCss = (
+const getDisabledCss = <T> (
   opacity: number = 0.5,
   cursor: CSSProperties['cursor'] = 'default',
-) => css<{ disabled?: boolean }>`
+): StyledCss<T> => css<{ disabled?: boolean }>`
   ${({ disabled }) => disabled ? css`
     &,
     &:hover,

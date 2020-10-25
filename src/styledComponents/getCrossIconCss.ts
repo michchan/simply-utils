@@ -1,12 +1,13 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components/macro'
+import StyledCss from './common/StyledCss.type'
 
 import getPlusIconCss from './getPlusIconCss'
 
-const getCrossIconCss = (
+const getCrossIconCss = <T> (
   size: number = 14,
   width: number = 2,
   color: string = '#333',
-) => css`
+): StyledCss<T> => css`
   ${getPlusIconCss(size, width, color)}
   
   &:before {
