@@ -8,9 +8,9 @@ type R = CSSProperties['flex']
 const mapColumnsFlexCss = <T> (columnsFlex: R[] | R): StyledCss<T> => (
   isArr(columnsFlex) ? columnsFlex : [columnsFlex]
 ).map((flex, index) => css`
-    & > *:nth-child(${index + 1}) {
-      flex: ${flex};
-    }   
-  `)
+  & > *:nth-child(${index + 1}) {
+    flex: ${flex};
+  }
+`)
 
 export default mapColumnsFlexCss

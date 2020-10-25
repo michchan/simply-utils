@@ -10,7 +10,6 @@ const getTextOverflowCss = <T> (
   overflow: hidden;
   text-overflow: ${trailiing};
   word-break: break-all;
-
   ${(numLines > 1 || shouldUseWebkitBox) && css`
     /* !!Multiline will be displayed as "-webkit-box" */
     display: -webkit-box;

@@ -12,7 +12,7 @@ const getPopUpShadowCss = <T> (
   const absOffset = size * offsetRatio
   const offset = offsetDirection === 'right' ? absOffset : -absOffset
   return css`
-    box-shadow: 0px ${offset}px ${size}px ${color};
+    box-shadow: 0 ${offset}px ${size}px ${color};
   `
 }
 

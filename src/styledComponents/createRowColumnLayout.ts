@@ -67,17 +67,23 @@ function createRowColumnLayout <T extends { [key: string]: any }> (
   const halfPaddingVerti = paddingVerti / 2
 
   // Create Rows Container
-  const RowsContainer = styled.div`${rowsContainerCss}`
+  const RowsContainer = styled.div`
+    ${rowsContainerCss}
+  `
   RowsContainer.displayName = 'RowsContainer'
 
   // Create Row
   const rowCss = getRowCss(halfPaddingVerti, halfPaddingHoriz)
-  const Row = styled.div`${rowCss}`
+  const Row = styled.div`
+    ${rowCss}
+  `
   Row.displayName = 'Row'
 
   // Create Column
   const columnCss = getColumnCss(halfPaddingVerti, halfPaddingHoriz)
-  const Column = styled.div<ColumnProps>`${columnCss}`
+  const Column = styled.div<ColumnProps>`
+    ${columnCss}
+  `
   Column.displayName = 'Column'
 
   return {
@@ -94,7 +100,7 @@ export default createRowColumnLayout
 
 // Css of RowsContainer
 const rowsContainerCss = css`
-    width: 100%;
+  width: 100%;
   ${({ extraCss }: RowsContainer) => extraCss}
 `
 // Css of Row
@@ -109,7 +115,9 @@ const getRowCss = (halfPaddingVerti: number, halfPaddingHoriz: number) => css`
   &:first-child {
     margin-top: -${halfPaddingVerti}px;
   }
+
   /* Fix weird issue for SectionCardBodyDiv display block */
+
   /* &:last-child {
     margin-bottom: -${halfPaddingVerti}px;
   } */
@@ -124,13 +132,12 @@ const getColumnCss = (halfPaddingVerti: number, halfPaddingHoriz: number) => css
   max-width: ${({ maxWidth = '100%' }: ColumnProps) => isNum(maxWidth) ? `${maxWidth}px` : maxWidth};
   padding: ${halfPaddingVerti}px ${halfPaddingHoriz}px;
   box-sizing: border-box;
-
-  ${({ breakpoint }: ColumnProps) => (breakpoint ? css`
+  ${({ breakpoint }: ColumnProps) => breakpoint ? css`
     @media (max-width: ${breakpoint}px) {        
       flex-basis: 100%;
       max-width: 100%
     }
-  ` : '')}
+  ` : ''}
 
   ${({ breakpoints = {} }: ColumnProps) => Object.keys(breakpoints)
     .map(bp => parseFloat(bp))

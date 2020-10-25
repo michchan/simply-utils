@@ -9,10 +9,9 @@ const getClearClickableCss = <T> (): StyledCss<T> => css`
   cursor: default;
   user-select: auto;
   transition: none;
-
   ${createHoverableOnlyCss(css`
-    &:hover,
-    &:active {
+    &::hover,
+    &::active {
       opacity: 1;
     } 
   `)}

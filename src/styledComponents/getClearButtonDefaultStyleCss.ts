@@ -6,10 +6,10 @@ import StyledCss from './common/StyledCss.type'
  */
 const getClearButtonDefaultStyleCss = <T> (): StyledCss<T> => css`
   appearance: none;
-  border: 0px;
+  border: 0;
   background: transparent;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 `
 
 export default getClearButtonDefaultStyleCss

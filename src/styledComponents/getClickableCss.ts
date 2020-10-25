@@ -21,13 +21,12 @@ const getClickableCss = <T> (
   cursor: pointer;
   user-select: none;
   transition: opacity 0.1s ease-in-out;
-
   ${createHoverableOnlyCss(css`
-    &:hover {
+    &::hover {
       opacity: ${hoverOpacity};
     }
 
-    &:active {
+    &::active {
       opacity: ${activeOpacity};
     }
   `)}

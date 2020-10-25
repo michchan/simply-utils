@@ -13,8 +13,8 @@ const getDisabledCss = <T> (
 ): StyledCss<T> => css<{ disabled?: boolean }>`
   ${({ disabled }) => disabled ? css`
     &,
-    &:hover,
-    &:active {
+    &::hover,
+    &::active {
       opacity: ${opacity};
       cursor: ${cursor};  
     }

@@ -18,7 +18,6 @@ const getTriangleCss = <T> (
   width: 0;
   height: 0;
   border-style: solid;
-  
   ${() => {
     switch (direction) {
       case 'right':

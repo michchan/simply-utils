@@ -7,18 +7,19 @@ const getChromeScrollBarHiddenFixCss = <T> (): StyledCss<T> | string => isChrome
   overflow-y: overlay;
 
   ::-webkit-scrollbar {
-    -webkit-appearance: none;
+    appearance: none;
     position: fixed;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     width: 7px;
     scrollbar-base-color: rgba(255, 255, 255, 0.2);
     opacity: 0.2;
   }
+
   ::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background-color: rgba(0,0,0,.5);
-    box-shadow: 0 0 1px rgba(255,255,255,.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
   }
 ` : ''
 

@@ -9,11 +9,12 @@ const getCrossIconCss = <T> (
   color: string = '#333',
 ): StyledCss<T> => css`
   ${getPlusIconCss(size, width, color)}
-  
-  &:before {
+
+  &::before {
     transform: rotate(45deg);
   }
-  &:after {
+
+  &::after {
     transform: rotate(-45deg);
   }
 `

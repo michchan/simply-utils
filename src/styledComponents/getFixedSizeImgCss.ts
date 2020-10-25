@@ -10,7 +10,6 @@ const getFixedSizeImgCss = <T> (
   height: ${height}px;
   min-width: ${width}px;
   min-height: ${height}px;
-
   ${bgColor ? css`
     background: ${bgColor};
   ` : ''}

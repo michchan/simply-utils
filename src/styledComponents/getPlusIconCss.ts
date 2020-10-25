@@ -6,8 +6,8 @@ const getPlusIconCss = <T> (
   width: number = 2,
   color: string = '#333',
 ): StyledCss<T> => css`
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     position: absolute;
     display: block;
     content: ' ';
@@ -17,7 +17,7 @@ const getPlusIconCss = <T> (
     z-index: 1;
   }
 
-  &:after {
+  &::after {
     transform: rotate(-90deg);
   }
 `
