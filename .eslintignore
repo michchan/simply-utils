@@ -1,17 +1,17 @@
 # Package manager files
-node_modules/*
-package-lock.json
-yarn.lock
+**/node_modules/*
+**/package-lock.json
+**/yarn.lock
 
 # Build/executable files
-build/*
-bundles/*
-dist/*
-bin/*
+**/build/*
+**/bundles/*
+**/dist/*
+**/bin/*
 
 # Environment configuration files
-.github
-.vscode
+**/.github
+**/.vscode
 
 # Non JavaScript/TypeScript files
-*.svg
+**/*.svg
