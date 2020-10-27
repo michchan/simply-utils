@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/michchan/simply-utils#readme",
   "devDependencies": {
-    "@michchan/eslint-config": "1.4.0",
+    "@michchan/eslint-config": "1.6.0",
     "@types/aws-lambda": "^8.10.63",
     "@types/history": "^4.7.8",
     "@types/lodash": "^4.14.149",
