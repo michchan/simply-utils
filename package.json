@@ -8,7 +8,7 @@
     "build": "tsc",
     "clearbuildcache": "rm -rf dist",
     "deploy": "npm run index && npm run build && npm run tag && git push && npm publish",
-    "eslint": "eslint --ext .js,.jsx,.ts,.tsx src/ scripts/",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "eslint:fix": "npm run eslint -- --fix",
     "stylelint": "stylelint 'src/**/*.{js,jsx,ts,tsx}'",
     "index": "node scripts/generateExports && node scripts/generateIndex && git add . && git commit -m \"Update index files\"",
