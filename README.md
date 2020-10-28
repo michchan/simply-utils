@@ -1,5 +1,7 @@
 # Simply Utils
 
+TEST
+
 [![NPM](https://nodei.co/npm/simply-utils.png)](https://nodei.co/npm/simply-utils/)
 
 This is a simple, generic utils library that,
