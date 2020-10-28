@@ -16,7 +16,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 4. **Stylelint** : 
    Make sure you have fixed all errors by running `npm run stylelint` or `yarn stylelint`
 5. **Type checking** : 
-   Make sure you have fixed all errors by running `npm run watch` or `yarn watch`
+   Make sure you have fixed all errors by running `npm run watch` or `yarn watch`, or testing build by running `npm run build` or `yarn build`
 
 ## Code of Conduct
 
