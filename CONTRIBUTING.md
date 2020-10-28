@@ -5,16 +5,18 @@ email, or any other method with the owners of this repository before making a ch
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
 
-## Pull Request Process
+## Pull Request Checklist
 
-1. Ensure any install or build dependencies are removed before the end of the layer when doing a 
-   build.
-2. Update the README.md with details of changes to the interface, this includes new environment 
-   variables, exposed ports, useful file locations and container parameters.
-3. Increase the version numbers in any examples files and the README.md to the new version that this
-   Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
-4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
-   do not have permission to do that, you may request the second reviewer to merge it for you.
+1. **Branch name** : 
+   Fork the repository and open a feature branch named with {{ contributor username }}/{{ feature name }}. Please be specific of what feature/issue you are dealing with.
+2. **Node version** : 
+   Make sure you are working with the same version as specified in `.nvmrc`
+3. **Eslint** : 
+   Make sure you have fixed all errors by running `npm run eslint:fix` or `yarn eslint:fix`
+4. **Stylelint** : 
+   Make sure you have fixed all errors by running `npm run stylelint` or `yarn stylelint`
+5. **Type checking** : 
+   Make sure you have fixed all errors by running `npm run watch` or `yarn watch`
 
 ## Code of Conduct
 
