@@ -1,3 +1,4 @@
+type FuncType <O> = (...args: any[]) => Promise<O>
 /**
  * Usage:
  * ```
@@ -12,7 +13,10 @@
  * pipeAsync(...asyncFunctions)('Input to the first function')
  * ```
  */
-const pipeAsync = (...functions: any[]) => (input: unknown): any => functions
-  .reduce((chain, func) => chain.then(func), Promise.resolve(input))
+const pipeAsync = <
+  O,
+  T extends FuncType<O> = FuncType<O>
+> (...functions: T[]) => (input?: unknown): Promise<O[]> => functions
+  .reduce((chain, func) => chain.then(func), Promise.resolve(input)) as Promise<O[]>
 
 export default pipeAsync

@@ -1,4 +1,5 @@
 import { DynamoDB } from 'aws-sdk'
+import wait from '../async/wait'
 
 type QI = DynamoDB.DocumentClient.QueryInput
 type QO = DynamoDB.DocumentClient.QueryOutput
@@ -19,6 +20,12 @@ function mergeResults <Output extends QO | SO> (
   }
 }
 
+export interface QueryOrScanAllDynamodbItemsOptions <Output extends QO | SO> {
+  previousResult?: null | Output;
+  /** Delay between each query request. Default to 0 */
+  delay?: number;
+}
+
 /**
  * Return a list of properties of tables that have been created and match the criteria
  */
@@ -29,7 +36,10 @@ function queryOrScanAllDynamodbItems <
   docClient: Pick<DynamoDB.DocumentClient, 'scan' | 'query'>,
   method: 'scan' | 'query',
   input: Input,
-  previousResult: null | Output = null,
+  {
+    previousResult = null,
+    delay = 0,
+  }: QueryOrScanAllDynamodbItemsOptions<Output> = {}
 ): Promise<Output> {
   return new Promise((resolve, reject) => {
     docClient[method](input, async (err, data) => {
@@ -40,10 +50,15 @@ function queryOrScanAllDynamodbItems <
         const mergedResults = mergeResults<Output>(previousResult, data as Output)
 
         if (data.LastEvaluatedKey) {
+          if (delay > 0) await wait(delay)
+          // Recur next
           resolve(await queryOrScanAllDynamodbItems<Input, Output>(docClient, method, {
             ...input,
             ExclusiveStartKey: data.LastEvaluatedKey,
-          }, mergedResults))
+          }, {
+            previousResult: mergedResults,
+            delay,
+          }))
         } else {
           // Merge with previousResult
           resolve(mergedResults)
