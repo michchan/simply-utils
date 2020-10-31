@@ -34,7 +34,7 @@ function main () {
 
   // Generate string of whole file
   const fileText
-    = `${importStatements}\n\n\n`
+    = `${importStatements}\n\n`
     + `/** -------------------- Named export -------------------- */\n\n${
       namedExportsStatements}\n\n`
     + '/** -------------------- Module export -------------------- */\n\n'
