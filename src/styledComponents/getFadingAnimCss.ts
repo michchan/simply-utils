@@ -1,5 +1,5 @@
 import { keyframes, css } from 'styled-components/macro'
-import StyledCss from './common/StyledCss.type'
+import StyledCss from './_common/StyledCss.type'
 
 const initOpacity = 0.2
 export const fadeAnimKeyframes = keyframes`

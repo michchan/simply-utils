@@ -1,5 +1,5 @@
 import getFixedSizeImgCss from './getFixedSizeImgCss'
-import StyledCss from './common/StyledCss.type'
+import StyledCss from './_common/StyledCss.type'
 
 const getSquaredFixedSizeImgCss = <T> (
   size: number,

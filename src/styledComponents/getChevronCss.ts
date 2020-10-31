@@ -1,5 +1,5 @@
 import { css } from 'styled-components/macro'
-import StyledCss from './common/StyledCss.type'
+import StyledCss from './_common/StyledCss.type'
 
 const ROTATE_ANGLE_LEFT = -45
 const ROTATE_ANGLE_RIGHT = 135

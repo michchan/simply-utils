@@ -1,5 +1,5 @@
 import { css, CSSProperties } from 'styled-components/macro'
-import StyledCss from './common/StyledCss.type'
+import StyledCss from './_common/StyledCss.type'
 
 /**
  * Get style of a disabled element

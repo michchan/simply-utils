@@ -1,5 +1,5 @@
 import { css, keyframes } from 'styled-components/macro'
-import StyledCss from './common/StyledCss.type'
+import StyledCss from './_common/StyledCss.type'
 
 export const DEFAULT_FADE_IN_DURATION = 300
 const fadeInAnim = keyframes`

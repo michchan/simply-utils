@@ -1,7 +1,7 @@
 import { css, CSSProperties } from 'styled-components/macro'
 
 import isArr from '../array/isArr'
-import StyledCss from './common/StyledCss.type'
+import StyledCss from './_common/StyledCss.type'
 
 type R = CSSProperties['flex']
 

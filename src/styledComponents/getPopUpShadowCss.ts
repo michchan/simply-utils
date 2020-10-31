@@ -1,5 +1,5 @@
 import { css } from 'styled-components/macro'
-import StyledCss from './common/StyledCss.type'
+import StyledCss from './_common/StyledCss.type'
 
 const DEFAULT_OFFSET_RATIO = 0.3333333333333333
 

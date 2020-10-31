@@ -1,5 +1,5 @@
 import { css, CSSProperties } from 'styled-components/macro'
-import StyledCss from './common/StyledCss.type'
+import StyledCss from './_common/StyledCss.type'
 
 import createHoverableOnlyCss from './createHoverableOnlyCss'
 import getDisabledCss from './getDisabledCss'

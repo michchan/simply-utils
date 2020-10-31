@@ -1,6 +1,6 @@
 import { isChrome } from 'react-device-detect'
 import { css } from 'styled-components/macro'
-import StyledCss from './common/StyledCss.type'
+import StyledCss from './_common/StyledCss.type'
 
 const getChromeScrollBarHiddenFixCss = <T> (): StyledCss<T> | string => isChrome ? css`
   /* Chrome scrollbar not showing fix */

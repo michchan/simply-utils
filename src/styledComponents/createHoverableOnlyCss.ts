@@ -1,5 +1,5 @@
 import { css } from 'styled-components/macro'
-import StyledCss from './common/StyledCss.type'
+import StyledCss from './_common/StyledCss.type'
 
 function createHoverableOnlyCss <T> (styledCss: StyledCss<T>): StyledCss<T> {
   return css`

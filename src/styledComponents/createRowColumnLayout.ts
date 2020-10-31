@@ -3,7 +3,7 @@ import styled, { css, StyledComponent } from 'styled-components/macro'
 
 import isNumOrStr from '../validators/isNumOrStr'
 import isNum from '../number/isNum'
-import StyledCss from './common/StyledCss.type'
+import StyledCss from './_common/StyledCss.type'
 
 export interface RowsContainer {
   extraCss?: string;
