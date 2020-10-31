@@ -1,4 +1,4 @@
-type FuncType <O> = (...args: any[]) => Promise<O>
+type FuncType <O> = (input?: O) => Promise<O>
 /**
  * Usage:
  * ```

@@ -6,6 +6,7 @@ const CHUNK_SIZE = 25
 
 export type BatchWriteChunkResult = DynamoDB.DocumentClient.BatchWriteItemOutput
 export type BatchWriteDynamoDBItemsResult = BatchWriteChunkResult[]
+type RArr = BatchWriteDynamoDBItemsResult
 
 type PT = DynamoDB.DocumentClient.PutRequest
 type DT = DynamoDB.DocumentClient.DeleteRequest
@@ -39,7 +40,8 @@ function batchWriteDynamodbItems <T, RT extends PT | DT> ({
 
   // Chunk records by 25 which is the max number of items DynamoDB can batch write.
   const chunks = chunk(records, CHUNK_SIZE)
-  const asyncFuncs = chunks.map(chunkedRecords => (): Promise<BatchWriteChunkResult> => {
+
+  const sendRequest = (chunkedRecords: T[]) => {
     // Create items
     const items = chunkedRecords.map(rec => ({
       [mode === 'put' ? 'PutRequest' : 'DeleteRequest']: (
@@ -52,12 +54,18 @@ function batchWriteDynamodbItems <T, RT extends PT | DT> ({
     }
     // Send batch create requests
     return docClient.batchWrite({ RequestItems }).promise()
+  }
+
+  const pipedFuncs = chunks.map(chunkedRecords => async (input: RArr = []): Promise<RArr> => {
+    const output = await sendRequest(chunkedRecords)
+    return [...input, output]
   })
 
   // Send batch requests with pipe
   if (requestsMode === 'pipe')
-    return pipeAsync<BatchWriteChunkResult>(...asyncFuncs)()
+    return pipeAsync<RArr>(...pipedFuncs)([])
+
   // Send batch requests in parallel for each chunk
-  return Promise.all(asyncFuncs.map(func => func()))
+  return Promise.all(chunks.map(sendRequest))
 }
 export default batchWriteDynamodbItems
