@@ -1,7 +1,7 @@
 import { DynamoDB } from 'aws-sdk'
 import wait from '../async/wait'
 
-export type ListAllTablesResult = DynamoDB.TableNameList
+export type ListAllTablesResult = DynamoDB.ListTablesOutput
 
 export interface ListAllDynamodbTablesOptions {
   Limit?: DynamoDB.ListTablesInput['Limit'];
@@ -50,7 +50,7 @@ const listAllDynamodbTables = (
         }))
       } else {
         // End recur
-        resolve(concatedTableNames)
+        resolve({ ...data, TableNames: concatedTableNames })
       }
     }
   })
