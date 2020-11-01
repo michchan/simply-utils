@@ -1,5 +1,6 @@
 export * from './batchWriteDynamodbItems'
 export * from './decodeCloudWatchLogEventPayload'
 export * from './listAllDynamodbTables'
+export * from './listAllS3Objects'
 export * from './queryOrScanAllDynamodbItems'
 export * from './waitForAWSService'
