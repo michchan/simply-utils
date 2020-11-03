@@ -1,6 +1,7 @@
 import { DynamoDB } from 'aws-sdk'
 import chunk from 'lodash/chunk'
 import pipeAsync from '../async/pipeAsync'
+import wait from '../async/wait'
 
 const CHUNK_SIZE = 25
 
@@ -20,6 +21,12 @@ export interface BatchWriteDynamoDBItemsOptions <T> {
    * Default to 'parallel'.
    */
   requestsMode?: 'parallel' | 'pipe';
+  /**
+   * The number of milliseconds between each batch call.
+   * Only available when 'requestsMode' is 'pipe'.
+   * Default to 0.
+   */
+  delay?: number;
 }
 /**
  * Batch write items to dynamoDB with handling for maximum items (25) to write,
@@ -32,13 +39,14 @@ function batchWriteDynamodbItems <T> ({
   mode,
   serialize,
   requestsMode = 'parallel',
+  delay = 0,
 }: BatchWriteDynamoDBItemsOptions<T>): Promise<BatchWriteDynamoDBItemsResult | null> {
   if (records.length === 0) return Promise.resolve(null)
 
   // Chunk records by 25 which is the max number of items DynamoDB can batch write.
   const chunks = chunk(records, CHUNK_SIZE)
 
-  const sendRequest = (chunkedRecords: T[]) => {
+  const sendRequest = async (chunkedRecords: T[]) => {
     // Create items
     const items = chunkedRecords.map(rec => ({
       [mode === 'put' ? 'PutRequest' : 'DeleteRequest']: {
@@ -52,7 +60,9 @@ function batchWriteDynamodbItems <T> ({
       [tableName]: items,
     }
     // Send batch create requests
-    return docClient.batchWrite({ RequestItems }).promise()
+    const output = await docClient.batchWrite({ RequestItems }).promise()
+    if (requestsMode === 'pipe' && delay > 0) await wait(delay)
+    return output
   }
 
   const pipedFuncs = chunks.map(chunkedRecords => async (input: RArr = []): Promise<RArr> => {
