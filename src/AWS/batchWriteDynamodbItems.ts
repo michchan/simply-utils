@@ -43,7 +43,7 @@ function batchWriteDynamodbItems <T> ({
     const items = chunkedRecords.map(rec => ({
       [mode === 'put' ? 'PutRequest' : 'DeleteRequest']: {
         [mode === 'put' ? 'Item' : 'Key']: (
-          serialize ? serialize(rec) : serialize
+          serialize ? serialize(rec) : rec
         ),
       },
     }))
