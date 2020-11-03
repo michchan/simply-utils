@@ -8,15 +8,12 @@ export type BatchWriteChunkResult = DynamoDB.DocumentClient.BatchWriteItemOutput
 export type BatchWriteDynamoDBItemsResult = BatchWriteChunkResult[]
 type RArr = BatchWriteDynamoDBItemsResult
 
-type PT = DynamoDB.DocumentClient.PutRequest
-type DT = DynamoDB.DocumentClient.DeleteRequest
-
-export interface BatchWriteDynamoDBItemsOptions <T, RT extends PT | DT> {
+export interface BatchWriteDynamoDBItemsOptions <T> {
   docClient: Pick<DynamoDB.DocumentClient, 'batchWrite'>;
   records: T[];
   tableName: string;
   mode: 'put' | 'delete';
-  serialize?: (item: T) => RT;
+  serialize?: (item: T) => DynamoDB.DocumentClient.AttributeMap;
   /**
    * 'parallel': Request using Promise.all for every batch request
    * 'pipe': Pipe each batch request
@@ -28,14 +25,14 @@ export interface BatchWriteDynamoDBItemsOptions <T, RT extends PT | DT> {
  * Batch write items to dynamoDB with handling for maximum items (25) to write,
  * which means with this helper more than 25 items can be written into the database with one call.
  */
-function batchWriteDynamodbItems <T, RT extends PT | DT> ({
+function batchWriteDynamodbItems <T> ({
   docClient,
   records,
   tableName,
   mode,
   serialize,
   requestsMode = 'parallel',
-}: BatchWriteDynamoDBItemsOptions<T, RT>): Promise<BatchWriteDynamoDBItemsResult | null> {
+}: BatchWriteDynamoDBItemsOptions<T>): Promise<BatchWriteDynamoDBItemsResult | null> {
   if (records.length === 0) return Promise.resolve(null)
 
   // Chunk records by 25 which is the max number of items DynamoDB can batch write.
@@ -44,9 +41,11 @@ function batchWriteDynamodbItems <T, RT extends PT | DT> ({
   const sendRequest = (chunkedRecords: T[]) => {
     // Create items
     const items = chunkedRecords.map(rec => ({
-      [mode === 'put' ? 'PutRequest' : 'DeleteRequest']: (
-        serialize ? serialize(rec) : serialize
-      ) as unknown as RT,
+      [mode === 'put' ? 'PutRequest' : 'DeleteRequest']: {
+        [mode === 'delete' ? 'Key' : 'Item']: (
+          serialize ? serialize(rec) : serialize
+        ),
+      },
     }))
     // Create request items
     const RequestItems: DynamoDB.DocumentClient.BatchWriteItemInput['RequestItems'] = {
