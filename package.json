@@ -1,6 +1,6 @@
 {
   "name": "simply-utils",
-  "version": "0.50.1",
+  "version": "0.50.2",
   "description": "Simple and generic JavaScript utils for common use cases, mainly developed and refractored from frontend projects.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
