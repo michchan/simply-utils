@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node with the right version
         uses: actions/setup-node@v1
         with:
-          node-version: '14.15.0'
+          node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
 
       # Install dependencies
