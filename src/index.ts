@@ -4,6 +4,7 @@ import * as array from './array'
 import * as arrayBuffer from './arrayBuffer'
 import * as async from './async'
 import * as dateTime from './dateTime'
+import * as devOps from './devOps'
 import * as dom from './dom'
 import * as func from './func'
 import * as i18next from './i18next'
@@ -30,6 +31,7 @@ export * from './array'
 export * from './arrayBuffer'
 export * from './async'
 export * from './dateTime'
+export * from './devOps'
 export * from './dom'
 export * from './func'
 export * from './i18next'
@@ -57,6 +59,7 @@ export default {
   ...arrayBuffer,
   ...async,
   ...dateTime,
+  ...devOps,
   ...dom,
   ...func,
   ...i18next,
