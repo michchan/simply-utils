@@ -1,5 +1,8 @@
 /**
  * Get the currency symbol
+ *
+ * * This function require "Intl.NumberFormat" in global scope.
+ * * Please see polyfill/polyfillIntl if you need a polyfill of that.
  */
 const getCurrencySymbol = (
   locales: string | string[] = [],

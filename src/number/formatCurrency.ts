@@ -9,6 +9,9 @@ export interface FormatCurrencyOptions {
 
 /**
  * See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
+ *
+ * * * This function require "Intl.NumberFormat" in global scope.
+ * * Please see polyfill/polyfillIntl if you need a polyfill of that.
  */
 const formatCurrency = (
   numToFormat: number = 0,

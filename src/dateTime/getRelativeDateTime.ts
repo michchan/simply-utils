@@ -13,6 +13,9 @@ const SECOND_PRECISION = 10
 /**
  * Get relative date time string e.g. 3 days ago, 3 weeks ago
  *
+ * * This function require "Intl.RelativeTimeFormat" in global scope.
+ * * Please see polyfill/polyfillIntl if you need a polyfill of that.
+ *
  * @param comparedDateTime ISO-timestamp or Date instance
  * @param relatedDateTime ISO-timestamp or Date instance
  * @param locales The locale code or an array of locale codes
@@ -25,15 +28,12 @@ function getRelativeDateTime (
   const comparedDate = isStr(comparedDateTime)
     ? new Date(isDateString(comparedDateTime) ? comparedDateTime : 0)
     : comparedDateTime || new Date()
-
   const relativeDate = isStr(relatedDateTime)
     ? new Date(isDateString(relatedDateTime) ? relatedDateTime : 0)
     : relatedDateTime || new Date()
 
-  // @TODO: Fix:
-  // @ts-expect-error: Ensured a polyfill for Intl.RelativeTimeFormat has been made
+  // @ts-expect-error: Polyfill is required
   const rtf = new Intl.RelativeTimeFormat(locales, { numeric: 'auto' })
-
   const diffInSecond = ((comparedDate.getTime() - relativeDate.getTime()) / ONE_SECOND_MS)
   const diffInMins = diffInSecond / MAX_SECONDS
 
