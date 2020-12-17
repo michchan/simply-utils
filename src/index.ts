@@ -14,6 +14,8 @@ import * as network from './network'
 import * as number from './number'
 import * as object from './object'
 import * as pagination from './pagination'
+import * as policy from './policy'
+import * as polyfill from './polyfill'
 import * as reactDom from './reactDom'
 import * as routing from './routing'
 import * as scraping from './scraping'
@@ -41,6 +43,8 @@ export * from './network'
 export * from './number'
 export * from './object'
 export * from './pagination'
+export * from './policy'
+export * from './polyfill'
 export * from './reactDom'
 export * from './routing'
 export * from './scraping'
@@ -69,6 +73,8 @@ export default {
   ...number,
   ...object,
   ...pagination,
+  ...policy,
+  ...polyfill,
   ...reactDom,
   ...routing,
   ...scraping,
