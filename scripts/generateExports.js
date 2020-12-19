@@ -18,7 +18,7 @@ function main (dir) {
       // Remove all '.ts' extension from filenames
       const name = filename.replace(/\.ts$/i, '')
       // Construct the export statement
-      return `export * from './${name}'`
+      return `export { default as ${name} } from './${name}'`
     })
     // Join all lines with line break symbol
     .join('\n')
