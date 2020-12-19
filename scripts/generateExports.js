@@ -11,8 +11,8 @@ function main (dir) {
   const filenames = fs
     // Read the directory specified
     .readdirSync(dir)
-    // Filter out 'index.ts'
-    .filter(name => !['index.ts'].includes(name))
+    // Filter out 'index.ts' and directory name
+    .filter(name => !['index.ts'].includes(name) && !/\.ts$/i.test(name))
     // Map every filename to the export statement
     .map(filename => {
       // Remove all '.ts' extension from filenames
