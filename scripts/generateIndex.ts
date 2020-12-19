@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-const fs = require('fs')
-const generateExports = require('./generateExports')
+import generateExports from './generateExports'
+import fs = require('fs')
 
 /** ---------------- Read folder name ---------------- */
 
