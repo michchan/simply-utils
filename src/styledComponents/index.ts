@@ -1,4 +1,3 @@
-export { default as _common } from './_common'
 export { default as createHoverableOnlyCss } from './createHoverableOnlyCss'
 export { default as createRowColumnLayout } from './createRowColumnLayout'
 export { default as getChevronCss } from './getChevronCss'

@@ -11,7 +11,8 @@
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "eslint:fix": "npm run eslint -- --fix",
     "stylelint": "stylelint 'src/**/*.{js,jsx,ts,tsx}'",
-    "index": "ts-node scripts/generateExports && ts-node scripts/generateIndex && git add . && git commit -m \"Update index files\"",
+    "index": "ts-node scripts/generateExports && ts-node scripts/generateIndex",
+    "index:commit": "npm run index && git add . && git commit -m \"Update index files\"",
     "tag": "git tag $(node -pe 'require(\"./package.json\").version')",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "tsc --watch --noemit"

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { I18nTranslate } from './types'
+import { I18nTranslate } from './_types'
 import isStr from '../string/isStr'
 
 /**
