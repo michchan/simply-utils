@@ -1,1 +1,1 @@
-export * from './launchPuppeteerBrowserSession'
+export { default as launchPuppeteerBrowserSession } from './launchPuppeteerBrowserSession'

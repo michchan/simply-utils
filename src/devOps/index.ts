@@ -1,1 +1,1 @@
-export * from './composeEnv'
+export { default as composeEnv } from './composeEnv'

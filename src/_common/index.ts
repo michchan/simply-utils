@@ -1,1 +1,1 @@
-export * from './urlRegex'
+export { default as urlRegex } from './urlRegex'
