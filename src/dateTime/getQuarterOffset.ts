@@ -1,6 +1,7 @@
 import { Quarter } from './getQuarter'
 
-const MAX_QUARTER = 4
+const MIN_QUARTER: Quarter = 1
+const MAX_QUARTER: Quarter = 4
 
 const getQuarterOffset = (
   year: number | string,
@@ -8,10 +9,18 @@ const getQuarterOffset = (
   quarterOffset: number,
 ): [number, Quarter] => {
   const yr = Number(year)
-  const qtoff = quarterOffset
+  const qtOff = Number(quarterOffset)
 
-  const nextQuarter = quarter + (qtoff % MAX_QUARTER) as Quarter
-  const nextYear = yr + Math.trunc(qtoff / MAX_QUARTER)
+  const qSum = quarter + qtOff
+  const q = qSum % MAX_QUARTER
+  const yrOff = qSum > MAX_QUARTER
+    ? qSum - MAX_QUARTER
+    : qSum < MIN_QUARTER
+      ? qSum - MIN_QUARTER
+      : 0
+
+  const nextQuarter = (q === 0 ? MAX_QUARTER : q) as Quarter
+  const nextYear = yr + Math.trunc(qtOff / MAX_QUARTER) + yrOff
 
   return [nextYear, nextQuarter]
 }
