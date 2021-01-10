@@ -1,5 +1,7 @@
+import { Location } from 'history'
 import isObj from '../object/isObj'
-import { Location, LocationDescriptor } from 'history'
+
+export type GetSearchParamsLocation = Pick<Location, 'search'>
 
 /**
  * Get query string from location
@@ -8,7 +10,7 @@ import { Location, LocationDescriptor } from 'history'
  * @param useWindowLocationAsFallback
  */
 const getSearchParams = (
-  location: Location | LocationDescriptor = window.location,
+  location: GetSearchParamsLocation | string = window.location,
   /**
     Since argument 'location' can be string pathname,
     it might not necessarily contains search parameters.

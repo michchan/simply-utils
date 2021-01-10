@@ -1,7 +1,6 @@
-import { Location, LocationDescriptor } from 'history'
 import isNum from '../number/isNum'
 import fromQueryString from '../network/fromQueryString'
-import getSearchParams from './getSearchParams'
+import getSearchParams, { GetSearchParamsLocation } from './getSearchParams'
 
 export interface GetSearchParamOptions {
   isNumberExpected?: boolean;
@@ -25,7 +24,7 @@ export interface GetSearchParamOptions {
  * @param shouldFallbackWithWindow
  */
 function getSearchParam <T extends string | number = string> (
-  location: LocationDescriptor | Location = window.location,
+  location: GetSearchParamsLocation | string = window.location,
   key: string | number,
   defaultValue: T,
   {
