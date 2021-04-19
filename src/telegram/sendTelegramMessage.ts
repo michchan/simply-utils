@@ -1,3 +1,5 @@
+import fetch from '../_common/fetchPolyfill'
+
 const API_BOT_API_KEY = '{{BOT_API_KEY}}'
 const API_CHAT_ID = '{{CHAT_ID}}'
 const API_TEXT = '{{TEXT}}'
