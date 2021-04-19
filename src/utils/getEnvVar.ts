@@ -3,7 +3,7 @@
  * @param name Name/key of the environment variable
  * @param isMandatory Whether it should throw an error if it's not defined.
  */
-const getEnvVars = (
+const getEnvVar = (
   name: string,
   isMandatory: boolean = true
 ): string => {
@@ -13,4 +13,4 @@ const getEnvVars = (
   return value as string
 }
 
-export default getEnvVars
+export default getEnvVar
