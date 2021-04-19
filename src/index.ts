@@ -20,6 +20,7 @@ import * as scraping from './scraping'
 import * as string from './string'
 import * as style from './style'
 import * as styledComponents from './styledComponents'
+import * as telegram from './telegram'
 import * as utils from './utils'
 import * as validators from './validators'
 
@@ -47,6 +48,7 @@ export * from './scraping'
 export * from './string'
 export * from './style'
 export * from './styledComponents'
+export * from './telegram'
 export * from './utils'
 export * from './validators'
 
@@ -75,6 +77,7 @@ export default {
   ...string,
   ...style,
   ...styledComponents,
+  ...telegram,
   ...utils,
   ...validators,
 }

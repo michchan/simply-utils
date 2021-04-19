@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "clearbuildcache": "rm -rf dist",
+    "clear-build-cache": "rm -rf dist",
     "deploy": "npm run index && npm run build && npm run tag && git push && npm publish",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "eslint:fix": "npm run eslint -- --fix",
@@ -15,7 +15,7 @@
     "index:commit": "npm run index && git add . && git commit -m \"Update index files\"",
     "tag": "git tag $(node -pe 'require(\"./package.json\").version')",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "tsc --watch --noemit"
+    "tsc-watch": "tsc --watch --noemit"
   },
   "repository": {
     "type": "git",
