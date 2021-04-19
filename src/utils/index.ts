@@ -1,3 +1,4 @@
+export { default as composeEnv } from './composeEnv'
 export { default as parseBooleanStr } from './parseBooleanStr'
 export { default as parseJSON } from './parseJSON'
 export { default as requestAnimationFrameRecursive } from './requestAnimationFrameRecursive'
