@@ -1,3 +1,4 @@
+export { default as getArraySortNumber } from './getArraySortNumber'
 export { default as getNextIndex } from './getNextIndex'
 export { default as isArr } from './isArr'
 export { default as shuffle } from './shuffle'
