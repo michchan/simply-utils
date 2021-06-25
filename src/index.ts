@@ -1,5 +1,6 @@
 import * as AWS from './AWS'
 import * as _common from './_common'
+import * as algo from './algo'
 import * as array from './array'
 import * as arrayBuffer from './arrayBuffer'
 import * as async from './async'
@@ -28,6 +29,7 @@ import * as validators from './validators'
 
 export * from './AWS'
 export * from './_common'
+export * from './algo'
 export * from './array'
 export * from './arrayBuffer'
 export * from './async'
@@ -57,6 +59,7 @@ export * from './validators'
 export default {
   ...AWS,
   ..._common,
+  ...algo,
   ...array,
   ...arrayBuffer,
   ...async,
