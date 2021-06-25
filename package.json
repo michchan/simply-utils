@@ -1,6 +1,6 @@
 {
   "name": "simply-utils",
-  "version": "0.57.1",
+  "version": "0.58.0",
   "description": "Simple and generic JavaScript utils for common use cases, mainly developed and refractored from frontend projects.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -85,10 +85,10 @@
     "file-loader": "6.x",
     "intl": "1.x",
     "node-fetch": "2.x",
-    "puppeteer-core": "5.5.x",
     "puppeteer": "5.5.x",
-    "react-dom": "17.x",
+    "puppeteer-core": "5.5.x",
     "react": "17.x",
+    "react-dom": "17.x",
     "relative-time-format": "1.x",
     "styled-components": ">= 5.0.0"
   }
