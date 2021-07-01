@@ -9,9 +9,10 @@ const getQuarterOffset = (
   quarterOffset: number,
 ): [number, Quarter] => {
   const yr = Number(year)
+  const qt = Number(quarter) as Quarter
   const qtOff = Number(quarterOffset)
 
-  const qSum = quarter + qtOff
+  const qSum = qt + qtOff
   const q = qSum % MAX_QUARTER
   const yrOff = qSum > MAX_QUARTER
     ? qSum - MAX_QUARTER
