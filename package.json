@@ -15,7 +15,8 @@
     "index:commit": "npm run index && git add . && git commit -m \"Update index files\"",
     "tag": "git tag $(node -pe 'require(\"./package.json\").version')",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc-watch": "tsc --watch --noemit"
+    "tsc-watch": "tsc --watch --noemit",
+    "generate-docs": "jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
@@ -52,10 +53,12 @@
     "aws-lambda": "^1.0.6",
     "aws-sdk": "^2.824.0",
     "chrome-aws-lambda": "5.3.1",
+    "docdash": "^1.2.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.11.0",
     "file-loader": "^6.0.0",
     "intl": "^1.2.5",
+    "jsdoc": "^3.6.7",
     "node-fetch": "^2.6.1",
     "puppeteer": "5.5.0",
     "puppeteer-core": "5.5.0",
