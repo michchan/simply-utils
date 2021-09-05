@@ -10,6 +10,8 @@ import { TableCellSortState } from './sortTableRowsByEachCell'
  *      --> clear sort state
  *
  * @returns a reducer function that accept a previous/current state and return next state.
+ * @category algo
+ * @module getTableRowsSortStateReducer
  */
 const getTableRowsSortStateReducer = (
   cellIndex: number,

@@ -2,6 +2,8 @@ import isStr from '../string/isStr'
 
 /**
  * Read the file props of the video
+ * @category media
+ * @module readVideoProps
  */
 const readVideoProps = (src: HTMLVideoElement['src'] | File | Blob): Promise<{
   width: number;

@@ -5,6 +5,8 @@ import formatAsGroupedString from './formatAsGroupedString'
  *
  * @param value The expiry date value of a credit card like '1223'
  * @param separator
+ * @category number
+ * @module formatCardExp
  */
 const formatCardExp = (value: string, separator: string = ' / '): string => {
   // Replace extra slashes "/" of value first before formatting

@@ -3,6 +3,8 @@
  * Reference: https://stackoverflow.com/questions/10730309/find-all-text-nodes-in-html-page
  *
  * @param el
+ * @category dom
+ * @module getDOMNodesUnder
  */
 function getDOMNodesUnder <T extends Node = Node> (
   el: Node,

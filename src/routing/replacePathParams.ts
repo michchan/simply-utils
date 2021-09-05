@@ -15,6 +15,8 @@ type Param = string | number
  * @param path The route config path for a route of a router like React-Router
  * @param params The param or an array of params in order.
  *   e.g. For /shops/:id/orders/:id -> ['shop123', 'order4325']
+ * @category routing
+ * @module replacePathParams
  */
 function replacePathParams (
   path: string,

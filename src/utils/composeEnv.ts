@@ -14,6 +14,8 @@ export interface ComposeEnvReturnType <K extends string> {
 
 /**
  * Environment variables (dotenv) composer with empty check
+ * @category utils
+ * @module composeEnv
  */
 const composeEnv = <K extends string> (keys: readonly K[]): ComposeEnvReturnType<K> => {
   const values = pick(process.env, keys) as unknown as EnvValues<K>

@@ -11,6 +11,8 @@ import getDisabledCss from './getDisabledCss'
  * @param activeOpacity
  * @param disabledOpacity
  * @param disabledCursor
+ * @category styledComponents
+ * @module getClickableCss
  */
 const getClickableCss = <T> (
   hoverOpacity: number = 0.7,

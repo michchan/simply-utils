@@ -4,6 +4,8 @@ import matchRoutePathname from './matchRoutePathname'
  *
  * @param route The route config path for a route of a router like React-Router
  * @param isNotExact
+ * @category routing
+ * @module getRoutePathnameMatcher
  */
 function getRoutePathnameMatcher (
   route: string,

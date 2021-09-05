@@ -2,6 +2,8 @@
  * Get scroll-Y number from either window object or HTML element
  *
  * @param el
+ * @category dom
+ * @module getScrollYFromElementOrWindow
  */
 const getScrollYFromElementOrWindow = (el: HTMLElement | typeof window): number => (
   (el as HTMLElement)?.scrollTop

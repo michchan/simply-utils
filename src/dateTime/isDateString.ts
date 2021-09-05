@@ -4,6 +4,8 @@ import isNum from '../number/isNum'
  * Check whether the string can be parsed by the Date constructor.
  *
  * @param dateStr
+ * @category dateTime
+ * @module isDateString
  */
 const isDateString = (dateStr: string): boolean => {
   // Empty string

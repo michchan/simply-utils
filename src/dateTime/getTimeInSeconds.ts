@@ -7,6 +7,8 @@ const SECONDS_IN_MIN = 60
  * @author Sandy Lau https://github.com/sandylau333
  *
  * @param date
+ * @category dateTime
+ * @module getTimeInSeconds
  */
 const getTimeInSeconds = (date: Date): number => (
   (date.getHours() * SECONDS_IN_HOUR)

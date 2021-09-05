@@ -12,6 +12,8 @@ type ReturnType<
  * e.g. const isStatusDraft = createKeyValidator<PublishableStatus, StatusDraft>(STATUS_DRAFT)
  *
  * @param target Target string constant, or array of validators.
+ * @category validators
+ * @module createKeyValidator
  */
 function createKeyValidator<FieldType extends string, TargetType extends FieldType> (
   target: TargetType | ReturnType<FieldType, TargetType>[]

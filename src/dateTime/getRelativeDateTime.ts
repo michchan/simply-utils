@@ -19,6 +19,8 @@ const SECOND_PRECISION = 10
  * @param comparedDateTime ISO-timestamp or Date instance
  * @param relatedDateTime ISO-timestamp or Date instance
  * @param locales The locale code or an array of locale codes
+ * @category dateTime
+ * @module getRelativeDateTime
  */
 function getRelativeDateTime (
   comparedDateTime: string | Date,

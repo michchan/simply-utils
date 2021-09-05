@@ -1,5 +1,7 @@
 /**
  * Source: https://davidwalsh.name/detect-scrollbar-width
+ * @category dom
+ * @module measureScrollbarWidth
  */
 const measureScrollbarWidth = (): number => {
   // Create the measurement node

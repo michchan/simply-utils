@@ -5,6 +5,8 @@
  * @param index
  * @param locale The locale code or an array of locale codes
  * @param format
+ * @category dateTime
+ * @module getLocalizedMonth
  */
 const getLocalizedMonth = (
   index: number = 0,

@@ -13,6 +13,8 @@ import isFunc from '../validators/isFunc'
  * @param setValue The React state setter for setting the "nextValue", .e.g. "setIsOpen".
  * @param canUpdate The function which receives the "nextValue",
  *        to return a boolean indicating whether the update is allowed.
+ * @category reactDom
+ * @module requestSetValue
  */
 function requestSetValue <T> (
   nextValue: SetStateAction<T>,

@@ -13,6 +13,8 @@ export interface TranslatedSection {
  * @param i18nNamspace
  * @param key The translation key, e.g. 'namespace:title.description'
  * @param t
+ * @category i18next
+ * @module getTranslatedSections
  */
 const getTranslatedSections = (
   i18nNamspace: string,

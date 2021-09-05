@@ -9,6 +9,8 @@ export const PARAM_REGEX_STR = '[a-zA-Z0-9_-]+'
  * @param path The actual pathname displayed on browser navigation bar
  * @param route The route config path for a route of a router like React-Router
  * @param isExact
+ * @category routing
+ * @module matchRoutePathname
  */
 const matchRoutePathname = (
   path: string,

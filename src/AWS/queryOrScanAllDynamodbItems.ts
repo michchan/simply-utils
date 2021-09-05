@@ -28,6 +28,8 @@ export interface QueryOrScanAllDynamodbItemsOptions <Output extends QO | SO> {
 
 /**
  * Return a list of properties of tables that have been created and match the criteria
+ * @category AWS
+ * @module queryOrScanAllDynamodbItems
  */
 function queryOrScanAllDynamodbItems <
   Input extends QI | SI,

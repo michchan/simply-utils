@@ -5,6 +5,8 @@ import replaceTextsInHTMLStr from './replaceTextsInHTMLStr'
  * Replace URLs in HTML string
  *
  * @param htmlStr
+ * @category dom
+ * @module replaceUrlsInHTMLStr
  */
 const replaceUrlsInHTMLStr = (
   htmlStr: string,

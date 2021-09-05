@@ -8,6 +8,8 @@ const NUM_GROUPS = 4
  *
  * @param value The original credit card number value like 4242424242424242
  * @param separator Customized separator. Default to hyphen '-'.
+ * @category number
+ * @module formatCardNum
  */
 const formatCardNum = (value: string, separator: string = ' '): string => formatAsGroupedString({
   value,

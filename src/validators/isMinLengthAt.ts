@@ -3,6 +3,8 @@
  *
  * @param minLength
  * @param value
+ * @category validators
+ * @module isMinLengthAt
  */
 function isMinLengthAt (
   minLength: number,

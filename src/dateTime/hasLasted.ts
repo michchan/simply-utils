@@ -3,6 +3,8 @@
  *
  * @param prev Previous ISOTimestamp time to compare
  * @param duration The duration to compare
+ * @category dateTime
+ * @module hasLasted
  */
 const hasLasted = (prev: string, duration: number, dateNow: Date = new Date()): boolean => {
   const timePrev = new Date(prev).getTime()

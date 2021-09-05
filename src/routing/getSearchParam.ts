@@ -22,6 +22,8 @@ export interface GetSearchParamOptions {
  * @param defaultValue
  * @param isNumberExpected
  * @param shouldFallbackWithWindow
+ * @category routing
+ * @module getSearchParam
  */
 function getSearchParam <T extends string | number = string> (
   location: GetSearchParamsLocation | string = window.location,

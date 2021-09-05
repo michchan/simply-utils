@@ -3,6 +3,8 @@
  *
  * @param value The original bank account number value
  * @param separator Customized separator. Default to hyphen '-'.
+ * @category number
+ * @module formatBankAccNum
  */
 const formatBankAccNum = (value: string, separator: string = '-'): string => {
   const rawNumber = value.replace(/[^\d]/g, '')

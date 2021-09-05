@@ -3,6 +3,8 @@ const CHARS_LENGTH = CHARS.length
 
 /**
  * Reference: https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+ * @category string
+ * @module generateRandomString
  */
 const generateRandomString = (length: number = 9): string => {
   let result = ''

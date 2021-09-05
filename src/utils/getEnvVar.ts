@@ -2,6 +2,8 @@
  * Helper to get environment variables with error throwing logic
  * @param name Name/key of the environment variable
  * @param isMandatory Whether it should throw an error if it's not defined. Default to true.
+ * @category utils
+ * @module getEnvVar
  */
 const getEnvVar = (
   name: string,

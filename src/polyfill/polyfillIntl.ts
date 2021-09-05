@@ -14,6 +14,8 @@ import isNullOrUndef from '../validators/isNullOrUndef'
  * Require packages:
  *   intl
  *   relative-time-format
+ * @category polyfill
+ * @module polyfillIntl
  */
 const polyfillIntl = (
   intlDataGetters: (() => unknown)[],

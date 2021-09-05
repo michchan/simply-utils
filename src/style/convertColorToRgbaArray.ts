@@ -90,6 +90,8 @@ const hslaToRgbArr = (color: string) => {
  * Michael Chan michchandev@gmail.com
  *
  * @param color
+ * @category style
+ * @module convertColorToRgbaArray
  */
 const convertColorToRgbaArray = (color: string): number[] => {
   // Find rgba values. ([ r, g, b, a? ]) (rgb in dec. a from 0 - 1)

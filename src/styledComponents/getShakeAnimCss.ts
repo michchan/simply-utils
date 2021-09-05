@@ -31,6 +31,8 @@ const shakeAnim = keyframes`
  *
  * @param {number} duration Duration in milliseconds (ms)
  * @returns return styled css
+ * @category styledComponents
+ * @module getShakeAnimCss
  */
 const getShakeAnimCss = <T> (duration: number = DEFAULT_SHAKE_DURATION): StyledCss<T> => css`
   animation: ${shakeAnim} ${duration}ms cubic-bezier(0.36, 0.07, 0.19, 0.97) both;

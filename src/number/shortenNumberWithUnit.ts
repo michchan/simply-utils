@@ -8,6 +8,8 @@ import divideDeep from '../math/divideDeep'
  * @param unitsMap The mapping of depth to unit. E.g. ['K', 'M', 'B']
  *
  * @returns A tuple type of [<Displayed number>, <Displayed units>] format. E.g. [300, 'K']
+ * @category number
+ * @module shortenNumberWithUnit
  */
 const shortenNumberWithUnit = (
   num: number,

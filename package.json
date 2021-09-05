@@ -16,6 +16,7 @@
     "tag": "git tag $(node -pe 'require(\"./package.json\").version')",
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc-watch": "tsc --watch --noemit",
+    "generate-docs-tags": "ts-node scripts/generateJSDocsTags",
     "generate-docs": "jsdoc -c jsdoc.json",
     "serve-docs": "serve docs"
   },

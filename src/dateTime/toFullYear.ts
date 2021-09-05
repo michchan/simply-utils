@@ -6,6 +6,8 @@ const CENTURY_DIGITS = 2
 /**
  * Convert 2 digit year to 4 digit year
  * @param year
+ * @category dateTime
+ * @module toFullYear
  */
 const toFullYear = (year: string | number): number | undefined => {
   const yearString = isStr(year) ? year : zeroPadding(year, CENTURY_DIGITS)

@@ -23,6 +23,8 @@ export interface GenerateProgressiveColorsOfSameHueOptions {
  * @param numberOfColors
  * @param options
  * @returns array of HSL color code
+ * @category style
+ * @module generateProgressiveColorsOfSameHue
  */
 const generateProgressiveColorsOfSameHue = (
   hue: number = 270,

@@ -18,6 +18,8 @@ const DAY_OFFSET = 4
  *
  * @author https://stackoverflow.com/a/6117889/9428719
  * @param d
+ * @category dateTime
+ * @module getWeekOfYear
  */
 function getWeekOfYear (date: Date): number {
   let d = date

@@ -14,6 +14,8 @@ const VALUE_DIVIDEND = 12.92
  * Get color luminance. Return 0 - 1.
  * Reference: https://dev.to/alvaromontoro/building-your-own-color-contrast-checker-4j7o
  * @param color
+ * @category style
+ * @module getColorLuminance
  */
 const getColorLuminance = (color: string): number => {
   const colorRgb = convertColorToRgbaArray(color).slice(0, RGB_LENGTH)

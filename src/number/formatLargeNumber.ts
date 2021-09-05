@@ -19,6 +19,8 @@ const NUMBER_SHORT_UNIT_MAP = [
  *
  * @param size The size in bytes
  * @returns A tuple type of [<Displayed number>, <Displayed units>] format. E.g. [1, 'K']
+ * @category number
+ * @module formatLargeNumber
  */
 function formatLargeNumber (num: number): [number, string] {
   return shortenNumberWithUnit(num, UNIT_INTERVAL, NUMBER_SHORT_UNIT_MAP)

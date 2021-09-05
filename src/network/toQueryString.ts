@@ -7,6 +7,8 @@ import isNullOrUndef from '../validators/isNullOrUndef'
  * Parse object to query string with "?" prefix auto-added
  *
  * @param params
+ * @category network
+ * @module toQueryString
  */
 function toQueryString <
   T extends { [key: string]: any } = { [key: string]: any }

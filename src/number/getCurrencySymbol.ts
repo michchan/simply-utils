@@ -3,6 +3,8 @@
  *
  * * This function require "Intl.NumberFormat" in global scope.
  * * Please see polyfill/polyfillIntl if you need a polyfill of that.
+ * @category number
+ * @module getCurrencySymbol
  */
 const getCurrencySymbol = (
   locales: string | string[] = [],

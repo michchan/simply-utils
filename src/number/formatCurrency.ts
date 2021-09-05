@@ -12,6 +12,8 @@ export interface FormatCurrencyOptions {
  *
  * * * This function require "Intl.NumberFormat" in global scope.
  * * Please see polyfill/polyfillIntl if you need a polyfill of that.
+ * @category number
+ * @module formatCurrency
  */
 const formatCurrency = (
   numToFormat: number = 0,

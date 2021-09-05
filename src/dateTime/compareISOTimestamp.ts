@@ -9,6 +9,8 @@
  *   return -1 if a is before b
  *   return 1 if a is after b
  *   else return 0
+ * @category dateTime
+ * @module compareISOTimestamp
  */
 const compareISOTimestamp = (a: string, b: string): number => {
   const aDate = new Date(a)

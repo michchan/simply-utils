@@ -9,6 +9,8 @@ import isTimeLocal from './isTimeLocal'
  * @param value string value of date-time,
  *        can be format of datetime-local, date-local, time-local or ISO-timestamp
  * @returns ISO-timestamp
+ * @category dateTime
+ * @module fromDateTimeLocal
  */
 const fromDateTimeLocal = (value: string): string => {
   if (isTimeLocal(value)) {

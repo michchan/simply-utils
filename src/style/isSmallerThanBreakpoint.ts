@@ -11,6 +11,8 @@ export type IsSmallerThanBreakpointBreakpoint = number | '100%' | ''
  * @param min (optional) minimum breakpoint. Default 0
  * Use if want to ensure return true if smaller than `min` no matter what `breakpoint` is
  * If both `breakpoint` and `min` are not provided, will return false
+ * @category style
+ * @module isSmallerThanBreakpoint
  */
 const isSmallerThanBreakpoint = (
   windowWidth: number,

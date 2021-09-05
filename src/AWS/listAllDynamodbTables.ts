@@ -17,6 +17,8 @@ export interface ListAllDynamodbTablesOptions {
 }
 /**
  * List table recursively
+ * @category AWS
+ * @module listAllDynamodbTables
  */
 const listAllDynamodbTables = (
   dynamodb: Pick<DynamoDB, 'listTables'>,

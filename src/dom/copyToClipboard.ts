@@ -2,6 +2,8 @@
  * Reference: https://gist.github.com/Chalarangelo/4ff1e8c0ec03d9294628efbae49216db#file-copytoclipboard-js
  *
  * @param {string} str text to copy
+ * @category dom
+ * @module copyToClipboard
  */
 const copyToClipboard = (str: string): void => {
   // Create a <textarea> element

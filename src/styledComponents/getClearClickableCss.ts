@@ -4,6 +4,8 @@ import createHoverableOnlyCss from './createHoverableOnlyCss'
 
 /**
  * Opposite of `getClickableCss`
+ * @category styledComponents
+ * @module getClearClickableCss
  */
 const getClearClickableCss = <T> (): StyledCss<T> => css`
   cursor: default;

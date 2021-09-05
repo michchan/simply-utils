@@ -44,6 +44,8 @@ export interface ListAllS3Options extends ConcatDataOptions {
 }
 /**
  * List S3 objects recursively
+ * @category AWS
+ * @module listAllS3Objects
  */
 const listAllS3Objects = (
   s3: Pick<S3, 'listObjectsV2'>,

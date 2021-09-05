@@ -7,6 +7,8 @@ export const DEFAULT_URL_REPLACER_STR = '<a href=\"$1\">$1</a>'
  *
  * @param text
  * @param isHTML
+ * @category dom
+ * @module parseUrlsInHTMLStr
  */
 const parseUrlsInHTMLStr = (
   htmlStr: string,

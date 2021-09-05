@@ -5,6 +5,8 @@ import isStr from './isStr'
  * @param {string | Array<string>} value A string in "key:value,key:value" pattern or
  *    an array of string in "key:value" pattern
  * @returns {Object} An object in { [key]: value } pattern
+ * @category string
+ * @module keyValueStringToObject
  */
 function keyValueStringToObject <T = { [key: string]: string }> (value: string | string[]): T {
   const result = {} as T

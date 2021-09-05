@@ -7,6 +7,8 @@ import isFullWidthChar from './isFullWIdthChar'
  * @param {Object} options
  *
  * @returns {string}
+ * @category string
+ * @module truncate
  */
 const truncate = (
   str: string = '',

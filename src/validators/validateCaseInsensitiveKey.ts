@@ -4,6 +4,8 @@
  * @param key The key to validate (to be constructed in RegExp)
  * @param value The value to test
  * @param isStrict If enabled, the regex will wrap the key with '^' and '$' symbol. Default to true.
+ * @category validators
+ * @module validateCaseInsensitiveKey
  */
 function validateCaseInsensitiveKey (
   key: string,

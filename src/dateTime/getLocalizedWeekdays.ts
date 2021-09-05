@@ -7,6 +7,8 @@ const NUM_WEEKDAYS = 7
  *
  * @param locale The locale code or an array of locale codes
  * @param format
+ * @category dateTime
+ * @module getLocalizedWeekdays
  */
 const getLocalizedWeekdays = (
   locale?: string | string[],

@@ -4,6 +4,8 @@ import isNum from '../number/isNum'
  *
  * @param value
  * @param unit Default to `px`
+ * @category style
+ * @module parseCSSNumWithUnit
  */
 function parseCSSNumWithUnit <
   T extends number | string,

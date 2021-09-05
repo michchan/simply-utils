@@ -83,6 +83,8 @@ export interface WaitForAWSServiceOptions {
   data => !!data?.StreamDescription
   )
  * ```
+ * @category AWS
+ * @module waitForAWSService
  */
 function waitForAWSService <Input, Output, Err> (
   describe: Desciber<Input, Output, Err>,

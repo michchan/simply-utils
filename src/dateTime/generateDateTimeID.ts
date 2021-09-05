@@ -6,6 +6,8 @@ const SECOND_DIGITS = 3
 
 /**
  * Generate an ID with format YYYYMMDDHHmmssSSS
+ * @category dateTime
+ * @module generateDateTimeID
  */
 const generateDateTimeID = (): string => {
   const date = new Date()

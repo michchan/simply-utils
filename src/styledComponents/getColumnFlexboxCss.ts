@@ -8,6 +8,8 @@ import getRowFlexboxCss from './getRowFlexboxCss'
  * @param alignItems Default to 'flex-start'
  * @param justifyContent Default to `alignItems` argument
  * @param flexWrap Default to 'nowrap'
+ * @category styledComponents
+ * @module getColumnFlexboxCss
  */
 const getColumnFlexboxCss = <T> (
   alignItems: CSSProperties['alignItems'] = 'flex-start',

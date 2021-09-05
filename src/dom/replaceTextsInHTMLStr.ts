@@ -7,6 +7,8 @@ const domparser = new DOMParser()
  * Replace text in HTML string
  *
  * @param htmlStr
+ * @category dom
+ * @module replaceTextsInHTMLStr
  */
 const replaceTextsInHTMLStr = (
   htmlStr: string,

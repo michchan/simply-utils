@@ -6,6 +6,8 @@ import StyledCss from './_common/StyledCss.type'
  *
  * @param opacity
  * @param cursor
+ * @category styledComponents
+ * @module getDisabledCss
  */
 const getDisabledCss = <T> (
   opacity: number = 0.5,

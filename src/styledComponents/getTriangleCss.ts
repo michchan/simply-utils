@@ -8,6 +8,8 @@ import StyledCss from './_common/StyledCss.type'
  * @param {string} color
  * @param {number} width
  * @param {number} height
+ * @category styledComponents
+ * @module getTriangleCss
  */
 const getTriangleCss = <T> (
   direction: 'up' | 'down' | 'left' | 'right' = 'down',

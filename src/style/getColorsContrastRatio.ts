@@ -8,6 +8,8 @@ const OFFSET = 0.05
  * Reference: https://dev.to/alvaromontoro/building-your-own-color-contrast-checker-4j7o
  * @param color1
  * @param color2
+ * @category style
+ * @module getColorsContrastRatio
  */
 const getColorsContrastRatio = (color1: string, color2: string): number => {
   const color1Luminance = getColorLuminance(color1)

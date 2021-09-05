@@ -5,6 +5,8 @@ import isObj from './isObj'
 /**
  * Like lodash/isEmpty but also cater empty nested object and array cases.
  * @param o
+ * @category object
+ * @module isDeepEmpty
  */
 const isDeepEmpty = (o: unknown): boolean => {
   if (isObj(o))

@@ -5,6 +5,8 @@ import qs, { ParsedQs } from 'qs'
  *
  * @param str Query string (?a=1&b=2)
  * @param fallback The fallback object
+ * @category network
+ * @module fromQueryString
  */
 function fromQueryString <T extends ParsedQs = ParsedQs> (
   str: string,

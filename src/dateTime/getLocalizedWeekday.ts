@@ -7,6 +7,8 @@ import addDays from './addDays'
  * @param index
  * @param locale The locale code or an array of locale codes
  * @param format
+ * @category dateTime
+ * @module getLocalizedWeekday
  */
 const getLocalizedWeekday = (
   index: number = 0,

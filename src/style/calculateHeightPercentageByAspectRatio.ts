@@ -6,6 +6,8 @@ const MAX_PERCENT = 100
  * @param aspectRatio The floating number of aspect ratio of format (W/H). e.g. 12/8
  * @param fallbackPercentage (optional) in format of "XX%". If invalid, use "100%"
  * @returns height in format of "XX%", which is percentage of height to width (H/W)
+ * @category style
+ * @module calculateHeightPercentageByAspectRatio
  */
 const calculateHeightPercentageByAspectRatio = (
   aspectRatio: number | string,

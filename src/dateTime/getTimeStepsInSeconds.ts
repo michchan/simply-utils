@@ -7,6 +7,8 @@ const SECONDS_IN_DAY = 86400
  * which is the number of seconds in a day divided by a step number.
  *
  * @param step The step of each intervals
+ * @category dateTime
+ * @module getTimeStepsInSeconds
  */
 const getTimeStepsInSeconds = (step: number = 60): number[] => getStepsToTotal(SECONDS_IN_DAY, step)
 

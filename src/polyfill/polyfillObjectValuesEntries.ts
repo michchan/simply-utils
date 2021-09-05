@@ -1,5 +1,7 @@
 /**
  * Source: https://github.com/tc39/proposal-object-values-entries/blob/master/polyfill.js
+ * @category polyfill
+ * @module polyfillObjectValuesEntries
  */
 const polyfillObjectValuesEntries = (): void => {
   // @ts-expect-error: @TODO: Fix type

@@ -14,6 +14,8 @@ export interface MoveToNextSelectOptionOptions {
 
 /**
  * Scroll to the next select option
+ * @category reactDom
+ * @module moveToNextSelectOption
  */
 const moveToNextSelectOption = ({
   direction,
