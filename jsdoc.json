@@ -1,16 +1,23 @@
 {
   "tags": {
-    "allowUnknownTags": false
+    "allowUnknownTags": [
+      "optional",
+      "category"
+    ]
   },
+  "plugins": [
+    "node_modules/better-docs/typescript",
+    "node_modules/better-docs/category"
+  ],
   "source": {
-    "include": "dist",
-    "includePattern": "\\.js$",
-    "excludePattern": "(node_modules/|docs)"
+    "include": "src",
+    "includePattern": "\\.(jsx|js|ts|tsx)$",
+    "excludePattern": "(node_modules/|docs|(index\\.(jsx|js|ts|tsx)))"
   },
   "opts": {
-    "template": "node_modules/docdash",
+    "template": "node_modules/better-docs",
     "encoding": "utf8",
-    "destination": "jsdoc_out/",
+    "destination": "docs/",
     "recurse": true,
     "verbose": true
   },
