@@ -4,6 +4,8 @@
  * @param {string} str text to copy
  * @category dom
  * @module copyToClipboard
+ * @category dom
+ * @module copyToClipboard
  */
 const copyToClipboard = (str: string): void => {
   // Create a <textarea> element

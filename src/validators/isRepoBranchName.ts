@@ -8,6 +8,8 @@ const REGEX = new RegExp(`^(${URL_SAFE_REGEX_STR}/)?${URL_SAFE_REGEX_STR}$`, 'i'
  * @param value
  * @category validators
  * @module isRepoBranchName
+ * @category validators
+ * @module isRepoBranchName
  */
 const isRepoBranchName = (value: string): boolean => REGEX.test(value)
 

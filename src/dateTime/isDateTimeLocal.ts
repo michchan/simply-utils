@@ -4,6 +4,8 @@ const REGEX = /^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}$/i
  * Validate if it is date-time local
  * @category dateTime
  * @module isDateTimeLocal
+ * @category dateTime
+ * @module isDateTimeLocal
  */
 const isDateTimeLocal = (value: string): boolean => REGEX.test(value)
 

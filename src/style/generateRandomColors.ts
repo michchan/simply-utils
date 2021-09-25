@@ -23,6 +23,8 @@ export interface GenerateRandomColorsOptions {
  * @returns array of HSL color code
  * @category style
  * @module generateRandomColors
+ * @category style
+ * @module generateRandomColors
  */
 const generateRandomColors = (
   numberOfColors: number,

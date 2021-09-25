@@ -4,6 +4,8 @@
  * @param el
  * @category dom
  * @module getScrollYFromElementOrWindow
+ * @category dom
+ * @module getScrollYFromElementOrWindow
  */
 const getScrollYFromElementOrWindow = (el: HTMLElement | typeof window): number => (
   (el as HTMLElement)?.scrollTop

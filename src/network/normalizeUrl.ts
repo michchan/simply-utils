@@ -2,6 +2,8 @@
  * Add 'http'/'https' prefix to url
  * @category network
  * @module normalizeUrl
+ * @category network
+ * @module normalizeUrl
  */
 const normalizeUrl = (src: string): string => {
   if (!/^(http|https)\:\/\//i.test(src))

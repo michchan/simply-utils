@@ -6,6 +6,8 @@ import isNum from '../number/isNum'
  * @param dateStr
  * @category dateTime
  * @module isDateString
+ * @category dateTime
+ * @module isDateString
  */
 const isDateString = (dateStr: string): boolean => {
   // Empty string

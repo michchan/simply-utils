@@ -5,6 +5,8 @@
  * @returns The timeout in milliseconds (ms).
  * @category network
  * @module calculateUploadTimeout
+ * @category network
+ * @module calculateUploadTimeout
  */
 function calculateUploadTimeout (size: number, min: number = 60000, factor: number = 10): number {
   // 1s/10kB

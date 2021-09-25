@@ -8,6 +8,8 @@ const MAX_PERCENT = 100
  * @returns height in format of "XX%", which is percentage of height to width (H/W)
  * @category style
  * @module calculateHeightPercentageByAspectRatio
+ * @category style
+ * @module calculateHeightPercentageByAspectRatio
  */
 const calculateHeightPercentageByAspectRatio = (
   aspectRatio: number | string,

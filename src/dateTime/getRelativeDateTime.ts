@@ -21,6 +21,8 @@ const SECOND_PRECISION = 10
  * @param locales The locale code or an array of locale codes
  * @category dateTime
  * @module getRelativeDateTime
+ * @category dateTime
+ * @module getRelativeDateTime
  */
 function getRelativeDateTime (
   comparedDateTime: string | Date,

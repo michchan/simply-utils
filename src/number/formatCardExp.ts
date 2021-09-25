@@ -7,6 +7,8 @@ import formatAsGroupedString from './formatAsGroupedString'
  * @param separator
  * @category number
  * @module formatCardExp
+ * @category number
+ * @module formatCardExp
  */
 const formatCardExp = (value: string, separator: string = ' / '): string => {
   // Replace extra slashes "/" of value first before formatting

@@ -5,6 +5,8 @@
  * @param pageSize
  * @category pagination
  * @module isPageTrailingItem
+ * @category pagination
+ * @module isPageTrailingItem
  */
 const isPageTrailingItem = (
   rowIndex: number,

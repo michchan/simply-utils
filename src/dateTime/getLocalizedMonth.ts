@@ -7,6 +7,8 @@
  * @param format
  * @category dateTime
  * @module getLocalizedMonth
+ * @category dateTime
+ * @module getLocalizedMonth
  */
 const getLocalizedMonth = (
   index: number = 0,

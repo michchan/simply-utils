@@ -7,6 +7,8 @@ import isObj from './isObj'
  * @param o
  * @category object
  * @module isDeepEmpty
+ * @category object
+ * @module isDeepEmpty
  */
 const isDeepEmpty = (o: unknown): boolean => {
   if (isObj(o))

@@ -10,6 +10,8 @@ import divideDeep from '../math/divideDeep'
  * @returns A tuple type of [<Displayed number>, <Displayed units>] format. E.g. [300, 'K']
  * @category number
  * @module shortenNumberWithUnit
+ * @category number
+ * @module shortenNumberWithUnit
  */
 const shortenNumberWithUnit = (
   num: number,

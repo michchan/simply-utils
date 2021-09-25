@@ -7,6 +7,8 @@ import urlRegex from '../_common/urlRegex'
  * @param regexReplacer
  * @category network
  * @module replaceUrls
+ * @category network
+ * @module replaceUrls
  */
 const replaceUrls = (
   text: string,

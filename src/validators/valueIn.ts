@@ -17,6 +17,8 @@ export type HasAccessRightsMode =
  * @param mode The mode of checking, either whitelist or blacklist. Default to whitelist.
  * @category validators
  * @module valueIn
+ * @category validators
+ * @module valueIn
  */
 function valueIn <T extends string | number = string> (
   value: T,

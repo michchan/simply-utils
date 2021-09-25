@@ -4,6 +4,8 @@
  * @param date
  * @category dateTime
  * @module getFirstDateOfMonth
+ * @category dateTime
+ * @module getFirstDateOfMonth
  */
 function getFirstDateOfMonth (date: Date = new Date()): Date {
   return new Date(date.getFullYear(), date.getMonth())

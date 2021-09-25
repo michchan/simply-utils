@@ -17,6 +17,8 @@ export interface CalculatePageByScrollTopOptions {
  * @returns The page number (start from 1)
  * @category pagination
  * @module calculatePageByScrollTop
+ * @category pagination
+ * @module calculatePageByScrollTop
  */
 const calculatePageByScrollTop = (
   /** The current scroll top */

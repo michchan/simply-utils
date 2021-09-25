@@ -5,6 +5,8 @@
  * @param el
  * @category dom
  * @module getDOMNodesUnder
+ * @category dom
+ * @module getDOMNodesUnder
  */
 function getDOMNodesUnder <T extends Node = Node> (
   el: Node,

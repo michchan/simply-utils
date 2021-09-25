@@ -6,6 +6,8 @@ import isNum from './isNum'
  * @param o
  * @category number
  * @module isNumStr
+ * @category number
+ * @module isNumStr
  */
 const isNumStr = (o: unknown): o is number | string => isNum(o, true)
 

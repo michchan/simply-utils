@@ -85,6 +85,8 @@ export interface WaitForAWSServiceOptions {
  * ```
  * @category AWS
  * @module waitForAWSService
+ * @category AWS
+ * @module waitForAWSService
  */
 function waitForAWSService <Input, Output, Err> (
   describe: Desciber<Input, Output, Err>,

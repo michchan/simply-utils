@@ -17,6 +17,8 @@ export const MAX_MSG_LENGTH = 4096
  * @param parseMode
  * @category telegram
  * @module sendTelegramMessage
+ * @category telegram
+ * @module sendTelegramMessage
  */
 const sendTelegramMessage = async (
   chatId: string,

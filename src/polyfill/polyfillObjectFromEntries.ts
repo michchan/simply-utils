@@ -2,6 +2,8 @@
  * Source: https://github.com/tc39/proposal-object-from-entries/blob/master/polyfill.js
  * @category polyfill
  * @module polyfillObjectFromEntries
+ * @category polyfill
+ * @module polyfillObjectFromEntries
  */
 const polyfillObjectFromEntries = (): void => {
   // @ts-expect-error: This is validating

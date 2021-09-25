@@ -15,6 +15,8 @@ export interface TranslatedSection {
  * @param t
  * @category i18next
  * @module getTranslatedSections
+ * @category i18next
+ * @module getTranslatedSections
  */
 const getTranslatedSections = (
   i18nNamspace: string,

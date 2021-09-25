@@ -15,6 +15,8 @@ export interface ToDateTimeLocalOptions {
  * Example value: "2019-05-02T13:28"
  * @category dateTime
  * @module toDateTimeLocal
+ * @category dateTime
+ * @module toDateTimeLocal
  */
 const toDateTimeLocal = (
   isoDatetime: string,

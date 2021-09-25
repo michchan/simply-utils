@@ -9,6 +9,8 @@ import isFullWidthChar from './isFullWIdthChar'
  * @returns {string}
  * @category string
  * @module truncate
+ * @category string
+ * @module truncate
  */
 const truncate = (
   str: string = '',

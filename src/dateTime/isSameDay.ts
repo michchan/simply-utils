@@ -7,6 +7,8 @@
  * @param b
  * @category dateTime
  * @module isSameDay
+ * @category dateTime
+ * @module isSameDay
  */
 const isSameDay = (a: Date, b: Date): boolean => {
   const aDay = new Date(a.getFullYear(), a.getMonth(), a.getDate())

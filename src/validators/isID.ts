@@ -6,6 +6,8 @@ import isURLSafeStr from './isURLSafeStr'
  * @param value
  * @category validators
  * @module isID
+ * @category validators
+ * @module isID
  */
 const isID = (value: string | number): boolean => isURLSafeStr(`${value}`)
 

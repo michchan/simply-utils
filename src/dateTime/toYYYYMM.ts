@@ -6,6 +6,8 @@ import zeroPadding from '../number/zeroPadding'
  * @returns A date string of format "YYYY-MM"
  * @category dateTime
  * @module toYYYYMM
+ * @category dateTime
+ * @module toYYYYMM
  */
 const toYYYYMM = (date: Date): string => {
   const YYYY = date.getFullYear()

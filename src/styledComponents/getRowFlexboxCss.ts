@@ -8,6 +8,8 @@ import StyledCss from './_common/StyledCss.type'
  * @param flexWrap Default to 'nowrap'
  * @category styledComponents
  * @module getRowFlexboxCss
+ * @category styledComponents
+ * @module getRowFlexboxCss
  */
 const getRowFlexboxCss = <T> (
   alignItems: CSSProperties['alignItems'] = 'flex-start',

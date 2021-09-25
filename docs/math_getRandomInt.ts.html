@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> isDateLocal</title>
+  <title> math/getRandomInt.ts</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -73,135 +75,34 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p>Module</p>
-                    <h1>isDateLocal</h1>
+                    <p>Source</p>
+                    <h1>math/getRandomInt.ts</h1>
                 </header>
                 
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Generate a random number in a certain range
+ *
+ * @param from The inclusive number from
+ * @param to The inclusive number to
+ * @category math
+ * @module getRandomInt
+ */
+const getRandomInt = (from: number, to: number): number => {
+  const min = Math.ceil(from)
+  const max = Math.floor(to)
+  // The maximum is inclusive and the minimum is inclusive
+  return Math.floor(Math.random() * ((max - min + 1) + min))
+}
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">Validate if it is date local</div>
-        
-
-        
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="dateTime_isDateLocal.ts.html" class="button">View Source</a>
-            <span>
-                <a href="dateTime_isDateLocal.ts.html">dateTime/isDateLocal.ts</a>, <a href="dateTime_isDateLocal.ts.html#line2">line 2</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-    </div>
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+export default getRandomInt</code></pre>
+        </article>
+    </section>
 
 
 

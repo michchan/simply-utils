@@ -17,6 +17,8 @@ type Param = string | number
  *   e.g. For /shops/:id/orders/:id -> ['shop123', 'order4325']
  * @category routing
  * @module replacePathParams
+ * @category routing
+ * @module replacePathParams
  */
 function replacePathParams (
   path: string,

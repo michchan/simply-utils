@@ -10,6 +10,8 @@ import isStr from '../string/isStr'
  * @param t
  * @category i18next
  * @module getTranslatedList
+ * @category i18next
+ * @module getTranslatedList
  */
 const getTranslatedList = (
   i18nNamspace: string,

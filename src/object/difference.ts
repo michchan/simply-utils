@@ -12,6 +12,8 @@ import isObj from './isObj'
  * @return {Object}    Return a new next who represent the diff
  * @category object
  * @module difference
+ * @category object
+ * @module difference
  */
 function difference <T = { [key: string]: any }> (
   previous: T,

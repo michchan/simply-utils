@@ -6,6 +6,8 @@ import convertColorToRgbaArray from './convertColorToRgbaArray'
  * @param alpha Alpha value. 0 - 1.
  * @category style
  * @module getColorWithAlpha
+ * @category style
+ * @module getColorWithAlpha
  */
 const getColorWithAlpha = (color: string, alpha: number): string => {
   const [r, g, b] = convertColorToRgbaArray(color)

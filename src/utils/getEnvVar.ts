@@ -4,6 +4,8 @@
  * @param isMandatory Whether it should throw an error if it's not defined. Default to true.
  * @category utils
  * @module getEnvVar
+ * @category utils
+ * @module getEnvVar
  */
 const getEnvVar = (
   name: string,

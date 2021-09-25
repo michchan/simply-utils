@@ -8,6 +8,8 @@ const REGEX = new RegExp(`^${URL_SAFE_REGEX_STR}/${URL_SAFE_REGEX_STR}$`, 'i')
  * @param value
  * @category validators
  * @module isRepoFullname
+ * @category validators
+ * @module isRepoFullname
  */
 const isRepoFullname = (value: string): boolean => REGEX.test(value)
 

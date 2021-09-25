@@ -9,6 +9,8 @@ import setTimerRecursive from './setTimerRecursive'
  *          It is useful to cancel timers.
  * @category utils
  * @module setTimeoutRecursive
+ * @category utils
+ * @module setTimeoutRecursive
  */
 const setTimeoutRecursive = (
   callStack: (() => unknown)[] = [],

@@ -7,6 +7,8 @@
  * @param {Number} maxViewportWidth
  * @category style
  * @module getFluidSize
+ * @category style
+ * @module getFluidSize
  */
 const getFluidSize = (
   // In px

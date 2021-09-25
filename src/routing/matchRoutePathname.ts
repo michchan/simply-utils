@@ -11,6 +11,8 @@ export const PARAM_REGEX_STR = '[a-zA-Z0-9_-]+'
  * @param isExact
  * @category routing
  * @module matchRoutePathname
+ * @category routing
+ * @module matchRoutePathname
  */
 const matchRoutePathname = (
   path: string,

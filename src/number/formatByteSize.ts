@@ -17,6 +17,8 @@ const UNITS_MAP = [
  * @returns A tuple type of [<Displayed number>, <Displayed units>] format. E.g. [300, 'MB']
  * @category number
  * @module formatByteSize
+ * @category number
+ * @module formatByteSize
  */
 function formatByteSize (size: number): [number, string] {
   return shortenNumberWithUnit(size, EACH_KB, UNITS_MAP)

@@ -9,6 +9,8 @@ const MAX_MONTHLY_LAST_DAY = 31
  * @param date
  * @category dateTime
  * @module getLastDateOfMonth
+ * @category dateTime
+ * @module getLastDateOfMonth
  */
 function getLastDateOfMonth (date: Date = new Date()): Date {
   // Month of given date

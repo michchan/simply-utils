@@ -10,6 +10,8 @@ const NUM_GROUPS = 4
  * @param separator Customized separator. Default to hyphen '-'.
  * @category number
  * @module formatCardNum
+ * @category number
+ * @module formatCardNum
  */
 const formatCardNum = (value: string, separator: string = ' '): string => formatAsGroupedString({
   value,

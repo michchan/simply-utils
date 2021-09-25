@@ -6,6 +6,8 @@ import matchRoutePathname from './matchRoutePathname'
  * @param isNotExact
  * @category routing
  * @module getRoutePathnameMatcher
+ * @category routing
+ * @module getRoutePathnameMatcher
  */
 function getRoutePathnameMatcher (
   route: string,

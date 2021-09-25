@@ -9,6 +9,8 @@ import isNullOrUndef from '../validators/isNullOrUndef'
  * @param params
  * @category network
  * @module toQueryString
+ * @category network
+ * @module toQueryString
  */
 function toQueryString <
   T extends { [key: string]: any } = { [key: string]: any }

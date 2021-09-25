@@ -8,6 +8,8 @@
  * @returns A tuple type of [quotient, depth]. Eg. for num = 40000, and divisor = 1000 -> [40, 1]
  * @category math
  * @module divideDeep
+ * @category math
+ * @module divideDeep
  */
 const divideDeep = (
   dividend: number,

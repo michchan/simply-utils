@@ -5,6 +5,8 @@ import { SyntheticEvent } from 'react'
  * @param e
  * @category reactDom
  * @module preventEventPropagateToParent
+ * @category reactDom
+ * @module preventEventPropagateToParent
  */
 const preventEventPropagateToParent = (e: SyntheticEvent | Event): void => {
   e.preventDefault()

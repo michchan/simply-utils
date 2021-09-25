@@ -9,6 +9,8 @@ export interface TableCellSortState {
  * Sort table rows data with a "sort state" array
  * @category algo
  * @module sortTableRowsByEachCell
+ * @category algo
+ * @module sortTableRowsByEachCell
  */
 function sortTableRowsByEachCell <T> (
   rows: T[],

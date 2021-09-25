@@ -9,6 +9,8 @@ import isFunc from '../validators/isFunc'
  * @param interval The interval between each try
  * @category utils
  * @module tryUntil
+ * @category utils
+ * @module tryUntil
  */
 function tryUntil (
   handler: (repeated: number, totalTry: number) => boolean,

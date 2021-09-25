@@ -9,6 +9,8 @@ const LAST_MS = 999
  * @param date
  * @category dateTime
  * @module getLastMsOfDate
+ * @category dateTime
+ * @module getLastMsOfDate
  */
 function getLastMsOfDate (date: Date = new Date()): Date {
   const clonedDate = new Date(date)

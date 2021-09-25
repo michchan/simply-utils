@@ -15,6 +15,8 @@ import isFunc from '../validators/isFunc'
  *        to return a boolean indicating whether the update is allowed.
  * @category reactDom
  * @module requestSetValue
+ * @category reactDom
+ * @module requestSetValue
  */
 function requestSetValue <T> (
   nextValue: SetStateAction<T>,

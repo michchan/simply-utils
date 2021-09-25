@@ -5,6 +5,8 @@
  * @param pageSize
  * @category pagination
  * @module getPageByRowIndex
+ * @category pagination
+ * @module getPageByRowIndex
  */
 const getPageByRowIndex = (
   rowIndex: number,

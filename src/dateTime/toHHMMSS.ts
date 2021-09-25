@@ -8,6 +8,8 @@ const NUM_DIGITS = 10
  * @param {Number} seconds
  * @category dateTime
  * @module toHHMMSS
+ * @category dateTime
+ * @module toHHMMSS
  */
 const toHHMMSS = (seconds: number): string => {
   // Don't forget the second param

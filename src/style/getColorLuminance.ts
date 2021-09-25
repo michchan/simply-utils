@@ -16,6 +16,8 @@ const VALUE_DIVIDEND = 12.92
  * @param color
  * @category style
  * @module getColorLuminance
+ * @category style
+ * @module getColorLuminance
  */
 const getColorLuminance = (color: string): number => {
   const colorRgb = convertColorToRgbaArray(color).slice(0, RGB_LENGTH)

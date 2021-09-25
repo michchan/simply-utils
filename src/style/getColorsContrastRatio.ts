@@ -10,6 +10,8 @@ const OFFSET = 0.05
  * @param color2
  * @category style
  * @module getColorsContrastRatio
+ * @category style
+ * @module getColorsContrastRatio
  */
 const getColorsContrastRatio = (color1: string, color2: string): number => {
   const color1Luminance = getColorLuminance(color1)

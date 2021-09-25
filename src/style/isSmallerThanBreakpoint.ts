@@ -13,6 +13,8 @@ export type IsSmallerThanBreakpointBreakpoint = number | '100%' | ''
  * If both `breakpoint` and `min` are not provided, will return false
  * @category style
  * @module isSmallerThanBreakpoint
+ * @category style
+ * @module isSmallerThanBreakpoint
  */
 const isSmallerThanBreakpoint = (
   windowWidth: number,

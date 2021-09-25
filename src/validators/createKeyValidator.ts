@@ -14,6 +14,8 @@ type ReturnType<
  * @param target Target string constant, or array of validators.
  * @category validators
  * @module createKeyValidator
+ * @category validators
+ * @module createKeyValidator
  */
 function createKeyValidator<FieldType extends string, TargetType extends FieldType> (
   target: TargetType | ReturnType<FieldType, TargetType>[]

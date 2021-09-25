@@ -8,6 +8,8 @@ const CENTURY_DIGITS = 2
  * @param year
  * @category dateTime
  * @module toFullYear
+ * @category dateTime
+ * @module toFullYear
  */
 const toFullYear = (year: string | number): number | undefined => {
   const yearString = isStr(year) ? year : zeroPadding(year, CENTURY_DIGITS)

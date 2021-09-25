@@ -5,6 +5,8 @@
  * @param separator Customized separator. Default to hyphen '-'.
  * @category number
  * @module formatBankAccNum
+ * @category number
+ * @module formatBankAccNum
  */
 const formatBankAccNum = (value: string, separator: string = '-'): string => {
   const rawNumber = value.replace(/[^\d]/g, '')

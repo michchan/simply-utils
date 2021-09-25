@@ -3,6 +3,8 @@
  *
  * @param from The inclusive number from
  * @param to The inclusive number to
+ * @category math
+ * @module getRandomInt
  */
 const getRandomInt = (from: number, to: number): number => {
   const min = Math.ceil(from)

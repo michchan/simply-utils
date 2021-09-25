@@ -8,6 +8,8 @@ type ReturnType <RefType extends number | NodeJS.Timeout> = RefType[]
  * @returns A reference value pointed to the titimmer references stack. It is useful to cancel refs.
  * @category utils
  * @module setTimerRecursive
+ * @category utils
+ * @module setTimerRecursive
  */
 function setTimerRecursive <RefType extends number | NodeJS.Timeout> (
   timer: 'timeout' | 'animFrame' = 'timeout',

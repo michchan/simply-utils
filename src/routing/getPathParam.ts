@@ -9,6 +9,8 @@ import isObj from '../object/isObj'
  * @param paramKey
  * @category routing
  * @module getPathParam
+ * @category routing
+ * @module getPathParam
  */
 const getPathParam = (
   location: history.Location | history.Location['pathname'],

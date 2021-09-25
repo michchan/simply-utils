@@ -14,6 +14,8 @@ export interface FormatCurrencyOptions {
  * * Please see polyfill/polyfillIntl if you need a polyfill of that.
  * @category number
  * @module formatCurrency
+ * @category number
+ * @module formatCurrency
  */
 const formatCurrency = (
   numToFormat: number = 0,

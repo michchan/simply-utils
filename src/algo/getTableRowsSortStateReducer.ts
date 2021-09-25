@@ -12,6 +12,8 @@ import { TableCellSortState } from './sortTableRowsByEachCell'
  * @returns a reducer function that accept a previous/current state and return next state.
  * @category algo
  * @module getTableRowsSortStateReducer
+ * @category algo
+ * @module getTableRowsSortStateReducer
  */
 const getTableRowsSortStateReducer = (
   cellIndex: number,

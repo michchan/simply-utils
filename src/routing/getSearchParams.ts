@@ -10,6 +10,8 @@ export type GetSearchParamsLocation = Pick<Location, 'search'>
  * @param useWindowLocationAsFallback
  * @category routing
  * @module getSearchParams
+ * @category routing
+ * @module getSearchParams
  */
 const getSearchParams = (
   location: GetSearchParamsLocation | string = window.location,

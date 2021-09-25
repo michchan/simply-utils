@@ -9,6 +9,8 @@ import setTimerRecursive from './setTimerRecursive'
  *          It is useful to cancel timers.
  * @category utils
  * @module requestAnimationFrameRecursive
+ * @category utils
+ * @module requestAnimationFrameRecursive
  */
 const requestAnimationFrameRecursive = (
   callStack: (() => unknown)[] = [],

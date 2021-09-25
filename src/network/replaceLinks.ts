@@ -9,6 +9,8 @@ import urlRegex from '../_common/urlRegex'
  * @param regexReplacer
  * @category network
  * @module replaceLinks
+ * @category network
+ * @module replaceLinks
  */
 const replaceLinks = (
   text: string,

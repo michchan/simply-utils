@@ -5,6 +5,8 @@ import isFunc from '../validators/isFunc'
  * Parse JSON string with error catched
  * @category utils
  * @module parseJSON
+ * @category utils
+ * @module parseJSON
  */
 function parseJSON <T extends { [key: string]: any } = { [key: string]: any }> (
   str: string,

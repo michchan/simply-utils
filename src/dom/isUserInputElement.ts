@@ -7,6 +7,8 @@ import parseBooleanStr from '../utils/parseBooleanStr'
  * @param el
  * @category dom
  * @module isUserInputElement
+ * @category dom
+ * @module isUserInputElement
  */
 const isUserInputElement = (el: HTMLElement): boolean => (
   /^select$/i.test(el.tagName)

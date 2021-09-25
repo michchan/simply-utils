@@ -60,6 +60,8 @@ export interface CreateRowColumnLayoutReturnType <T extends { [key: string]: any
  * @param paddingVerti
  * @category styledComponents
  * @module createRowColumnLayout
+ * @category styledComponents
+ * @module createRowColumnLayout
  */
 function createRowColumnLayout <T extends { [key: string]: any }> (
   paddingHoriz: number = 30,

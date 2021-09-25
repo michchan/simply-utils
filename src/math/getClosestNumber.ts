@@ -11,6 +11,8 @@
  * @param numbers The array of numbers
  * @category math
  * @module getClosestNumber
+ * @category math
+ * @module getClosestNumber
  */
 const getClosestNumber = (num: number, numbers: number[]): number => numbers
   .reduce((prev, curr) => (Math.abs(curr - num) < Math.abs(prev - num) ? curr : prev))

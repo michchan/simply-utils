@@ -7,6 +7,8 @@ import isStr from './isStr'
  * @returns {Object} An object in { [key]: value } pattern
  * @category string
  * @module keyValueStringToObject
+ * @category string
+ * @module keyValueStringToObject
  */
 function keyValueStringToObject <T = { [key: string]: string }> (value: string | string[]): T {
   const result = {} as T

@@ -3,6 +3,8 @@
  * @param htmlString
  * @category dom
  * @module getInnerTextFromHTMLStr
+ * @category dom
+ * @module getInnerTextFromHTMLStr
  */
 function getInnerTextFromHTMLStr (htmlString: string): string {
   const tempContainerDom = document.createElement('div')

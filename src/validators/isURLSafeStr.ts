@@ -16,6 +16,8 @@ const REGEX = new RegExp(`^(${CASE_1}|${CASE_2})$`, 'i')
  * @param value
  * @category validators
  * @module isURLSafeStr
+ * @category validators
+ * @module isURLSafeStr
  */
 const isURLSafeStr = (value: string | string): boolean => REGEX.test(`${value}`)
 

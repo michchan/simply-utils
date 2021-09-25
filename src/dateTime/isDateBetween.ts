@@ -13,6 +13,8 @@ import isUndef from '../validators/isUndef'
  * @param isInclusive (optional) Default false
  * @category dateTime
  * @module isDateBetween
+ * @category dateTime
+ * @module isDateBetween
  */
 const isDateBetween = (date: Date, start?: Date, end?: Date, isInclusive?: boolean): boolean => {
   if (!isDate(date)) return false

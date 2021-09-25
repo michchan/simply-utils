@@ -9,6 +9,8 @@ import addDays from './addDays'
  * @param format
  * @category dateTime
  * @module getLocalizedWeekday
+ * @category dateTime
+ * @module getLocalizedWeekday
  */
 const getLocalizedWeekday = (
   index: number = 0,

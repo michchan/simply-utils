@@ -45,6 +45,8 @@ const translate = (direction: ChevronRotataDirection) => {
  * @param {number} thickness
  * @category styledComponents
  * @module getChevronCss
+ * @category styledComponents
+ * @module getChevronCss
  */
 const getChevronCss = <T> (
   direction: ChevronRotataDirection = 'down',

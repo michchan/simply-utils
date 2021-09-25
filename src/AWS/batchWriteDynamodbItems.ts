@@ -33,6 +33,8 @@ export interface BatchWriteDynamoDBItemsOptions <T> {
  * which means with this helper more than 25 items can be written into the database with one call.
  * @category AWS
  * @module batchWriteDynamodbItems
+ * @category AWS
+ * @module batchWriteDynamodbItems
  */
 function batchWriteDynamodbItems <T> ({
   docClient,
