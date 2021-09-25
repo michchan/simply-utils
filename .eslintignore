@@ -15,3 +15,6 @@
 
 # Non JavaScript/TypeScript files
 **/*.svg
+
+# Ignore JSDocs
+**/docs/*
