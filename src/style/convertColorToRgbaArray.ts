@@ -10,6 +10,7 @@ const MAX_HSL_VALUE = 100
 /**
  * Helper method that converts hue to rgb value
  * Reference: https://stackoverflow.com/questions/2353211/hsl-to-rgb-color-conversion
+ * @ignore
  */
 const hueToRgbValue = (p: number, q: number, t: number): number => {
   const normalizedT = t < 0 ? t + 1 : (t > 1 ? t - 1 : t)
@@ -48,7 +49,7 @@ const hexToRgbArr = (color: string) => {
       return []
   }
 }
-/** Reference: https://stackoverflow.com/questions/2353211/hsl-to-rgb-color-conversion */
+/** @ignore  Reference: https://stackoverflow.com/questions/2353211/hsl-to-rgb-color-conversion */
 const hslaToRgbArr = (color: string) => {
   // Array of value strings
   const [hString, sString, lString, aString] = color.replace(/^hsla?\(|\)$| +/gi, '').split(',')

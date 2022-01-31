@@ -4,6 +4,14 @@ import fs = require('fs')
 const BLOCK_CM_START = '/**'
 const BLOCK_CM_END = ' */'
 
+const isModuleDeclarationLine = (line: string, name: string = ''): boolean => (
+  line.startsWith(`const ${name}`) ||
+  line.startsWith(`function ${name}`) ||
+  line.startsWith(`export function ${name}`) || 
+  line.startsWith(`async function ${name}`) || 
+  line.startsWith(`export async function ${name}`)
+)
+
 /** ---------------- Read folder name ---------------- */
 
 // Read module names from src
@@ -38,22 +46,21 @@ function main (dir: string): void {
     const catLine = ` * @category ${pureDir.replace(/^\//, '')}`
     const modLine = ` * @module ${name}`
 
-    const newLines = lines.reduce((acc, line) => {
-      if (
-        line.startsWith(`const ${name}`) ||
-        line.startsWith(`function ${name}`) ||
-        line.startsWith(`export function ${name}`) || 
-        line.startsWith(`async function ${name}`) || 
-        line.startsWith(`export async function ${name}`)
-      ) {
-        const prevLines = acc.slice(0, acc.length - 1).filter(line => {
+    let moduleLineCursor = 0;
+    const newLines = lines.reduce((acc, line, i) => {
+      const prevLines = acc.slice(0, acc.length - 1)
+
+      // ========== Generate/manipulate tag lines for exported modules ==========
+      if (isModuleDeclarationLine(line, name)) {
+        const prevNormalizedLine = prevLines.filter(line => {
           if (line === catLine || line === modLine) return false
           return true
         })
 
+        // Generate block comment as well
         if (!lines.includes(BLOCK_CM_START) || !lines.includes(BLOCK_CM_END)) {
           return [
-            ...prevLines,
+            ...prevNormalizedLine,
             BLOCK_CM_START,
             catLine,
             modLine,
@@ -62,16 +69,42 @@ function main (dir: string): void {
           ]
         }
 
-        const endOfBlockCommentLine = acc.slice(-1)
-        if (endOfBlockCommentLine[0]?.startsWith(' */')) {
+        // Add tags to existing block comments
+        const [endOfBlockCommentLine] = acc.slice(-1) ?? []
+        if (endOfBlockCommentLine?.startsWith(' */')) {
           return [
-            ...prevLines,
+            ...prevNormalizedLine,
             catLine,
             modLine,
-            ...endOfBlockCommentLine,
+            endOfBlockCommentLine,
             line,
           ]
         }
+
+        moduleLineCursor = i
+      }
+      // ========== Ignore internal modules ==========
+      if (isModuleDeclarationLine(line)) {
+        if (!prevLines.slice(moduleLineCursor).some(l => /^( \* @ignore)|(\/\*\* @ignore )/i.test(l))) {
+          const [endOfBlockCommentLine] = acc.slice(-1) ?? []
+          if (endOfBlockCommentLine?.startsWith(' */')) {
+            return [
+              ...prevLines,
+              ' * @ignore',
+              endOfBlockCommentLine,
+              line,
+            ]
+          }
+          if (endOfBlockCommentLine?.startsWith('/**')) {
+            return [
+              ...prevLines,
+              `/** @ignore ${endOfBlockCommentLine?.replace(/^(\/\*\*( @ignore )?)/, '') ?? ''}`,
+              line,
+            ]
+          }
+        }
+
+        moduleLineCursor = i
       }
       return [...acc, line]
     }, [] as string[])

@@ -4,7 +4,7 @@ type QI = DynamoDB.DocumentClient.QueryInput
 type QO = DynamoDB.DocumentClient.QueryOutput
 type SI = DynamoDB.DocumentClient.ScanInput
 type SO = DynamoDB.DocumentClient.ScanOutput
-/** Merge previous and next results */
+/** @ignore   Merge previous and next results */
 function mergeResults <Output extends QO | SO> (
   previousResult: null | Output,
   nextResult: Output

@@ -17,7 +17,7 @@ interface RecurOptions <Input, Output, Err> {
   maxTryTime: number;
   interval: number;
 }
-/** Wait for service async */
+/** @ignore   Wait for service async */
 function describeRecur <Input, Output, Err> ({
   describe,
   input,
