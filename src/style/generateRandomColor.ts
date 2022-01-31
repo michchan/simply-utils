@@ -1,3 +1,4 @@
+/* eslint-disable no-bitwise */
 const RADIX = 16
 const BASE_COLOR = 0xFFFFFF
 

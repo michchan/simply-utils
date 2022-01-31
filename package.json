@@ -14,11 +14,12 @@
     "index": "ts-node scripts/generateExports && ts-node scripts/generateIndex",
     "index:commit": "npm run index && git add . && git commit -m \"Update index files\"",
     "tag": "git tag $(node -pe 'require(\"./package.json\").version')",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "tsc-watch": "tsc --watch --noemit",
     "generate-docs-tags": "ts-node scripts/generateJSDocsTags",
     "generate-docs": "jsdoc -c jsdoc.json",
-    "serve-docs": "serve docs"
+    "serve-docs": "serve docs",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -42,7 +43,7 @@
   },
   "homepage": "https://github.com/michchan/simply-utils#readme",
   "devDependencies": {
-    "@michchan/eslint-config": "1.10.0",
+    "@michchan/eslint-config": "1.10.1",
     "@types/aws-lambda": "^8.10.70",
     "@types/history": "^4.7.8",
     "@types/lodash": "^4.14.167",
@@ -59,6 +60,7 @@
     "dotenv": "^8.2.0",
     "eslint": "^7.11.0",
     "file-loader": "^6.0.0",
+    "husky": "^7.0.4",
     "intl": "^1.2.5",
     "jsdoc": "^3.6.10",
     "node-fetch": "^2.6.7",

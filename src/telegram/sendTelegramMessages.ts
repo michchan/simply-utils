@@ -9,6 +9,7 @@ export interface SendTelegramMessagesOptions {
   parseMode?: string;
   /** Default to DEFAULT_INTERVAL */
   interval?: number;
+}
 /**
  * @category telegram
  * @module sendTelegramMessages

@@ -5,11 +5,11 @@ const BLOCK_CM_START = '/**'
 const BLOCK_CM_END = ' */'
 
 const isModuleDeclarationLine = (line: string, name: string = ''): boolean => (
-  line.startsWith(`const ${name}`) ||
-  line.startsWith(`function ${name}`) ||
-  line.startsWith(`export function ${name}`) || 
-  line.startsWith(`async function ${name}`) || 
-  line.startsWith(`export async function ${name}`)
+  line.startsWith(`const ${name}`)
+  || line.startsWith(`function ${name}`)
+  || line.startsWith(`export function ${name}`)
+  || line.startsWith(`async function ${name}`)
+  || line.startsWith(`export async function ${name}`)
 )
 
 /** ---------------- Read folder name ---------------- */
@@ -46,7 +46,7 @@ function main (dir: string): void {
     const catLine = ` * @category ${pureDir.replace(/^\//, '')}`
     const modLine = ` * @module ${name}`
 
-    let moduleLineCursor = 0;
+    let moduleLineCursor = 0
     const newLines = lines.reduce((acc, line, i) => {
       const prevLines = acc.slice(0, acc.length - 1)
 
@@ -85,7 +85,11 @@ function main (dir: string): void {
       }
       // ========== Ignore internal modules ==========
       if (isModuleDeclarationLine(line)) {
-        if (!prevLines.slice(moduleLineCursor).some(l => /^( \* @ignore)|(\/\*\* @ignore )/i.test(l))) {
+        if (
+          !prevLines
+            .slice(moduleLineCursor)
+            .some(l => /^( \* @ignore)|(\/\*\* @ignore )/i.test(l))
+        ) {
           const [endOfBlockCommentLine] = acc.slice(-1) ?? []
           if (endOfBlockCommentLine?.startsWith(' */')) {
             return [
