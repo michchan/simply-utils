@@ -19,7 +19,8 @@
     "generate-docs-tags": "ts-node scripts/generateJSDocsTags",
     "generate-docs": "jsdoc -c jsdoc.json",
     "serve-docs": "serve docs",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "standard-version --ignore-path .gitignore --commit-hook false"
   },
   "repository": {
     "type": "git",
@@ -70,6 +71,7 @@
     "react-dom": "^17.0.1",
     "relative-time-format": "^1.0.5",
     "serve": "^12.0.0",
+    "standard-version": "^9.3.2",
     "styled-components": "^5.2.1",
     "stylelint": "^13.7.2",
     "stylelint-config-standard": "^20.0.0",
