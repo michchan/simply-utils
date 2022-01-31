@@ -1,6 +1,5 @@
 import { css } from 'styled-components/macro'
 import StyledCss from './_common/StyledCss.type'
-
 /**
  * Source: http://apps.eky.hk/css-triangle-generator/
  *
@@ -8,8 +7,6 @@ import StyledCss from './_common/StyledCss.type'
  * @param {string} color
  * @param {number} width
  * @param {number} height
- * @category styledComponents
- * @module getTriangleCss
  * @category styledComponents
  * @module getTriangleCss
  */

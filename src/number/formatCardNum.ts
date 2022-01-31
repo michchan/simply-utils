@@ -1,5 +1,4 @@
 import formatAsGroupedString from './formatAsGroupedString'
-
 const GROUP_SIZE = 4
 const NUM_GROUPS = 4
 /**
@@ -8,8 +7,6 @@ const NUM_GROUPS = 4
  *
  * @param value The original credit card number value like 4242424242424242
  * @param separator Customized separator. Default to hyphen '-'.
- * @category number
- * @module formatCardNum
  * @category number
  * @module formatCardNum
  */

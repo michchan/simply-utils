@@ -1,10 +1,7 @@
 import isStr from '../string/isStr'
 import isFunc from '../validators/isFunc'
-
 /**
  * Parse JSON string with error catched
- * @category utils
- * @module parseJSON
  * @category utils
  * @module parseJSON
  */

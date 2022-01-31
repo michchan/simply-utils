@@ -5,8 +5,6 @@
  * @param callee The callee function
  * @category async
  * @module callPromiseWithDelay
- * @category async
- * @module callPromiseWithDelay
  */
 function callPromiseWithDelay <T> (
   callee: () => Promise<T>,

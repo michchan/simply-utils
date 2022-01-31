@@ -1,10 +1,7 @@
 export type ComposeFunc <T> = (arg: T) => T
-
 /**
  * Compose functions from right to left
  * Reference: https://1loc.dev/#compose-functions
- * @category func
- * @module compose
  * @category func
  * @module compose
  */

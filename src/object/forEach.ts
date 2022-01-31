@@ -1,3 +1,7 @@
+/**
+ * @category object
+ * @module forEach
+ */
 function forEach<T extends { [key: string]: any } = { [key: string]: any }> (
   obj: T,
   callback: (

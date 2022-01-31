@@ -1,6 +1,5 @@
 import isDateString from './isDateString'
 import isStr from '../string/isStr'
-
 const ONE_SECOND_MS = 1000
 const MAX_SECONDS = 60
 const MAX_MINS = 60
@@ -9,7 +8,6 @@ const MAX_DAYS_IN_WEEK = 7
 const MAX_DAYS_IN_MONTH = 30
 const MAX_DAYS_IN_YEAR = 365
 const SECOND_PRECISION = 10
-
 /**
  * Get relative date time string e.g. 3 days ago, 3 weeks ago
  *
@@ -19,8 +17,6 @@ const SECOND_PRECISION = 10
  * @param comparedDateTime ISO-timestamp or Date instance
  * @param relatedDateTime ISO-timestamp or Date instance
  * @param locales The locale code or an array of locale codes
- * @category dateTime
- * @module getRelativeDateTime
  * @category dateTime
  * @module getRelativeDateTime
  */

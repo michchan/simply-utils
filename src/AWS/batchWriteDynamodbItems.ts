@@ -2,13 +2,10 @@ import { DynamoDB } from 'aws-sdk'
 import chunk from 'lodash/chunk'
 import pipeAsync from '../async/pipeAsync'
 import wait from '../async/wait'
-
 const CHUNK_SIZE = 25
-
 export type BatchWriteChunkResult = DynamoDB.DocumentClient.BatchWriteItemOutput
 export type BatchWriteDynamoDBItemsResult = BatchWriteChunkResult[]
 type RArr = BatchWriteDynamoDBItemsResult
-
 export interface BatchWriteDynamoDBItemsOptions <T> {
   docClient: Pick<DynamoDB.DocumentClient, 'batchWrite'>;
   records: T[];
@@ -31,8 +28,6 @@ export interface BatchWriteDynamoDBItemsOptions <T> {
 /**
  * Batch write items to dynamoDB with handling for maximum items (25) to write,
  * which means with this helper more than 25 items can be written into the database with one call.
- * @category AWS
- * @module batchWriteDynamodbItems
  * @category AWS
  * @module batchWriteDynamodbItems
  */

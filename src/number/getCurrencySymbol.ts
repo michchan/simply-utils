@@ -5,8 +5,6 @@
  * * Please see polyfill/polyfillIntl if you need a polyfill of that.
  * @category number
  * @module getCurrencySymbol
- * @category number
- * @module getCurrencySymbol
  */
 const getCurrencySymbol = (
   locales: string | string[] = [],

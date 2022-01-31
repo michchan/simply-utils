@@ -6,8 +6,6 @@
  * @param step
  * @category math
  * @module getStepsToTotal
- * @category math
- * @module getStepsToTotal
  */
 const getStepsToTotal = (total: number, step: number): number[] => {
   const numSteps = Math.floor(total / step) + (total % step ? 1 : 0)

@@ -1,12 +1,10 @@
 import isNullOrUndef from '../validators/isNullOrUndef'
 import shuffle from '../array/shuffle'
-
 const MAX_HUE = 360
 const SAT_BASE = 40
 const SAT_OFFSET = 60
 const LIGHT_BASE = 40
 const LIGHT_OFFSET = 40
-
 export interface GenerateRandomColorsOptions {
   // Specify saturation. 0 - 100
   // Default to random 60 - 100
@@ -15,14 +13,11 @@ export interface GenerateRandomColorsOptions {
   // Default to random 30 - 70
   lightness?: number;
 }
-
 /**
  * Generate array of random colors
  * @param numberOfColors
  * @param options
  * @returns array of HSL color code
- * @category style
- * @module generateRandomColors
  * @category style
  * @module generateRandomColors
  */

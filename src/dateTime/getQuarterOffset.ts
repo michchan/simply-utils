@@ -2,7 +2,10 @@ import { Quarter } from './getQuarter'
 
 const MIN_QUARTER: Quarter = 1
 const MAX_QUARTER: Quarter = 4
-
+/**
+ * @category dateTime
+ * @module getQuarterOffset
+ */
 const getQuarterOffset = (
   year: number | string,
   quarter: Quarter,

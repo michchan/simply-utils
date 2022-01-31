@@ -1,14 +1,10 @@
 import isSameMonth from './isSameMonth'
 import getLastMsOfDate from './getLastMsOfDate'
-
 const MAX_MONTHLY_LAST_DAY = 31
-
 /**
  * @author Sandy Lau https://github.com/sandylau333
  *
  * @param date
- * @category dateTime
- * @module getLastDateOfMonth
  * @category dateTime
  * @module getLastDateOfMonth
  */

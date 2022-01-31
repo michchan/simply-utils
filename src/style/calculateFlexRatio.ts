@@ -1,3 +1,7 @@
+/**
+ * @category style
+ * @module calculateFlexRatio
+ */
 const calculateFlexRatio = (nums: number[] = []): number[] => {
   if (nums.length === 0) return nums
 

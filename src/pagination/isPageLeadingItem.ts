@@ -5,8 +5,6 @@
  * @param pageSize
  * @category pagination
  * @module isPageLeadingItem
- * @category pagination
- * @module isPageLeadingItem
  */
 const isPageLeadingItem = (
   rowIndex: number,

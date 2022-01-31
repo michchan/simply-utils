@@ -6,8 +6,6 @@
  * @param text The text to escape
  * @category string
  * @module escapeSpecialCharacters
- * @category string
- * @module escapeSpecialCharacters
  */
 function escapeSpecialCharacters (text: string): string {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')

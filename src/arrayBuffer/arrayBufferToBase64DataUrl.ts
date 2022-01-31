@@ -3,6 +3,8 @@
  *
  * @param buf The array buffer data
  * @param contentType The MIME type .e.g text/plain
+ * @category arrayBuffer
+ * @module arrayBufferToBase64DataUrl
  */
 export function arrayBufferToBase64DataUrl (buf: ArrayBuffer, contentType: string): string {
   const base64 = Buffer.from(buf).toString('base64')

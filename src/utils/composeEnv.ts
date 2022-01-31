@@ -1,21 +1,15 @@
 import pick from 'lodash/pick'
-
 // Config dot env
 require('dotenv').config()
-
 export type EnvValues <K extends string> = {
   [key in K]: string;
 }
-
 export interface ComposeEnvReturnType <K extends string> {
   keys: readonly K[];
   values: EnvValues<K>;
 }
-
 /**
  * Environment variables (dotenv) composer with empty check
- * @category utils
- * @module composeEnv
  * @category utils
  * @module composeEnv
  */

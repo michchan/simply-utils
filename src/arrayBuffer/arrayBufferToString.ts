@@ -3,6 +3,8 @@
  *
  * Reference: https://stackoverflow.com/questions/9267899/arraybuffer-to-base64-encoded-string
  * @param buf
+ * @category arrayBuffer
+ * @module arrayBufferToString
  */
 export function arrayBufferToString (buf: ArrayBuffer): string {
   let binary = ''

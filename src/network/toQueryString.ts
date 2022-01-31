@@ -1,14 +1,10 @@
 import qs from 'qs'
 import omitBy from 'lodash/omitBy'
-
 import isNullOrUndef from '../validators/isNullOrUndef'
-
 /**
  * Parse object to query string with "?" prefix auto-added
  *
  * @param params
- * @category network
- * @module toQueryString
  * @category network
  * @module toQueryString
  */

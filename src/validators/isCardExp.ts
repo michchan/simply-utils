@@ -2,7 +2,10 @@
 const REGEX = /^\d{2}\/\d{2}$/
 const START_MONTH = 1
 const END_MONTH = 12
-
+/**
+ * @category validators
+ * @module isCardExp
+ */
 const isCardExp = (str: string): boolean => {
   const isFormatCorrect = REGEX.test(str)
 

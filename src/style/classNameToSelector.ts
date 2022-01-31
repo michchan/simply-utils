@@ -5,8 +5,6 @@
  * @param className
  * @category style
  * @module classNameToSelector
- * @category style
- * @module classNameToSelector
  */
 const classNameToSelector = (className: string): string => `.${className.trim().replace(/\s+/g, '.')}`
 

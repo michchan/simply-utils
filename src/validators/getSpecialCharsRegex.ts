@@ -31,7 +31,10 @@ const SPECIAL_CHARS_LIST = [
   ':',
   '\\s',
 ]
-
+/**
+ * @category validators
+ * @module getSpecialCharsRegex
+ */
 const getSpecialCharsRegex = (
   excluded: string[] = [],
   // RegExp flags

@@ -14,8 +14,6 @@ type FuncType <O> = (input?: O) => Promise<O>
  * ```
  * @category async
  * @module pipeAsync
- * @category async
- * @module pipeAsync
  */
 const pipeAsync = <
   O,

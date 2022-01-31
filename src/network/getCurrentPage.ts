@@ -1,3 +1,7 @@
+/**
+ * @category network
+ * @module getCurrentPage
+ */
 const getCurrentPage = (
   dataLength: number,
   pageSize: number

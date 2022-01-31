@@ -4,12 +4,10 @@ export type Desciber <Input, Output, Err> = (
 ) => unknown
 export type HasServicePredicate <Output> = (result: null | Output) => boolean
 export type Callback <Output, Err> = (err: Err, data: Output) => unknown
-
 // 25 times
 export const DEFAULT_MAX_TRY_TIME = 25
 // Every 20 seconds
 export const DEFAULT_INTERVAL = 20000
-
 interface RecurOptions <Input, Output, Err> {
   describe: Desciber<Input, Output, Err>;
   input: Input;
@@ -19,7 +17,6 @@ interface RecurOptions <Input, Output, Err> {
   maxTryTime: number;
   interval: number;
 }
-
 /** Wait for service async */
 function describeRecur <Input, Output, Err> ({
   describe,
@@ -56,7 +53,6 @@ function describeRecur <Input, Output, Err> ({
     }
   })
 }
-
 export interface WaitForAWSServiceOptions {
   // Default to 25
   maxTryTime?: number;
@@ -71,11 +67,9 @@ export interface WaitForAWSServiceOptions {
  *
  * ```
  * const dynamodbStreams = new AWS.DynamoDBStreams();
-
   type I = AWS.DynamoDBStreams.DescribeStreamInput
   type O = AWS.DynamoDBStreams.DescribeStreamOutput
   export type Result = O
-
   const waitForStream = (input: I): Promise<null | Result> => waitForAWSService<I, O, AWS.AWSError>(
   // Prevent `this` context problem
   (...args) => dynamodbStreams.describeStream(...args),
@@ -83,8 +77,6 @@ export interface WaitForAWSServiceOptions {
   data => !!data?.StreamDescription
   )
  * ```
- * @category AWS
- * @module waitForAWSService
  * @category AWS
  * @module waitForAWSService
  */

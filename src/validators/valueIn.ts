@@ -1,22 +1,17 @@
 import isFunc from './isFunc'
 import isArr from '../array/isArr'
-
 export type HasAccessRightsIteratee <T extends string | number = string> =
   | T
   | ((value: T) => boolean)
-
 export type HasAccessRightsMode =
   | 'whitelist'
   | 'blacklist'
-
 /**
  * Simple helper to check wether a value is in/out of a list
  *
  * @param value The value to check
  * @param list The list of values / value checkers
  * @param mode The mode of checking, either whitelist or blacklist. Default to whitelist.
- * @category validators
- * @module valueIn
  * @category validators
  * @module valueIn
  */

@@ -1,3 +1,7 @@
+/**
+ * @category number
+ * @module zeroPadding
+ */
 const zeroPadding = (
   i: number,
   numDigits: number = 2

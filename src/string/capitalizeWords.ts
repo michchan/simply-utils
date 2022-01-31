@@ -5,8 +5,6 @@
  * @returns {string}
  * @category string
  * @module capitalizeWords
- * @category string
- * @module capitalizeWords
  */
 const capitalizeWords = (str: string): string => {
   const words: string[] = str.split(' ').filter(s => s)

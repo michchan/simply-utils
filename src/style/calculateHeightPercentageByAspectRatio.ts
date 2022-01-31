@@ -1,13 +1,10 @@
 import isNum from '../number/isNum'
-
 const MAX_PERCENT = 100
 /**
  * Convert aspect ratio to height percentage for use in the container
  * @param aspectRatio The floating number of aspect ratio of format (W/H). e.g. 12/8
  * @param fallbackPercentage (optional) in format of "XX%". If invalid, use "100%"
  * @returns height in format of "XX%", which is percentage of height to width (H/W)
- * @category style
- * @module calculateHeightPercentageByAspectRatio
  * @category style
  * @module calculateHeightPercentageByAspectRatio
  */

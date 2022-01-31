@@ -2,7 +2,10 @@ import { css } from 'styled-components/macro'
 import StyledCss from './_common/StyledCss.type'
 
 import getPlusIconCss from './getPlusIconCss'
-
+/**
+ * @category styledComponents
+ * @module getCrossIconCss
+ */
 const getCrossIconCss = <T> (
   size: number = 14,
   width: number = 2,

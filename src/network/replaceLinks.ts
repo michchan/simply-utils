@@ -1,5 +1,4 @@
 import urlRegex from '../_common/urlRegex'
-
 /**
  * !@DEPRECATED: Use network/replaceUrls instead
  *
@@ -7,8 +6,6 @@ import urlRegex from '../_common/urlRegex'
  *
  * @param text
  * @param regexReplacer
- * @category network
- * @module replaceLinks
  * @category network
  * @module replaceLinks
  */

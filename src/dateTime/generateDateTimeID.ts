@@ -1,13 +1,9 @@
 import zeroPadding from '../number/zeroPadding'
 import isStr from '../string/isStr'
-
 const YEAR_DIGITS = 4
 const SECOND_DIGITS = 3
-
 /**
  * Generate an ID with format YYYYMMDDHHmmssSSS
- * @category dateTime
- * @module generateDateTimeID
  * @category dateTime
  * @module generateDateTimeID
  */

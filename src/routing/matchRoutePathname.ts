@@ -1,5 +1,4 @@
 export const PARAM_REGEX_STR = '[a-zA-Z0-9_-]+'
-
 /**
  *
  * Determine if pathname and config path are equal and get the matched route pathname (config path).
@@ -9,8 +8,6 @@ export const PARAM_REGEX_STR = '[a-zA-Z0-9_-]+'
  * @param path The actual pathname displayed on browser navigation bar
  * @param route The route config path for a route of a router like React-Router
  * @param isExact
- * @category routing
- * @module matchRoutePathname
  * @category routing
  * @module matchRoutePathname
  */

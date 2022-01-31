@@ -1,10 +1,7 @@
 export type FlipFunc <Args extends unknown[], R> = (...args: Args) => R
-
 /**
  * Reverse the order of arguments
  * Reference: https://1loc.dev/#flip-the-arguments-of-a-function
- * @category func
- * @module flip
  * @category func
  * @module flip
  */

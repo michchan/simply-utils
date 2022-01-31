@@ -1,3 +1,7 @@
+/**
+ * @category network
+ * @module getNextPage
+ */
 const getNextPage = (
   dataLength: number,
   pageSize: number

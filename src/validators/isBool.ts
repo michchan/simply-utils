@@ -1,4 +1,7 @@
-// Not using "isBoolean" here to avoid wrong import from other utils library
+/**
+ * @category validators
+ * @module isBool
+ */
 const isBool = (o: unknown): o is boolean => typeof o === 'boolean'
 
 export default isBool

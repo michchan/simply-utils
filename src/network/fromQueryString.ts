@@ -1,12 +1,9 @@
 import qs, { ParsedQs } from 'qs'
-
 /**
  * Parse query string
  *
  * @param str Query string (?a=1&b=2)
  * @param fallback The fallback object
- * @category network
- * @module fromQueryString
  * @category network
  * @module fromQueryString
  */

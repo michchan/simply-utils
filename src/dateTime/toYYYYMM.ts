@@ -1,11 +1,8 @@
 import zeroPadding from '../number/zeroPadding'
-
 /**
  *
  * @param date
  * @returns A date string of format "YYYY-MM"
- * @category dateTime
- * @module toYYYYMM
  * @category dateTime
  * @module toYYYYMM
  */

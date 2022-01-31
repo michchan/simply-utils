@@ -1,3 +1,7 @@
+/**
+ * @category dom
+ * @module scrollIntoView
+ */
 function scrollIntoView (
   scrollableElement: null | HTMLElement | typeof window,
   targetElement: null | HTMLElement,

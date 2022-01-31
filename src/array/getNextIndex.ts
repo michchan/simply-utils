@@ -1,8 +1,9 @@
 export type GetNextIndexDirection ='backward' | 'forward'
-
 /**
  * Get the next item index of the array
  * It handles with the length of the array so that the index won't overflow.
+ * @category array
+ * @module getNextIndex
  */
 export function getNextIndex (
   prevIndex: null | number,

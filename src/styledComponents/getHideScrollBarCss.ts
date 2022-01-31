@@ -1,6 +1,9 @@
 import { css } from 'styled-components/macro'
 import StyledCss from './_common/StyledCss.type'
-
+/**
+ * @category styledComponents
+ * @module getHideScrollBarCss
+ */
 const getHideScrollBarCss = <T> (): StyledCss<T> => css`
   /*
     Hide scrollbar

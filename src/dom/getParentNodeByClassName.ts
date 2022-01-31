@@ -1,5 +1,8 @@
 // @DEPRECATED at 2020-04-17
-// PLEASE USE: traverseParentNodeByClassNamae
+/**
+ * @category dom
+ * @module getParentNodeByClassName
+ */
 const getParentNodeByClassName = (
   node: HTMLElement,
   className: string,

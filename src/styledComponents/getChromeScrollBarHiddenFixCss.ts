@@ -1,7 +1,10 @@
 import { isChrome } from 'react-device-detect'
 import { css } from 'styled-components/macro'
 import StyledCss from './_common/StyledCss.type'
-
+/**
+ * @category styledComponents
+ * @module getChromeScrollBarHiddenFixCss
+ */
 const getChromeScrollBarHiddenFixCss = <T> (): StyledCss<T> | string => isChrome ? css`
   /* Chrome scrollbar not showing fix */
   overflow-y: overlay;

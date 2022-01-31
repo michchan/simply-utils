@@ -1,12 +1,9 @@
 import isEmpty from 'lodash/isEmpty'
 import { isArr } from '../array'
 import isObj from './isObj'
-
 /**
  * Like lodash/isEmpty but also cater empty nested object and array cases.
  * @param o
- * @category object
- * @module isDeepEmpty
  * @category object
  * @module isDeepEmpty
  */

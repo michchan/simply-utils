@@ -4,6 +4,8 @@
  * @param buffer The array buffer
  * @param type MIME type
  * @returns The object URL
+ * @category arrayBuffer
+ * @module arrayBufferToBlobUrl
  */
 export function arrayBufferToBlobUrl (buffer: ArrayBuffer, type: BlobPropertyBag['type']): string {
   const bytes = new Uint8Array(buffer)

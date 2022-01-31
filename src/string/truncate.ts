@@ -1,5 +1,4 @@
-import isFullWidthChar from './isFullWIdthChar'
-
+import isFullWidthChar from './isFullWidthChar'
 /**
  * Truncate string with handling of full width characters (e.g. Chinese/Japanese)
  *
@@ -7,8 +6,6 @@ import isFullWidthChar from './isFullWIdthChar'
  * @param {Object} options
  *
  * @returns {string}
- * @category string
- * @module truncate
  * @category string
  * @module truncate
  */

@@ -7,8 +7,6 @@
  * @param b
  * @category dateTime
  * @module isSameMonth
- * @category dateTime
- * @module isSameMonth
  */
 const isSameMonth = (a: Date, b: Date): boolean => {
   const aMonth = new Date(a.getFullYear(), a.getMonth())

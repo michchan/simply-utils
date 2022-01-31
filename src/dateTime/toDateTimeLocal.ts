@@ -1,11 +1,9 @@
 import isDateString from './isDateString'
 import zeroPadding from '../number/zeroPadding'
-
 export interface ToDateTimeLocalOptions {
   dateOnly?: boolean;
   timeOnly?: boolean;
 }
-
 /**
  * As the HTML5 input simply doesn't parse the ISO8061 timestamp with local timezone
  * So we have to parse it manually
@@ -13,8 +11,6 @@ export interface ToDateTimeLocalOptions {
  * @returns {String}
  * A string of type datetime-local, date-local or time-local (depending on options passed).
  * Example value: "2019-05-02T13:28"
- * @category dateTime
- * @module toDateTimeLocal
  * @category dateTime
  * @module toDateTimeLocal
  */

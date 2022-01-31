@@ -4,8 +4,6 @@
  * @param date
  * @category dateTime
  * @module getFirstMsOfDate
- * @category dateTime
- * @module getFirstMsOfDate
  */
 function getFirstMsOfDate (date: Date = new Date()): Date {
   const clonedDate = new Date(date)

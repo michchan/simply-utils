@@ -1,10 +1,7 @@
 import { css } from 'styled-components/macro'
 import StyledCss from './_common/StyledCss.type'
-
 /**
  * Clear the default style of a button element
- * @category styledComponents
- * @module getClearButtonDefaultStyleCss
  * @category styledComponents
  * @module getClearButtonDefaultStyleCss
  */

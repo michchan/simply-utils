@@ -1,21 +1,19 @@
 import puppeteer = require('puppeteer')
 import chromium = require('chrome-aws-lambda')
-
 import 'chrome-aws-lambda/bin/aws.tar.br'
 import 'chrome-aws-lambda/bin/chromium.br'
 import 'chrome-aws-lambda/bin/swiftshader.tar.br'
-
 // 240s
 const DEFAULT_TIMEOUT = 240_000
-
 export type GetDataWithPage <T> = (page: puppeteer.Page) => Promise<T> | T
-
 /**
  * Helpers to scrape data from html with Puppeteer library.
  * It is ready to run on any serverless environment like AWS lambda.
  *
  * @param getBatchData
  * @param defaultTimeout Default to 240000 (ms)
+ * @category scraping
+ * @module launchPuppeteerBrowserSession
  */
 async function launchPuppeteerBrowserSession <T> (
   getBatchData: GetDataWithPage<T>[],

@@ -5,8 +5,6 @@ const LENGTH = 3
  * @param value
  * @category number
  * @module formatCvc
- * @category number
- * @module formatCvc
  */
 const formatCvc = (value: string): string => {
   if (value.length > LENGTH)

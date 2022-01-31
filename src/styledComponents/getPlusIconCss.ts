@@ -1,6 +1,9 @@
 import { css } from 'styled-components/macro'
 import StyledCss from './_common/StyledCss.type'
-
+/**
+ * @category styledComponents
+ * @module getPlusIconCss
+ */
 const getPlusIconCss = <T> (
   size: number = 14,
   width: number = 2,

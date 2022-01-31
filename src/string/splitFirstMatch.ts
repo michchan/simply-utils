@@ -1,3 +1,7 @@
+/**
+ * @category string
+ * @module splitFirstMatch
+ */
 const splitFirstMatch = (
   str: string,
   separator: string

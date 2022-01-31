@@ -1,15 +1,11 @@
 import { css, CSSProperties } from 'styled-components/macro'
 import StyledCss from './_common/StyledCss.type'
-
 import getRowFlexboxCss from './getRowFlexboxCss'
-
 /**
  *
  * @param alignItems Default to 'flex-start'
  * @param justifyContent Default to `alignItems` argument
  * @param flexWrap Default to 'nowrap'
- * @category styledComponents
- * @module getColumnFlexboxCss
  * @category styledComponents
  * @module getColumnFlexboxCss
  */

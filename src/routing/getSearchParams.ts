@@ -1,15 +1,11 @@
 import { Location } from 'history'
 import isObj from '../object/isObj'
-
 export type GetSearchParamsLocation = Pick<Location, 'search'>
-
 /**
  * Get query string from location
  *
  * @param location
  * @param useWindowLocationAsFallback
- * @category routing
- * @module getSearchParams
  * @category routing
  * @module getSearchParams
  */

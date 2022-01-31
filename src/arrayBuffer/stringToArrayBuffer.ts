@@ -1,9 +1,10 @@
 // 2 bytes for each char
 const BYTES_PER_CHAR = 2
-
 /**
  * Reference: https://developers.google.com/web/updates/2012/06/How-to-convert-ArrayBuffer-to-and-from-String
  * @param str
+ * @category arrayBuffer
+ * @module stringToArrayBuffer
  */
 export function stringToArrayBuffer (str: string): ArrayBuffer {
   const buf = new ArrayBuffer(str.length * BYTES_PER_CHAR)

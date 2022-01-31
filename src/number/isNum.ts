@@ -1,4 +1,7 @@
-// Not using "isNumber" here to avoid wrong import from other utils library
+/**
+ * @category number
+ * @module isNum
+ */
 const isNum = (o: unknown, isStringAllowed: boolean = false): o is number => {
   const isNumType = typeof o === 'number'
 

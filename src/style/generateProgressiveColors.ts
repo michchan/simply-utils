@@ -16,8 +16,6 @@ export interface GenerateProgressiveColorsOptions {
  * @returns array of HSL color code
  * @category style
  * @module generateProgressiveColors
- * @category style
- * @module generateProgressiveColors
  */
 const generateProgressiveColors = (
   numberOfColors: number,

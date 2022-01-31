@@ -4,7 +4,6 @@ export interface CalculatePageByScrollTopOptions {
   /** The page breaker height. Default to 0 */
   pageBreakerHeight?: number;
 }
-
 /**
  * Calculate active page based on scroll top and row size properties.
  * This is useful of list with vertical-scrolled pagination.
@@ -15,8 +14,6 @@ export interface CalculatePageByScrollTopOptions {
  * @param options
  *
  * @returns The page number (start from 1)
- * @category pagination
- * @module calculatePageByScrollTop
  * @category pagination
  * @module calculatePageByScrollTop
  */

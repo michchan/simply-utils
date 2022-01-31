@@ -1,5 +1,4 @@
 import addDays from './addDays'
-
 /**
  *
  * @author Sandy Lau https://github.com/sandylau333
@@ -7,8 +6,6 @@ import addDays from './addDays'
  * @param index
  * @param locale The locale code or an array of locale codes
  * @param format
- * @category dateTime
- * @module getLocalizedWeekday
  * @category dateTime
  * @module getLocalizedWeekday
  */

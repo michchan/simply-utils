@@ -7,7 +7,10 @@ export const fadeAnimKeyframes = keyframes`
   50% { opacity: 1; }
   0% { opacity: ${initOpacity}; }
 `
-
+/**
+ * @category styledComponents
+ * @module getFadingAnimCss
+ */
 const getFadingAnimCss = <T> (): StyledCss<T> => {
   const fadeDuration = 1400
   return css`

@@ -1,8 +1,6 @@
 import { MutableRefObject } from 'react'
-
 import getNextIndex, { GetNextIndexDirection } from '../array/getNextIndex'
 import isFunc from '../validators/isFunc'
-
 export type MoveToNextSelectOptionDirection = GetNextIndexDirection
 export interface MoveToNextSelectOptionOptions {
   direction: GetNextIndexDirection;
@@ -11,11 +9,8 @@ export interface MoveToNextSelectOptionOptions {
   nodeRefs: MutableRefObject<(null | HTMLElement)[]>;
   listScrollableRef: MutableRefObject<null | HTMLDivElement>;
 }
-
 /**
  * Scroll to the next select option
- * @category reactDom
- * @module moveToNextSelectOption
  * @category reactDom
  * @module moveToNextSelectOption
  */

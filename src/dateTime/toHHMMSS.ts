@@ -1,13 +1,10 @@
 const SECONS_IN_HOUR = 3600
 const SECONS_IN_MIN = 60
 const NUM_DIGITS = 10
-
 /**
  * References: https://stackoverflow.com/questions/6312993/javascript-seconds-to-time-string-with-format-hhmmss
  *
  * @param {Number} seconds
- * @category dateTime
- * @module toHHMMSS
  * @category dateTime
  * @module toHHMMSS
  */

@@ -1,8 +1,6 @@
 import isEqual from 'lodash/isEqual'
 import transform from 'lodash/transform'
-
 import isObj from './isObj'
-
 /**
  * Source: https://gist.github.com/Yimiprod/7ee176597fef230d1451
  *
@@ -10,8 +8,6 @@ import isObj from './isObj'
  * @param {Object} next Object compared
  * @param {Object} previous  Object to compare with
  * @return {Object}    Return a new next who represent the diff
- * @category object
- * @module difference
  * @category object
  * @module difference
  */

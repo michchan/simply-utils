@@ -1,5 +1,4 @@
 import chunk from 'lodash/chunk'
-
 const MIN_RGB_LENGTH = 3
 const FULL_RGB_LENGTH = 6
 const MIN_RGBA_LENGTH = 4
@@ -8,7 +7,6 @@ const MAX_RGB_VALUE = 255
 const NUM_RGB_COMPONENTS = 3
 const MAX_HUE = 360
 const MAX_HSL_VALUE = 100
-
 /**
  * Helper method that converts hue to rgb value
  * Reference: https://stackoverflow.com/questions/2353211/hsl-to-rgb-color-conversion
@@ -23,14 +21,11 @@ const hueToRgbValue = (p: number, q: number, t: number): number => {
     default: return p
   }
 }
-
 const rgbaToArr = (color: string) => color.replace(/^rgba?\(|\)$|\s+/gi, '').split(',')
-
 const hexToRgbArr = (color: string) => {
   const colorString = color.slice(1)
   // Contains hex codes like ['e', 'e', 'e', 'f', 'f', 'f']
   const hexCodes = color.match(/[0-9a-f]/gi) || []
-
   const mapHexCodes = () => hexCodes.map(singleHex => parseInt(`${singleHex}${singleHex}`, 16))
   const mapFullHexCodes = () => {
     // Group each 2 hexcodes like:
@@ -38,10 +33,8 @@ const hexToRgbArr = (color: string) => {
     const chunks = chunk(hexCodes, 2)
     // Join each group to make it like ['34', '34', '34']
     const hexCodeGroups = chunks.map(chunk => chunk.join(''))
-
     return hexCodeGroups.map(hex => parseInt(hex, 16))
   }
-
   switch (colorString.length) {
     // E.g. #333 === '#333333'
     case MIN_RGB_LENGTH: return mapHexCodes(); break
@@ -55,7 +48,6 @@ const hexToRgbArr = (color: string) => {
       return []
   }
 }
-
 /** Reference: https://stackoverflow.com/questions/2353211/hsl-to-rgb-color-conversion */
 const hslaToRgbArr = (color: string) => {
   // Array of value strings
@@ -64,7 +56,6 @@ const hslaToRgbArr = (color: string) => {
   const h = (parseFloat(hString) % MAX_HUE) / MAX_HUE
   const s = parseFloat(sString) / MAX_HSL_VALUE
   const l = parseFloat(lString) / MAX_HSL_VALUE
-
   // Calculate corresponding rgb
   if (s === 0) {
     return [
@@ -83,15 +74,12 @@ const hslaToRgbArr = (color: string) => {
     aString,
   ]
 }
-
 /**
  * @author
  * Sandy Lau https://github.com/sandylau333
  * Michael Chan michchandev@gmail.com
  *
  * @param color
- * @category style
- * @module convertColorToRgbaArray
  * @category style
  * @module convertColorToRgbaArray
  */

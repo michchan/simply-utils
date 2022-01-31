@@ -1,13 +1,9 @@
 import isStr from '../string/isStr'
 import zeroPadding from '../number/zeroPadding'
-
 const CENTURY_DIGITS = 2
-
 /**
  * Convert 2 digit year to 4 digit year
  * @param year
- * @category dateTime
- * @module toFullYear
  * @category dateTime
  * @module toFullYear
  */

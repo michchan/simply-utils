@@ -1,15 +1,11 @@
 import getColorLuminance from './getColorLuminance'
-
 const OFFSET = 0.05
-
 /**
  * Get contrast ratio between two color.
  * Smaller result means larger contrast.
  * Reference: https://dev.to/alvaromontoro/building-your-own-color-contrast-checker-4j7o
  * @param color1
  * @param color2
- * @category style
- * @module getColorsContrastRatio
  * @category style
  * @module getColorsContrastRatio
  */

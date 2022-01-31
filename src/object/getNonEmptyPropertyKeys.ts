@@ -1,5 +1,8 @@
 import isEmpty from 'lodash/isEmpty'
-
+/**
+ * @category object
+ * @module getNonEmptyPropertyKeys
+ */
 function getNonEmptyPropertyKeys <T = { [key: string]: any }> (object: T): string[] {
   return Object
     .entries(object)

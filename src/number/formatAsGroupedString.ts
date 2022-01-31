@@ -8,7 +8,10 @@ export interface FormatAsGroupedStringOptions {
   /** Default to 0 */
   startIndex?: number;
 }
-
+/**
+ * @category number
+ * @module formatAsGroupedString
+ */
 const formatAsGroupedString = ({
   value,
   groupSize,

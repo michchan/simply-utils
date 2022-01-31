@@ -2,7 +2,10 @@ import isNull from '../validators/isNull'
 import isUndef from '../validators/isUndef'
 import isArr from '../array/isArr'
 
-// Not using "isObject" here to avoid wrong import from other utils library
+/**
+ * @category object
+ * @module isObj
+ */
 function isObj <T extends { [key: string]: any } = { [key: string]: any }> (
   o: unknown
 ): o is T {

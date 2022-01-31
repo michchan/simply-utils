@@ -1,3 +1,7 @@
+/**
+ * @category dom
+ * @module traverseParentNodeBy
+ */
 const traverseParentNodeBy = (
   node: HTMLElement,
   // Return true to indicate it is the matched

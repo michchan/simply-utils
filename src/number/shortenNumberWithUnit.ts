@@ -1,5 +1,4 @@
 import divideDeep from '../math/divideDeep'
-
 /**
  * Get a shorten number with unit (e.g. 1K, 1M)
  *
@@ -8,8 +7,6 @@ import divideDeep from '../math/divideDeep'
  * @param unitsMap The mapping of depth to unit. E.g. ['K', 'M', 'B']
  *
  * @returns A tuple type of [<Displayed number>, <Displayed units>] format. E.g. [300, 'K']
- * @category number
- * @module shortenNumberWithUnit
  * @category number
  * @module shortenNumberWithUnit
  */

@@ -1,15 +1,11 @@
 import { ReactNode } from 'react'
-
 import { I18nTranslate } from './_types'
 import isStr from '../string/isStr'
-
 /**
  *
  * @param i18nNamspace
  * @param key The translation key, e.g. 'namespace:title.description'
  * @param t
- * @category i18next
- * @module getTranslatedList
  * @category i18next
  * @module getTranslatedList
  */

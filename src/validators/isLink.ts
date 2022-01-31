@@ -1,6 +1,9 @@
 import urlRegex from '../_common/urlRegex'
 
-// !@DEPRECATED: Use network/isUrl instead
+/**
+ * @category validators
+ * @module isLink
+ */
 const isLink = (
   str: string,
   isStrict: boolean = true

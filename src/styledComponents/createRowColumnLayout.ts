@@ -1,10 +1,8 @@
 import { CSSProperties } from 'react'
 import styled, { css, StyledComponent } from 'styled-components/macro'
-
 import isNumOrStr from '../validators/isNumOrStr'
 import isNum from '../number/isNum'
 import StyledCss from './_common/StyledCss.type'
-
 export interface RowsContainer {
   extraCss?: string;
 }
@@ -36,7 +34,6 @@ export interface ColumnProps {
   breakpoint?: number;
   extraCss?: string;
 }
-
 export interface CreateRowColumnLayoutReturnType <T extends { [key: string]: any }> {
   rowsContainerCss: StyledCss<T>;
   RowsContainer: StyledComponent<'div', T>;
@@ -58,8 +55,6 @@ export interface CreateRowColumnLayoutReturnType <T extends { [key: string]: any
  *
  * @param paddingHoriz
  * @param paddingVerti
- * @category styledComponents
- * @module createRowColumnLayout
  * @category styledComponents
  * @module createRowColumnLayout
  */

@@ -1,7 +1,10 @@
 import formatCurrency, { FormatCurrencyOptions } from './formatCurrency'
 
 export interface FormatCurrencyRangOptions extends FormatCurrencyOptions {}
-
+/**
+ * @category number
+ * @module formatCurrencyRange
+ */
 const formatCurrencyRange = (
   minNumToFormat: number = 0,
   maxNumToFormat: number = 0,

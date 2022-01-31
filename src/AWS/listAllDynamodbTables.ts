@@ -1,8 +1,6 @@
 import { DynamoDB } from 'aws-sdk'
 import wait from '../async/wait'
-
 export type ListAllTablesResult = DynamoDB.ListTablesOutput
-
 export interface ListAllDynamodbTablesOptions {
   Limit?: DynamoDB.ListTablesInput['Limit'];
   /** Delay between each query request. Default to 0 */
@@ -17,8 +15,6 @@ export interface ListAllDynamodbTablesOptions {
 }
 /**
  * List table recursively
- * @category AWS
- * @module listAllDynamodbTables
  * @category AWS
  * @module listAllDynamodbTables
  */

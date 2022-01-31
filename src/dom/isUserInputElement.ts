@@ -1,12 +1,9 @@
 import parseBooleanStr from '../utils/parseBooleanStr'
-
 /**
  * The elements include:
  * select, textarea, input[type=text], input[type=date], input[type=password],
  * input[type=email], input[type=number], div[contenteditable]
  * @param el
- * @category dom
- * @module isUserInputElement
  * @category dom
  * @module isUserInputElement
  */

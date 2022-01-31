@@ -1,7 +1,5 @@
 import isNum from '../number/isNum'
-
 export type IsSmallerThanBreakpointBreakpoint = number | '100%' | ''
-
 /**
  * Check if the given windowWidth is smaller than the breakpoint
  * @param windowWidth usually use with hook `useWindowSize`
@@ -11,8 +9,6 @@ export type IsSmallerThanBreakpointBreakpoint = number | '100%' | ''
  * @param min (optional) minimum breakpoint. Default 0
  * Use if want to ensure return true if smaller than `min` no matter what `breakpoint` is
  * If both `breakpoint` and `min` are not provided, will return false
- * @category style
- * @module isSmallerThanBreakpoint
  * @category style
  * @module isSmallerThanBreakpoint
  */

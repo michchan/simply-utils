@@ -1,11 +1,8 @@
 import isURLSafeStr from './isURLSafeStr'
-
 /**
  * Whether it is an ID
  *
  * @param value
- * @category validators
- * @module isID
  * @category validators
  * @module isID
  */

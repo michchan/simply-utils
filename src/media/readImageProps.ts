@@ -1,9 +1,6 @@
 import isStr from '../string/isStr'
-
 /**
  * Read the file props of the image
- * @category media
- * @module readImageProps
  * @category media
  * @module readImageProps
  */

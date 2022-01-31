@@ -1,12 +1,9 @@
 import replaceUrls from '../network/replaceUrls'
 import replaceTextsInHTMLStr from './replaceTextsInHTMLStr'
-
 /**
  * Replace URLs in HTML string
  *
  * @param htmlStr
- * @category dom
- * @module replaceUrlsInHTMLStr
  * @category dom
  * @module replaceUrlsInHTMLStr
  */

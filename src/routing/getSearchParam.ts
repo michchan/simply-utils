@@ -1,7 +1,6 @@
 import isNum from '../number/isNum'
 import fromQueryString from '../network/fromQueryString'
 import getSearchParams, { GetSearchParamsLocation } from './getSearchParams'
-
 export interface GetSearchParamOptions {
   isNumberExpected?: boolean;
   /**
@@ -22,8 +21,6 @@ export interface GetSearchParamOptions {
  * @param defaultValue
  * @param isNumberExpected
  * @param shouldFallbackWithWindow
- * @category routing
- * @module getSearchParam
  * @category routing
  * @module getSearchParam
  */

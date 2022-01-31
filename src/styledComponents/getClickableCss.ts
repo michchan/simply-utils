@@ -1,9 +1,7 @@
 import { css, CSSProperties } from 'styled-components/macro'
 import StyledCss from './_common/StyledCss.type'
-
 import createHoverableOnlyCss from './createHoverableOnlyCss'
 import getDisabledCss from './getDisabledCss'
-
 /**
  * Get common css to make an element looks and feels clickable.
  *
@@ -11,8 +9,6 @@ import getDisabledCss from './getDisabledCss'
  * @param activeOpacity
  * @param disabledOpacity
  * @param disabledCursor
- * @category styledComponents
- * @module getClickableCss
  * @category styledComponents
  * @module getClickableCss
  */

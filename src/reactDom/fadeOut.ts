@@ -1,7 +1,10 @@
 import { CSSProperties } from 'react'
 
 const DURATION_BUFFER = 10
-
+/**
+ * @category reactDom
+ * @module fadeOut
+ */
 const fadeOut = (
   el: HTMLElement,
   // In ms

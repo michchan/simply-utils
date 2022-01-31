@@ -6,8 +6,6 @@
  * @param isStrict If enabled, the regex will wrap the key with '^' and '$' symbol. Default to true.
  * @category validators
  * @module validateCaseInsensitiveKey
- * @category validators
- * @module validateCaseInsensitiveKey
  */
 function validateCaseInsensitiveKey (
   key: string,

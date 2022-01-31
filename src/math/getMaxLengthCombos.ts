@@ -10,8 +10,6 @@
  * e.g. [['a', '1', '@'], ['a', '1', '#'], ['a', '2', '@']...]
  * @category math
  * @module getMaxLengthCombos
- * @category math
- * @module getMaxLengthCombos
  */
 function getMaxLengthCombos <T> (arrays: (T[])[] = []): (T[])[] {
   if (arrays.length === 0)

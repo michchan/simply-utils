@@ -1,5 +1,4 @@
 import wait from './wait'
-
 /**
  * Execute async task with auto-retry
  *
@@ -7,6 +6,8 @@ import wait from './wait'
  * @param time The nth number of time for this attempt.
  *             Stop retrying if it is equal to ZERO. Default to 3.
  * @param delay The milliseconds of delay before each retry, default to 0.
+ * @category async
+ * @module retry
  */
 export async function retry <T = unknown> (
   task: (time: number) => Promise<T>,

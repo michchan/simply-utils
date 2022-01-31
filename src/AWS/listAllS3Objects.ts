@@ -1,8 +1,6 @@
 import { S3 } from 'aws-sdk'
 import wait from '../async/wait'
-
 export type ListAllS3ObjectsResult = S3.ListObjectsV2Output
-
 export interface ConcatDataOptions {
   /**
    * Accumulated object list to be concentenated with the result.
@@ -34,7 +32,6 @@ const getDataConcatener = ({
     MaxKeys: sumMaxKeys,
   }
 }
-
 export interface ListAllS3Options extends ConcatDataOptions {
   MaxKeys?: S3.ListObjectsV2Request['MaxKeys'];
   /** Delay between each query request. Default to 0 */
@@ -44,8 +41,6 @@ export interface ListAllS3Options extends ConcatDataOptions {
 }
 /**
  * List S3 objects recursively
- * @category AWS
- * @module listAllS3Objects
  * @category AWS
  * @module listAllS3Objects
  */

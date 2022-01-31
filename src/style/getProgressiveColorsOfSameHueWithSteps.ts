@@ -36,7 +36,10 @@ export interface GetProgressiveColorsOfSameHueWithStepsReturnType {
 
 type O = GetProgressiveColorsOfSameHueWithStepsOptions
 type R = GetProgressiveColorsOfSameHueWithStepsReturnType
-
+/**
+ * @category style
+ * @module getProgressiveColorsOfSameHueWithSteps
+ */
 const getProgressiveColorsOfSameHueWithSteps = ({
   hue,
   saturation,

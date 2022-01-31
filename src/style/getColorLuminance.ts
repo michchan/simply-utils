@@ -1,21 +1,15 @@
 import convertColorToRgbaArray from './convertColorToRgbaArray'
-
 const RGB_LENGTH = 3
 const MAX_RGB_VALUE = 255
-
 const REL_R = 0.2126
 const REL_G = 0.7152
 const REL_B = 0.0722
-
 const VALUE_THRESOLD = 0.03928
 const VALUE_DIVIDEND = 12.92
-
 /**
  * Get color luminance. Return 0 - 1.
  * Reference: https://dev.to/alvaromontoro/building-your-own-color-contrast-checker-4j7o
  * @param color
- * @category style
- * @module getColorLuminance
  * @category style
  * @module getColorLuminance
  */

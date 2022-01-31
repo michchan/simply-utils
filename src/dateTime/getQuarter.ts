@@ -11,7 +11,10 @@ const quarterMap: { [key: string]: Quarter } = {
   '7-9': Q3,
   '10-12': Q4,
 }
-
+/**
+ * @category dateTime
+ * @module getQuarter
+ */
 const getQuarter = (date?: Date): Quarter => {
   const thisDate = date || new Date()
   // The number returned from `date.getMonth()` starts from 0,

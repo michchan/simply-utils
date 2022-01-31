@@ -13,8 +13,6 @@
  * including minimum and maximum number of the range [Min, Max]
  * @category math
  * @module calculateCenteredRange
- * @category math
- * @module calculateCenteredRange
  */
 const calculateCenteredRange = (
   active: number,

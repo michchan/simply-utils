@@ -2,13 +2,10 @@ const LAST_HOUR = 23
 const LAST_MIN = 59
 const LAST_SECOND = 59
 const LAST_MS = 999
-
 /**
  *
  * @author Sandy Lau https://github.com/sandylau333
  * @param date
- * @category dateTime
- * @module getLastMsOfDate
  * @category dateTime
  * @module getLastMsOfDate
  */

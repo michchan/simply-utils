@@ -1,22 +1,17 @@
 import fetch from '../_common/fetchPolyfill'
-
 const API_BOT_API_KEY = '{{BOT_API_KEY}}'
 const API_CHAT_ID = '{{CHAT_ID}}'
 const API_TEXT = '{{TEXT}}'
 const API_PARSE_MODE = '{{PARSE_MODE}}'
 const API_URL_TEMPLATE = `https://api.telegram.org/bot${API_BOT_API_KEY}/sendMessage?chat_id=${API_CHAT_ID}&text=${API_TEXT}&parse_mode=${API_PARSE_MODE}`
-
 // Max character in a telegram message
 export const MAX_MSG_LENGTH = 4096
-
 /**
  * Check the API documentation on telegram.org for more information.
  * @param chatId
  * @param apiKey
  * @param text
  * @param parseMode
- * @category telegram
- * @module sendTelegramMessage
  * @category telegram
  * @module sendTelegramMessage
  */

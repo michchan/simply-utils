@@ -1,7 +1,10 @@
 import traverseParentNodeBy from './traverseParentNodeBy'
 import { isArr } from '../array'
 import isFunc from '../validators/isFunc'
-
+/**
+ * @category dom
+ * @module traverseParentNodeByClassName
+ */
 const traverseParentNodeByClassName = (
   node: HTMLElement,
   className: string | string[],

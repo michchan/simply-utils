@@ -11,8 +11,6 @@
  *   else return 0
  * @category dateTime
  * @module compareISOTimestamp
- * @category dateTime
- * @module compareISOTimestamp
  */
 const compareISOTimestamp = (a: string, b: string): number => {
   const aDate = new Date(a)

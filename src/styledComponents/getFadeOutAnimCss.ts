@@ -11,7 +11,10 @@ const fadeOutAnim = keyframes`
     opacity: 0;
   }
 `
-
+/**
+ * @category styledComponents
+ * @module getFadeOutAnimCss
+ */
 const getFadeOutAnimCss = <T> (duration: number = DEFAULT_FADE_OUT_DURATION): StyledCss<T> => css`
   animation: ${fadeOutAnim} ${duration}ms ease-in;
 `

@@ -1,12 +1,9 @@
 import formatAsGroupedString from './formatAsGroupedString'
-
 /**
  * Format the expiry date '1223' to format like '12/23'
  *
  * @param value The expiry date value of a credit card like '1223'
  * @param separator
- * @category number
- * @module formatCardExp
  * @category number
  * @module formatCardExp
  */

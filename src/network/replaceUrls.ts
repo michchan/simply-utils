@@ -1,12 +1,9 @@
 import urlRegex from '../_common/urlRegex'
-
 /**
  * Replace all links in text
  *
  * @param text
  * @param regexReplacer
- * @category network
- * @module replaceUrls
  * @category network
  * @module replaceUrls
  */

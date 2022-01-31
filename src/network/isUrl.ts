@@ -1,5 +1,8 @@
 import urlRegex from '../_common/urlRegex'
-
+/**
+ * @category network
+ * @module isUrl
+ */
 const isUrl = (
   str: string,
   isStrict: boolean = true

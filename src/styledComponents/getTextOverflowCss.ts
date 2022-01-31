@@ -1,6 +1,9 @@
 import { css, CSSProperties } from 'styled-components/macro'
 import StyledCss from './_common/StyledCss.type'
-
+/**
+ * @category styledComponents
+ * @module getTextOverflowCss
+ */
 const getTextOverflowCss = <T> (
   numLines: number = 1,
   trailiing: CSSProperties['textOverflow'] = 'ellipsis',

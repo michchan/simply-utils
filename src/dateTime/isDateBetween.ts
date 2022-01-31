@@ -1,6 +1,5 @@
 import isDate from './isDate'
 import isUndef from '../validators/isUndef'
-
 /**
  * Check if `date` is between `start` and `end`.
  * `start` and `end` are count as datetime (in ms)
@@ -11,8 +10,6 @@ import isUndef from '../validators/isUndef'
  * @param start (optional)
  * @param end (optional)
  * @param isInclusive (optional) Default false
- * @category dateTime
- * @module isDateBetween
  * @category dateTime
  * @module isDateBetween
  */

@@ -1,19 +1,15 @@
 import validateCaseInsensitiveKey from './validateCaseInsensitiveKey'
 import isArr from '../array/isArr'
-
 type ReturnType<
   FieldType extends string,
   TargetType extends FieldType
 > = (type: FieldType) => type is TargetType
-
 /**
  * Create a validator of the case-insensitive key
  *
  * e.g. const isStatusDraft = createKeyValidator<PublishableStatus, StatusDraft>(STATUS_DRAFT)
  *
  * @param target Target string constant, or array of validators.
- * @category validators
- * @module createKeyValidator
  * @category validators
  * @module createKeyValidator
  */

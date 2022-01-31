@@ -1,7 +1,6 @@
 const MS_IN_DAY = 86400000
 const MAX_WEEKDAY = 7
 const DAY_OFFSET = 4
-
 /**
  * Based on information at:
  * http://www.merlyn.demon.co.uk/weekcalc.htm#WNR
@@ -18,8 +17,6 @@ const DAY_OFFSET = 4
  *
  * @author https://stackoverflow.com/a/6117889/9428719
  * @param d
- * @category dateTime
- * @module getWeekOfYear
  * @category dateTime
  * @module getWeekOfYear
  */

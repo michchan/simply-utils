@@ -4,6 +4,8 @@
  * Reference: https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
  *
  * @param {Array} a items An array containing the items.
+ * @category array
+ * @module shuffle
  */
 export function shuffle <A extends unknown[] = unknown[]> (a: A): A {
   let j

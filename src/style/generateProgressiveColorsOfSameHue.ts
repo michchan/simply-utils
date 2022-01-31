@@ -1,5 +1,4 @@
 const MAX_HUE = 360
-
 export interface GenerateProgressiveColorsOfSameHueOptions {
   // Specity initial lightness (0 - 100)
   // Default to 50
@@ -14,7 +13,6 @@ export interface GenerateProgressiveColorsOfSameHueOptions {
   // Default to 80
   targetValue?: number;
 }
-
 /**
  * Generate a set of colors from original color to changes of targetValue.
  * For example, generateProgressiveColorsOfSameHue(270, 10)
@@ -23,8 +21,6 @@ export interface GenerateProgressiveColorsOfSameHueOptions {
  * @param numberOfColors
  * @param options
  * @returns array of HSL color code
- * @category style
- * @module generateProgressiveColorsOfSameHue
  * @category style
  * @module generateProgressiveColorsOfSameHue
  */

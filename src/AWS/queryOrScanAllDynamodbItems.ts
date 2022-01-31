@@ -1,11 +1,9 @@
 import { DynamoDB } from 'aws-sdk'
 import wait from '../async/wait'
-
 type QI = DynamoDB.DocumentClient.QueryInput
 type QO = DynamoDB.DocumentClient.QueryOutput
 type SI = DynamoDB.DocumentClient.ScanInput
 type SO = DynamoDB.DocumentClient.ScanOutput
-
 /** Merge previous and next results */
 function mergeResults <Output extends QO | SO> (
   previousResult: null | Output,
@@ -19,17 +17,13 @@ function mergeResults <Output extends QO | SO> (
     ScannedCount: (previousResult.ScannedCount) ?? 0 + (nextResult.ScannedCount ?? 0),
   }
 }
-
 export interface QueryOrScanAllDynamodbItemsOptions <Output extends QO | SO> {
   previousResult?: null | Output;
   /** Delay between each query request. Default to 0 */
   delay?: number;
 }
-
 /**
  * Return a list of properties of tables that have been created and match the criteria
- * @category AWS
- * @module queryOrScanAllDynamodbItems
  * @category AWS
  * @module queryOrScanAllDynamodbItems
  */

@@ -1,5 +1,4 @@
 import isNullOrUndef from '../validators/isNullOrUndef'
-
 /**
  * !! Caution:
  *   This might cause a large bundle size.
@@ -14,8 +13,6 @@ import isNullOrUndef from '../validators/isNullOrUndef'
  * Require packages:
  *   intl
  *   relative-time-format
- * @category polyfill
- * @module polyfillIntl
  * @category polyfill
  * @module polyfillIntl
  */
