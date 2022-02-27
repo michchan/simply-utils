@@ -8,7 +8,7 @@
 **/bundles/*
 **/dist/*
 **/bin/*
-**/dist_jsdoc/*
+**/docs/*
 
 # Environment configuration files
 **/.github
