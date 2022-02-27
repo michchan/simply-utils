@@ -18,7 +18,8 @@
     "tsc-watch": "tsc --watch --noemit",
     "generate-docs-tags": "ts-node scripts/generateJSDocsTags",
     "generate-docs": "jsdoc -c jsdoc.json",
-    "serve-docs": "serve docs",
+    "build-docs": "npm run generate-docs-tags && npm run generate-docs",
+    "serve-docs": "serve dist_jsdoc",
     "prepare": "husky install",
     "release": "standard-version --ignore-path .gitignore --commit-hook false"
   },

@@ -17,12 +17,26 @@
   "opts": {
     "template": "node_modules/better-docs",
     "encoding": "utf8",
-    "destination": "docs/",
+    "destination": "dist_jsdoc/",
     "recurse": true,
     "verbose": true
   },
   "templates": {
     "cleverLinks": false,
-    "monospaceLinks": false
+    "monospaceLinks": false,
+    "search": true,
+    "better-docs": {
+      "name": "Simply-Utils Documentation",
+      "logo": "images/logo.png",
+      "title": "Simply-Utils Documentation",
+      "css": "style.css",
+      "hideGenerator": false,
+      "navLinks": [
+        {
+          "label": "Github",
+          "href": "https://github.com/michchan/simply-utils"
+        }
+      ]
+    }
   }
 }

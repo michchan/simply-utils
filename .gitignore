@@ -115,5 +115,5 @@ temp/
 # Ignore build
 /dist
 
-# Ignore JSDoc output
-jsdoc_out
+# Ignore JSDoc build
+/dist_jsdoc
