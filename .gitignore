@@ -114,6 +114,3 @@ temp/
 
 # Ignore build
 /dist
-
-# Ignore JSDoc build
-/dist_jsdoc

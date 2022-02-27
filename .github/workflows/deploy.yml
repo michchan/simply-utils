@@ -41,6 +41,10 @@ jobs:
       - name: Run Stylelint test
         run: npm run stylelint
 
+      # Check if docs are included
+      - name: Check generated docs
+        run: npm run build-docs && npm run git-check-unclean
+
       # Clear last build cache
       - name: Clear last build cache
         run: npm run clear-build-cache
@@ -53,7 +57,3 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      # Build docs
-      - name: Build JSDoc
-        run: npm run build-docs

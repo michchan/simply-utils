@@ -35,6 +35,6 @@ jobs:
       - name: Test build
         run: npm run build
 
-      # Build docs
-      - name: Test build JSDoc
-        run: npm run build-docs
+      # Check if docs are included
+      - name: Check generated docs
+        run: npm run build-docs && npm run git-check-unclean
