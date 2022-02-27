@@ -2,19 +2,19 @@ name: CI
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   testOnIntegrate:
     runs-on: ubuntu-latest
 
-    steps:   
+    steps:
       # Setup node
       - name: Setup Node with the right version
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "12.x"
+          registry-url: "https://registry.npmjs.org"
 
       # Checkout branch to merge
       - name: Checkout branch to merge
@@ -26,7 +26,7 @@ jobs:
       # Run eslint test
       - name: Run ESLint test
         run: npm run eslint
-      
+
       # Run stylelint test
       - name: Run Stylelint test
         run: npm run stylelint
@@ -34,3 +34,7 @@ jobs:
       # Build and type check
       - name: Test build
         run: npm run build
+
+      # Build docs
+      - name: Test build JSDoc
+        run: npm run build-docs

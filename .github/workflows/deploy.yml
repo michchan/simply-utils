@@ -5,12 +5,11 @@ name: CD
 # Controls when the action will run. Triggers the workflow on push new tag.
 on:
   push:
-    tags: 
+    tags:
       - v*
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
@@ -28,8 +27,8 @@ jobs:
       - name: Setup Node with the right version
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "12.x"
+          registry-url: "https://registry.npmjs.org"
 
       # Install dependencies
       - run: npm install
@@ -37,7 +36,7 @@ jobs:
       # Run eslint test
       - name: Run ESLint test
         run: npm run eslint
-      
+
       # Run stylelint test
       - name: Run Stylelint test
         run: npm run stylelint
@@ -54,3 +53,7 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # Build docs
+      - name: Build JSDoc
+        run: npm run build-docs
