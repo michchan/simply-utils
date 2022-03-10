@@ -1,6 +1,6 @@
 {
   "name": "simply-utils",
-  "version": "0.61.4",
+  "version": "0.61.5",
   "description": "Simple and generic JavaScript utils for common use cases, mainly developed and refractored from frontend projects.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,7 +21,7 @@
     "build-docs": "npm run generate-docs-tags && npm run generate-docs",
     "serve-docs": "serve docs",
     "prepare": "husky install",
-    "release": "standard-version --ignore-path .gitignore --commit-hook false",
+    "release": "HUSKY=0 standard-version --ignore-path .gitignore --commit-hook false",
     "git-check-unclean": "sh scripts/git-check-unclean.sh"
   },
   "repository": {
