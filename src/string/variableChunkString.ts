@@ -6,7 +6,7 @@ export type RestStrategy = 'keep' | 'omit'
  * @param str
  * @param chunkSizes
  * @param restStrategy
- * @returns
+ * @returns The splitted chunks of string
  * @category string
  * @module variableChunkString
  */
