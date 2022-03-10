@@ -1,3 +1,4 @@
+export { default as convertNumberBetweenMeasurementUnits } from './convertNumberBetweenMeasurementUnits'
 export { default as formatAsGroupedString } from './formatAsGroupedString'
 export { default as formatBankAccNum } from './formatBankAccNum'
 export { default as formatByteSize } from './formatByteSize'
