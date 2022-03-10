@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.61.6](https://github.com/michchan/simply-utils/compare/v0.61.5...v0.61.6) (2022-03-10)
+
+
+### Bug Fixes
+
+* build-docs error ([ed0682c](https://github.com/michchan/simply-utils/commit/ed0682cff11bb423d0a7aa27fa002a4fdd823d04))
+
 ### [0.61.5](https://github.com/michchan/simply-utils/compare/v0.61.4...v0.61.5) (2022-03-10)
 
 
