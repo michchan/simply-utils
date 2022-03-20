@@ -23,7 +23,7 @@
     "tsc-watch": "tsc --watch --noemit",
     "generate-docs-tags": "ts-node scripts/generateJSDocsTags",
     "generate-docs": "jsdoc -c jsdoc.json",
-    "build-docs": "yarn run generate-docs-tags && yarn run generate-docs",
+    "build-docs": "rm -rf docs && yarn run generate-docs-tags && yarn run generate-docs",
     "serve-docs": "serve docs",
     "prepare": "husky install",
     "release": "HUSKY=0 standard-version --ignore-path .gitignore --commit-hook false",
