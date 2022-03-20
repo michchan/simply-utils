@@ -27,33 +27,33 @@ jobs:
       - name: Setup Node with the right version
         uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
+          node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
 
-      # Install dependencies
-      - run: npm install
+      # Yarn install
+      - run: yarn install --frozen-lockfile
 
       # Run eslint test
       - name: Run ESLint test
-        run: npm run eslint
+        run: yarn run eslint
 
       # Run stylelint test
       - name: Run Stylelint test
-        run: npm run stylelint
+        run: yarn run stylelint
 
       # Check if docs are included
       - name: Check generated docs
-        run: npm run build-docs && npm run git-check-unclean
+        run: yarn run build-docs && yarn run git-check-unclean
 
       # Clear last build cache
       - name: Clear last build cache
-        run: npm run clear-build-cache
+        run: yarn run clear-build-cache
 
       # Build
       - name: Build
-        run: npm run build
+        run: yarn run build
 
       # Publish to NPM
-      - run: npm publish
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

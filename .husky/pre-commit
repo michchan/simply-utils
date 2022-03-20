@@ -5,9 +5,10 @@
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # =========== End
 
-npm run eslint:fix
-npm run stylelint
-npm run index
-npm test
-npm run build-docs
+npm install -g yarn
+yarn run eslint:fix
+yarn run stylelint
+yarn run index
+yarn test
+yarn run build-docs
 git add .

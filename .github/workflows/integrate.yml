@@ -13,7 +13,7 @@ jobs:
       - name: Setup Node with the right version
         uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
+          node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
 
       # Checkout branch to merge
@@ -21,20 +21,20 @@ jobs:
         uses: actions/checkout@v2
 
       # Install dependencies
-      - run: npm install
+      - run: yarn install
 
       # Run eslint test
       - name: Run ESLint test
-        run: npm run eslint
+        run: yarn run eslint
 
       # Run stylelint test
       - name: Run Stylelint test
-        run: npm run stylelint
+        run: yarn run stylelint
 
       # Build and type check
       - name: Test build
-        run: npm run build
+        run: yarn run build
 
       # Check if docs are included
       - name: Check generated docs
-        run: npm run build-docs && npm run git-check-unclean
+        run: yarn run build-docs && yarn run git-check-unclean

@@ -15,7 +15,7 @@ function parseJSON <T extends { [key: string]: any } = { [key: string]: any }> (
   try {
     return isStr(str) ? JSON.parse(str) : fallback
   } catch (error) {
-    if (isFunc(log)) log(error)
+    if (error && isFunc(log)) log(error as Error)
     return fallback as unknown as T
   }
 }

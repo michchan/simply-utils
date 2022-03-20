@@ -10,7 +10,7 @@
     "node_modules/better-docs/category"
   ],
   "source": {
-    "include": "src",
+    "include": "dist",
     "includePattern": "\\.(jsx|js|ts|tsx)$",
     "excludePattern": "(node_modules/|docs|(index\\.(jsx|js|ts|tsx)))"
   },

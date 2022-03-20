@@ -12,11 +12,11 @@ Please note we have a code of conduct, please follow it in all your interactions
 2. **Node version** : 
    Make sure you are working with the same version as specified in `.nvmrc`
 3. **Eslint** : 
-   Make sure you have fixed all errors by running `npm run eslint:fix` or `yarn eslint:fix`
+   Make sure you have fixed all errors by running `yarn run eslint:fix` or `yarn eslint:fix`
 4. **Stylelint** : 
-   Make sure you have fixed all errors by running `npm run stylelint` or `yarn stylelint`
+   Make sure you have fixed all errors by running `yarn run stylelint` or `yarn stylelint`
 5. **Type checking** : 
-   Make sure you have fixed all errors by running `npm run watch` or `yarn watch`, or testing build by running `npm run build` or `yarn build`
+   Make sure you have fixed all errors by running `yarn run watch` or `yarn watch`, or testing build by running `yarn run build` or `yarn build`
 
 ## Code of Conduct
 

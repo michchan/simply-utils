@@ -15,7 +15,7 @@ function getDOMNodesUnder <T extends Node = Node> (
 ): T[] {
   let n: null | T = null
   const nodes: T[] = []
-  const walker = document.createTreeWalker(el, whatToShow, null, false)
+  const walker = document.createTreeWalker(el, whatToShow, null)
 
   while ((
     n = walker.nextNode() as (
