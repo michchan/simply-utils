@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.62.0](https://github.com/michchan/simply-utils/compare/v0.61.6...v0.62.0) (2022-03-20)
+
+
+### Bug Fixes
+
+* remove git cache docs/string_isFullWIdthChar.js.html ([e9bba5a](https://github.com/michchan/simply-utils/commit/e9bba5a90119984db46d8449e53734dfb1524ae5))
+
 ### [0.61.6](https://github.com/michchan/simply-utils/compare/v0.61.5...v0.61.6) (2022-03-10)
 
 
