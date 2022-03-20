@@ -11,7 +11,7 @@
   ],
   "source": {
     "include": "dist",
-    "includePattern": "\\.(jsx|js|ts|tsx)$",
+    "includePattern": "\\.js$",
     "excludePattern": "(node_modules/|docs|(index\\.(jsx|js|ts|tsx)))"
   },
   "opts": {
