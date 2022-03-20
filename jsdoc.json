@@ -12,7 +12,7 @@
   "source": {
     "include": "dist",
     "includePattern": "\\.js$",
-    "excludePattern": "(node_modules/|docs|(index\\.(jsx|js|ts|tsx)))|(\\.d\\.ts)|(\\.ts)"
+    "excludePattern": "(node_modules/|docs|(index\\.(jsx|js|ts|tsx)))|(\\.d\\.ts)|(\\.ts)|(\\.tsx)"
   },
   "opts": {
     "template": "node_modules/better-docs",
