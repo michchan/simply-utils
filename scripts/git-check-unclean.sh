@@ -1,3 +1,5 @@
+git status
+
 if [ -z "$(git status --porcelain)" ]; then 
   echo "Working directory clean";
   exit 0;
