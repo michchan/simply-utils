@@ -11,9 +11,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "build-ci": "tsc && scripts/build.sh",
     "clear-build-cache": "rm -rf dist",
-    "deploy": "yarn run index && yarn run build && yarn run tag && git push && npm publish",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "eslint:fix": "yarn run eslint -- --fix",
     "stylelint": "stylelint 'src/**/*.{js,jsx,ts,tsx}'",
@@ -27,6 +25,7 @@
     "build-docs": "rm -rf docs && yarn run generate-docs-tags && yarn run generate-docs",
     "serve-docs": "serve docs",
     "prepare": "husky install",
+    "prepublishOnly": "scripts/pre-distribute.sh",
     "release": "HUSKY=0 standard-version --ignore-path .gitignore --commit-hook false",
     "git-check-unclean": "sh scripts/git-check-unclean.sh"
   },
