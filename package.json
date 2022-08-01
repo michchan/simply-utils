@@ -1,6 +1,6 @@
 {
   "name": "simply-utils",
-  "version": "0.64.0",
+  "version": "0.64.1",
   "description": "Simple and generic JavaScript utils for common use cases, mainly developed and refractored from frontend projects.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -65,17 +65,39 @@
     "styled-components": ">= 5.0.0"
   },
   "peerDependenciesMeta": {
-    "chrome-aws-lambda": { "optional": true },
-    "dotenv": { "optional": true },
-    "file-loader": { "optional": true },
-    "intl": { "optional": true },
-    "node-fetch": { "optional": true },
-    "puppeteer": { "optional": true },
-    "puppeteer-core": { "optional": true },
-    "react": { "optional": true },
-    "react-dom": { "optional": true },
-    "relative-time-format": { "optional": true },
-    "styled-components": { "optional": true }
+    "chrome-aws-lambda": {
+      "optional": true
+    },
+    "dotenv": {
+      "optional": true
+    },
+    "file-loader": {
+      "optional": true
+    },
+    "intl": {
+      "optional": true
+    },
+    "node-fetch": {
+      "optional": true
+    },
+    "puppeteer": {
+      "optional": true
+    },
+    "puppeteer-core": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "relative-time-format": {
+      "optional": true
+    },
+    "styled-components": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@types/node-fetch": "^2.5.10",
