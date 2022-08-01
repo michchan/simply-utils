@@ -2,8 +2,8 @@
   "name": "simply-utils",
   "version": "0.64.1",
   "description": "Simple and generic JavaScript utils for common use cases, mainly developed and refractored from frontend projects.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "engines": {
     "node": ">=16.0.0",
     "npm": "please-use-yarn",
@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "build-ci": "tsc && scripts/build.sh",
     "clear-build-cache": "rm -rf dist",
     "deploy": "yarn run index && yarn run build && yarn run tag && git push && npm publish",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx .",
@@ -125,7 +126,7 @@
     "dotenv": "^8.2.0",
     "eslint": "^7.11.0",
     "file-loader": "^6.0.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.0",
     "intl": "^1.2.5",
     "jsdoc": "^3.6.10",
     "node-fetch": "^2.6.7",

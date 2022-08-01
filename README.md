@@ -42,7 +42,7 @@ yarn add simply-utils
 1. Import **separately** using ES6 module (**Recommended**. This uses code-splitting style and is most cost-effective.):
 
 ```Javascript
-    import isStr from 'simply-utils/dist/string/isStr'
+    import isStr from 'simply-utils/string/isStr'
 
     const isString = isStr('testing')
 ```

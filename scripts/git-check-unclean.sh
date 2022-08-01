@@ -1,3 +1,4 @@
+#!/bin/sh
 git status
 
 if [ -z "$(git status --porcelain)" ]; then 
