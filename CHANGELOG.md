@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.65.0](https://github.com/michchan/simply-utils/compare/v0.64.1...v0.65.0) (2022-08-01)
+
+
+### Features
+
+* export files from root instead of dist ([a31781f](https://github.com/michchan/simply-utils/commit/a31781f02ea5587e0e0ad3c91f765aaea08f8619))
+
 ### [0.64.1](https://github.com/michchan/simply-utils/compare/v0.64.0...v0.64.1) (2022-08-01)
 
 ## [0.64.0](https://github.com/michchan/simply-utils/compare/v0.63.2...v0.64.0) (2022-08-01)
