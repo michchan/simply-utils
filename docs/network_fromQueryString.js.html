@@ -122,7 +122,7 @@ var qs_1 = __importDefault(require("qs"));
  */
 function fromQueryString(str, fallback) {
     if (fallback === void 0) { fallback = {}; }
-    return (qs_1.default.parse(/^\?/.test(str) ? str.substr(1) : str) || fallback);
+    return (qs_1.default.parse(/^\?/.test(str) ? str.substring(1) : str) || fallback);
 }
 exports.default = fromQueryString;
 </code></pre>

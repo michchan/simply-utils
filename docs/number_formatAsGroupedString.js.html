@@ -107,11 +107,7 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>"use strict";
-var __importDefault = (this &amp;&amp; this.__importDefault) || function (mod) {
-    return (mod &amp;&amp; mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var trim_1 = __importDefault(require("lodash/trim"));
 /**
  * @category number
  * @module formatAsGroupedString
@@ -119,10 +115,12 @@ var trim_1 = __importDefault(require("lodash/trim"));
 var formatAsGroupedString = function (_a) {
     var value = _a.value, groupSize = _a.groupSize, maxNumGroup = _a.maxNumGroup, separator = _a.separator, _b = _a.startIndex, startIndex = _b === void 0 ? 0 : _b;
     var regexp = new RegExp(separator, 'g');
-    var trimmedValue = (0, trim_1.default)(value.replace(regexp, ''));
+    var trimmedValue = value.replace(regexp, '').trim();
     var strGroups = [];
     for (var i = startIndex; i &lt; maxNumGroup; i++) {
-        var strGroup = trimmedValue.substr(i * groupSize, groupSize);
+        var groupStartIndex = i * groupSize;
+        var groupEndIndex = groupStartIndex + groupSize;
+        var strGroup = trimmedValue.substring(groupStartIndex, groupEndIndex);
         if (strGroup)
             strGroups.push(strGroup);
     }

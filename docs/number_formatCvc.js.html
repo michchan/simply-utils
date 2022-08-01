@@ -118,7 +118,7 @@ var LENGTH = 3;
  */
 var formatCvc = function (value) {
     if (value.length > LENGTH)
-        return value.substr(0, LENGTH);
+        return value.substring(0, LENGTH);
     return value;
 };
 exports.default = formatCvc;

@@ -12,7 +12,7 @@ function fromQueryString <T extends ParsedQs = ParsedQs> (
   fallback: T = {} as T,
 ): T {
   return (qs.parse(
-    /^\?/.test(str) ? str.substr(1) : str
+    /^\?/.test(str) ? str.substring(1) : str
   ) || fallback) as T
 }
 

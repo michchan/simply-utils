@@ -20,8 +20,8 @@ const variableChunkString = (str: string, chunkSizes: number[], restStrategy: Re
     while (lineWords.join(' ').length <= size && words.length > 0) {
       const word = words.shift()
       if (word?.length && word?.length > size) {
-        const shortenWord = word?.substr(0, size)
-        words = [word?.substr(size), ...words]
+        const shortenWord = word?.substring(0, size)
+        words = [word?.substring(size), ...words]
         lineWords.push(shortenWord)
         // Go to next line
         break

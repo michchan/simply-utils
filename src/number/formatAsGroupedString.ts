@@ -1,5 +1,3 @@
-import trim from 'lodash/trim'
-
 export interface FormatAsGroupedStringOptions {
   value: string;
   groupSize: number;
@@ -21,11 +19,13 @@ const formatAsGroupedString = ({
 }: FormatAsGroupedStringOptions): string => {
   const regexp = new RegExp(separator, 'g')
 
-  const trimmedValue = trim(value.replace(regexp, ''))
+  const trimmedValue = value.replace(regexp, '').trim()
   const strGroups = []
 
   for (let i = startIndex; i < maxNumGroup; i++) {
-    const strGroup = trimmedValue.substr(i * groupSize, groupSize)
+    const groupStartIndex = i * groupSize
+    const groupEndIndex = groupStartIndex + groupSize
+    const strGroup = trimmedValue.substring(groupStartIndex, groupEndIndex)
     if (strGroup)
       strGroups.push(strGroup)
   }

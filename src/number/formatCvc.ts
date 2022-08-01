@@ -8,7 +8,7 @@ const LENGTH = 3
  */
 const formatCvc = (value: string): string => {
   if (value.length > LENGTH)
-    return value.substr(0, LENGTH)
+    return value.substring(0, LENGTH)
 
   return value
 }

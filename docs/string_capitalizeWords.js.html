@@ -118,7 +118,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 var capitalizeWords = function (str) {
     var words = str.split(' ').filter(function (s) { return s; });
-    var capitalizedWords = words.map(function (word) { return "".concat((word[0] || '').toUpperCase()).concat(word.substr(1)); });
+    var capitalizedWords = words.map(function (word) { return "".concat((word[0] || '').toUpperCase()).concat(word.substring(1)); });
     return capitalizedWords.join(' ');
 };
 exports.default = capitalizeWords;

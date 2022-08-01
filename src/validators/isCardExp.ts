@@ -14,7 +14,7 @@ const isCardExp = (str: string): boolean => {
   const [month, year] = str.split('/')
 
   const isDate = Number(month) >= START_MONTH && Number(month) <= END_MONTH
-    && Number(year) >= Number(`${new Date().getFullYear()}`.substr(2, 2))
+    && Number(year) >= Number(`${new Date().getFullYear()}`.substring(2, 4))
 
   return isDate
 }

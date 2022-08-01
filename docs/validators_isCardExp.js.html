@@ -122,7 +122,7 @@ var isCardExp = function (str) {
         return false;
     var _a = str.split('/'), month = _a[0], year = _a[1];
     var isDate = Number(month) >= START_MONTH &amp;&amp; Number(month) &lt;= END_MONTH
-        &amp;&amp; Number(year) >= Number("".concat(new Date().getFullYear()).substr(2, 2));
+        &amp;&amp; Number(year) >= Number("".concat(new Date().getFullYear()).substring(2, 4));
     return isDate;
 };
 exports.default = isCardExp;
