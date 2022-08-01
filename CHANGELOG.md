@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.64.0](https://github.com/michchan/simply-utils/compare/v0.63.2...v0.64.0) (2022-08-01)
+
+
+### Features
+
+* deprecated `substr` usages ([f90020c](https://github.com/michchan/simply-utils/commit/f90020c78e43051c9baa33719973865d166f9200))
+
 ### [0.63.2](https://github.com/michchan/simply-utils/compare/v0.63.1...v0.63.2) (2022-04-02)
 
 ### [0.63.1](https://github.com/michchan/simply-utils/compare/v0.63.0...v0.63.1) (2022-03-21)
