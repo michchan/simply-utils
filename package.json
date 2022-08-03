@@ -28,7 +28,7 @@
     "prepare": "husky install",
     "release": "HUSKY=0 standard-version --ignore-path .gitignore --commit-hook false",
     "git-check-unclean": "sh scripts/git-check-unclean.sh",
-    "publish": "cd dist && npm publish --access public"
+    "distribute": "cd dist && npm publish --access public"
   },
   "repository": {
     "type": "git",

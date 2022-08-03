@@ -50,6 +50,7 @@ jobs:
         run: yarn run build-docs && yarn run git-check-unclean
 
       # Publish to NPM
-      - run: yarn run publish
+      # MUST use `npm` as `NODE_AUTH_TOKEN` is auto-injected by github action into .npmrc
+      - run: npm run distribute
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
