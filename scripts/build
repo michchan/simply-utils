@@ -8,7 +8,11 @@ cp package.json dist/
 cd dist
 
 #  Remove dist/ paths
-declare -a regmain=('s=dist/index.js=index.js=g' 's=dist/index.d.ts=index.d.ts=g')
+declare -a regmain=(
+  's=dist/index.js=index.js=g'
+  's=dist/index.d.ts=index.d.ts=g'
+  's="prepare": "husky install"="prepare": ""=g'
+)
 
 ## Perform the string replacements - "$OSTYPE" == "darwin" is Mac
 for reg in "${regmain[@]}"
