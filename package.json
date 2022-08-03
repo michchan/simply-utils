@@ -2,16 +2,16 @@
   "name": "simply-utils",
   "version": "0.65.0",
   "description": "Simple and generic JavaScript utils for common use cases, mainly developed and refractored from frontend projects.",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "engines": {
     "node": ">=16.0.0",
     "npm": "please-use-yarn",
     "yarn": ">= 1.22.0"
   },
   "scripts": {
-    "build": "tsc",
-    "clear-build-cache": "rm -rf dist",
+    "prebuild": "rm -rf dist",
+    "build": "scripts/build",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "eslint:fix": "yarn run eslint -- --fix",
     "stylelint": "stylelint 'src/**/*.{js,jsx,ts,tsx}'",
@@ -19,15 +19,16 @@
     "index:commit": "yarn run index && git add . && git commit -m \"Update index files\"",
     "tag": "git tag $(node -pe 'require(\"./package.json\").version')",
     "test": "echo \"Error: no test specified\" && exit 0",
+    "tsc": "tsc",
     "tsc-watch": "tsc --watch --noemit",
     "generate-docs-tags": "ts-node scripts/generateJSDocsTags",
     "generate-docs": "jsdoc -c jsdoc.json",
     "build-docs": "rm -rf docs && yarn run generate-docs-tags && yarn run generate-docs",
     "serve-docs": "serve docs",
     "prepare": "husky install",
-    "prepublishOnly": "scripts/pre-distribute.sh",
     "release": "HUSKY=0 standard-version --ignore-path .gitignore --commit-hook false",
-    "git-check-unclean": "sh scripts/git-check-unclean.sh"
+    "git-check-unclean": "sh scripts/git-check-unclean.sh",
+    "publish": "cd dist && npm publish --access public"
   },
   "repository": {
     "type": "git",

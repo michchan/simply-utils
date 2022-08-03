@@ -10,7 +10,6 @@ yarn run eslint:fix
 yarn run stylelint
 yarn run index
 yarn test
-yarn run clear-build-cache
 yarn run build
 yarn run build-docs
 git add .
