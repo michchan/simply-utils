@@ -12,11 +12,13 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "scripts/build",
+    "dev": "yarn tsc --watch",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "eslint:fix": "yarn run eslint -- --fix",
     "stylelint": "stylelint 'src/**/*.{js,jsx,ts,tsx}'",
     "index": "ts-node scripts/generateExports && ts-node scripts/generateIndex",
     "index:commit": "yarn run index && git add . && git commit -m \"Update index files\"",
+    "link": "scripts/link",
     "tag": "git tag $(node -pe 'require(\"./package.json\").version')",
     "test": "echo \"Error: no test specified\" && exit 0",
     "tsc": "tsc",
