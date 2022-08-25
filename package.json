@@ -12,6 +12,7 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "scripts/build",
+    "postinstall": "yarn build",
     "dev": "yarn tsc --watch",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "eslint:fix": "yarn run eslint -- --fix",

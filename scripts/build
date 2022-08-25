@@ -5,6 +5,9 @@ yarn run tsc
 # Copy package.json to /dist
 cp package.json dist/
 
+# Copy node_modules to dist
+cp -r node_modules dist/
+
 cd dist
 
 #  Remove dist/ paths
