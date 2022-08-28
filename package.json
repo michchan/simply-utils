@@ -1,6 +1,6 @@
 {
   "name": "simply-utils",
-  "version": "0.68.0",
+  "version": "0.68.1",
   "description": "Simple and generic JavaScript utils for common use cases, mainly developed and refractored from frontend projects.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,7 +27,10 @@
     "generate-docs": "jsdoc -c jsdoc.json",
     "build-docs": "rm -rf docs && yarn run generate-docs-tags && yarn run generate-docs",
     "serve-docs": "serve docs",
-    "prepare": "husky install && yarn build",
+    "postinstall": "yarn build",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable",
+    "prepare": "husky install",
     "release": "HUSKY=0 standard-version --ignore-path .gitignore --commit-hook false",
     "git-check-unclean": "sh scripts/git-check-unclean.sh",
     "distribute": "cd dist && npm publish --access public"
@@ -137,6 +140,7 @@
     "intl": "^1.2.5",
     "jsdoc": "^3.6.10",
     "node-fetch": "^2.6.7",
+    "pinst": "^3.0.0",
     "puppeteer": "6.0.0",
     "puppeteer-core": "6.0.0",
     "react": "^17.0.1",
