@@ -12,7 +12,6 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "scripts/build",
-    "postinstall": "yarn build",
     "dev": "yarn tsc --watch",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "eslint:fix": "yarn run eslint -- --fix",
@@ -28,7 +27,7 @@
     "generate-docs": "jsdoc -c jsdoc.json",
     "build-docs": "rm -rf docs && yarn run generate-docs-tags && yarn run generate-docs",
     "serve-docs": "serve docs",
-    "prepare": "husky install",
+    "prepare": "husky install && yarn build",
     "release": "HUSKY=0 standard-version --ignore-path .gitignore --commit-hook false",
     "git-check-unclean": "sh scripts/git-check-unclean.sh",
     "distribute": "cd dist && npm publish --access public"
