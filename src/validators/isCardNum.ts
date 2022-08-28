@@ -1,6 +1,8 @@
 // Without spacing e.g. 42424242424242424
 const REGEX = /^\d{4}\d{4}\d{4}\d{4}$/
 /**
+ * @DEPRECATED use /validators/isValidCreditCardNum
+ *
  * @category validators
  * @module isCardNum
  */

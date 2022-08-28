@@ -1,6 +1,5 @@
-/* eslint-disable no-console */
-import creditCardType from 'credit-card-type'
 import { CreditCardType } from 'credit-card-type/dist/types'
+import getCreditCardTypeAndTrimmedValue from '../validators/_common/getCreditCardTypeAndTrimmedValue'
 
 /**
  * Reference: https://github.com/braintree/credit-card-type#pretty-card-numbers
@@ -38,12 +37,8 @@ function prettyCardNumber (
  * @module formatCreditCardNum
  */
 const formatCreditCardNum = (value: string, separator: string = ' '): string => {
-  const regexp = new RegExp(separator, 'g')
-  const trimmedValue = value.replace(regexp, '').trim()
-  const types = creditCardType(trimmedValue)
-
-  if (types.length === 1) {
-    const [matchedType] = types
+  const [matchedType, trimmedValue] = getCreditCardTypeAndTrimmedValue(value, separator, 'onlyMatchOne')
+  if (matchedType) {
     const maxLength = [...matchedType.lengths].sort().pop()
     const limitedValue = trimmedValue.substring(0, maxLength)
     return prettyCardNumber(limitedValue, matchedType, separator)
