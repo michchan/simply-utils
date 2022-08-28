@@ -2,6 +2,8 @@ import formatAsGroupedString from './formatAsGroupedString'
 const GROUP_SIZE = 4
 const NUM_GROUPS = 4
 /**
+ * @DEPRECATED Use number/formatCreditCardNum
+ *
  * Format credit card number (e.g. 4242424242424242)
  * to format like 4242-4242-4242-4242 (separator can be customized)
  *

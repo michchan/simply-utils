@@ -57,6 +57,7 @@
   "homepage": "https://github.com/michchan/simply-utils#readme",
   "peerDependencies": {
     "chrome-aws-lambda": "6.x",
+    "credit-card-type": "9.x",
     "dotenv": "*",
     "file-loader": "6.x",
     "intl": "1.x",
@@ -70,6 +71,9 @@
   },
   "peerDependenciesMeta": {
     "chrome-aws-lambda": {
+      "optional": true
+    },
+    "credit-card-type": {
       "optional": true
     },
     "dotenv": {
@@ -112,7 +116,7 @@
     "react-device-detect": "^1.15.0"
   },
   "devDependencies": {
-    "@michchan/eslint-config": "1.10.1",
+    "@michchan/eslint-config": "1.12.0",
     "@types/aws-lambda": "^8.10.70",
     "@types/history": "^4.7.8",
     "@types/lodash": "^4.14.167",
@@ -126,6 +130,7 @@
     "aws-sdk": "^2.824.0",
     "better-docs": "^2.3.2",
     "chrome-aws-lambda": "6.0.0",
+    "credit-card-type": "^9.1.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.11.0",
     "file-loader": "^6.0.0",
