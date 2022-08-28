@@ -1,5 +1,7 @@
 const LENGTH = 3
 /**
+ * @DEPRECATED Use number/formatCreditCardSecurityCode
+ *
  * Limit the length of credit card security code
  *
  * @param value
