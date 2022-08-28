@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.68.0](https://github.com/michchan/simply-utils/compare/v0.67.0...v0.68.0) (2022-08-28)
+
+
+### Features
+
+* formatCreditCardNum: detect and format card type ([7a3fdc7](https://github.com/michchan/simply-utils/commit/7a3fdc7739145bc1a851144079f2cfd8fcce8ad4))
+* formatCreditCardSecurityCode ([28c7cde](https://github.com/michchan/simply-utils/commit/28c7cde9aa85a5954c6c42e8ca80052b1535cc84))
+* isValidCreditCardNum ([7d23dbb](https://github.com/michchan/simply-utils/commit/7d23dbb453f2903f5cb0bc25e5334f375083f652))
+* isValidCreditCardSecurityCode ([fdedd7e](https://github.com/michchan/simply-utils/commit/fdedd7e24e5e641fee252718e45395fcc71941d2))
+
+
+### Bug Fixes
+
+* node_modules not working in build ([057c58b](https://github.com/michchan/simply-utils/commit/057c58b7514e8439e25151a657a8bab494a2a69f))
+
 ## [0.67.0](https://github.com/michchan/simply-utils/compare/v0.66.0...v0.67.0) (2022-08-03)
 
 ## [0.66.0](https://github.com/michchan/simply-utils/compare/v0.65.0...v0.66.0) (2022-08-03)
