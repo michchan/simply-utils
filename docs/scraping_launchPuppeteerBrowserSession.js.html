@@ -170,7 +170,7 @@ function launchPuppeteerBrowserSession(getBatchData, defaultTimeout) {
                     browser = null;
                     _f.label = 1;
                 case 1:
-                    _f.trys.push([1, , 9, 10]);
+                    _f.trys.push([1, , 9, 12]);
                     _b = (_a = chromium.puppeteer).launch;
                     _e = {
                         args: chromium.args,
@@ -211,10 +211,13 @@ function launchPuppeteerBrowserSession(getBatchData, defaultTimeout) {
                 // Run function to get data
                 return [2 /*return*/, data];
                 case 9:
-                    if (browser)
-                        browser.close();
-                    return [7 /*endfinally*/];
-                case 10: return [2 /*return*/];
+                    if (!browser) return [3 /*break*/, 11];
+                    return [4 /*yield*/, browser.close()];
+                case 10:
+                    _f.sent();
+                    _f.label = 11;
+                case 11: return [7 /*endfinally*/];
+                case 12: return [2 /*return*/];
             }
         });
     });
