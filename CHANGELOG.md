@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.68.3](https://github.com/michchan/simply-utils/compare/v0.68.2...v0.68.3) (2023-12-24)
+
+
+### Bug Fixes
+
+* launchPuppeteerBrowserSession: puppeteer browse close not being awaited ([1d27934](https://github.com/michchan/simply-utils/commit/1d27934f36b823e4c02d63942c0594b67ba350e7))
+
 ### [0.68.2](https://github.com/michchan/simply-utils/compare/v0.68.0...v0.68.2) (2022-08-28)
 
 ## [0.68.0](https://github.com/michchan/simply-utils/compare/v0.67.0...v0.68.0) (2022-08-28)
