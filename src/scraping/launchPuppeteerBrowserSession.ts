@@ -45,7 +45,7 @@ async function launchPuppeteerBrowserSession <T> (
     // Run function to get data
     return data
   } finally {
-    if (browser) browser.close()
+    if (browser) await browser.close()
   }
 }
 export default launchPuppeteerBrowserSession
