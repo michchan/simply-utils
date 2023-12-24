@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.68.4](https://github.com/michchan/simply-utils/compare/v0.68.3...v0.68.4) (2023-12-24)
+
 ### [0.68.3](https://github.com/michchan/simply-utils/compare/v0.68.2...v0.68.3) (2023-12-24)
 
 
