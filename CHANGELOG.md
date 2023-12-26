@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.69.0](https://github.com/michchan/simply-utils/compare/v0.68.4...v0.69.0) (2023-12-26)
+
+
+### Features
+
+* upgrade puppeteer and chrome-aws-lambda to v10 ([bcb2756](https://github.com/michchan/simply-utils/commit/bcb275678c507d952062f7e89d4510fb4ba6a686))
+
 ### [0.68.4](https://github.com/michchan/simply-utils/compare/v0.68.3...v0.68.4) (2023-12-24)
 
 ### [0.68.3](https://github.com/michchan/simply-utils/compare/v0.68.2...v0.68.3) (2023-12-24)
