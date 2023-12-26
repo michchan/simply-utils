@@ -180,12 +180,12 @@ function launchPuppeteerBrowserSession(getBatchData, defaultTimeout) {
                 case 2: return [4 /*yield*/, _b.apply(_a, [(_e.executablePath = _f.sent(),
                             _e.headless = chromium.headless,
                             _e.ignoreHTTPSErrors = true,
-                            _e)])
-                    // Open a new page
-                ];
+                            _e)])];
                 case 3:
                     // Open the headless browser
                     browser = _f.sent();
+                    if (!browser)
+                        throw new Error('browser is not defined after launch');
                     return [4 /*yield*/, browser.newPage()
                         // Set default timeout
                     ];

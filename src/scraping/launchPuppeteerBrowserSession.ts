@@ -1,11 +1,11 @@
-import puppeteer = require('puppeteer')
+import { Browser, Page } from 'puppeteer-core'
 import chromium = require('chrome-aws-lambda')
 import 'chrome-aws-lambda/bin/aws.tar.br'
 import 'chrome-aws-lambda/bin/chromium.br'
 import 'chrome-aws-lambda/bin/swiftshader.tar.br'
 // 240s
 const DEFAULT_TIMEOUT = 240_000
-export type GetDataWithPage <T> = (page: puppeteer.Page) => Promise<T> | T
+export type GetDataWithPage <T> = (page: Page) => Promise<T> | T
 /**
  * Helpers to scrape data from html with Puppeteer library.
  * It is ready to run on any serverless environment like AWS lambda.
@@ -19,7 +19,7 @@ async function launchPuppeteerBrowserSession <T> (
   getBatchData: GetDataWithPage<T>[],
   defaultTimeout: number = DEFAULT_TIMEOUT
 ): Promise<T[]> {
-  let browser: puppeteer.Browser | null = null
+  let browser: Browser | null = null
 
   try {
     // Open the headless browser
@@ -30,6 +30,8 @@ async function launchPuppeteerBrowserSession <T> (
       headless: chromium.headless,
       ignoreHTTPSErrors: true,
     })
+
+    if (!browser) throw new Error('browser is not defined after launch')
 
     // Open a new page
     const page = await browser.newPage()
